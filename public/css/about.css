@@ -1,0 +1,117 @@
+.u-section-1 .u-sheet-1 {
+    min-height: 750px;
+  }
+  
+  .u-section-1 .u-layout-wrap-1 {
+    margin: 65px auto 32px 0;
+  }
+  
+  .u-section-1 .u-image-1 {
+    min-height: 328px;
+    background-image: url("../images/Delicacy_1718x965.PNG");
+    background-position: 50% 50%;
+  }
+  
+  .u-section-1 .u-container-layout-1 {
+    padding: 30px;
+  }
+  
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 328px;
+  }
+  
+  .u-section-1 .u-container-layout-2 {
+    padding: 30px 0;
+  }
+  
+  .u-section-1 .u-text-1 {
+    font-size: 1.125rem;
+    background-image: none;
+    margin: 0;
+  }
+  
+  .u-section-1 .u-layout-cell-3 {
+    min-height: 514px;
+  }
+  
+  .u-section-1 .u-container-layout-3 {
+    padding: 30px 0;
+  }
+  
+  .u-section-1 .u-text-2 {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  
+  .u-section-1 .u-text-3 {
+    font-size: 1.125rem;
+    margin: 20px 0 0;
+  }
+  
+  .u-section-1 .u-image-2 {
+    min-height: 514px;
+    background-image: url("../images/Customer_816x816.jpg");
+    background-position: 50% 50%;
+  }
+  
+  .u-section-1 .u-container-layout-4 {
+    padding: 30px;
+  }
+  
+  @media (max-width: 1199px) {
+    .u-section-1 .u-layout-wrap-1 {
+      margin-right: initial;
+      margin-left: initial;
+    }
+  
+    .u-section-1 .u-image-1 {
+      min-height: 315px;
+    }
+  
+    .u-section-1 .u-layout-cell-2 {
+      min-height: 315px;
+    }
+  
+    .u-section-1 .u-layout-cell-3 {
+      min-height: 315px;
+    }
+  
+    .u-section-1 .u-image-2 {
+      min-height: 315px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .u-section-1 .u-layout-cell-2 {
+      min-height: 100px;
+    }
+  
+    .u-section-1 .u-layout-cell-3 {
+      min-height: 100px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .u-section-1 .u-sheet-1 {
+      min-height: 1780px;
+    }
+  
+    .u-section-1 .u-container-layout-1 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .u-section-1 .u-container-layout-4 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }.u-section-2 .u-sheet-1 {
+    min-height: 400px;
+  }
+  
+  .u-section-2 .u-text-1 {
+    margin-bottom: 60px;
+    font-size: 1.125rem;
+  }.u-backlink{
+      display: none;
+  }

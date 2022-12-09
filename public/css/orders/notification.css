@@ -1,0 +1,141 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 164px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 256px;
+  height: 64px;
+  margin: 40px auto 16px 0;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 0 auto -10px 0;
+}.u-section-2 .u-sheet-1 {
+  min-height: 480px;
+}
+
+.u-section-2 .u-layout-wrap-1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.u-section-2 .u-image-1 {
+  min-height: 612px;
+  background-image: url("/images/PastryIcon_278x156.png");
+  background-position: 50% 50%;
+}
+
+.u-section-2 .u-container-layout-1 {
+  padding: 30px;
+}
+
+.u-section-2 .u-layout-cell-2 {
+  min-height: 612px;
+}
+
+.u-section-2 .u-container-layout-2 {
+  padding: 30px;
+}
+
+.u-section-2 .u-text-1 {
+  margin: 0 auto;
+}
+
+.u-section-2 .u-text-2 {
+  font-size: 1.125rem;
+  margin: 20px auto 0;
+}
+
+.u-section-2 .u-text-3 {
+  font-size: 1.125rem;
+  margin: 30px 0 0;
+}
+
+.u-section-2 .u-btn-1 {
+  font-size: 1.125rem;
+  background-image: none;
+  margin: 30px auto 0;
+  padding: 10px 90px;
+}
+
+.u-section-2 .u-btn-2 {
+  font-size: 1.125rem;
+  border-style: solid;
+  letter-spacing: 1px;
+  margin: 30px auto 0;
+  padding: 8px 78px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 975px;
+  }
+
+  .u-section-2 .u-layout-wrap-1 {
+    position: relative;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 505px;
+  }
+
+  .u-section-2 .u-layout-cell-2 {
+    min-height: 505px;
+  }
+
+  .u-section-2 .u-btn-1 {
+    border-style: solid;
+    padding: 8px 33px;
+  }
+
+  .u-section-2 .u-btn-2 {
+    font-weight: normal;
+    text-transform: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 780px;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 387px;
+  }
+
+  .u-section-2 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1581px;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 581px;
+  }
+
+  .u-section-2 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-2 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1084px;
+  }
+
+  .u-section-2 .u-image-1 {
+    min-height: 366px;
+  }
+}.u-backlink{
+	display: none;
+}

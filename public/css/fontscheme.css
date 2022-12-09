@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Roboto-Slab;
+    src: url('../Roboto_Slab/static/RobotoSlab-Regular.ttf'); /* remember that font file path must be relative to the current css file. not the final compiled folder*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+.u-body h3, .u-body h4, .u-body h5, .u-body h6
+{
+    font-family: Roboto,sans-serif;
+}
+
+.u-body h1, .u-body h2
+{
+    font-family: Roboto-Slab, sans-serif;
+}
+
+.u-section-9 h2.u-text-1{
+    font-family: Roboto-Slab, sans-serif !important;
+}

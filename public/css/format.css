@@ -1,0 +1,54 @@
+
+/*text wrapping*/
+.clip { text-overflow: clip; }
+.ellipsis { text-overflow: ellipsis; }
+.word { text-overflow: ellipsis-word; }
+
+/*text sizes*/
+.small{
+    font-size: 1rem !important; /*16 pixels the smallest font size*/
+}
+
+.medium{
+    font-size: 1.15rem !important; /*18.4 pixels the standard font size*/
+}
+
+/*amount*/
+.amount{
+    font-size: 70%;
+}
+
+/*image*/
+.image{
+    background-size: cover;
+    background-position: center;
+}
+
+/*border*/
+.border{
+    border: 1px solid #f2f2f2;
+}
+
+/*items alignment*/
+
+.inline{
+    display: inline-block !important;
+}
+
+.right{
+    text-align: right !important;
+}
+
+/*hide*/
+.remove{
+    display: none;
+}
+
+
+/*customize header order button*/
+
+@media (min-width: 1009px) {
+    .u-header .u-menu-1 {
+        margin: 0 0 0 auto  ;
+    }
+}
