@@ -41,7 +41,7 @@ class BeveragesController extends Controller
     public function details($productId){
 
         //GET DATA FROM STORAGE 
-        $path = storage_path() . "\app\json\Products.json"; 
+        $path = storage_path() . "/app/json/Products.json"; 
         $json = json_decode(file_get_contents($path), true);
         $products=collect($json);
         $product=collect($json)->where('productId', $productId);

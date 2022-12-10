@@ -14,7 +14,7 @@ class BundleProductsController extends Controller
     public function index(){
 
         //GET DATA FROM STORAGE 
-        //$path = storage_path() . "\app\json\Products.json"; 
+        //$path = storage_path() . "/app/json/Products.json"; 
         //$json = json_decode(file_get_contents($path), true);
         //$products=collect($json);   
         
