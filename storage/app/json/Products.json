@@ -1,3 +1,585 @@
+
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
 [
     {        
         "categories":["Must Try"],
@@ -20,7 +602,7 @@
       {
         "categories":["Best Seller", "Must Try"],
         "foreignName": "鳳凰酥",
-        "name": "Salted Egg",
+        "name": "Salted Egg Pineapple Cake",
         "productDescription": "Authentic Taiwanese salted egg pineapple cake. Buttery shortbread crust generously stuffed with homemade pineapple filling and salted egg. We use homegrown pineapples from Tagaytay and organic salted duck eggs from Laguna. Each piece is individually wrapped and carefully packed in a gift box.",
         "productId": "F0FF91B6-050B-4E2E-9694-5E36550E95DC",
         "productOptions":["Salted Egg"],
@@ -32,16 +614,16 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",        
         "sellingPrice": "660.00",
-        "thumbnailUrl": "images/ProductThumbnails/SaltedEggPineappleCake_4288x2848.JPG",
+        "thumbnailUrl": "images/ProductThumbnails/SaltedEggPineappleCake_4288x2848.png",
         "url": "images/ProductImages/SaltedEggPineappleCake_480x480.png"        
       },
       {
         "categories":["Mix and Match", "Must Try"],
         "foreignName": "蛋黃酥",
-        "name": "Salted Egg Yolk Pastries",
+        "name": "Taiwanese Mooncake",
         "productDescription": "Authentic Taiwanese style mooncakes. Light flaky layered crust filled with homemade filling. Available in Taro, Coco(nut), Matcha, and Red bean.",
         "productId": "DEE36E3F-9D7E-46C9-951F-26282B0F3841",
-        "productOptions":["Taro", "Matcha", "Coco", "Assorted (1 flavor each)"],
+        "productOptions":["Red Bean", "Taro", "Matcha", "Coco", "Assorted (1 flavor each)"],
         "productSize":["Box of 4"],
         "productType": "Pastries",
         "productTypeId": "A3902296-0D6F-4E34-91A2-023573626225",
@@ -59,7 +641,7 @@
         "name": "Suncake",
         "productDescription": "Plain Suncake: Taiwanese flaky pastry generously filled with maltose (麥芽糖). Also available in Salted egg, Ube, Red bean Mochi, Ube mochi, and Chocnut flavors.This is one of our best-sellers and often enjoyed by old and young alike. We only use the finest ingredients, such as real fresh ube. It’s a favorite Taiwanese snack with a Filipino twist! Each piece is individually wrapped and carefully packed in a gift box.",
         "productId": "26E0F202-8063-4EEB-9EE9-134720810CBC",
-        "productOptions":["Plain", "Salted Egg", "Ube", "Red Bean Mochi", "Ube Mochi", "Chocnut"],
+        "productOptions":["Plain", "Salted Egg", "Ube", "Red Bean Mochi", "Ube Mochi", "Chocnut", "Milk Cake"],
         "productSize": ["Box of 5"],
         "productType": "Pastries",
         "productTypeId": "A3902296-0D6F-4E34-91A2-023573626225",
@@ -70,24 +652,6 @@
         "sellingPrice": "375.00",
         "thumbnailUrl": "images/ProductThumbnails/SuncakeBox_1920x1920.jpg",
         "url": "images/ProductImages/Suncake_480x480.png"        
-      },
-      {
-        "categories":["Mix and Match", "Must Try"],
-        "foreignName": "紅豆月餅",
-        "name": "Red Bean Mooncake",
-        "productDescription": "Each piece is individually wrapped and carefully packed in a gift box.",
-        "productId": "672C455B-6379-4534-8859-2DB1F657FE50",
-        "productOptions":["Red Bean"],
-        "productSize": ["Box of 4"],
-        "productType": "Pastries",
-        "productTypeId": "A3902296-0D6F-4E34-91A2-023573626225",
-        "productStatus": "Discarded",  
-        "productStatusId": "0000",
-        "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
-        "productBrandName": "SoyStory",         
-        "sellingPrice": "320.00",
-        "thumbnailUrl": "images/ProductThumbnails/RedBeanMooncake_1440x1080.jpg",
-        "url": "images/ProductImages/RedBeanMooncake_810x540.jpg"        
       },
       {
         "categories":["Must Try"],
@@ -104,7 +668,7 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "375.00",
-        "thumbnailUrl": "images/ProductThumbnails/MilkCake_800x1067.png",
+        "thumbnailUrl": "images/ProductThumbnails/MilkCake_1600x1238.jpg",
         "url": "images/ProductImages/MilkCake_800x658.png"        
       },
       {
@@ -133,8 +697,8 @@
         "productId": "6CBBCF37-8165-4A6F-95B9-05B5386F8EC4",
         "productOptions":["Cranberries and Macadamia Nuts"],
         "productSize": ["Box of 10"],
-        "productType": "Pastries",
-        "productTypeId": "A3902296-0D6F-4E34-91A2-023573626225",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
@@ -151,15 +715,15 @@
         "productId": "580056F5-E372-43C2-B60C-3C0836B73C69",
         "productOptions":["Pork Floss"],
         "productSize": ["Box of 10"],
-        "productType": "Pastries",
-        "productTypeId": "A3902296-0D6F-4E34-91A2-023573626225",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "380.00",
-        "thumbnailUrl": "images/ProductThumbnails/PorkFlossSnowflakePastry_3381x5071.jpg",
-        "url": "images/ProductImages/PorkFlossSnowflakePastryWrapped_3381x5071.jpg"        
+        "thumbnailUrl": "images/ProductThumbnails/PorkFlossSnowflakePackage_1066x1600.jpg",
+        "url": "images/ProductImages/PorkFlossSnowflake_1066x1600.jpg"        
       },
       {
         "categories": "Mix and Match",
@@ -212,7 +776,7 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "450.00",
-        "thumbnailUrl": "images/ProductThumbnails/EggRoll_3024x3024.jpg",
+        "thumbnailUrl": "images/ProductThumbnails/EggRoll_740x550.jpg",
         "url": "images/ProductImages/EggRoll_2110x2110.jpg"        
       },
       {
@@ -223,14 +787,14 @@
         "productId": "3925A746-96FB-4FC0-A40F-39E6A594A2BA",
         "productOptions":["Box of 20"],
         "productSize": ["Sold per box"],
-        "productType": "Desserts",
-        "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "400.00",
-        "thumbnailUrl": "images/ProductThumbnails/PeanutCrunch_3381x5071.jpg",
+        "thumbnailUrl": "images/ProductThumbnails/PeanutCrunch_1066x1600.jpg",
         "url": "images/ProductImages/PeanutCrunch_3396x2264.jpg"        
       },
       {
@@ -241,8 +805,8 @@
         "productId": "B996BE6D-6D5F-41DB-888C-7F7DD3DCE926",
         "productOptions":["Box of 20"],
         "productSize": ["Sold per box"],
-        "productType": "Desserts",
-        "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
@@ -259,8 +823,8 @@
         "productId": "8ABBE46F-ADA5-44DC-BCD2-297FD12ADE3B",
         "productOptions":["Unsalted Baked Peanuts", "Salted Baked Peanuts"],
         "productSize": ["Sold per pack"],
-        "productType": "Desserts",
-        "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
@@ -277,8 +841,8 @@
         "productId": "9B80771E-50E4-4A34-AB49-906ADA87829C",
         "productOptions":["Sweet and spicy"],
         "productSize": ["Sold per pack"],
-        "productType": "Desserts",
-        "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
+        "productType": "Nuts and Nougat",
+        "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
@@ -295,7 +859,7 @@
         "productId": "4606C637-B4D2-4C26-B2DF-E7F7A1C0D564",
         "productOptions":["Chocnut", "Red Bean"],
         "productSize": ["6 pieces per tray"],
-        "productType": "Desserts",
+        "productType": "Special Orders",
         "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
         "productStatus": "Selected",  
         "productStatusId": "1000",
@@ -313,7 +877,7 @@
         "productId": "9DFA74DE-5CF7-4BFF-8F66-1F522D4ED1EC",
         "productOptions":["Soy"],
         "productSize": ["Solo"],
-        "productType": "Desserts",
+        "productType": "Special Orders",
         "productTypeId": "BDB353A9-27DA-4257-A3F6-54477A8CA9B4",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
@@ -324,28 +888,10 @@
         "url": "images/ProductImages/SoyLecheFlan_1200x700.jpg"        
       },
       {
-        "categories": "Other Products",
-        "foreignName": "仙草",
-        "name": "Grass Jelly",
-        "productDescription": "Grass jelly can be served chilled or at room temperature and is most often used as a jelly-like topping in drinks and desserts.",
-        "productId": "DEABC900-23D8-4BB0-A41A-F8C52A0D5955",
-        "productOptions":["Grass Jelly Solo - 20 packs", "Grass Jelly Pouch"],
-        "productSize": ["20 packs", "Pouch"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
-        "productStatus": "Discarded",  
-        "productStatusId": "0000",
-        "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
-        "productBrandName": "Sun-Q",         
-        "sellingPrice": "500.00",
-        "thumbnailUrl": "images/ProductThumbnails/GrassJelly_1080x1718.jpg",
-        "url": "images/ProductImages/GrassJellyGlass_1080x1718.jpg"        
-      },
-      {
         "categories": "Must Try",
         "foreignName": "吸吸凍",
         "name": "Shake Shake Jelly",
-        "productDescription": "A drinkable jelly drink. Open, shake, drink, and enjoy! Available in grass jelly 仙草, almond jelly 杏仁, assam milk tea jelly 阿薩姆奶茶, taro milk jelly 芋頭鮮奶, and café au lait jelly 牛奶咖啡.",
+        "productDescription": ["A drinkable jelly drink. Open, shake, drink, and enjoy! Available in grass jelly 仙草, almond jelly 杏仁, assam milk tea jelly 阿薩姆奶茶, taro milk jelly 芋頭鮮奶, and café au lait jelly 牛奶咖啡."],
         "productId": "7710E874-1601-44D4-9E74-81E1BA0F9DCB",
         "productOptions": ["Almond Jelly", "Assam Milk Tea Jelly", "Café Au Lait Jelly", "Grass Jelly", "Taro Milk Jelly"],
         "productSize":["Sold per bottle"],
@@ -363,12 +909,12 @@
         "categories": "Other Products",
         "foreignName": "黑糖珍珠",
         "name": "Black Tapioca Pearls Solo Pack",
-        "productDescription": "Tired of cooking big batches of tapioca pearls that just goes to waste? Try our heat and eat Black tapioca pearls in brown sugar syrup. It’s individually wrapped in single or family sized packaging. Enjoy your boba in three easy steps. Place the bag in a pot of water and bring it to a rapid boil for 3 minutes. Cut pouch, empty contents and enjoy! It’s the best way to satisfy your milk tea cravings without breaking the bank. Prepare your tea, add your milk, put in the heat and eat pearls, and drink! Take it to your office or school for your milk tea fix!",
+        "productDescription":["Tired of cooking big batches of tapioca pearls that end up going to waste? Try our heat and eat black tapioca pearls in brown sugar syrup. Our instant pearls come in two sizes: solo or family pack.","Enjoy your boba in 3 easy steps!","Soak the solo pack in hot water, cover it, and wait for 5 minutes. Cut the pouch open, empty the contents, and enjoy!"],
         "productId": "408BECEE-C95A-498E-A365-7054295E9674",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["Sold in 1kg"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -381,12 +927,12 @@
         "categories": "Other Products",
         "foreignName": "黑糖珍珠",
         "name": "Black Tapioca Pearls Family Pack",
-        "productDescription": "Tired of cooking big batches of tapioca pearls that just goes to waste? Try our heat and eat Black tapioca pearls in brown sugar syrup. It’s individually wrapped in single or family sized packaging. Enjoy your boba in three easy steps. Place the bag in a pot of water and bring it to a rapid boil for 3 minutes. Cut pouch, empty contents and enjoy! It’s the best way to satisfy your milk tea cravings without breaking the bank. Prepare your tea, add your milk, put in the heat and eat pearls, and drink! Take it to your office or school for your milk tea fix!",
+        "productDescription": ["Tired of cooking big batches of tapioca pearls that end up going to waste? Try our heat and eat black tapioca pearls in brown sugar syrup. Our instant pearls come in two sizes: solo or family pack.","Enjoy your boba in 3 easy steps!","Place the family pack in a pot of water and bring it to a rapid boil for 3 minutes. Cut the pouch, empty the contents, and enjoy!"],
         "productId": "0D577EAF-B54F-4592-A0F9-4FB5C0E7C804",
         "productOptions":["1kg family pack"],
         "productSize": ["Sold in 1kg"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -398,13 +944,13 @@
       {
         "categories": "Other Products",
         "foreignName": "白茶珍珠",
-        "name": "White Tapioca Pearls Party Pack",
-        "productDescription": "Tired of cooking big batches of tapioca pearls that just goes to waste? Try our heat and eat white tapioca pearls in sugar syrup. It’s individually wrapped in single or family sized packaging. Enjoy your boba in three easy steps. Place the bag in a pot of water and bring it to a rapid boil for 3 minutes. Cut pouch, empty contents and enjoy! It’s perfect for Filipino desserts like buco pandan, ginataang bilo bilo, tapioca pudding, coolers etc.",
+        "name": "White Tapioca Pearls Family Pack",
+        "productDescription": ["Tired of cooking big batches of tapioca pearls that end up going to waste? Try our heat and eat black tapioca pearls in brown sugar syrup. Our instant pearls come in two sizes: solo or family pack.","Enjoy your boba in 3 easy steps!","Place the family pack in a pot of water and bring it to a rapid boil for 3 minutes. Cut the pouch, empty the contents, and enjoy!"],
         "productId": "C1784AEB-8241-4609-82A0-E6AB2992C4F3",
         "productOptions":["1kg party pack"],
         "productSize": ["Sold in 1kg"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -417,12 +963,12 @@
         "categories": "Other Products",
         "foreignName": "白茶珍珠",
         "name": "White Tapioca Pearls Solo Pack",
-        "productDescription": "Tired of cooking big batches of tapioca pearls that just goes to waste? Try our heat and eat white tapioca pearls in sugar syrup. It’s individually wrapped in single or family sized packaging. Enjoy your boba in three easy steps. Place the bag in a pot of water and bring it to a rapid boil for 3 minutes. Cut pouch, empty contents and enjoy! It’s perfect for Filipino desserts like buco pandan, ginataang bilo bilo, tapioca pudding, coolers etc.",
+        "productDescription": ["Tired of cooking big batches of tapioca pearls that end up going to waste? Try our heat and eat black tapioca pearls in brown sugar syrup. Our instant pearls come in two sizes: solo or family pack.","Enjoy your boba in 3 easy steps!","Soak the solo pack in hot water, cover it, and wait for 5 minutes. Cut the pouch open, empty the contents, and enjoy!"],
         "productId": "A52945D0-4906-4B35-8177-BB5C66AF9986",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["Sold in 1kg"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -433,14 +979,14 @@
       },
       {
         "categories": "Other Products",
-        "foreignName": "宇部方塊",
+        "foreignName": "芋塊",
         "name": "Ube Cubes Solo Pack",
-        "productDescription": "Ube cubes are made with 100% real ube (purple yam) and tapioca. A perfect topping or sinker for all ube lovers. Perfect for ginataang bilo bilo and other hot or icy desserts.",
+        "productDescription": ["Ube cubes are made with 100% real ube (purple yam) and tapioca. A perfect topping or sinker for all ube lovers. Perfect for ginataang bilo bilo and other hot or icy desserts."],
         "productId": "C52DA99C-9B84-4D3D-8EEE-1312D5B409EB",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["20 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -453,12 +999,12 @@
         "categories": "Other Products",
         "foreignName": "宇部方塊",
         "name": "Ube Cubes Family Pack",
-        "productDescription": "Ube cubes are made with 100% real ube (purple yam) and tapioca. A perfect topping or sinker for all ube lovers. Perfect for ginataang bilo bilo and other hot or icy desserts.",
+        "productDescription": ["Ube cubes are made with 100% real ube (purple yam) and tapioca. A perfect topping or sinker for all ube lovers. Perfect for ginataang bilo bilo and other hot or icy desserts."],
         "productId": "F52A4DA3-5F5B-4BBE-9DE8-195E92ACC354",
         "productOptions":["1kg family pack of 4"],
         "productSize": ["4 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -471,12 +1017,12 @@
         "categories": "Other Products",
         "foreignName": "芸豆",
         "name": "Kidney Beans Solo Pack",
-        "productDescription": "Here’s a convenient way to enjoy eating beans. No need to waste time cooking the beans to make it tender. Try our kidney beans! Just thaw and enjoy! Perfect to add on to your breakfast porridge for weight loss and healthy skin. Kidney beans are said to help prevent osteoporosis and improve memory power.",
+        "productDescription": ["Here’s a convenient way to enjoy eating beans. No need to waste time cooking the beans to make it tender. Try our kidney beans! Just thaw and enjoy! Perfect to add on to your breakfast porridge for weight loss and healthy skin. Kidney beans are said to help prevent osteoporosis and improve memory power."],
         "productId": "0FB5A9B5-AEBC-40D8-A7A7-A9DE280CEA27",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["20 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -489,12 +1035,12 @@
         "categories": "Other Products",
         "foreignName": "芸豆",
         "name": "Kidney Beans Family Pack",
-        "productDescription": "Here’s a convenient way to enjoy eating beans. No need to waste time cooking the beans to make it tender. Try our kidney beans! Just thaw and enjoy! Perfect to add on to your breakfast porridge for weight loss and healthy skin. Kidney beans are said to help prevent osteoporosis and improve memory power.",
+        "productDescription": ["Here’s a convenient way to enjoy eating beans. No need to waste time cooking the beans to make it tender. Try our kidney beans! Just thaw and enjoy! Perfect to add on to your breakfast porridge for weight loss and healthy skin. Kidney beans are said to help prevent osteoporosis and improve memory power."],
         "productId": "91A6C4E4-7570-4A79-BBEF-41A3D0CD7564",
         "productOptions":["1kg family pack of 4"],
         "productSize": ["4 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -507,12 +1053,12 @@
         "categories": "Other Products",
         "foreignName": "紅豆",
         "name": "Red Beans Family Pack",
-        "productDescription": "Red beans with a unique white ridge along one side, they usually have a nutty flavour, which makes them sync with both savoury and sweet dishes.",
+        "productDescription": ["Red beans with a unique white ridge along one side, they usually have a nutty flavour, which makes them sync with both savoury and sweet dishes."],
         "productId": "E6C41B2A-78CD-40E5-9775-E7BC660406CF",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["20 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Selected",  
         "productStatusId": "1000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -525,12 +1071,12 @@
         "categories": "Other Products",
         "foreignName": "紅豆",
         "name": "Red Beans Solo Pack",
-        "productDescription": "Red beans with a unique white ridge along one side, they usually have a nutty flavour, which makes them sync with both savoury and sweet dishes.",
+        "productDescription": ["Red beans with a unique white ridge along one side, they usually have a nutty flavour, which makes them sync with both savoury and sweet dishes."],
         "productId": "FDC86EB9-FFC6-44A1-A549-654F0DA4F6E3",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["20 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Selected",  
         "productStatusId": "1000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -543,12 +1089,12 @@
         "categories": "Other Products",
         "foreignName": "大麥",
         "name": "Sweetened Barley Solo Pack",
-        "productDescription": "A yummy way to lower your cholesterol levels. Barley are said to help in protecting heart health. Add our sweetened barley in your milk every morning and enjoy!",
+        "productDescription": ["A yummy way to lower your cholesterol levels. Barley are said to help in protecting heart health. Add our sweetened barley in your milk every morning and enjoy!"],
         "productId": "8BD6CBD6-EC72-401B-B891-BE48D170F8B7",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["Sold per pack"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -561,12 +1107,12 @@
         "categories": "Other Products",
         "foreignName": "大麥",
         "name": "Sweetened Barley Family Pack",
-        "productDescription": "A yummy way to lower your cholesterol levels. Barley are said to help in protecting heart health. Add our sweetened barley in your milk every morning and enjoy!",
+        "productDescription": ["A yummy way to lower your cholesterol levels. Barley are said to help in protecting heart health. Add our sweetened barley in your milk every morning and enjoy!"],
         "productId": "E703F1C2-6A5B-48B9-B9A2-9E016304C470",
         "productOptions":["1kg family pack of 4"],
         "productSize": ["Sold per pack"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -579,12 +1125,12 @@
         "categories": "Other Products",
         "foreignName": "蜜花生",
         "name": "Sweet Peanuts Solo Pack",
-        "productDescription": "Peanuts in sweet sugar syrup.",
+        "productDescription": ["Peanuts in sweet sugar syrup."],
         "productId": "57028B18-3B8E-4953-968A-0321B37EF426",
         "productOptions":["1kg solo pack of 20"],
         "productSize": ["20 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
@@ -597,12 +1143,12 @@
         "categories": "Other Products",
         "foreignName": "蜜花生",
         "name": "Sweet Peanuts Family Pack",
-        "productDescription": "Peanuts in sweet sugar syrup.",
+        "productDescription": ["Peanuts in sweet sugar syrup."],
         "productId": "93270A56-D090-441C-95EB-DA6E9FEB27D3",
         "productOptions":["1kg family pack of 4"],
         "productSize": ["4 packs"],
-        "productType": "Mix-ins",
-        "productTypeId": "0E0E7C1B-699D-40FB-9689-2932C0F22543",
+        "productType": "ToppingsOrSinkers",
+        "productTypeId": "2A98BD66-CC91-4EF3-B081-9B8C63203CAE",
         "productStatus": "Discarded",  
         "productStatusId": "0000",
         "productBrandId": "FF6DB7A0-22C6-4857-AFBE-621E86068D37",
