@@ -45,7 +45,7 @@ Product Details
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>              
               <div class="u-size-30 u-size-60-md">
                 <div class="u-layout-col">
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-45 u-layout-cell-3">
@@ -68,9 +68,15 @@ Product Details
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-5">
-                      <p class="u-text u-text-8"> {{ $product['productDescription'] }} </p>
+                      @for($i=0; $i < count($product['productDescription']); $i++)   
+                        
+                        <p>
+                        {{ $product['productDescription'][$i] }}
+</p>
+                      
+                        @endfor
                       <a href="{{ route('orders.create', $product['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
-                       <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
+                       <a href="{{ route('beverages.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
                       <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>

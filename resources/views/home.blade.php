@@ -11,13 +11,14 @@ Home
 
 @section('content')
 
-<section class="u-clearfix u-section-1" id="sec-ea9a">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <img class="u-image u-image-1" src="images/Animations/HeroImageAnimation_700x700.gif" data-image-width="700" data-image-height="700">
-      </div>
+<section class="u-clearfix u-section-1" id="sec-ea9a" style="background-color: #EDC97C;" >
+<img class="u-image u-image-1" src="images/Animations/Animations_1024x910.gif">
+      <!-- <div class="u-clearfix u-sheet u-sheet-1"  style="backgroun-color: ##EDC97C; background: url('images/Animations/Animations_1024x600.gif'); background-position: center; background-repeat: no-repeat; height: 600px; min-height: auto; width: 100%;">
+        <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
+      </div>-->
     </section>
     <section class="u-border-1 u-border-no-left u-border-no-right u-border-palette-5-light-1 u-clearfix u-palette-5-base u-section-2" id="carousel_c3cc">
-      <p class="u-align-center u-text u-text-1"> Order now our most popular products!</p>
+      <p class="u-align-center u-text u-text-1"> Check out our best sellers!</p>
     </section>
     <section class="u-carousel u-carousel-duration-2000 u-carousel-left u-slide u-block-d061-1" id="carousel_ae0d" data-interval="8000" data-u-ride="carousel">
       <ol class="u-absolute-hcenter u-carousel-indicators u-block-d061-2">
@@ -42,13 +43,12 @@ Home
                     <div class="u-layout-col">
                       <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> Snowflake Pastry&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 雪Q餅</h2>
-                          <p class="u-text u-text-3"> Soft and chewy nougat pastry with real dried
-cranberries and macadamia nut.</p>
-                          <h2 class="u-text u-text-4">380.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h1 class="u-custom-font u-text u-title u-text-1"> Pineapple Cake&nbsp;</h1>
+                          <h2 class="u-text u-text-2"> 鳳梨酥</h2>
+                          <p class="u-text u-text-3"> Authentic Taiwanese pineapple cake. Buttery shortbread crust generously stuffed with homemade pineapple filling.</p>
+                          <h2 class="u-text u-text-4">570.00 <span style="font-size: 1.125rem;">PHP</span>
                           </h2>
-                          <a href="/Pastries/6CBBCF37-8165-4A6F-95B9-05B5386F8EC4" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                          <a href="/Pastries/D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
                       </div>
                     </div>
@@ -74,13 +74,12 @@ cranberries and macadamia nut.</p>
                     <div class="u-layout-col">
                       <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> Snowflake Pastry&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 雪Q餅</h2>
-                          <p class="u-text u-text-3"> Soft and chewy nougat pastry with real dried
-cranberries and macadamia nut.</p>
-                          <h2 class="u-text u-text-4">380.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h1 class="u-custom-font u-text u-title u-text-1"> Suncake&nbsp;</h1>
+                          <h2 class="u-text u-text-2"> 太陽餅</h2>
+                          <p class="u-text u-text-3"> Plain Suncake: Taiwanese flaky pastry generously filled with maltose (麥芽糖). Also available in Salted egg, Ube, Red bean Mochi, Ube mochi, and Chocnut flavors.</p>
+                          <h2 class="u-text u-text-4">375.00 <span style="font-size: 1.125rem;">PHP</span>
                           </h2>
-                          <a href="/Pastries/6CBBCF37-8165-4A6F-95B9-05B5386F8EC4" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                          <a href="/Pastries/26E0F202-8063-4EEB-9EE9-134720810CBC" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
                       </div>
                     </div>
@@ -106,13 +105,12 @@ cranberries and macadamia nut.</p>
                     <div class="u-layout-col">
                       <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> Snowflake Pastry&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 雪Q餅</h2>
-                          <p class="u-text u-text-3"> Soft and chewy nougat pastry with real dried
-cranberries and macadamia nut.</p>
-                          <h2 class="u-text u-text-4">380.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h1 class="u-custom-font u-text u-title u-text-1"> 3Q PASTRY&nbsp;</h1>
+                          <h2 class="u-text u-text-2"> 3Q 餅</h2>
+                          <p class="u-text u-text-3"> Taiwanese flaky generously filled with homemade red bean filling, pork floss, and either mochi or salted egg.</p>
+                          <h2 class="u-text u-text-4">285.00 <span style="font-size: 1.125rem;">PHP</span>
                           </h2>
-                          <a href="/Pastries/6CBBCF37-8165-4A6F-95B9-05B5386F8EC4" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                          <a href="/Pastries/E041A5A3-A2CB-4A21-8C3C-E577CB8F14B2" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
                       </div>
                     </div>
@@ -161,7 +159,7 @@ cranberries and macadamia nut.</p>
         </div>
       </div>
     </section>
-    <section class="u-border-1 u-border-no-left u-border-no-right u-border-palette-5-light-1 u-clearfix u-palette-5-base u-section-6" id="carousel_aac6">
+    <!-- <section class="u-border-1 u-border-no-left u-border-no-right u-border-palette-5-light-1 u-clearfix u-palette-5-base u-section-6" id="carousel_aac6">
       <p class="u-align-center u-text u-text-1">Order now and get tasty discounts!</p>
     </section>
     <section class="u-align-center u-clearfix u-palette-5-light-2 u-section-7" id="sec-8af9">
@@ -186,37 +184,8 @@ cranberries and macadamia nut.</p>
           </div>
         </div>
       </div>
-    </section>
-    <section class="u-align-center u-clearfix u-section-8" id="sec-b93c">
-      <div class="u-align-left u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Our Products</h2>
-        <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/PastryIcon_278x156.png" alt=""></span>
-                <h3 class="u-align-center u-text u-text-default u-text-2">Pastries</h3>
-                <p class="u-align-center u-text u-text-3">Taiwanese pineapple cakes fall somewhere between a filled cookie and a small pie, and is not what we commonly think of as ‘cake.’</p>
-                <a href="Pastries.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
-              </div>
-            </div>
-            <div class="u-align-center u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span class="u-file-icon u-icon u-icon-2"><img src="images/MilkTea_448x798.png" alt=""></span>
-                <h3 class="u-align-center u-text u-text-default u-text-4">Beverages</h3>
-                <p class="u-align-center u-text u-text-5">Just like in Taiwan, Tea shops are popping up all over the world. One Taiwan based company has over 450 locations while in the Philippines another person owns over 100 within 1.5 years.</p>
-                <a href="Beverages.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
-              </div>
-            </div>
-            <div class="u-container-style u-list-item u-repeater-item">
-              <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span class="u-file-icon u-icon u-icon-3"><img src="images/Mochi_188x154.png" alt=""></span>
-                <h3 class="u-align-center u-text u-text-default u-text-6">Desserts</h3>
-                <p class="u-align-center u-text u-text-7">Igniting Taiwanese cuisine with vibrant colors, sumptuous, gooey textures, and spellbinding decadence, these Taiwanese desserts are must-try dishes on your trip to Taiwan.</p>
-                <a href="Desserts.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    </section> -->
+    
     <section class="u-align-left u-clearfix u-grey-10 u-section-9" id="carousel_078b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">

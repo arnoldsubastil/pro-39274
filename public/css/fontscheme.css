@@ -1,4 +1,12 @@
 @font-face {
+    font-family: Roboto;
+    src: url('../Roboto/Roboto-Regular.ttf'); /* remember that font file path must be relative to the current css file. not the final compiled folder*/
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+}
+
+@font-face {
     font-family: Roboto-Slab;
     src: url('../Roboto_Slab/static/RobotoSlab-Regular.ttf'); /* remember that font file path must be relative to the current css file. not the final compiled folder*/
     font-weight: normal;

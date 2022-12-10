@@ -50,6 +50,10 @@ Route::get('/Beverages', 'App\Http\Controllers\BeveragesController@index')->name
 Route::get('/Beverages/{productId}', 'App\Http\Controllers\BeveragesController@details')->name('beverages.details');
 Route::get('/Desserts', 'App\Http\Controllers\DessertsController@index')->name('desserts.index');
 Route::get('/Desserts/{productId}', 'App\Http\Controllers\DessertsController@details')->name('desserts.details');
+Route::get('/ToppingsAndSinkers', 'App\Http\Controllers\ToppingsAndSinkersController@index')->name('toppings.index');
+Route::get('/ToppingsAndSinkers/{productId}', 'App\Http\Controllers\ToppingsAndSinkersController@details')->name('toppings.details');
+Route::get('/NutsAndNougat', 'App\Http\Controllers\NutsAndNougatController@index')->name('nuts.index');
+Route::get('/NutsAndNougat/{productId}', 'App\Http\Controllers\NutsAndNougatController@details')->name('nuts.details');
 
 Route::get('/Orders/Create/{productId}', 'App\Http\Controllers\OrdersController@create')->name('orders.create');
 Route::get('/Orders/Notification', 'App\Http\Controllers\OrdersController@notification')->name('orders.notification');

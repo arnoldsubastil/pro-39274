@@ -70,8 +70,8 @@ Product Details
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-5">
                       <p class="u-text u-text-8"> {{ $product['productDescription'] }} </p>
-                      <a href="{{ route('orders.create', $product['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
-                       <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
+                       <a href="{{ route('desserts.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
                       <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>

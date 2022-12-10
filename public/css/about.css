@@ -8,7 +8,7 @@
   
   .u-section-1 .u-image-1 {
     min-height: 328px;
-    background-image: url("../images/Delicacy_1718x965.PNG");
+    background-image: url("../images/About/SaltedEggPastry_1696x1129.jpg");
     background-position: 50% 50%;
   }
   
@@ -50,7 +50,7 @@
   
   .u-section-1 .u-image-2 {
     min-height: 514px;
-    background-image: url("../images/Customer_816x816.jpg");
+    background-image: url("../images/About/ShakeShakeJelly_800x1200.png");
     background-position: 50% 50%;
   }
   
@@ -92,9 +92,9 @@
   }
   
   @media (max-width: 767px) {
-    .u-section-1 .u-sheet-1 {
+    /* .u-section-1 .u-sheet-1 {
       min-height: 1780px;
-    }
+    } */
   
     .u-section-1 .u-container-layout-1 {
       padding-left: 10px;

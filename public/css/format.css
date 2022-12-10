@@ -4,6 +4,50 @@
 .ellipsis { text-overflow: ellipsis; }
 .word { text-overflow: ellipsis-word; }
 
+/*list*/
+.socialIcons{
+    border-color: #E3EBE3;
+    border-width: 1px;
+    font-style: normal;  
+}
+
+.listSocialIcons{
+    
+    list-style: none;   
+    padding-left: 8px;
+    margin-top: 0 !important; 
+}
+
+.listSocialIcons li{
+    margin: 16px 0;
+}
+
+.listSocialIcons li a span{
+    width: 32%; 
+    height: 64px;
+}
+
+.listSocialIcons img{
+    height: 32px !important; 
+    width: 32px !important;    
+}
+
+.listSocialIcons a{
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.listSocialIcons div{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;   
+}
+
+.listSocialIcons div p{
+    margin: 0;   
+}
+
 /*text sizes*/
 .small{
     font-size: 1rem !important; /*16 pixels the smallest font size*/
