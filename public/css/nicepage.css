@@ -11589,6 +11589,8 @@ section.u-image:not(.u-hover-box),
   padding: 2px;
 }
 .u-gutter-0 .u-layout {
+  color: #231F20;
+  background-color: #FFFFFF;
   margin: 0px;
 }
 .u-gutter-0 .u-layout .u-layout-cell {
@@ -30265,15 +30267,15 @@ li.active > a.u-button-style.u-button-style.u-border-active-palette-1-light-3 {
   stroke: #ec8700;
 }
 .u-button-style.u-border-palette-1-base {
-  border-color: #ec8700 !important;
-  color: #ec8700 !important;
+  border-color: #D36D28 !important;
+  color: #D36D28 !important;
   background-color: transparent !important;
 }
 .u-button-style.u-border-palette-1-base:hover,
 .u-button-style.u-border-palette-1-base:focus {
   border-color: transparent !important;
-  color: #d47a00 !important;
-  background-color: transparent !important;
+  color: #D36D28 !important;
+  background-color: #D36D28 !important;
 }
 .u-border-hover-palette-1-base:hover,
 .u-border-hover-palette-1-base:focus,
@@ -38016,7 +38018,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-table-alt-custom-color-3 tr:nth-child(even)
         {
             color: #ffffff;
-            background-color: #415842;
+            background-color: #D36D28;
         }
 
         .u-button-style.u-custom-color-3,
@@ -39111,7 +39113,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-image:not(.u-shading) > .u-container-layout > .u-btn:hover,
         .u-btn:hover
         {
-        background-color: #d47a00;
+        background-color: #D46D28;
         color: #e6e6e6;
         }
         .u-overlap.u-overlap-transparent:not(.u-overlap-contrast) .u-header :not(.u-nav-item) > .u-btn:focus,
@@ -39284,7 +39286,7 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-footer .u-layout-wrap-1 {
-  margin: 60px 0 0;
+  margin: 20px 0 0;
 }
 
 .u-footer .u-layout-cell-1 {
