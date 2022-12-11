@@ -13858,7 +13858,7 @@ div.u-video,
   position: relative;
   vertical-align: middle;
   padding: 0;
-  margin: 0;
+  margin: 0 8px 0 0;
   height: 100%;
 }
 .u-nav-popup .u-nav-item {
@@ -15860,9 +15860,9 @@ div.u-video,
 .u-enable-responsive .u-spacing-21 > li + li {
   margin: 21px 0 0 0 !important;
 }
-.u-spacing-20:not(.u-text) > li:not(:last-child) {
+/* .u-spacing-20:not(.u-text) > li:not(:last-child) {
   margin-right: 20px;
-}
+} */
 .u-spacing-20 > .u-accordion-item + .u-accordion-item {
   margin-top: 20px;
 }

@@ -18,6 +18,29 @@
 
   }
 
+  @media (max-width: 1024px){
+
+    .moduleNavigation .productsNavItem{
+      display: block;
+    }
+    
+    .moduleNavigation .pastriesNavItem, .moduleNavigation .beveragesNavItem, .moduleNavigation .dessertsNavItem {
+      display: none;
+    }
+
+    .moduleNavigation ul .u-nav-item:first-child{
+      margin-right: 0;
+    }
+
+  }
+
+  @media (min-width: 1025px){
+
+    .moduleNavigation .productsNavItem{
+      display: none;
+    }
+
+  }
 
   @media (max-width: 1008px){
 
@@ -46,18 +69,6 @@
       width: 100%;
     }
 
-
-  }
-
-  @media (max-width: 767px){
-
-    .moduleNavigation .pastriesNavItem, .moduleNavigation .beveragesNavItem, .moduleNavigation .dessertsNavItem {
-        display: none;
-    }
-
-    .moduleNavigation ul .u-nav-item:first-child{
-        margin-right: 0;
-    }
 
   }
 

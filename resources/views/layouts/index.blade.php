@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="/css/format.css" media="screen">
     <link rel="stylesheet" href="/css/nicepage.css" media="screen">
     <link rel="stylesheet" href="/css/responsive.css" media="screen">
+    <link rel="stylesheet" href="/css/menu.css" media="screen">
     <!--Dynamic StyleSheets added from a view would be pasted here-->
     @yield('styles')    
    
     <script class="u-script" type="text/javascript" src="/script/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/script/menu.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;
 }</style><link rel="stylesheet" data-font="Aleo:300,300i,400,400i,700,700i" href="https://fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i"></head>
@@ -68,12 +70,19 @@
               
                 <ul class="u-nav u-spacing-20 u-unstyled u-nav-3">
                   <li class="u-nav-item"><a class="homeNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Home</a>
-</li><li class="u-nav-item"><a class="productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Products" style="padding: 10px;">Products</a>
+</li><li class="u-nav-item dropdown"><a class="dropbtn productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" onclick="myFunction()" style="padding: 10px;">Products</a>
+<div id="myDropdown" class="dropdown-content">
+    <a href="/Pastries">Pastries</a>
+    <a href="/ToppingsAndSinkers">Toppings & Sinkers</a>
+    <a href="/NutsAndNougat">Nuts & Nougat</a>
+    <a href="/Beverages">Shake Shake Jelly</a>
+    <a href="/Desserts">Special Orders</a>
+  </div>
 <!-- </li><li class="u-nav-item"><a class="categoriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Categories" style="padding: 10px;">Categories</a> -->
 </li><li class="u-nav-item"><a class="pastriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Pastries" style="padding: 10px;">Pastries</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/ToppingsAndSinkers" style="padding: 10px;">Toppings & Sinkers</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/NutsAndNougat" style="padding: 10px;">Nuts & Nougat</a>
-</li><li class="u-nav-item"><a class="beveragesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Beverages" style="padding: 10px;">Beverages</a>
+</li><li class="u-nav-item"><a class="beveragesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Beverages" style="padding: 10px;">Shake Shake Jelly</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Desserts" style="padding: 10px;">Special Orders</a>
 </li></ul>
               </div>
