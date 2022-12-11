@@ -4,10 +4,14 @@
 .ellipsis { text-overflow: ellipsis; }
 .word { text-overflow: ellipsis-word; }
 
-/*list*/
+/*footer*/
+footer .texts{
+    text-transform: uppercase;
+}
+
 .socialIcons{
-    border-color: #D36D28;
-    border-width: 1px;
+    border-color: #A7A9AC;
+    border-width: 2px;
     font-style: normal;  
 }
 
@@ -19,7 +23,15 @@
 }
 
 .listSocialIcons li{
-    margin: 16px 0;
+    margin: 0;
+}
+
+.listSocialIcons li .socialSpan{
+    background-color: #D46D28;
+}
+
+.listSocialIcons li div p{
+    text-transform: uppercase;
 }
 
 .listSocialIcons li a span{
@@ -42,6 +54,10 @@
     display: inline-block;
     vertical-align: middle;
     width: 70%;   
+}
+
+.listSocialIcons .phoneNumberLabel{
+    line-height: 1.0;   
 }
 
 .listSocialIcons div p{

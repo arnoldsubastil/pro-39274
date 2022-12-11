@@ -110,17 +110,17 @@
 
 
 
-<footer class="u-clearfix u-custom-color-3 u-footer" id="sec-a9d8"><div class="u-clearfix u-sheet u-sheet-1">
+<footer class="u-clearfix u-custom-color-3 u-footer" id="sec-a9d8"><div class="u-clearfix u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout" style="">
             <div class="u-layout-row" style="">
 
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-size-30-md">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md">
                 <div class="u-container-layout u-container-layout-1"><!--position-->
                   <div data-position="" class="u-align-left u-expanded-width u-position u-position-1"><!--block-->
-                    <div class="u-block">
+                    <div class="u-block texts">
                       <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h3 class="u-block-header u-text"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h3><!--/block_header--><!--block_content-->
+                        <h2 class="u-block-header u-text"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h2><!--/block_header--><!--block_content-->
                         <p class="u-block-content u-text u-text-2"><!--block_content_content-->Share your soystories on Facebook and Instagram.<!--/block_content_content-->
                         </p><!--/block_content-->
                         <p class="u-block-content u-text u-text-2"><!--block_content_content-->Don't forget to tag us in your posts!<!--/block_content_content-->
@@ -132,7 +132,7 @@
                 </div>
               </div>
               
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-size-30-md">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md">
                 <div class="u-container-layout u-container-layout-3"><!--position-->
                   
                   <div data-position="" class="u-align-left u-position"><!--block-->
@@ -140,12 +140,12 @@
                       <div class="u-block-container u-clearfix"><!--block_header-->                      
                       <blockquote class="u-text u-text-3 socialIcons"> 
                         <ul class="listSocialIcons">
-                          <li><a class="u-social-url" title="Facebook" target="_blank" href="/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base u-icon-1"><img src="/images/Footer_Phone_32x32.png" alt=""></span>
-          </a><div><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
+                          <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Footer_Phone_32x32.png" alt=""></span>
+          </a><div class="phoneNumberLabel"><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
                           
-                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-palette-5-base u-icon-2"><img src="/images/Instagram_128x128.png" alt=""></span>
+                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-palette-5-base socialSpan"><img src="/images/Instagram_128x128.png" alt=""></span>
           </a><div><p>Soystory Authentic Taiwanese Pastries</p></div></li>
-          <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base u-icon-1"><img src="/images/Facebook_128x128.png" alt=""></span>
+          <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Facebook_128x128.png" alt=""></span>
           </a><div><p>soystorypastries</p></div></li>
                         </ul>
           
@@ -158,15 +158,6 @@
             </div>
           </div>
         </div>
-        <div class="u-border-1 u-border-white u-expanded-width u-line u-line-horizontal u-opacity u-opacity-50 u-line-1"></div>
-        <div class="u-social-icons u-spacing-10 u-social-icons-1">
-          <!-- <a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base u-icon-1"><img src="/images/Facebook_128x128.png" alt=""></span>
-          </a>
-          <a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-palette-5-base u-icon-2"><img src="/images/Instagram_128x128.png" alt=""></span>
-          </a> -->
-        </div>
-        <a href="/" class="u-image u-logo u-image-1" data-image-width="104" data-image-height="28" title="Home">
-          <img src="/images/Logo_SoyStory_Gray_104x28.png" class="u-logo-image u-logo-image-1">
-        </a>
+        
       </div></footer>
 </body></html>
