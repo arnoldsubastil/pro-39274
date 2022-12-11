@@ -135,7 +135,7 @@
                   <div data-position="" class="u-align-left u-expanded-width u-position u-position-1"><!--block-->
                     <div class="u-block texts">
                       <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h2 class="u-block-header u-text"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h2><!--/block_header--><!--block_content-->
+                        <h2 class="u-block-header u-text" style="font-family: Bebas, sans-serif; color: #D66E28;"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h2><!--/block_header--><!--block_content-->
                         <p class="u-block-content u-text u-text-2"><!--block_content_content-->Share your soystories on Facebook and Instagram.<!--/block_content_content-->
                         </p><!--/block_content-->
                         <p class="u-block-content u-text u-text-2"><!--block_content_content-->Don't forget to tag us in your posts!<!--/block_content_content-->

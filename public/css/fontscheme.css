@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: Bebas;
+    src: url('../Bebas/Bebas-Regular.ttf'); /* remember that font file path must be relative to the current css file. not the final compiled folder*/
+    font-weight: normal;
+    font-style: normal;
+}
+
 .u-body h3, .u-body h4, .u-body h5, .u-body h6
 {
     font-family: Roboto,sans-serif;
