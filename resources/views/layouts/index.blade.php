@@ -69,8 +69,9 @@
               <div class="u-custom-menu u-nav-container moduleNavigation">
               
                 <ul class="u-nav u-spacing-20 u-unstyled u-nav-3">
-                  <li class="u-nav-item"><a class="homeNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Home</a>
-</li><li class="u-nav-item dropdown"><a class="dropbtn productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" onclick="myFunction()" style="padding: 10px;">Products</a>
+                  <li class="u-nav-item"><a class="homeNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Home</a></li>
+                  <li class="u-nav-item"><a class="aboutNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Our Story</a></li>
+<li class="u-nav-item dropdown"><a class="dropbtn productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" onclick="myFunction()" style="padding: 10px;">Products</a>
 <div id="myDropdown" class="dropdown-content">
     <a href="/Pastries">Pastries</a>
     <a href="/ToppingsAndSinkers">Toppings & Sinkers</a>
@@ -78,12 +79,17 @@
     <a href="/Beverages">Shake Shake Jelly</a>
     <a href="/Desserts">Special Orders</a>
   </div>
+  
 <!-- </li><li class="u-nav-item"><a class="categoriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Categories" style="padding: 10px;">Categories</a> -->
 </li><li class="u-nav-item"><a class="pastriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Pastries" style="padding: 10px;">Pastries</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/ToppingsAndSinkers" style="padding: 10px;">Toppings & Sinkers</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/NutsAndNougat" style="padding: 10px;">Nuts & Nougat</a>
 </li><li class="u-nav-item"><a class="beveragesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Beverages" style="padding: 10px;">Shake Shake Jelly</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Desserts" style="padding: 10px;">Special Orders</a>
+</li>
+<li class="u-nav-item"><a class="eventsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Christmas Gift Sets </a>
+</li>
+<li class="u-nav-item"><a class="contactNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Contact US</a>
 </li></ul>
               </div>
               <!-- <div class="u-custom-menu u-nav-container-collapse">
@@ -153,7 +159,7 @@
           </a><div class="phoneNumberLabel"><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
                           
                           <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="images/Icons/Footer_Instagram_32x32.png" alt=""></span>
-          </a><div><p>Soystory Authentic Taiwanese Pastries</p></div></li>
+          </a><div><p>Soystory Authentic</p><p>Taiwanese Pastries</p></div></li>
           <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Facebook_32x32.png" alt=""></span>
           </a><div><p>soystorypastries</p></div></li>
                         </ul>

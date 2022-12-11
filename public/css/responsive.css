@@ -28,11 +28,12 @@
 
   @media (max-width: 1024px){
 
-    .moduleNavigation .productsNavItem{
+    .moduleNavigation .productsNavItem,
+    .moduleNavigation .aboutNavItem, .moduleNavigation .eventsNavItem, .moduleNavigation .contactNavItem{
       display: block;
     }
     
-    .moduleNavigation .pastriesNavItem, .moduleNavigation .beveragesNavItem, .moduleNavigation .dessertsNavItem {
+    .moduleNavigation .pastriesNavItem, .moduleNavigation .beveragesNavItem, .moduleNavigation .dessertsNavItem{
       display: none;
     }
 
@@ -45,6 +46,10 @@
   @media (min-width: 1025px){
 
     .moduleNavigation .productsNavItem{
+      display: none;
+    }
+
+    .moduleNavigation .aboutNavItem, .moduleNavigation .eventsNavItem, .moduleNavigation .contactNavItem{
       display: none;
     }
 

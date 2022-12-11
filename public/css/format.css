@@ -54,7 +54,7 @@ footer .texts{
 .listSocialIcons div{
     display: inline-block;
     vertical-align: middle;
-    width: 70%;   
+    width: auto;   
 }
 
 
@@ -102,6 +102,13 @@ footer .texts{
 .remove{
     display: none;
 }
+
+footer.u-custom-color-3{
+    background-image: url('../images/Patterns/WhitePatterns_960x480.png');
+    background-repeat: repeat;
+    background-size: 320px;
+  }
+
 
 
 /*customize header order button*/
