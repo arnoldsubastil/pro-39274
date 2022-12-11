@@ -11592,7 +11592,7 @@ section.u-image:not(.u-hover-box),
 }
 .u-gutter-0 .u-layout {
   color: #231F20;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   margin: 0px;
 }
 .u-gutter-0 .u-layout .u-layout-cell {
