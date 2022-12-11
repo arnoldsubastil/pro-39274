@@ -11,8 +11,8 @@ Home
 
 @section('content')
 
-<section class="u-clearfix u-section-1" id="sec-ea9a" style="background-color: #EDC97C;" >
-<img class="u-image u-image-1" src="images/Animations/Animations_1024x910.gif">
+<section class="u-clearfix u-section-1 heroImage" id="sec-ea9a"  style="background-color: #F4DFB0;" >
+<img class="u-image u-image-1" src="images/Animations/Animation_1800X700.gif" style=" width:100%;">
       <!-- <div class="u-clearfix u-sheet u-sheet-1"  style="backgroun-color: ##EDC97C; background: url('images/Animations/Animations_1024x600.gif'); background-position: center; background-repeat: no-repeat; height: 600px; min-height: auto; width: 100%;">
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->

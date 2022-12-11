@@ -70,7 +70,7 @@
               
                 <ul class="u-nav u-spacing-20 u-unstyled u-nav-3">
                   <li class="u-nav-item"><a class="homeNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Home</a></li>
-                  <li class="u-nav-item"><a class="aboutNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Our Story</a></li>
+                  <li class="u-nav-item"><a class="aboutNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/About" style="padding: 10px;">Our Story</a></li>
 <li class="u-nav-item dropdown"><a class="dropbtn productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" onclick="myFunction()" style="padding: 10px;">Products</a>
 <div id="myDropdown" class="dropdown-content">
     <a href="/Pastries">Pastries</a>
@@ -87,9 +87,9 @@
 </li><li class="u-nav-item"><a class="beveragesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Beverages" style="padding: 10px;">Shake Shake Jelly</a>
 </li><li class="u-nav-item"><a class="dessertsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Desserts" style="padding: 10px;">Special Orders</a>
 </li>
-<li class="u-nav-item"><a class="eventsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Christmas Gift Sets </a>
+<li class="u-nav-item"><a class="eventsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Events" style="padding: 10px;">Christmas Gift Sets </a>
 </li>
-<li class="u-nav-item"><a class="contactNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/" style="padding: 10px;">Contact US</a>
+<li class="u-nav-item"><a class="contactNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="#" style="padding: 10px;">Contact US</a>
 </li></ul>
               </div>
               <!-- <div class="u-custom-menu u-nav-container-collapse">

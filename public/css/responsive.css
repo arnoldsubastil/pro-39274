@@ -41,6 +41,15 @@
       margin-right: 0;
     }
 
+    /* section.heroImage{
+      background-color: #F4DFB0; 
+      background-image: url('../images/Animations/Animation_1800X700.gif'); 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain; 
+      height: 700px;
+    } */
+
   }
 
   @media (min-width: 1025px){
@@ -53,7 +62,18 @@
       display: none;
     }
 
+    /* section.heroImage{
+      background-color: #F4DFB0; 
+      background-image: url('../images/Animations/Animation_1800X700.gif'); 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain; 
+      height: 700px;
+    } */
+
   }
+
+  
 
   @media (max-width: 1008px){
 
