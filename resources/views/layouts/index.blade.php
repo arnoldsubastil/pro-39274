@@ -140,12 +140,12 @@
                       <div class="u-block-container u-clearfix"><!--block_header-->                      
                       <blockquote class="u-text u-text-3 socialIcons"> 
                         <ul class="listSocialIcons">
-                          <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Footer_Phone_32x32.png" alt=""></span>
+                          <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Icons/Footer_Phone_32x32.png" alt=""></span>
           </a><div class="phoneNumberLabel"><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
                           
-                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-palette-5-base socialSpan"><img src="/images/Instagram_128x128.png" alt=""></span>
+                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="images/Icons/Footer_Instagram_32x32.png" alt=""></span>
           </a><div><p>Soystory Authentic Taiwanese Pastries</p></div></li>
-          <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Facebook_128x128.png" alt=""></span>
+          <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Facebook_32x32.png" alt=""></span>
           </a><div><p>soystorypastries</p></div></li>
                         </ul>
           
