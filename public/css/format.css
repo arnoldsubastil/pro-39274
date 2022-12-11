@@ -31,6 +31,7 @@ footer .texts{
 }
 
 .listSocialIcons li div p{
+    line-height: 1.0;   
     text-transform: uppercase;
 }
 
@@ -56,9 +57,7 @@ footer .texts{
     width: 70%;   
 }
 
-.listSocialIcons .phoneNumberLabel{
-    line-height: 1.0;   
-}
+
 
 .listSocialIcons div p{
     margin: 0;   

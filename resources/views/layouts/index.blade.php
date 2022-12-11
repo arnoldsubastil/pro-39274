@@ -124,7 +124,7 @@
           <div class="u-gutter-0 u-layout" style="">
             <div class="u-layout-row" style="">
 
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30-md">
                 <div class="u-container-layout u-container-layout-1"><!--position-->
                   <div data-position="" class="u-align-left u-expanded-width u-position u-position-1"><!--block-->
                     <div class="u-block texts">
@@ -141,7 +141,7 @@
                 </div>
               </div>
               
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md">
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-30-md">
                 <div class="u-container-layout u-container-layout-3"><!--position-->
                   
                   <div data-position="" class="u-align-left u-position"><!--block-->

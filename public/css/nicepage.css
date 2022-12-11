@@ -9464,6 +9464,8 @@ section.u-image:not(.u-hover-box),
     max-width: 50%;
     min-width: 50%;
   }
+
+ 
   .u-layout-col > .u-size-30-md {
     flex: 30 0 auto;
   }

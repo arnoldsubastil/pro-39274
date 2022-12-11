@@ -1,3 +1,11 @@
+@media (max-width: 1082px){
+  .u-footer .u-gutter-0 .u-layout .u-layout-row > div {
+    width: 48%;
+    max-width: initial;
+    min-width: initial;
+  }
+}
+
 @media (min-width: 1009px) {
     .shopButton
     {
@@ -70,6 +78,34 @@
     }
 
 
+  }
+
+  @media (max-width: 608px){
+    .u-footer .u-gutter-0 .u-layout .u-layout-row > div {
+      width: 100%;
+      max-width: initial;
+      min-width: initial;
+    }
+
+    .u-footer .u-container-layout-3{
+      padding: 0;
+    }
+    .u-footer .u-container-layout-1{
+      padding-bottom: 0;
+    }
+
+    .u-footer .u-gutter-0 .u-layout .u-layout-row{
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    blockquote{
+      margin-top: 0;
+      margin-left: 16px;
+      padding: 0 0 0 16px;
+    }
+
+    
   }
 
   .shopMenu{
