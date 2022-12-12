@@ -14,53 +14,53 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('maintenance');
 });
 
-Route::get('/Categories', function () {
-    return view('categories');
-});
+// Route::get('/Categories', function () {
+//     return view('categories');
+// });
 
-Route::get('/About', function () {
-    return view('about');
-});
+// Route::get('/About', function () {
+//     return view('about');
+// });
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes for JSON
-|--------------------------------------------------------------------------
-|
-| Comment here
-|
-*/
+// /*
+// |--------------------------------------------------------------------------
+// | Web Routes for JSON
+// |--------------------------------------------------------------------------
+// |
+// | Comment here
+// |
+// */
 
-Route::get('/Products', 'App\Http\Controllers\ProductsController@index')->name('products.index');
+// Route::get('/Products', 'App\Http\Controllers\ProductsController@index')->name('products.index');
 
-/*Product Categroies*/
-Route::get('/NewProducts', 'App\Http\Controllers\NewProductsController@index')->name('newProducts.index');
-Route::get('/BestSellers', 'App\Http\Controllers\BestSellerProductsController@index')->name('bestsellerProducts.index');
-Route::get('/Bundles', 'App\Http\Controllers\BundleProductsController@index')->name('bundleProducts.index');
-Route::get('/Events', 'App\Http\Controllers\EventProductsController@index')->name('eventProducts.index');
-Route::get('/MixAndMatch', 'App\Http\Controllers\MixProductsController@index')->name('mixProducts.index');
+// /*Product Categroies*/
+// Route::get('/NewProducts', 'App\Http\Controllers\NewProductsController@index')->name('newProducts.index');
+// Route::get('/BestSellers', 'App\Http\Controllers\BestSellerProductsController@index')->name('bestsellerProducts.index');
+// Route::get('/Bundles', 'App\Http\Controllers\BundleProductsController@index')->name('bundleProducts.index');
+// Route::get('/Events', 'App\Http\Controllers\EventProductsController@index')->name('eventProducts.index');
+// Route::get('/MixAndMatch', 'App\Http\Controllers\MixProductsController@index')->name('mixProducts.index');
 
-/*Product Types*/
-Route::get('/Pastries', 'App\Http\Controllers\PastriesController@index')->name('pastries.index');
-Route::get('/Pastries/{productId}', 'App\Http\Controllers\PastriesController@details')->name('pastries.details');
-Route::get('/Beverages', 'App\Http\Controllers\BeveragesController@index')->name('beverages.index');
-Route::get('/Beverages/{productId}', 'App\Http\Controllers\BeveragesController@details')->name('beverages.details');
-Route::get('/Desserts', 'App\Http\Controllers\DessertsController@index')->name('desserts.index');
-Route::get('/Desserts/{productId}', 'App\Http\Controllers\DessertsController@details')->name('desserts.details');
-Route::get('/ToppingsAndSinkers', 'App\Http\Controllers\ToppingsAndSinkersController@index')->name('toppings.index');
-Route::get('/ToppingsAndSinkers/{productId}', 'App\Http\Controllers\ToppingsAndSinkersController@details')->name('toppings.details');
-Route::get('/NutsAndNougat', 'App\Http\Controllers\NutsAndNougatController@index')->name('nuts.index');
-Route::get('/NutsAndNougat/{productId}', 'App\Http\Controllers\NutsAndNougatController@details')->name('nuts.details');
+// /*Product Types*/
+// Route::get('/Pastries', 'App\Http\Controllers\PastriesController@index')->name('pastries.index');
+// Route::get('/Pastries/{productId}', 'App\Http\Controllers\PastriesController@details')->name('pastries.details');
+// Route::get('/Beverages', 'App\Http\Controllers\BeveragesController@index')->name('beverages.index');
+// Route::get('/Beverages/{productId}', 'App\Http\Controllers\BeveragesController@details')->name('beverages.details');
+// Route::get('/Desserts', 'App\Http\Controllers\DessertsController@index')->name('desserts.index');
+// Route::get('/Desserts/{productId}', 'App\Http\Controllers\DessertsController@details')->name('desserts.details');
+// Route::get('/ToppingsAndSinkers', 'App\Http\Controllers\ToppingsAndSinkersController@index')->name('toppings.index');
+// Route::get('/ToppingsAndSinkers/{productId}', 'App\Http\Controllers\ToppingsAndSinkersController@details')->name('toppings.details');
+// Route::get('/NutsAndNougat', 'App\Http\Controllers\NutsAndNougatController@index')->name('nuts.index');
+// Route::get('/NutsAndNougat/{productId}', 'App\Http\Controllers\NutsAndNougatController@details')->name('nuts.details');
 
-Route::get('/Orders/Create/{productId}', 'App\Http\Controllers\OrdersController@create')->name('orders.create');
-Route::get('/Orders/Notification', 'App\Http\Controllers\OrdersController@notification')->name('orders.notification');
+// Route::get('/Orders/Create/{productId}', 'App\Http\Controllers\OrdersController@create')->name('orders.create');
+// Route::get('/Orders/Notification', 'App\Http\Controllers\OrdersController@notification')->name('orders.notification');
 
-Route::get('/Billing/Create/{productId}', 'App\Http\Controllers\BillsController@create')->name('bills.create');
-Route::get('/Payments/Create', 'App\Http\Controllers\PaymentsController@create')->name('payments.create');
+// Route::get('/Billing/Create/{productId}', 'App\Http\Controllers\BillsController@create')->name('bills.create');
+// Route::get('/Payments/Create', 'App\Http\Controllers\PaymentsController@create')->name('payments.create');
 
-Route::get('/Cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
-Route::get('/Cart/Create', 'App\Http\Controllers\CartController@create')->name('cart.create');
+// Route::get('/Cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
+// Route::get('/Cart/Create', 'App\Http\Controllers\CartController@create')->name('cart.create');
 
