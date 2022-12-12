@@ -206,7 +206,7 @@ Taiwanese pastries. Our objective is to promote and serve authentic Taiwanese
 pastries in the Philippine market, and at the same time support Filipino
 farmers by directly buying locally grown produce from them.
                   </p>
-                  <a href="/About" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Read More</a>
+                  <a href="/About" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Read more</a>
                 </div>
               </div>
             </div>
