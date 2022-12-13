@@ -12,21 +12,21 @@ Promos and Events
 
 @section('content')  
 
-<section class="u-clearfix u-container-align-center u-section-1" id="sec-4f90">
+<!-- <section class="u-clearfix u-container-align-center u-section-1" id="sec-4f90">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-1 u-border-palette-4-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
       </div>
-    </section>
+    </section> -->
     <section class="u-clearfix u-section-2" id="sec-381e">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h3 class="u-text u-text-default u-text-1">Promos &amp; Events</h3>
+        <h6 class="u-text u-text-default u-text-1">Christmas Gift Sets</h6>
       </div>
     </section>
-    <section class="u-clearfix u-section-3" id="sec-c186">
+    <!-- <section class="u-clearfix u-section-3" id="sec-c186">
       <div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-text u-text-default u-text-1"> You still have a few more days to join our giveaway! Check our story to see how you can win your favorite Soystory goodies.</p>
       </div>
-    </section>
+    </section> -->
     <section class="u-clearfix u-section-4" id="sec-70b1">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
@@ -49,7 +49,7 @@ Promos and Events
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-grey-5 u-section-5" id="carousel_0a6b">
+    <section class="u-clearfix u-section-5" id="carousel_0a6b">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
