@@ -89,7 +89,7 @@
 </li>
 <li class="u-nav-item"><a class="eventsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Events" style="padding: 10px;">Christmas Gift Sets </a>
 </li>
-<li class="u-nav-item"><a class="contactNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="#" style="padding: 10px;">Contact US</a>
+<li class="u-nav-item"><a class="contactNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="#" style="padding: 10px;">Contact Us</a>
 </li></ul>
               </div>
               <!-- <div class="u-custom-menu u-nav-container-collapse">
