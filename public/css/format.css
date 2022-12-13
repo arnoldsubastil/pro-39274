@@ -108,8 +108,8 @@ footer.u-custom-color-3{
     background-repeat: repeat;
     background-size: 320px; */
     background-image: url('../images/Patterns/FooterPatterns_4000x2000.jpg');
-    background-repeat: repeat;
-    background-size: 600px auto;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: -24px -8px;
   }
 
