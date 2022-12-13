@@ -46,7 +46,7 @@ Home
                           <h1 class="u-custom-font u-text u-title u-text-1"> Pineapple Cake&nbsp;</h1>
                           <h2 class="u-text u-text-2"> 鳳梨酥</h2>
                           <p class="u-text u-text-3"> Authentic Taiwanese pineapple cake. Buttery shortbread crust generously stuffed with homemade pineapple filling.</p>
-                          <h2 class="u-text u-text-4">570.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 570.00 
                           </h2>
                           <a href="/Pastries/D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
@@ -77,7 +77,7 @@ Home
                           <h1 class="u-custom-font u-text u-title u-text-1"> Suncake&nbsp;</h1>
                           <h2 class="u-text u-text-2"> 太陽餅</h2>
                           <p class="u-text u-text-3"> Plain Suncake: Taiwanese flaky pastry generously filled with maltose (麥芽糖). Also available in Salted egg, Ube, Red bean Mochi, Ube mochi, and Chocnut flavors.</p>
-                          <h2 class="u-text u-text-4">375.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 375.00 
                           </h2>
                           <a href="/Pastries/26E0F202-8063-4EEB-9EE9-134720810CBC" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
@@ -108,7 +108,7 @@ Home
                           <h1 class="u-custom-font u-text u-title u-text-1"> 3Q PASTRY&nbsp;</h1>
                           <h2 class="u-text u-text-2"> 3Q 餅</h2>
                           <p class="u-text u-text-3"> Taiwanese flaky generously filled with homemade red bean filling, pork floss, and either mochi or salted egg.</p>
-                          <h2 class="u-text u-text-4">285.00 <span style="font-size: 1.125rem;">PHP</span>
+                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 285.00 
                           </h2>
                           <a href="/Pastries/E041A5A3-A2CB-4A21-8C3C-E577CB8F14B2" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
@@ -146,7 +146,8 @@ Home
             <div class="u-layout-row" style="">
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1">Must try!</h2>
+                  <h6>New Product</h6>
+                  <h2 class="u-text u-text-default u-text-1">Pork Floss Snowflakes Pastry</h2>
                   <p class="u-text u-text-2">Soft and chewy nougat pastry with pork floss.</p>
                   <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                 </div>
