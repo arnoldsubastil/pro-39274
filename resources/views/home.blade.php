@@ -199,14 +199,8 @@ Home
                 <div class="u-container-layout u-container-layout-2">
                   <h2 class="u-align-left u-custom-font u-heading-font u-text u-text-default u-text-1">It's Soystory time!</h2>
                   <p class="u-align-justify u-text u-text-2">
-                    <span style="font-weight: 700;"><b>Soystory</b>
-                    </span> is a local food company that specializes in producing
-authentic Taiwanese delicacies in the Philippines. Our products are handcrafted
-using locally sourced ingredients. Established in 2017, Soystory began making authentic
-Taiwanese pastries. Our objective is to promote and serve authentic Taiwanese
-pastries in the Philippine market, and at the same time support Filipino
-farmers by directly buying locally grown produce from them.
-                  </p>
+                  Soystory is a food company that is committed to only using all-natural and fresh ingredients. Established in 2017, Soystory specializes in producing authentic Taiwanese delicacies in the Philippines. From salted-egg pineapple cakes, 3Q Pastries, to seasonal mooncakes, our products are handcrafted using carefully selected and locally sourced ingredients.  
+                </p>
                   <a href="/About" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Read more</a>
                 </div>
               </div>

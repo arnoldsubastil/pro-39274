@@ -29,8 +29,12 @@
   @media (max-width: 1024px){
 
     .moduleNavigation .productsNavItem,
-    .moduleNavigation .aboutNavItem, .moduleNavigation .eventsNavItem, .moduleNavigation .contactNavItem{
+    .moduleNavigation .eventsNavItem, .moduleNavigation .contactNavItem{
       display: block;
+    }
+
+    .moduleNavigation .aboutNavItem{
+      display: none;
     }
     
     .moduleNavigation ul .u-nav-item:first-child{

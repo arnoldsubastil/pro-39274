@@ -69,7 +69,7 @@
         "productBrandName": "SoyStory",         
         "sellingPrice": "375.00",
         "thumbnailUrl": "images/ProductThumbnails/SuncakeBox_1920x1920.jpg",
-        "url": "images/ProductImages/Suncake_480x480.png"        
+        "url": "images/ProductImages/Suncake_375x446.png"        
       },
       {
         "categories":["Must Try"],
@@ -86,8 +86,8 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "375.00",
-        "thumbnailUrl": "images/ProductThumbnails/MilkCake_1600x1238.jpg",
-        "url": "images/ProductImages/MilkCake_800x658.png"        
+        "thumbnailUrl": "images/ProductThumbnails/MilkCake_1180x1238.jpg",
+        "url": "images/ProductImages/MilkCake_2379x1586.jpg"        
       },
       {
         "categories":["Mix and Match", "Must Try"],
