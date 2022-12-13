@@ -107,7 +107,7 @@ Product Details
                   <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId['thumbnailUrl']}}">
                   <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId['name']}}<br> {{$uniqueProductId['foreignName']}}<br>
                   </h4>
-                  <a href="{{ route('pastries.details', $uniqueProductId['productId']) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                  <a href="{{ route('desserts.details', $uniqueProductId['productId']) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                 </div>
               </div>
 

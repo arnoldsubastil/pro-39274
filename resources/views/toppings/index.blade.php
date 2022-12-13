@@ -28,7 +28,7 @@ Toppings & Sinkers
 
             @foreach($uniqueProductIds as $uniqueProductId)            
   
-              <!--- get all nuts and nougat --->
+              <!--- get all toppings and sinkers --->
               @if($uniqueProductId['productTypeId'] == "2A98BD66-CC91-4EF3-B081-9B8C63203CAE")
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
