@@ -86,7 +86,7 @@ Product Details
  
  <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
-        <h3 class="u-text u-text-default u-text-1">You might also like:</h3>
+        <h6 class="u-text u-text-default u-text-1">You might also like:</h6>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-3" id="sec-ff51">

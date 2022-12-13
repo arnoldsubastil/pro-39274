@@ -75,7 +75,7 @@ Product Details
 </p>
                       
                         @endfor
-                      <a href="{{ route('orders.create', $product['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
                        <a href="{{ route('beverages.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
                       <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
@@ -92,7 +92,7 @@ Product Details
  
  <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
-        <h3 class="u-text u-text-default u-text-1">You might also like:</h3>
+        <h6 class="u-text u-text-default u-text-1">You might also like:</h6>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-3" id="sec-ff51">

@@ -14,7 +14,7 @@ Desserts
 
     <section class="u-clearfix u-section-3" id="sec-2dfe">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h3 class="u-text u-text-default u-text-1">Desserts</h3>
+        <h6 class="u-text u-text-default u-text-1">Desserts</h6>
       </div>
     </section>
     <section class="u-clearfix u-section-4" id="sec-0999">

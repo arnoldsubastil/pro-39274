@@ -43,7 +43,7 @@
                 </a>
               </div> -->
               <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Products" style="padding: 12px 20px;">Shop now!</a>
+                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;">Shop now!</a>
 </li</ul>
               </div>
               <div class="u-custom-menu u-nav-container-collapse">
@@ -157,7 +157,7 @@
                           <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Icons/Footer_Phone_32x32.png" alt=""></span>
           </a><div class="phoneNumberLabel"><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
                           
-                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="images/Icons/Footer_Instagram_32x32.png" alt=""></span>
+                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Instagram_32x32.png" alt=""></span>
           </a><div><p>Soystory Authentic</p><p>Taiwanese Pastries</p></div></li>
           <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Facebook_32x32.png" alt=""></span>
           </a><div><p>soystorypastries</p></div></li>
