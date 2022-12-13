@@ -39,6 +39,7 @@ About Soystory
                   </div>
                 </div>
               </div>
+              
               <div class="u-size-30">
                 <div class="u-layout-row">
                   <div class="u-align-justify u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-3">
