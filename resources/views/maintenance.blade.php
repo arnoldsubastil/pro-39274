@@ -10,9 +10,9 @@
 </style>
 
 <article>
-    <h1>We&rsquo;ll be back soon!</h1>
+    <h1>Something awesome is in the works!</h1>
     <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="https://www.facebook.com/soystorypastries">view our facebook page</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>You May find our website inaccessible, please bear with us whilst we update our website! Thank you so much for your understanding.. If you need to you can always <a href="https://www.facebook.com/soystorypastries">view our facebook page</a>, otherwise we&rsquo;ll be back online shortly!</p>
         <p>&mdash; The Team</p>
     </div>
 </article>
