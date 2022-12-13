@@ -194,7 +194,7 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "450.00",
-        "thumbnailUrl": "images/ProductThumbnails/EggRollPackaging_3024x3024.jpg",
+        "thumbnailUrl": "images/ProductThumbnails/EggRollPackaging_2268x2496.jpg",
         "url": "images/ProductImages/EggRollPlate_402x300.jpg"        
       },
       {
@@ -248,7 +248,7 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "155.00",
-        "thumbnailUrl": "images/ProductThumbnails/BakedPeanuts_1275x1356.png",
+        "thumbnailUrl": "images/ProductThumbnails/BakedPeanutsPackaging_1080x1080.jpg",
         "url": "images/ProductImages/BakedPeanuts_1080x1080.jpg"        
       },
       {
@@ -257,7 +257,7 @@
         "name": "Hot & Sweet Baked Peanuts",
         "productDescription": "The perfect snack that the whole family can enjoy— Hot and sweet oven baked peanuts.",
         "productId": "9B80771E-50E4-4A34-AB49-906ADA87829C",
-        "productOptions":["Sweet and spicy"],
+        "productOptions":["Hot and sweet"],
         "productSize": ["Sold per pack"],
         "productType": "Nuts and Nougat",
         "productTypeId": "C1968E9E-F308-4461-808C-4D53558A2372",
@@ -266,7 +266,7 @@
         "productBrandId": "6552CAA9-AECA-4C21-BAA0-C41F2523BAB8",
         "productBrandName": "SoyStory",         
         "sellingPrice": "180.00",
-        "thumbnailUrl": "images/ProductThumbnails/HotAndSpicyPeanuts_1200x1600.png",
+        "thumbnailUrl": "images/ProductThumbnails/HotAndSpicyBakedPeanuts_1080x1080.jpg",
         "url": "images/ProductImages/BakedPeanutsHotAndSweet_1080x1080.jpg"        
       },
       {
