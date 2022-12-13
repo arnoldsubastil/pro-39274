@@ -98,6 +98,15 @@
   }
 
   @media (max-width: 608px){
+
+    .u-footer .u-gutter-0 .u-layout .u-layout-row > div:first-child, .u-footer .u-gutter-0 .u-layout .u-layout-row > div:last-child{
+      width: 100%;
+      max-width: initial;
+      min-width: initial;
+    }
+
+    
+
     .u-footer .u-gutter-0 .u-layout .u-layout-row > div {
       width: 100%;
       max-width: initial;
@@ -130,6 +139,26 @@
 
     
   }
+
+
+@media(max-width:480px)
+{
+  .u-footer .u-icon {
+    background: #A7A9AC;
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    padding: 4px;
+}
+
+.u-footer .u-icon img{
+  height: 24px !important;
+  width: 24px !important;
+}
+
+}
+
 
   .shopMenu{
     margin: 0 0 0 auto !important;
