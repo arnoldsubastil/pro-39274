@@ -27,25 +27,18 @@ Product Details
                     <div class="u-container-layout u-container-layout-2">
                       <h2 class="u-text u-text-1"> {{ $product['name'] }}<br>
                       </h2>
-                      <h3 class="u-text u-text-2"> {{ $product['foreignName'] }} </h3>
-                      <p class="u-text u-text-3">
-                        <span style="font-size: 2.25rem;"> {{ $product['sellingPrice'] }} </span>
-                        <span style="font-size: 1.125rem;">PHP</span>
-                      </p>
-                      <p class="u-text u-text-4"> This product is available in:</p>
-                      <ul class="u-text u-text-5">
-                        @for($i=0; $i < count($product['productSize']); $i++)   
-                        
-                        <li>
-                          {{ $product['productSize'][$i] }} 
-                        </li>
-                      
+                      <h4 class="u-text u-text-2"> {{ $product['foreignName'] }} </h4>                      
+                        @for($i=0; $i < count($product['productSize']); $i++)
+                          <h4>{{ $product['productSize'][$i] }}</h4>
                         @endfor
-                      </ul>
+                        <p class="u-text u-text-3">
+                          <span style="font-size: 1.75rem;">PHP</span>
+                          <span style="font-size: 1.75rem;">{{ $product['sellingPrice'] }}</span>
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>              
+              </div>
               <div class="u-size-30 u-size-60-md">
                 <div class="u-layout-col">
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-45 u-layout-cell-3">
@@ -54,7 +47,16 @@ Product Details
                         <div class="u-container-layout u-container-layout-4"></div>
                       </div>
                       <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/{{$product['thumbnailUrl']}}'); background-size: cover;"></div>
-                      <p class="u-text u-text-default u-text-6"> This product has the following options:</p>
+                      <br/>
+                      <br/>
+                      @for($i=0; $i < count($product['productDescription']); $i++)
+                      <p class="u-text u-text-8"> {{ $product['productDescription'][$i] }} </p>
+                        @endfor
+                    </div>
+                  </div>
+                  <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
+                    <div class="u-container-layout u-container-layout-5">                      
+                      <p class="u-text u-text-default u-text-6"> Available flavors:</p>
                       <ul class="u-text u-text-default u-text-7">
                         @for($i=0; $i < count($product['productOptions']); $i++)   
                         
@@ -64,19 +66,10 @@ Product Details
                       
                         @endfor
                       </ul>
-                    </div>
-                  </div>
-                  <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
-                    <div class="u-container-layout u-container-layout-5">
-                      @for($i=0; $i < count($product['productDescription']); $i++)   
-                        
-                        <p>
-                        {{ $product['productDescription'][$i] }}
-</p>
-                      
-                        @endfor
+                      <br/>
+                      <br/>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
-                       <a href="{{ route('beverages.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
+                       <a href="javascript:history.back()" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
                       <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>
