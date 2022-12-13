@@ -58,7 +58,7 @@ Product Details
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-5">                      
-                      <p class="u-text u-text-default u-text-6"> Available flavors:</p>
+                      <!-- <p class="u-text u-text-default u-text-6"> Available flavors:</p>
                       <ul class="u-text u-text-default u-text-7">
                         @for($i=0; $i < count($product['productOptions']); $i++)   
                         
@@ -67,7 +67,7 @@ Product Details
                         </li>
                       
                         @endfor
-                      </ul>
+                      </ul> -->
                       <br/>
                       <br/>
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>

@@ -155,7 +155,7 @@
                       <blockquote class="u-text u-text-3 socialIcons"> 
                         <ul class="listSocialIcons">
                           <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Icons/Footer_Phone_32x32.png" alt=""></span>
-          </a><div class="phoneNumberLabel"><p>+63 (920) 921 1290</p><p>+63 (917) 138 0392</p></div></li>
+          </a><div class="phoneNumberLabel"><p>+63 917 138 0392</p><p>+63 920 921 1290</p></div></li>
                           
                           <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Instagram_32x32.png" alt=""></span>
           </a><div><p>Soystory Authentic</p><p>Taiwanese Pastries</p></div></li>
