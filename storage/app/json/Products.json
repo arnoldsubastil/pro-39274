@@ -55,7 +55,7 @@
       },
       {
         "categories":["Best Seller", "Mix and Match"],
-        "foreignName": "芋塊",
+        "foreignName": "太陽餅",
         "name": "Suncake",
         "productDescription": "Plain Suncake: Taiwanese flaky pastry generously filled with maltose (麥芽糖).This is one of our best-sellers and often enjoyed by old and young alike. We only use the finest ingredients, such as real fresh ube. It’s a favorite Taiwanese snack with a Filipino twist! Each piece is individually wrapped and carefully packed in a gift box.",
         "productId": "26E0F202-8063-4EEB-9EE9-134720810CBC",
@@ -542,7 +542,7 @@
       {
         "categories": "Other Products",
         "foreignName": "蜜花生",
-        "name": "Sweet Peanuts Solo Pack (50g)",
+        "name": "Sweetened Peanuts Solo Pack (50g)",
         "productDescription": ["Peanuts are an excellent source of plant-based protein, fiber, and many key vitamins and minerals. Add our sweet peanuts to your choice of milk for a delicious snack!"],
         "productId": "57028B18-3B8E-4953-968A-0321B37EF426",
         "productOptions":["1kg solo pack of 20"],
@@ -560,7 +560,7 @@
       {
         "categories": "Other Products",
         "foreignName": "蜜花生",
-        "name": "Sweet Peanuts Family Pack (250g)",
+        "name": "Sweetened Peanuts Family Pack (250g)",
         "productDescription": ["Peanuts are an excellent source of plant-based protein, fiber, and many key vitamins and minerals. Add our sweet peanuts to your choice of milk for a delicious snack!"],
         "productId": "93270A56-D090-441C-95EB-DA6E9FEB27D3",
         "productOptions":["1kg family pack of 4"],
