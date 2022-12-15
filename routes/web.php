@@ -64,3 +64,20 @@ Route::get('/Payments/Create', 'App\Http\Controllers\PaymentsController@create')
 Route::get('/Cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::get('/Cart/Create', 'App\Http\Controllers\CartController@create')->name('cart.create');
 
+Route::get('resizer/images/{location}/{photo}/{ext}/{width}/{height}', function ($location, $photo, $ext, $width, $height) {
+
+    $image = new \Intervention\Image\ImageManager();
+    $url = public_path('images/' . $location .'/'.$photo); // If your photo is in public folder
+    $width1 = $width;
+    $height1 = $height;
+
+    
+
+    $res = $image->cache(function ($image) use ($url, $width1, $height1) {
+
+        return $image->make($url)->resize($width1, $height1);
+    }, 9999, true);
+
+    return $res->response();
+
+    })->name('resizer');
