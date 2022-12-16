@@ -21,7 +21,7 @@ Product Details
               <div class="u-size-30 u-size-60-md">
                 <div class="u-layout-col">
                   <div class="u-container-style u-image u-layout-cell u-left-cell u-size-45 u-image-1" data-image-width="1696" data-image-height="1129">
-                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/{{$product['url']}}'); background-size: cover;"></div>
+                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/resizer/{{$product['url']}}/320'); background-size: cover;"></div>
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">

@@ -126,4 +126,13 @@
           <img src="/images/Logo_SoyStory_Gray_104x28.png" class="u-logo-image u-logo-image-1">
         </a>
       </div></footer>
+      <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6S08TFE07G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6S08TFE07G');
+</script>
 </body></html>
