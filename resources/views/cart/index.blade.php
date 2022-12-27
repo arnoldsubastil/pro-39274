@@ -1,4 +1,4 @@
-@extends('layouts.cart')
+@extends('layouts.index')
 
 @section('title')
 Shopping Cart
@@ -11,6 +11,8 @@ Shopping Cart
 
 @section('content')
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
 <section class="u-clearfix u-container-align-center u-section-2" id="sec-6f9e">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-border-1 u-border-palette-4-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
@@ -39,27 +41,32 @@ Shopping Cart
               @foreach($uniqueProductIds as $uniqueProductId)
 
                 <!--- get selected products --->
-                @if($uniqueProductId['productStatusId'] == "1000")
+                @if($uniqueProductId->productStatusId == "1000")
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
                     <div class="u-container-align-center u-container-style u-group u-group-1">
                       <div class="u-container-layout u-valign-bottom u-container-layout-2">
-                        <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-1 ellipsis">{{$uniqueProductId['name']}}
+                        <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-1 ellipsis">{{$uniqueProductId->name}}
                         </h4>
                       </div>
                     </div>
-                    <p class="u-align-center u-text u-text-default u-text-2 small"> {{$uniqueProductId['foreignName']}} </p>
-                    <img class="u-image u-image-default u-image-1" src="{{$uniqueProductId['thumbnailUrl']}}" alt="" data-image-width="1684" data-image-height="1123">
-                    <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">{{$uniqueProductId['sellingPrice']}} <span class="amount">PHP</small></h4>
-                    <a href="{{ route('pastries.details', $uniqueProductId['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                    <p class="u-align-center u-text u-text-default u-text-2 small"> {{$uniqueProductId->foreignName}} </p>
+                    <img class="u-image u-image-default u-image-1" src="{{$uniqueProductId->thumbnailUrl}}" alt="" data-image-width="1684" data-image-height="1123">
+                    <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">{{$uniqueProductId->sellingPrice}} <span class="amount">PHP</small></h4>
+                    <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                    <input type="button" value="-" class="minustocart" productcount="" >
+
+                    <input type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" class="itemNumber" value="{{ $uniqueProductId->numberoforder }}" />
+
+                    <input type="checkbox" name="" value="{{ $uniqueProductId->productIdlong }}" class="itemchecker" />
                   </div>
                 </div>
 
                @endif
               
               @endforeach
-
+        <input type="hidden" name="tocheckout" class="tocheckout" value='' />
               <!--- end product item --->
 
             </div>
@@ -77,7 +84,7 @@ Shopping Cart
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <a href="#" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</a>
+                  <button id="placeorder" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</button>
                   <a href="javascript:history.back()" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
                 </div>
               </div>
@@ -93,6 +100,48 @@ Shopping Cart
 @endsection
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function ($) {  
+
+  $(".itemNumber").keyup(function(){
+
+    let _token = $('meta[name="csrf-token"]').attr('content');
+    let myid = $("#loginid").val();
+    let id = $(this).attr('prod-id');
+    let note = $(this).attr('note');
+    let qty = $(this).val();
+    console.log(id);
+    $.ajax({
+        url: "/api/update-qty-cart",
+        type:"POST",
+        data:{
+        myid:myid,
+        qty:qty,
+        productid:id,
+        note:note,
+        _token: _token
+        },
+        success:function(response){
+            console.log(response);
+        },
+    });  
+  });
+  
+  $('#placeorder').click(function(){
+
+    var orderlist = '';
+    $(".itemchecker:checked").each(function(){
+      orderlist = $(this).val() + ',' + orderlist;
+    });
+
+    location.href='/Billing/Create/' + orderlist;
+    // console.log('/checkout/' + orderlist);
+  });
+
+});
+
+</script>
 
 
 <!-- Push a script dynamically from a view -->

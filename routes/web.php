@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,10 +55,10 @@ Route::get('/ToppingsAndSinkers/{productId}', 'App\Http\Controllers\ToppingsAndS
 Route::get('/NutsAndNougat', 'App\Http\Controllers\NutsAndNougatController@index')->name('nuts.index');
 Route::get('/NutsAndNougat/{productId}', 'App\Http\Controllers\NutsAndNougatController@details')->name('nuts.details');
 
-Route::get('/Orders/Create/{productId}', 'App\Http\Controllers\OrdersController@create')->name('orders.create');
-Route::get('/Orders/Notification', 'App\Http\Controllers\OrdersController@notification')->name('orders.notification');
 
-Route::get('/Billing/Create/{productId}', 'App\Http\Controllers\BillsController@create')->name('bills.create');
+
+Route::get('/Orders/Create/{productId}', 'App\Http\Controllers\OrdersController@create')->name('orders.create');
+
 Route::get('/Payments/Create', 'App\Http\Controllers\PaymentsController@create')->name('payments.create');
 
 Route::get('/Cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
@@ -84,3 +84,15 @@ Route::get('resizer/images/{location}/{photo}/{width}', function ($location, $ph
     return $res->response();
 
     })->name('resizer');
+
+  
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/my-cart', 'App\Http\Controllers\CartController@getItemCart');
+Route::get('/Billing/Create/{productlist}', 'App\Http\Controllers\BillsController@create')->name('bills.create');
+Route::post('/Pay', 'App\Http\Controllers\CartController@checkoutorder');
+
+Route::get('/my-orders', 'App\Http\Controllers\CartController@getAllCheckout');

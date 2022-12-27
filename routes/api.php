@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +12,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::post('/add-to-cart', 'App\Http\Controllers\CartController@addToCart');
+Route::post('/update-qty-cart', 'App\Http\Controllers\CartController@updateQtyCart');
+Route::post('/count-qty-cart', 'App\Http\Controllers\CartController@countItemCart');
+
+
+Route::post('/checkout', 'App\Http\Controllers\CartController@checkoutorder');
+
+
+Route::post('/my-order', 'App\Http\Controllers\CartController@getcheckoutItem');

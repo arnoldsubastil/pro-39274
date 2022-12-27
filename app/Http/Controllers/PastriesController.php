@@ -5,54 +5,43 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http; //GET DATA FROM WEB
 use Illuminate\Support\Facades\Storage; //GET DATA FROM STORAGE
+use DB;
 
 class PastriesController extends Controller
 {
     //
 
     public function index(){
-
-        //GET DATA FROM STORAGE 
-        $path = storage_path() . "/app/json/Products.json"; 
-        $json = json_decode(file_get_contents($path), true);
-        $products=collect($json);   
         
-        //GET DATA FROM WEB 
-        //$pastries=Http::get('https://jsonplaceholder.typicode.com/photos')->json();
-        //$products=collect($pastries);
-       
-        $uniqueProductId=$products->unique('productId');
-        $countUnique = $products->countBy('productId');
-
-        //dd($countUnique);
-        //dump($countUnique);               
+        $uniqueProductId = DB::table('products')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->where('productType', 'Pastries')
+            ->get();          
 
         return view('pastries.index',[
             'uniqueProductIds'=>$uniqueProductId,
-            'countUnique'=>$countUnique
+            'countUnique'=>count($uniqueProductId)
         ]);
     
     }
 
     public function details($productId){
 
-        //GET DATA FROM STORAGE 
-        $path = storage_path() . "/app/json/Products.json"; 
-        $json = json_decode(file_get_contents($path), true);
-        $products=collect($json);
-        $product=collect($json)->where('productId', $productId);
-
-        $uniqueProductId=$products->unique('productId');
-        //GET DATA FROM WEB 
-        //$pastries=Http::get('https://jsonplaceholder.typicode.com/photos')->json();
-        //$product=collect($pastries)->where('id', $id);
-
-        //dump($product);
+        $uniqueProductId = DB::table('products')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->where('productIdlong', $productId)
+            ->get();
+        
+            $product = DB::table('products')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->where('productType', 'Pastries')
+            ->where('productIdlong' , '!=', $productId)
+            ->get();
 
         
         return view('pastries.details',[
-            'uniqueProductIds'=>$uniqueProductId,
-            'products'=>$product,
+            'uniqueProductIds'=>$product,
+            'products'=>$uniqueProductId,
             'productId'=>$productId
         ]);
 

@@ -11,7 +11,8 @@ Product Details
 @endsection
 
 @section('content')  
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
     @foreach($products as $product)
     <section class="u-clearfix u-section-1" id="carousel_7dcd">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -21,19 +22,20 @@ Product Details
               <div class="u-size-30 u-size-60-md">
                 <div class="u-layout-col">
                   <div class="u-container-style u-image u-layout-cell u-left-cell u-size-45 u-image-1" data-image-width="1696" data-image-height="1129">
-                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/resizer/{{$product['url']}}/320'); background-size: cover;"></div>
+                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/resizer/{{$product->url}}/320'); background-size: cover;"></div>
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
-                      <h2 class="u-text u-text-1"> {{ $product['name'] }}<br>
+                      <h2 class="u-text u-text-1"> {{ $product->name }}<br>
                       </h2>
-                      <h4 class="u-text u-text-2"> {{ $product['foreignName'] }} </h4>                      
-                        @for($i=0; $i < count($product['productSize']); $i++)
-                          <h4>{{ $product['productSize'][$i] }}</h4>
+                      <h4 class="u-text u-text-2"> {{ $product->foreignName }} </h4>                      
+                        @for($i=0; $i < count(json_decode($product->productSize)); $i++)
+                          <h4>{{ $product->productSize[$i] }}</h4>
                         @endfor
                         <p class="u-text u-text-3">
                           <span style="font-size: 1.75rem;">PHP</span>
-                          <span style="font-size: 1.75rem;">{{ $product['sellingPrice'] }}</span>
+                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>
+                          <button class="addtocart" prod-id="{{ $product->productIdlong }}">Add to cart</button>
                       </p>
                     </div>
                   </div>
@@ -46,26 +48,26 @@ Product Details
                       <div class="u-container-style u-group u-image u-image-tiles u-image-2" data-image-width="100" data-image-height="60">
                         <div class="u-container-layout u-container-layout-4"></div>
                       </div>
-                      <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/{{$product['thumbnailUrl']}}'); background-size: cover;"></div>
+                      <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/{{$product->thumbnailUrl}}'); background-size: cover;"></div>
                       <br/>
                       <br/>
-                      <p class="u-text u-text-8"> {{ $product['productDescription'] }} </p>
+                      <p class="u-text u-text-8"> {{ $product->productDescription }} </p>
                     </div>
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-5">        
-                    @for($i=0; $i < count($product['productOptions']); $i++)   
+                    @for($i=0; $i < count(json_decode($product->productOptions)); $i++)   
                        
-                        @if (count($product['productOptions']) === 1)
+                        @if (count(json_decode($product->productOptions)) === 1)
             
                         @else
                         
                         <p class="u-text u-text-default u-text-6"> Available flavors:</p>
                       <ul class="u-text u-text-default u-text-7">
-                        @for($i=0; $i < count($product['productOptions']); $i++)   
+                        @for($i=0; $i < count(json_decode($product->productOptions)); $i++)   
                         
                         <li>
-                        {{ $product['productOptions'][$i] }}
+                        {{ $product->productOptions[$i] }}
                         </li>
                       
                         @endfor
@@ -109,14 +111,14 @@ Product Details
             @foreach($uniqueProductIds as $uniqueProductId)
             
               <!--- get all pastries --->
-              @if($uniqueProductId['productTypeId'] == "A3902296-0D6F-4E34-91A2-023573626225")
+              @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                 <div class="u-container-layout u-similar-container u-container-layout-1">
-                  <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId['thumbnailUrl']}}">
-                  <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId['name']}}<br> {{$uniqueProductId['foreignName']}}<br>
+                  <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
+                  <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
                   </h4>
-                  <a href="{{ route('pastries.details', $uniqueProductId['productId']) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                  <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                 </div>
               </div>
 
@@ -155,10 +157,36 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div><br/>
     </section>
     
-                  
+       
    
-        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function ($) {  
 
+  $('.addtocart').click(function(){
+    
+    let _token = $('meta[name="csrf-token"]').attr('content');
+    let myid = $("#loginid").val();
+    let id = $(this).attr('prod-id');
+    let notes = '';
+    $.ajax({
+        url: "/api/add-to-cart",
+        type:"POST",
+        data:{
+        myid:myid,
+        id:id,
+        notes:notes,
+        _token: _token
+        },
+        success:function(response){
+            console.log(response);
+        },
+    });  
+  });
+  
 
+});
+
+</script>
 
 @endsection

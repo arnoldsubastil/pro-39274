@@ -30,6 +30,8 @@
           
           
           
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />  
           
           
         </div>
@@ -43,7 +45,8 @@
                 </a>
               </div> -->
               <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;">Shop now!</a>
+                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Cart/" style="padding: 12px 20px;">Shop now!</a>
+                <span class="notificationCart"></span>
 </li</ul>
               </div>
               <div class="u-custom-menu u-nav-container-collapse">
@@ -183,5 +186,28 @@
   gtag('js', new Date());
 
   gtag('config', 'G-6S08TFE07G');
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function ($) {  
+
+    let _token = $('meta[name="csrf-token"]').attr('content');
+    let myid = $("#loginid").val();
+    $.ajax({
+        url: "/api/count-qty-cart",
+        type:"POST",
+        data:{
+        myid:myid,
+        _token: _token
+        },
+        success:function(response){
+          if(response != 0)
+           $('.notificationCart').html(response);
+           else
+           $('.notificationCart').hide();
+        },
+    });
+});
+
 </script>
 </body></html>
