@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     
     <!--Static StyleSheets-->
+    <link rel="icon" type="image/x-icon" href="/images/Icons/Cart_Orange_16x16.ico">
     <link rel="stylesheet" href="/css/fontscheme.css" media="screen">
     <link rel="stylesheet" href="/css/format.css" media="screen">
     <link rel="stylesheet" href="/css/nicepage.css" media="screen">
