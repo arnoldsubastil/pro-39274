@@ -23,20 +23,12 @@ Contact Us
                   <div class="u-align-center u-form u-form-1">
                     <form method="POST" action="{{ route('register') }}" style="padding: 0px;">
                     @csrf
-                      <h2 class="u-form-group u-form-text u-text u-text-1"> Sign up!</h2>
+                      <h2 class="u-form-group u-form-text u-text u-text-1"> What can we help you with?</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
-                        <span style="font-weight: 400;">Create your account for fast checkout and easy to order transactions. </span>
+                        <span style="font-weight: 400;">Get in touch with us by either fill out the form with your inquiries or call us with the phone numbers below this form.</span>
                         <br>
                       </p>
-                      <div class="u-form-group u-form-group-3">
-                        <label for="name" class="u-custom-font u-font-montserrat u-label u-label-1"> {{ __('Username') }}</label>
-                        <input id="name" type="text" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-1 form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus >
-                        @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                      
                       <div class="u-form-group u-form-group-4">
                         <label for="name" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('First Name') }}</label>
                         <input id="name" type="text" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
@@ -55,24 +47,8 @@ Contact Us
                             </span>
                         @enderror
                     </div>
-                    <div class="u-form-group u-form-group-4">
-                        <label for="name" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Contact Number') }}</label>
-                        <input id="name" type="text" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control @error('contact_no') is-invalid @enderror" name="contact_no" value="{{ old('contact_no') }}" required autocomplete="contact_no" autofocus>
-                        @error('contact_no')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                    <div class="u-form-group u-form-group-4">
-                        <label for="name" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Billing Address') }}</label>
-                        <input id="name" type="text" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control @error('deliveryAddress') is-invalid @enderror" name="deliveryAddress" value="{{ old('deliveryAddress') }}" required autocomplete="deliveryAddress" autofocus>
-                        @error('deliveryAddress')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
+                   
+                    
                     <div class="u-form-group u-form-group-4">
                         <label for="email" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Email Address') }}</label>
                         <input id="email" type="email" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -82,22 +58,21 @@ Contact Us
                             </span>
                         @enderror
                     </div>
+
                     <div class="u-form-group u-form-group-4">
-                        <label for="password" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Password') }}</label>
-                        <input id="password" type="password" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                        @error('password')
+                        <label for="inquiries" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Message') }}</label>
+                        <textarea id="InquiryTextArea" rows="8" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2" name="inquiries" required ></textarea>
+                        @error('inquiries')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+
                     </div>
-                    <div class="u-form-group u-form-group-4">
-                        <label for="password-confirm" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Confirm Password') }}</label>
-                        <input id="password-confirm" type="password" class="u-custom-font u-font-montserrat u-input u-input-rectangle u-text-grey-80 u-white u-input-2 form-control" name="password_confirmation" required autocomplete="new-password">
-                    </div>
+                    
                                        
                       <div class="u-align-center u-form-group u-form-submit">
-                        <button type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">{{ __('Register') }}</button>                        
+                        <button type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">{{ __('Submit') }}</button>                        
                       </div>
                      
                     </form>
