@@ -7,6 +7,7 @@ use \App\Models\User;
 use \App\Models\Cart;
 use \App\Models\Orders;
 use \App\Models\CartOrder;
+use \App\Models\Reviews;
 use Auth;
 use DB;
 
@@ -19,8 +20,7 @@ class CartController extends Controller
         // $this->middleware('guest');
     }
     public function index(Request $request) {
-        $userId = $this->getID(Auth::user()->id);
-        
+        $userId = $this->getID(Auth::user());
         $carttocheckout = DB::table('cart')
             ->select('cart.user_id', 'cart.product_id', 'products.productIdlong', 'cart.product_note', 'products.name', 'products.thumbnailUrl', 'products.productStatusId', 'products.foreignName', 'products.thumbnailUrl', 'products.sellingPrice', DB::raw('COUNT(1) as numberoforder'))
             ->join('products', 'products.productIdlong', '=', 'cart.product_id')
@@ -98,7 +98,6 @@ class CartController extends Controller
 
     public function countItemCart(Request $request){
         $userId = $this->getID($request->myid);
-        // dd($userId);
         $countofcart = DB::table('cart')
             ->select('user_id','product_id')
             ->where('user_id', $userId)
@@ -123,7 +122,7 @@ class CartController extends Controller
     }
 
     public function getAllCheckout() {
-        $userId = $this->getID(Auth::user()->id);
+        $userId = $this->getID(Auth::user());
         // dd($userId);
         $checkouted = DB::table('orders')
             ->select('orders.user_id',
@@ -185,6 +184,7 @@ class CartController extends Controller
                 'orders.voucher_proof',
                 'orders.notes',
                 'products.name',
+                'products.productIdlong',
                 'cart.product_note',
                 DB::raw('COUNT(1) as qty'))
             ->join('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
@@ -206,6 +206,7 @@ class CartController extends Controller
             ->groupBy('orders.voucher_proof')
             ->groupBy('orders.notes')
             ->groupBy('products.name')
+            ->groupBy('products.productIdlong')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
             ->get();
@@ -214,7 +215,7 @@ class CartController extends Controller
     }
 
     public function checkoutorder(Request $request) {
-        $userId = $this->getID(Auth::user()->id);
+        $userId = $this->getID(Auth::user());
         $productslist = explode(',', $request->productlist);
         $carttocheckout = DB::table('cart')
             ->select('user_id', 'product_id', 'cart_id')
@@ -266,14 +267,37 @@ class CartController extends Controller
         return view('orders.notification');
     }
 
+    public function postreview(Request $request) {
+        $userId = $this->getID(Auth::user());
+            Reviews::create([
+                'customer_id' => $userId,
+                'product_id' => $request->productIdlong,
+                'review' => $request->myreview,
+                'approval' => 0
+            ]);
+                    
+        return view('orders.reviewupdated');
+    }
+    public function postcontact(Request $request) {
+
+        $this->getID(Auth::user());
+            Reviews::create([
+                'email' => $request->productIdlong,
+                'message' => $request->message,
+                'read_done' => 0
+            ]);
+                    
+        return view('cart.contactussuccess');
+    }
+
     private function getID($id) {
-        
-        if ($id == '') {
+        if (is_string($id)) {
+            $userId = $id;
+        } else if ($id->id == null) {
             $userId = hash('ripemd160', shell_exec('getmac'));
         } else {
-            $userId = $id;
+            $userId = $id->id;
         }
-
         return $userId;
     }
 

@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use DB;
+use Auth;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -38,7 +41,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        // $this->middleware('guest');
     }
 
     /**
@@ -77,5 +80,32 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    
+    protected function updateAccount(Request $data)
+    {
+        User::where('id', Auth::user()->id)
+        ->update([
+            'name' => $data['name'],
+            'firstName' => $data['firstName'],
+            'lastName' => $data['lastName'],
+            'contact_no' => $data['contact_no'],
+            'deliveryAddress' => $data['deliveryAddress'],
+            'email' => $data['email']
+        ]);
+        return view('orders.profileupdated');
+    }
+
+    protected function getprofile()
+    {
+        $profile = DB::table('users')
+            ->select('name', 'firstName', 'lastName', 'contact_no', 'deliveryAddress', 'email')
+            ->where('id', Auth::user()->id)
+            ->get();
+        
+            return view('auth.update', [
+                'profile'=>$profile[0]
+            ]);
     }
 }

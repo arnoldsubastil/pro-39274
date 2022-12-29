@@ -99,3 +99,10 @@ Route::get('/Billing/Create/{productlist}', 'App\Http\Controllers\BillsControlle
 Route::post('/Pay', 'App\Http\Controllers\CartController@checkoutorder');
 
 Route::get('/my-orders', 'App\Http\Controllers\CartController@getAllCheckout');
+
+
+Route::get('/posted-review', 'App\Http\Controllers\CartController@postreview');
+Route::post('/post-contact', 'App\Http\Controllers\CartController@postcontact');
+
+Route::get('/update-profile', 'App\Http\Controllers\Auth\RegisterController@getprofile');
+Route::post('/update-my-profile', 'App\Http\Controllers\Auth\RegisterController@updateAccount');
