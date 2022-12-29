@@ -61,8 +61,8 @@ Login
                      
                     </form>
                   </div>
-                  <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="Home.html" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
-                    <br>Continue as guest? <a href="Home.html" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
+                  <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="/register" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
+                    <br>Continue as guest? <a href="/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
                     <br>
                   </p>
                 </div>
@@ -79,11 +79,11 @@ Login
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1">New Customers</h2>
+                  <h2 class="u-text u-text-default u-text-1">For new customers</h2>
                   <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Proceed to order and you will have an opportunity to create an account after checking out if one does not already exist for you.</p>
                   <a href="Home.html" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
                   <p class="u-custom-font u-font-montserrat u-text u-text-3">Create a customer account for fast checkout and easy to order transactions.&nbsp;</p>
-                  <a href="CustomerRegistration.html" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Create an account</a>
+                  <a href="/register" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Create an account</a>
                 </div>
               </div>
             </div>
