@@ -41,6 +41,10 @@
       margin-right: 0;
     }
 
+    .stampImage{
+      background-image: none;
+    }
+
     /* section.heroImage{
       background-color: #F4DFB0; 
       background-image: url('../images/Animations/Animation_1800X700.gif'); 

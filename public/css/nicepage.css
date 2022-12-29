@@ -11591,8 +11591,8 @@ section.u-image:not(.u-hover-box),
   padding: 2px;
 }
 .u-gutter-0 .u-layout {
-  color: #231F20;
-  background-color: #FFFFFF;
+  color: #383C3B;
+  background-color: transparent;
   margin: 0px;
 }
 .u-gutter-0 .u-layout .u-layout-cell {
@@ -16790,7 +16790,7 @@ p {
   font-family: Georgia, serif !important;
 }
 .u-font-roboto.u-custom-font {
-  font-family: Roboto, sans-serif !important;
+  font-family: Montserrat, sans-serif;
 }
 .u-font-open-sans.u-custom-font {
   font-family: 'Open Sans', sans-serif !important;
@@ -22828,7 +22828,7 @@ a.u-button-style.u-border-20 {
 }
 /*begin-variables font-family*/
 .u-body {
-  font-family: Roboto,sans-serif;
+  font-family: Montserrat,sans-serif;
 }
 h1,
 h2,
@@ -22857,7 +22857,7 @@ h6 {
 /*end-variables color*/
 /*begin-variables font*/
 .u-custom-font.u-text-font {
-  font-family: Roboto,sans-serif !important;
+  font-family: Montserrat,sans-serif;
 }
 .u-custom-font.u-heading-font {
   font-family: 'Roboto Slab',serif !important;
@@ -38085,7 +38085,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-table-alt-custom-color-4 tr:nth-child(even)
         {
             color: #ffffff;
-            background-color: #ba934e;
+            background-color: #FDE1A6;
         }
 
         .u-button-style.u-custom-color-4,
@@ -39282,6 +39282,11 @@ a.u-link.u-text-hover-grey-90:hover {
     height: 46px;
   }
 }
+
+.u-footer .u-gutter-0 .u-layout{
+  background-color: #FFFFFF;
+}
+
 .u-footer .u-sheet-1 {
   min-height: initial;
 }
