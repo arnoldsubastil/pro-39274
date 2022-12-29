@@ -25,6 +25,9 @@ Route::get('/About', function () {
     return view('about');
 });
 
+
+Route::get('/Contact', 'App\Http\Controllers\ContactController@index')->name('contact.index');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes for JSON
