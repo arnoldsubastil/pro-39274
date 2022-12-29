@@ -36,13 +36,13 @@ Order Product
         <div class="item">
             Voucher:
             @if ($product->productslist != "")
-                <option>{{$product->voucher_code}}</option>
+                <option>{{ $product->voucher_code}}</option>
             @else
             No voucher
             @endif
         </div>
         <div class="item">
-            @if ($product->productslist != "")
+            @if ($product->voucher_proof != "")
             <img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" />
             @endif
         </div>
@@ -83,15 +83,27 @@ jQuery(document).ready(function ($) {
         },
         success:function(response){
                 $.each(response, function( index, value ) {
+                    var note = 'No message from the user for this specific product...';
+                    if(value.product_note != null) {
+                        note = value.product_note;
+                    }
                 $alltext = $alltext + `
                 <div>
                     Product Name: `+ value.name +`
                 </div>
                 <div>
-                    Product QTY: `+ value.name +`
+                    Product QTY: `+ value.qty +`
                 </div>
                 <div>
-                    Product Note: `+ value.product_note +`
+                    Product Note: `+ note +`
+                </div>
+                <div>
+                    <form method="get" action="/posted-review">
+                        <meta name="csrf-token" content="`+_token+`">
+                        <input type="hidden" name="productIdlong" value="`+value.productIdlong+`" />
+                        <textarea name='myreview'></textarea>
+                        <input type="submit" />
+                    </form>
                 </div>
                 `;
                 });

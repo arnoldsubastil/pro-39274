@@ -29,9 +29,7 @@ Product Details
                       <h2 class="u-text u-text-1"> {{ $product->name }}<br>
                       </h2>
                       <h4 class="u-text u-text-2"> {{ $product->foreignName }} </h4>                      
-                        @for($i=0; $i < count(json_decode($product->productSize)); $i++)
-                          <h4>{{ $product->productSize[$i] }}</h4>
-                        @endfor
+                      <h4>{{  $product->productSize }}</h4>
                         <p class="u-text u-text-3">
                           <span style="font-size: 1.75rem;">PHP</span>
                           <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>
@@ -56,18 +54,21 @@ Product Details
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-5">        
-                    @for($i=0; $i < count(json_decode($product->productOptions)); $i++)   
+                    @for($i=0; $i < count(explode('/' ,$product->productOptions)); $i++)   
                        
-                        @if (count(json_decode($product->productOptions)) === 1)
-            
+                        @if (count(explode('/',$product->productOptions)) === 1)
+                          
+                        <li>
+                        {{ explode('/', $product->productOptions)[0] }}
+                        </li>
                         @else
                         
                         <p class="u-text u-text-default u-text-6"> Available flavors:</p>
                       <ul class="u-text u-text-default u-text-7">
-                        @for($i=0; $i < count(json_decode($product->productOptions)); $i++)   
+                        @for($i=0; $i < count(explode('/', $product->productOptions)); $i++)   
                         
                         <li>
-                        {{ $product->productOptions[$i] }}
+                        {{ explode('/', $product->productOptions)[$i] }}
                         </li>
                       
                         @endfor
@@ -107,6 +108,24 @@ Product Details
           <div class="u-repeater u-repeater-1">
 
           <!--- begin product item --->
+
+          @foreach($alsobuy as $uniqueProductId)
+            
+            <!--- get all pastries --->
+            @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
+          
+            <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
+                <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
+                </h4>
+                <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+              </div>
+            </div>
+
+            @endif            
+          
+          @endforeach
 
             @foreach($uniqueProductIds as $uniqueProductId)
             
