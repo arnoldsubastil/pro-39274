@@ -103,6 +103,23 @@ footer .texts{
     display: none;
 }
 
+/*stripe*/
+.stripeDiv{
+    background-image: url(../images/Patterns/Stripe_OrangeYellow_154x16.png);
+    background-size: auto 16px;
+    background-repeat: repeat-x;
+    height: 16px;
+    margin: 8px 0;
+}
+
+/*stamps*/
+.stampImage{
+    background-image: url(../images/Stamps/Stamp_282x174.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right 16px;
+}
+
 /*forms*/
 form > div, form > h2.u-form-text.u-text, form > p.u-form-text.u-text{
     margin: 24px 0;

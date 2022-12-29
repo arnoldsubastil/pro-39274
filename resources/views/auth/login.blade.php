@@ -12,7 +12,8 @@ Login
 
 @section('content')
 <section class="u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-custom-color-4 u-valign-middle-xs u-section-1" id="sec-54cf">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <div class="stripeDiv"></div>
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1 stampImage">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
@@ -71,6 +72,7 @@ Login
           </div>
         </div>
       </div>
+      <div class="stripeDiv"></div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-9ead">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
