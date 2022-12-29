@@ -103,6 +103,12 @@ footer .texts{
     display: none;
 }
 
+/*notification*/
+.notificationCart
+{
+    display: none;
+}
+
 /*stripe*/
 .stripeDiv{
     background-image: url(../images/Patterns/Stripe_OrangeYellow_154x16.png);
@@ -143,6 +149,7 @@ footer.u-custom-color-3{
 
 
 /*customize header order button*/
+
 
 @media (min-width: 1009px) {
     .u-header .u-menu-1 {

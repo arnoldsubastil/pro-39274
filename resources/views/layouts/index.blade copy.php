@@ -28,32 +28,17 @@
           <div class="u-clearfix u-sheet u-sheet-1" style="text-align: center;">
             <p class="u-align-center u-text u-text-default u-text-1" style="display: inline-block; margin-bottom: 8px; margin-top: 8px;"> Free delivery for orders worth 2,000 PHP and above within Metro Manila!</p>
           </div>
-        </div>        
+
+          
           
           
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />           
+<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />  
+</div>
           
         
         <div class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-base u-section-row u-sticky u-sticky-a971 u-white u-section-row-2" id="sec-9eb6">
           <div class="u-clearfix u-sheet u-sheet-2">
-
-          <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-2 quickNavigationBar" data-position="">
-              <!-- <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 400;">
-                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-file-icon u-nav-link u-text-grey-75 u-file-icon-2" href="#">
-                  <img src="/images/Icons/Menu_VerticalDots_32x32.png" alt="">
-                </a>
-              </div> -->
-              <div class="u-custom-menu u-nav-container ">
-              
-                <ul class=" u-nav u-spacing-20 u-unstyled u-nav-3">
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/register" style="padding: 10px;">Register</a></li>
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/login" style="padding: 10px;">Login</a></li>                    
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact" style="padding: 10px;">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-
             <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1 shopMenu ">
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;" class="shopButton"><img src="/images/Icons/Cart_Orange_64x64.png" alt="" height="64" width="64"></a>
               <!-- <div class="menu-collapse" style="font-size: 1rem;">
