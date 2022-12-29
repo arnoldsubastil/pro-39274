@@ -1,7 +1,7 @@
 @extends('layouts.index')
 
 @section('title')
-Login
+Sign In
 @endsection
 
 <!-- Push a style dynamically from a view -->
