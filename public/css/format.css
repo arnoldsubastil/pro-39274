@@ -103,6 +103,11 @@ footer .texts{
     display: none;
 }
 
+/*forms*/
+form > div, form > h2.u-form-text.u-text, form > p.u-form-text.u-text{
+    margin: 24px 0;
+}
+
 /* footer .u-gutter-0 .u-layout{
     background-color: transparent !important;
 } */
