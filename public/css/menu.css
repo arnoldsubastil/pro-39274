@@ -33,14 +33,45 @@
   
   .show {display: block;}
 
-  span.notificationCart {
-    background: #810b0b;
-    color: #FFF;
-    padding: 8px 13px;
+
+
+  .shoppingCartButton
+  {
+    display: block;
+    text-align: center;
+  }
+
+  .shoppingCartButton .shoppingCartIcon, .shoppingCartButton .shoppingCartLabel
+  {
+    display: block;
+    margin: auto;
+  }
+
+  .shoppingCartButton .shoppingCartLabel
+  {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .shoppingCartButton:hover, .shoppingCartButton:hover .shoppingCartLabel, .shoppingCartButton .shoppingCartLabel:hover
+  {
+    text-decoration: none;
+  }
+
+  .shoppingCartButton .notificationCart 
+  {
+    background: #B83331;
+    border: 1px solid #FFFFFF;
     border-radius: 100%;
-    /* width: 70px; */
-    /* height: 20px; */
+    color: #FFFFFF;
+    font-size: 1rem;
+    padding: 8px 12px;
     position: absolute;
-    top: 50px;
-    left: 110px;
+    top: -8px;
+    left: 48px;
+}
+
+
+.quickNavigationBar p{
+  font-size: 1rem;
 }

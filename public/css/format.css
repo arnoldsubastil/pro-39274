@@ -107,12 +107,6 @@ p{
     display: none;
 }
 
-/*notification*/
-.notificationCart
-{
-    display: none;
-}
-
 /*stripe*/
 .stripeDiv{
     background-image: url(../images/Patterns/Stripe_OrangeYellow_154x16.png);
