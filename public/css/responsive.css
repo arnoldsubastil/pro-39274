@@ -7,6 +7,11 @@
 }
 
 @media (min-width: 1009px) {
+
+  .u-header .u-menu-1 {
+    margin: 0 0 0 auto  ;
+}
+
     .shopButton
     {
         display: none;

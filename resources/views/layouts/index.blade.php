@@ -55,14 +55,14 @@
             </nav>
 
             <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1 shopMenu ">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;" class="shopButton"><img src="/images/Icons/Cart_Orange_64x64.png" alt="" height="64" width="64"></a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;" class="shopButton"><img src="/images/Icons/Cart_Orange_64x64.png" alt="add to cart" height="64" width="64"></a>
               <!-- <div class="menu-collapse" style="font-size: 1rem;">
                 <a class="u-button-style u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-file-icon u-nav-link u-text-grey-75 u-file-icon-1" href="#">
                   <img src="/images/Icons/Menu_Ellipsis_x32x32.png" alt="">
                 </a>
               </div> -->
               <div class="u-custom-menu u-nav-container">
-                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Cart/" style="padding: 12px 20px;">Shop now!</a>
+                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Cart/" style="padding: 12px 20px;">Add to cart</a>
                 <span class="notificationCart"></span>
 </li</ul>
               </div>

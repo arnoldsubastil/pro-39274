@@ -151,12 +151,3 @@ footer.u-custom-color-3{
   }
 
 
-
-/*customize header order button*/
-
-
-@media (min-width: 1009px) {
-    .u-header .u-menu-1 {
-        margin: 0 0 0 auto  ;
-    }
-}
