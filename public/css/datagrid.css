@@ -1,0 +1,125 @@
+/* Classes for Icon Sizes in Browse/List Pages (study based on windows file explorer):
+.noIconView (none)
+.smallIconView (32x32)
+.mediumIconView (48x48)
+.largeIconView (96x96)
+.extraLargeIconView (128x128)
+- all in 16 font sizes (standard font size) */
+
+.table{
+    margin-bottom: 32px;
+}
+
+.table a{
+    color: #383C3B;
+}
+
+.table .table-cell span.currency{
+    font-size: 1.125rem;
+}
+
+.table .table-cell span.amount
+{
+    font-size: 2rem;
+}
+
+.table .table-cell a.foreignName
+{
+    font-size: 1rem;
+}
+
+
+
+
+
+
+.listView  
+{   
+  border-collapse: collapse;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.listView  .table-head 
+{
+  display: none;
+  border: 1px solid #DDDDDD;
+  padding: 8px;
+}
+
+.listView  .table-cell {
+    
+    display: inline-block;
+    padding: 16px;    
+    vertical-align: middle;
+    width: 264px;
+}
+
+.listView  .table-cell a
+{   
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.listView  .table-cell button, .listView  .table-cell img
+{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.listView  .table-row 
+{
+  border-bottom: 0;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.listView  .table-row:hover
+{
+  background-color: #DDDDDD;
+}
+
+.listView  .table-row:first-child 
+{    
+  display: none;
+}
+
+.listView  .table-row:last-child 
+{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.listView a.listItemDetailLabel{
+    display: none;
+    /* display: block; */
+}
+
+.listView  .table-cell a.listItemDetailValue
+{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 100%;    
+}
+  
+.listView  .table-cell.selectCheckbox
+{
+    width: auto;
+}
+
+
+@media(max-width:1024px)
+{
+  .listView .table-cell 
+  {
+    width: 100%;
+  }
+
+}
+
