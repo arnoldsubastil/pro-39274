@@ -373,6 +373,19 @@ END- html */
     display: none;
   }  
 
+  .table-cell .listItemDetailValue.code{
+    margin-bottom: 16px;
+  }
+  
+  .table-cell .listItemDetailValue.voucherName{
+    margin-bottom: 16px;
+  }
+
+  .table-cell .listItemDetailValue.discount{
+    margin-bottom: 16px;
+  }
+    
+
   .listView .table-cell 
   {
     width: 100%;
