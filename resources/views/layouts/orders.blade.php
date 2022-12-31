@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/fontscheme.css" media="screen">
     <link rel="stylesheet" href="/css/format.css" media="screen">
     <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/responsive.css" media="screen">
 
     <!--Dynamic StyleSheets added from a view would be pasted here-->
     @yield('styles')    

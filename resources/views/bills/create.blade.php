@@ -75,7 +75,7 @@ Bill Order
   
                       <div class="u-form-group u-form-message u-form-group-5">
                         <!-- <label for="message-2382" class="u-label u-label-5">Voucher </label> -->
-                        <span id="myBtn" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select Voucher</span>
+                        <span id="myBtn" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
                       </div>                      
 
                       <div class="u-align-right u-form-group u-form-submit">
@@ -87,6 +87,7 @@ Bill Order
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                   </div>
+                  <br/>
                   
                   <!-- <span id="myBtn">View Voucher</span> -->
 
@@ -107,7 +108,6 @@ Bill Order
 
 
             <!-- BEGIN- related order list --> 
-            <br/>  
             <h3>Order Details</h3>         
             <div class="table orderDetailsTable">            
                   <div class="table-row">
@@ -123,10 +123,10 @@ Bill Order
                 
                 <div class="table-row">                      
                       <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
-                      <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
-                      <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
+                      <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
                       <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
-                      <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Notes</span><span class="listItemDetailValue"><textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" rows="5" placeholder="Notes about this product">{{ $product->product_note }}</textarea></span></div>
                    </div>
               
@@ -135,16 +135,20 @@ Bill Order
             </div>
             <!-- END- related order list -->
             
-        <div class="u-form-group u-form-message u-form-group-5 right">
-          <label for="message-2382" class="u-label u-label-5">Total Amount Due :  <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span></label>
+        <div class="u-form-group u-form-message right">
+          <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
+          <div class="totalAmount">
+              <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
+            
           <input type="hidden" id="totalcomputedamount_submt"  value="" />
-        </div>
-        <hr class="solid"/>
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout right">            
-            <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
-            <a  id="myBtnsubmit" class="u-border-2 u-border-hover-palette-1-base u-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
-        </div>
+        </div>               
+      </div>
+      <hr class="solid"/>
+      <br/>
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout right">            
+          <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
+          <a  id="myBtnsubmit" class="u-border-2 u-border-hover-palette-1-base u-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
       </div>
         
                   

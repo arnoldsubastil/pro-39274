@@ -59,6 +59,18 @@
       background-image: none;
     }
 
+    .totalAmount{
+      width: 100%;
+    }
+
+    .u-section-2 .u-form-1{
+      width: 100% !important;
+    }
+
+    .u-layout.right{
+      text-align: center !important;
+    }
+
     /* section.heroImage{
       background-color: #F4DFB0; 
       background-image: url('../images/Animations/Animation_1800X700.gif'); 
