@@ -55,8 +55,10 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
-                        <label><input type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
-                        <label><input type="radio" name="mode_of_payment" value="GCash"> GCash</label> <br>
+
+                        <label><input type="radio" name="mode_of_payment" checked="checked" value="BPI">BPI</label> <br>
+                        <label><input type="radio" name="mode_of_payment" value="GCash">GCash</label> <br>
+
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
                       </div>
@@ -105,6 +107,8 @@ Bill Order
                       </div>
 
                     </div>
+                  <!-- <a  id="myBtnsubmit" class="u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a> -->
+
 
 
             <!-- BEGIN- related order list --> 
@@ -123,7 +127,7 @@ Bill Order
                 
                 <div class="table-row">                      
                       <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
-                      <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
+                      <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductImages/'.$product->url}}/128" alt="" ></span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
                       <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
@@ -145,6 +149,15 @@ Bill Order
       </div>
       <hr class="solid"/>
       <br/>
+                      @if ($errors->any())
+                          <div class="alert alert-danger">
+                              <ul>
+                                  @foreach ($errors->all() as $error)
+                                      <li>{{ $error }}</li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                      @endif
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right">            
           <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
@@ -247,6 +260,7 @@ var btn2 = document.getElementById("myBtnsubmit");
 var span2 = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 btn2.onclick = function() {
+  console.log('test');
   modal2.style.display = "block";
 }
 // When the user clicks on <span> (x), close the modal

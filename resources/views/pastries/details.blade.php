@@ -22,7 +22,7 @@ Product Details
               <div class="u-size-30 u-size-60-md">
                 <div class="u-layout-col">
                   <div class="u-container-style u-image u-layout-cell u-left-cell u-size-45 u-image-1" data-image-width="1696" data-image-height="1129">
-                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/resizer/{{$product->url}}/320'); background-size: cover;"></div>
+                    <div class="u-container-layout u-container-layout-1" style="background-image: url('/resizer/images/ProductImages/{{$product->url}}/320'); background-size: cover;"></div>
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
@@ -32,7 +32,13 @@ Product Details
                       <h4>{{  $product->productSize }}</h4>
                         <p class="u-text u-text-3">
                           <span style="font-size: 1.75rem;">PHP</span>
-                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>                          
+                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>
+                          @if($product->stock == null || $product->stock <= 0)
+                          <span style="color:#ab0000;font-size: 18px;">Product not available this time...</span>
+                          @else
+                          <button class="addtocart" prod-id="{{ $product->productIdlong }}">Add to cart</button>
+                          @endif
+
                       </p>
                     </div>
                   </div>
@@ -45,7 +51,7 @@ Product Details
                       <div class="u-container-style u-group u-image u-image-tiles u-image-2" data-image-width="100" data-image-height="60">
                         <div class="u-container-layout u-container-layout-4"></div>
                       </div>
-                      <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/{{$product->thumbnailUrl}}'); background-size: cover;"></div>
+                      <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/resizer/images/ProductThumbnails/{{$product->thumbnailUrl}}/437'); background-size: cover;"></div>
                       <br/>
                       <br/>
                       <p class="u-text u-text-8"> {{ $product->productDescription }} </p>
@@ -120,18 +126,17 @@ Product Details
           @foreach($alsobuy as $uniqueProductId)
             
             <!--- get all pastries --->
-            @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
           
             <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-              <div class="u-container-layout u-similar-container u-container-layout-1 center">
-                <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="/resizer/images/ProductThumbnails/{{$uniqueProductId->thumbnailUrl}}/309">
+
                 <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
                 </h4>
                 <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
               </div>
             </div>
-
-            @endif            
+       
           
           @endforeach
 
@@ -141,8 +146,10 @@ Product Details
               @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-                <div class="u-container-layout u-similar-container u-container-layout-1 center">
-                  <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
+
+                <div class="u-container-layout u-similar-container u-container-layout-1">
+                  <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="/resizer/images/ProductThumbnails/{{$uniqueProductId->thumbnailUrl}}/309">
+
                   <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
                   </h4>
                   <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>

@@ -28,11 +28,29 @@ class PastriesController extends Controller
     public function details($productId){
 
         $uniqueProductId = DB::table('products')
-            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.productType', 'products.productTypeId', 'products.productStatus', 'products.productStatusId', 'products.productBrandId', 'products.productBrandName', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'))
             ->where('productIdlong', $productId)
+            ->leftJoin('cart', 'cart.product_id', '=', 'products.productIdlong')
+            ->leftJoin('inventory', 'inventory.product_id', '=', 'products.productIdlong')
+            ->groupBy('products.product_id')
+            ->groupBy('products.categories')
+            ->groupBy('products.foreignName')
+            ->groupBy('products.name')
+            ->groupBy('products.productDescription')
+            ->groupBy('products.productIdlong')
+            ->groupBy('products.productOptions')
+            ->groupBy('products.productSize')
+            ->groupBy('products.productType')
+            ->groupBy('products.productTypeId')
+            ->groupBy('products.productStatus')
+            ->groupBy('products.productStatusId')
+            ->groupBy('products.productBrandId')
+            ->groupBy('products.productBrandName')
+            ->groupBy('products.sellingPrice')
+            ->groupBy('products.thumbnailUrl')
+            ->groupBy('products.url')
             ->get();
         
-
             $allcartids = DB::table('cart')
             ->select(DB::raw('GROUP_CONCAT(cart_id) as carts'))
             ->where('product_id', $productId)

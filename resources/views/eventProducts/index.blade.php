@@ -19,7 +19,6 @@ Promos and Events
 @foreach($uniqueProductIds as $uniqueProductId)
   @if ($lastid != $uniqueProductId->product_id)
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h6>Christmas Gift Sets</h6>
         <div class="u-clearfix u-expanded-width u-gutter-34 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-col">
@@ -54,7 +53,7 @@ Promos and Events
                       </ul>
                       <p class="u-text u-text-3">
                           <span style="font-size: 1.25rem;">PHP </span>
-                          <span style="font-size: 1.75rem;">625.00</span>
+                          <span style="font-size: 1.75rem;">{{ $uniqueProductId->sellingPrice }}</span>
                       </p>
 
                       <br/><br/>

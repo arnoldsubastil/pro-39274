@@ -68,6 +68,7 @@ class CartController extends Controller
     }
 
     public function addToCart(Request $request) {
+        
         $userId = $this->getID($request->myid);
         return Cart::create([
             'user_id' => $userId,
@@ -186,6 +187,8 @@ class CartController extends Controller
                 'products.name',
                 'products.productIdlong',
                 'cart.product_note',
+                'cartorder.cartorderId',
+                'cartorder.review',
                 DB::raw('COUNT(1) as qty'))
             ->join('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
@@ -209,12 +212,23 @@ class CartController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
+            ->groupBy('cartorder.cartorderId')
+            ->groupBy('cartorder.review')
             ->get();
 
             return $checkouted;
     }
 
     public function checkoutorder(Request $request) {
+
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'contact' => 'required|min:10|max:16',
+            'maddress' => 'required',
+            'daddress' => 'required',
+            'mode_of_payment' => 'required'
+        ]);
+
         $userId = $this->getID(Auth::user());
         $productslist = explode(',', $request->productlist);
         $carttocheckout = DB::table('cart')
@@ -224,7 +238,7 @@ class CartController extends Controller
             ->whereIn('product_id', $productslist)
             ->get();
 
-            if(isset($request->image)){
+            if (isset($request->image)){
                 if($request->image->extension() == 'png' || $request->image->extension() == 'jpg' || $request->image->extension() == 'jpeg'){
                     $imageName = time().'.'.$request->image->extension();
                     $request->image->move(public_path('images/voucherproof'), $imageName);
@@ -255,6 +269,7 @@ class CartController extends Controller
                 CartOrder::create([
                     'order_id' => $orderId->order_id,
                     'cart_id' => $tocheckout->cart_id,
+                    'review' => '',
                     'productnote' => $productnote[$productId]
                 ]);
             }
@@ -268,13 +283,10 @@ class CartController extends Controller
     }
 
     public function postreview(Request $request) {
-        $userId = $this->getID(Auth::user());
-            Reviews::create([
-                'customer_id' => $userId,
-                'product_id' => $request->productIdlong,
-                'review' => $request->myreview,
-                'approval' => 0
-            ]);
+        CartOrder::where('cartorderId', $request->productIdlong)
+        ->update([
+            'review' => $request->myreview
+        ]);
                     
         return view('orders.reviewupdated');
     }
@@ -293,7 +305,9 @@ class CartController extends Controller
     private function getID($id) {
         if (is_string($id)) {
             $userId = $id;
-        } else if ($id->id == null) {
+        } elseif ($id == null) {
+            $userId = hash('ripemd160', shell_exec('getmac'));
+        }  elseif ($id->id == null) {
             $userId = hash('ripemd160', shell_exec('getmac'));
         } else {
             $userId = $id->id;

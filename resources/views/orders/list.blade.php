@@ -168,6 +168,7 @@ jQuery(document).ready(function ($) {
                         note = value.product_note;
                     }
                 $alltext = $alltext + `
+<<<<<<< HEAD
 
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
@@ -194,6 +195,29 @@ jQuery(document).ready(function ($) {
                 </div>
 
                 `;
+=======
+                <div>
+                    Product Name: `+ value.name +`
+                </div>
+                <div>
+                    Product QTY: `+ value.qty +`
+                </div>
+                <div>
+                    Product Note: `+ note +`
+                </div>
+                `;
+                if(value.review == '') {
+                    $alltext = $alltext + `
+                <div>
+                    <form method="get" action="/posted-review">
+                        <meta name="csrf-token" content="`+_token+`">
+                        <input type="hidden" name="productIdlong" value="`+value.cartorderId+`" />
+                        <textarea name='myreview'></textarea>
+                        <input type="submit" />
+                    </form>
+                </div>`;
+                }
+>>>>>>> 70cf331eaa62c63505fc267ffa875d689c068014
                 });
                 
                 $('.'+orderId+'_item').html($alltext);
