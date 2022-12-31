@@ -135,6 +135,10 @@ p{
     text-align: right !important;
 }
 
+.center{
+    text-align: center;
+}
+
 /*hide*/
 .remove{
     display: none;

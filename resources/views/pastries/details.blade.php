@@ -32,8 +32,7 @@ Product Details
                       <h4>{{  $product->productSize }}</h4>
                         <p class="u-text u-text-3">
                           <span style="font-size: 1.75rem;">PHP</span>
-                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>
-                          <button class="addtocart" prod-id="{{ $product->productIdlong }}">Add to cart</button>
+                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>                          
                       </p>
                     </div>
                   </div>
@@ -73,8 +72,7 @@ Product Details
                       
                         @endfor
                       </ul>
-                      <br/>
-                      <br/>
+                      
 
                         @endif
                         
@@ -82,9 +80,9 @@ Product Details
                     @endfor
                     
                       
-                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
+                      <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
                        <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
-                      <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
+                      <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>
                 </div>
@@ -95,8 +93,18 @@ Product Details
       </div>
     </section>
  @endforeach 
-
- 
+ <section class="u-clearfix u-section-6" id="sec-9474">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout right" >
+          <a href="javascript:history.back()" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
+          <a href="/Cart" class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
+          <!-- <button id="placeorder"  class="u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</button>             -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <br/><br/>
  <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
         <h6 class="u-text u-text-default u-text-1">You might also like:</h6>
@@ -115,7 +123,7 @@ Product Details
             @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
           
             <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1 center">
                 <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
                 <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
                 </h4>
@@ -133,7 +141,7 @@ Product Details
               @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
-                <div class="u-container-layout u-similar-container u-container-layout-1">
+                <div class="u-container-layout u-similar-container u-container-layout-1 center">
                   <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId->thumbnailUrl}}">
                   <h4 class="u-align-center u-text u-text-1"> {{$uniqueProductId->name}}<br> {{$uniqueProductId->foreignName}}<br>
                   </h4>
