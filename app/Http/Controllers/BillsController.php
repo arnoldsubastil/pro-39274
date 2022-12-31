@@ -57,7 +57,7 @@ class BillsController extends Controller
         $listofvoucherarr = explode(',', $listofvoucher);
         $datetoday = date("Y-m-d");
         $checkvoucher = DB::table('voucher')
-            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed')
+            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
             ->where('valid_date_start', '<=', $datetoday)
             ->where('valid_date_end', '>=', $datetoday)
             ->where('required_items', '<=', intval($countitem))
@@ -65,7 +65,7 @@ class BillsController extends Controller
             ->whereNotIn('voucher_id', $listofvoucherarr)
             ->get();
         $checkvoucher2 = DB::table('voucher')
-            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed')
+            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
             ->where('valid_date_start', '<=', $datetoday)
             ->where('valid_date_end', '>=', $datetoday)
             ->where('required_items', '<=', intval($countitem))
@@ -82,6 +82,8 @@ class BillsController extends Controller
                 $arr1[$ctr]['discount_type'] = $voucheradd->discount_type;
                 $arr1[$ctr]['discount'] = $voucheradd->discount;
                 $arr1[$ctr]['proof_needed'] = $voucheradd->proof_needed;
+                $arr1[$ctr]['valid_date_start'] = $voucheradd->valid_date_start;
+                $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
             foreach ($checkvoucher2 as $voucheradd){
@@ -92,6 +94,8 @@ class BillsController extends Controller
                 $arr1[$ctr]['discount_type'] = $voucheradd->discount_type;
                 $arr1[$ctr]['discount'] = $voucheradd->discount;
                 $arr1[$ctr]['proof_needed'] = $voucheradd->proof_needed;
+                $arr1[$ctr]['valid_date_start'] = $voucheradd->valid_date_start;
+                $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
         

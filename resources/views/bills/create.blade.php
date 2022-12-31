@@ -107,31 +107,38 @@ Bill Order
                   <div class="table vouchersListTable">
                     <div class="table-row">
                         <div class="table-head selectCheckbox"></div>
-                        <div class="table-head">Image</div>
-                        <div class="table-head">Voucher</div>                      
-                        <div class="table-head">Quantity</div>
+                        <div class="table-head">Voucher Name</div>             
+                        <div class="table-head">Information</div>                      
                         <div class="table-head">Discounted Amount</div>
                     </div>
                       @foreach($voucher as $onevoucher)
                         <div class="table-row">
-                              <div class="table-cell selectCheckbox">
+                              <div class="table-cell selectCheckbox"></div>
+                              <div class="table-cell">
                                 <div class="round">
                                   <input type="checkbox" id="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" name="voucher" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}" />
                                   <label for="{{ $onevoucher['voucher_id'] }}"></label>
                                 </div>
                               </div>
-                              <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span href="" class="listItemDetailValue">123</span></div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/sample.png'}}/240" alt="" ></a></div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Voucher</span><span class="listItemDetailValue voucherName">Discount Voucher</span><span class="listItemDetailLabel">Code</span><span href="" class="listItemDetailValue code">503339EF-D410-40BF-8EBF-9C4BF1543296</span><span class="listItemDetailLabel">Description</span><span href="" class="listItemDetailValue">Valid until Jan 1 to 30, 2023</span></div>
+                              
                               <div class="table-cell">
-                                <span class="listItemDetailLabel">Quantity</span>
+                                <span class="listItemDetailLabel">Voucher</span>
+                                <span class="listItemDetailLabel">Code</span>
+                                <span href="" class="listItemDetailValue code">{{ $onevoucher['voucher_code'] }}</span>
+                                <span class="listItemDetailLabel">Description</span>
+                                <span href="" class="listItemDetailValue">Valid until {{ $onevoucher['valid_date_start'] }} to {{ $onevoucher['valid_date_end'] }}</span>
+                              </div>
+                              
+                              <div class="table-cell">
                                 <span class="listItemDetailValue snippetButton">
-                                  <button id="minus" class="minusButton">−</button>
-                                  <input id="input" type="number" name=""   value="2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
-                                  <button id="plus" class="plusButton">+</button>
+                                  @if($onevoucher['discount_type'] == 'percent')
+                                   {{ $onevoucher['discount'] }} %
+                                   @else
+                                    {{ $onevoucher['discount'] }} Php
+                                  @endif
                                 </span>
                               </div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Discounted Amount</span><span href="" class="listItemDetailValue discount"><span class="currency">PHP</span><span class="amount"> 100.00</span> </span></div>
+
                             </div>
 
                       @endforeach
@@ -263,41 +270,34 @@ Bill Order
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-jQuery(document).ready(function ($) {  
+  
 
   // BEGIN - close vouchers list modal without refreshing the page
   var vouchersListModal = document.getElementById("VouchersListModal");
   var vouchersListCloseButton = document.getElementById("VouchersModalCloseButton");
   var vouchersListCancelButton = document.getElementById("VouchersModalCancelButton");
-  vouchersListCloseButton.onclick = function(event) {
-    vouchersListModal.style.display = "none";
-  }
-  vouchersListCancelButton.onclick = function(event) {
-    vouchersListModal.style.display = "none";
-  }
-  // END - close vouchers modal without refreshing the page
+  
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  vouchersListModal.style.display = "block";
+}
+
+vouchersListCloseButton.onclick = function(event) {
+  vouchersListModal.style.display = "none";
+}
+vouchersListCancelButton.onclick = function(event) {
+  vouchersListModal.style.display = "none";
+}
+// END - close vouchers modal without refreshing the page
 
 
-
-  // Get the modal
-  var modal = document.getElementById("VouchersListModal");
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == vouchersListModal) {
+      vouchersListModal.style.display = "none";
     }
   }
 
@@ -308,7 +308,7 @@ var modal2 = document.getElementById("myModal2");
 // Get the button that opens the modal
 var btn2 = document.getElementById("myBtnsubmit");
 // Get the <span> element that closes the modal
-var span2 = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close2")[0];
 // When the user clicks on the button, open the modal
 btn2.onclick = function() {
   modal2.style.display = "block";
@@ -320,14 +320,18 @@ span2.onclick = function() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modal2) {
     modal2.style.display = "none";
+  }
+  if (event.target == vouchersListModal) {
+    vouchersListModal.style.display = "none";
   }
 }
 
 
-
+</script>
+<script>
+jQuery(document).ready(function ($) {  
 var mvar = 0;
 $(".totalprodamount").each(function() {
     console.log($(this).html());
