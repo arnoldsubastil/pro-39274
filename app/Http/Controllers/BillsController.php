@@ -100,8 +100,9 @@ class BillsController extends Controller
         ->where('id', $userId)
         ->get();
             if (count($users) == 0) {
-                $users = array(array('name' => '', 'firstName' => '', 'lastName' => '', 'deliveryAddress' => '', 'email' => '', 'contact_no' => ''));
-                $users = (object)$users;
+                $users = array();
+                $newusers = array('name' => '', 'firstName' => '', 'lastName' => '', 'deliveryAddress' => '', 'email' => '', 'contact_no' => '');
+                $users[0] = (object)$newusers;
             }
         return view('bills.create', [
             'carttocheckout'=>$carttocheckout,
@@ -114,6 +115,8 @@ class BillsController extends Controller
     private function getID($id) {
         if (is_string($id)) {
             $userId = $id;
+        } elseif ($id == null) {
+            $userId = hash('ripemd160', shell_exec('getmac'));
         } elseif ($id->id == null) {
             $userId = hash('ripemd160', shell_exec('getmac'));
         } else {

@@ -82,7 +82,7 @@ Shopping Cart
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <button id="placeorder" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</button>
+                  <button id="placeorder" class="disabledbutton u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</button>
                   <a href="javascript:history.back()" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
                 </div>
               </div>
@@ -125,7 +125,21 @@ jQuery(document).ready(function ($) {
         },
     });  
   });
-  
+  $(".itemchecker:checked").change(function(){
+
+    var orderlist = '';
+    $(".itemchecker:checked").each(function(){
+      orderlist = $(this).val() + ',' + orderlist;
+    });
+    
+    if(orderlist != ''){
+      $('#.placeorder').addClass('disabledbutton');
+    } else {
+      $('#.placeorder').removeClass('disabledbutton');
+    }
+
+  });
+
   $('#placeorder').click(function(){
 
     var orderlist = '';
@@ -133,8 +147,12 @@ jQuery(document).ready(function ($) {
       orderlist = $(this).val() + ',' + orderlist;
     });
 
-    location.href='/Billing/Create/' + orderlist;
-    // console.log('/checkout/' + orderlist);
+    if(orderlist != ''){
+      location.href='/Billing/Create/' + orderlist;
+    } else {
+      console.log('Please select a product on the cart');
+    }
+    
   });
 
 });

@@ -77,7 +77,7 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
-                        <label><input type="radio" name="mode_of_payment" value="BPI">BPI</label> <br>
+                        <label><input type="radio" name="mode_of_payment" checked="checked" value="BPI">BPI</label> <br>
                         <label><input type="radio" name="mode_of_payment" value="GCash">GCash</label> <br>
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
@@ -125,6 +125,15 @@ Bill Order
                       </div>
 
                     </div>
+                      @if ($errors->any())
+                          <div class="alert alert-danger">
+                              <ul>
+                                  @foreach ($errors->all() as $error)
+                                      <li>{{ $error }}</li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                      @endif
                   <a  id="myBtnsubmit" class="u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
                   
                     <!-- The Modal -->

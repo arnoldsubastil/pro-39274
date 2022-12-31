@@ -17,6 +17,7 @@ class CartOrder extends Model
     protected $fillable = [
         'order_id',
         'cart_id',
+        'review',
         'productnote'
     ];
 }

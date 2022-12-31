@@ -97,15 +97,18 @@ jQuery(document).ready(function ($) {
                 <div>
                     Product Note: `+ note +`
                 </div>
+                `;
+                if(value.review == '') {
+                    $alltext = $alltext + `
                 <div>
                     <form method="get" action="/posted-review">
                         <meta name="csrf-token" content="`+_token+`">
-                        <input type="hidden" name="productIdlong" value="`+value.productIdlong+`" />
+                        <input type="hidden" name="productIdlong" value="`+value.cartorderId+`" />
                         <textarea name='myreview'></textarea>
                         <input type="submit" />
                     </form>
-                </div>
-                `;
+                </div>`;
+                }
                 });
                 
                 $('.'+orderId+'_item').html($alltext);
