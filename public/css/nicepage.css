@@ -1027,8 +1027,7 @@ ol {
   top: 0 !important;
 }
 .u-btn {
-  /*display: inline-block;*/
-  display: table;
+  display: inline-block;
   /*TODO maye need another solution for negative marin*/
   cursor: pointer;
   color: inherit;
@@ -30281,7 +30280,7 @@ li.active > a.u-button-style.u-button-style.u-border-active-palette-1-light-3 {
 .u-button-style.u-border-palette-1-base {
   border-color: #D36D28 !important;
   color: #D36D28 !important;
-  background-color: transparent !important;
+  background-color: #FFFFFF !important;
 }
 .u-button-style.u-border-palette-1-base:hover,
 .u-button-style.u-border-palette-1-base:focus {

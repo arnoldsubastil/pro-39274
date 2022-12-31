@@ -18,7 +18,7 @@
     <script class="u-script" type="text/javascript" src="/script/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/menu.js" defer=""></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;
 }</style><link rel="stylesheet" data-font="Aleo:300,300i,400,400i,700,700i" href="https://fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i"></head>
@@ -232,7 +232,7 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-jQuery(document).ready(function ($) {  
+$(document).ready(function () {  
 
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
@@ -245,8 +245,8 @@ jQuery(document).ready(function ($) {
         },
         success:function(response){
           if(response != 0)
-           $('.notificationCart').html(response);
-           else
+           $('.notificationCart').html(response); 
+           else          
            $('.notificationCart').hide();
         },
     });

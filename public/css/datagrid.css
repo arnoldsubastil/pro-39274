@@ -6,26 +6,130 @@
 .extraLargeIconView (128x128)
 - all in 16 font sizes (standard font size) */
 
+
+
 .table{
-    margin-bottom: 32px;
+  border-collapse: collapse;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.table .table-head 
+{  
+  border-right: 1px solid #DDDDDD;
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: 16px 0;
+}
+
+.table .table-head:last-child
+{
+  border-right: 0;
+}
+
+.table .table-cell {
+    
+    display: inline-block;
+    padding: 16px;    
+    vertical-align: middle;
 }
 
 .table a{
-    color: #383C3B;
+  color: #383C3B;
+}
+
+.table .table-cell, .table .table-cell a
+{   
+    font-size: 1.125rem;
+    vertical-align: middle;
 }
 
 .table .table-cell span.currency{
-    font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 .table .table-cell span.amount
 {
-    font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-.table .table-cell a.foreignName
+
+.table .table-cell .foreignName
 {
-    font-size: 1rem;
+  font-size: 1rem;
+}
+
+.table .table-cell button, .table .table-cell img
+{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.table .table-cell img
+{
+    height: 128px;
+    width: 128px;
+}
+
+.table .table-cell textarea
+{    
+    border: 1px solid #DDDDDD;
+    font-size: 1.125rem;
+    resize: none;
+    width: 100%;
+}
+
+.table .table-row 
+{
+  border-bottom: 0;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.table .table-row:hover
+{
+  background-color: #F2F2F2;
+}
+
+.table .table-row:first-child 
+{    
+  display: inline-block;
+  padding: 0;
+}
+
+.table .table-row:first-child:hover 
+{    
+  background-color: transparent;
+}
+
+
+.table .table-row:last-child 
+{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.table .listItemDetailLabel{
+    display: none;
+    /* display: block; */
+}
+
+.table .table-cell .listItemDetailValue
+{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 100%;    
+}
+  
+.table .table-cell.selectCheckbox
+{
+    width: auto;
 }
 
 
@@ -56,7 +160,11 @@
     width: 264px;
 }
 
-.listView  .table-cell a
+.listView a{
+  color: #383C3B;
+}
+
+.listView  .table-cell, .listView  .table-cell a
 {   
     font-size: 1.125rem;
     vertical-align: middle;
@@ -66,6 +174,26 @@
 {
     margin: auto;
     vertical-align: middle;
+}
+
+.listView  .table-cell img
+{
+    height: 240px;
+    width: 240px;
+}
+
+.listView .table-cell span.currency{
+  font-size: 1.125rem;
+}
+
+.listView .table-cell span.amount
+{
+  font-size: 2rem;
+}
+
+.listView .table-cell .foreignName
+{
+  font-size: 1rem;
 }
 
 .listView  .table-row 
@@ -82,7 +210,7 @@
 
 .listView  .table-row:hover
 {
-  background-color: #DDDDDD;
+  background-color: #F2F2F2;
 }
 
 .listView  .table-row:first-child 
@@ -95,12 +223,12 @@
   border-bottom: 1px solid #DDDDDD;
 }
 
-.listView a.listItemDetailLabel{
+.listView .listItemDetailLabel{
     display: none;
     /* display: block; */
 }
 
-.listView  .table-cell a.listItemDetailValue
+.listView  .table-cell .listItemDetailValue
 {
     display: inline-block;
     margin: auto;
@@ -114,6 +242,26 @@
 }
 
 
+/* width for different number of columns */
+
+/* for five columns */
+.orderDetailsTable .table-head{  
+  width: 22%
+}
+
+.orderDetailsTable .table-head.quantity{  
+  width: 10%
+}
+
+.orderDetailsTable .table-cell{  
+  width: 22%
+}
+
+.orderDetailsTable .table-cell.quantity{  
+  width: 10%
+}
+
+/* responsive */
 @media(max-width:1024px)
 {
   .listView .table-cell 

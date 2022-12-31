@@ -36,78 +36,45 @@
 </main>
 
 
-<br />
-<br />
-<br />
-<br />
-<br />
-
-<footer class="u-clearfix u-custom-color-3 u-footer" id="sec-a9d8"><div class="u-clearfix u-sheet u-sheet-1">
+<footer class="u-clearfix u-custom-color-3 u-footer" id="sec-a9d8"><div class="u-clearfix u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout" style="">
             <div class="u-layout-row" style="">
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
+
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30-md">
                 <div class="u-container-layout u-container-layout-1"><!--position-->
                   <div data-position="" class="u-align-left u-expanded-width u-position u-position-1"><!--block-->
-                    <div class="u-block">
+                    <div class="u-block texts">
                       <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h3 class="u-block-header u-text"><!--block_header_content--> Store hours<!--/block_header_content--></h3><!--/block_header--><!--block_content-->
-                        <p class="u-block-content u-text u-text-2"><!--block_content_content-->Production days:&nbsp;<br>Monday-Saturday <br>Closed on Sundays<!--/block_content_content-->
+                        <h2 class="u-block-header u-text" style="font-family: Bebas, sans-serif; color: #D66E28;"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h2><!--/block_header--><!--block_content-->
+                        <p class="u-block-content u-text u-text-2"><!--block_content_content-->Share your soystories on Facebook and Instagram. <br/><!--/block_content_content-->
+                        Don't forget to tag us in your posts!<!--/block_content_content-->
                         </p><!--/block_content-->
                       </div>
                     </div><!--/block-->
                   </div><!--/position--><!--position-->
-                  <div data-position="" class="u-align-left u-expanded-width u-position u-position-2"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                      <h3 class="u-block-header u-text remove"><!--block_header_content--> It's Soystory time!<!--/block_header_content--></h3><!--/block_header--><!--block_content-->  
-                      <div class="u-block-content u-text u-text-10"><!--block_content_content-->Share your soystories on Facebook and Instagram.&nbsp;Don't forget to tag us in your posts!<!--/block_content_content-->
-                        </div><!--/block_content-->
-                        <div class="u-block-content u-text u-text-4"><!--block_content_content--> 
-                          <br>Facebook:&nbsp;<br>Soystory Authentic Taiwanese Pastries<br>
-                          <br>Instagram:&nbsp;<br>soystorypastries<!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
+                  
                 </div>
               </div>
-              <div class="u-align-left u-container-style u-layout-cell u-size-20 u-size-30-md u-layout-cell-2">
-                <div class="u-container-layout u-container-layout-2"><!--position-->
-                  <div data-position="" class="u-position u-position-3"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h3 class="u-block-header u-text"><!--block_header_content--> How to order<!--/block_header_content--></h3><!--/block_header--><!--block_content-->
-                        <div class="u-block-content u-text u-text-6"><!--block_content_content-->
-                          <br>1. Fill up order form <br>2. Wait for text message confirmation<br>3. Wait for your orders<br>
-                          <br>For delivery:<br>Delivery within Metro Manila<br>*c/o buyer<br>GRAB/LALAMOVE<br>
-                          <br>For pick up :&nbsp;<br>TIONGHWA FOOD PRODUCTS<br>Plaza 3 Cartimar Shopping Center Pasay City<br><!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                </div>
-              </div>
-              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-3">
+              
+              <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-30-md">
                 <div class="u-container-layout u-container-layout-3"><!--position-->
-                  <div data-position="" class="u-align-left u-position u-position-4"><!--block-->
+                  
+                  <div data-position="" class="u-align-left u-position"><!--block-->
                     <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h3 class="u-block-header u-text"><!--block_header_content--> Made to order<!--/block_header_content--></h3><!--/block_header--><!--block_content-->
-                        <div class="u-block-content u-text u-text-8"><!--block_content_content-->
-                          <br>Authentic Taiwanese Pastries locally made just for you.&nbsp;Please note that our products are made to order. We will bake your orders tomorrow when payment is confirmed.<br>
-                          <br><!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position--><!--position-->
-                  <div data-position="" class="u-align-left u-position u-position-5"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                      <h3 class="u-block-header u-text"><!--block_header_content--> Contact us<!--/block_header_content--></h3><!--/block_header--><!--block_content-->
-                        <div class="u-block-content u-text u-text-10"><!--block_content_content--> 
-                        &nbsp; <br>Smart:<br>+63 (920) 921 1290<br><br>Globe:<br>+63 (917) 138 0392
-                        </div><!--/block_content-->
+                      <div class="u-block-container u-clearfix"><!--block_header-->                      
+                      <blockquote class="u-text u-text-3 socialIcons"> 
+                        <ul class="listSocialIcons">
+                          <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base "><img src="/images/Icons/Footer_Phone_32x32.png" alt=""></span>
+          </a><div class="phoneNumberLabel"><p>+63 917 138 0392</p><p>+63 920 921 1290</p></div></li>
+                          
+                          <li><a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Instagram_32x32.png" alt=""></span>
+          </a><div><p>Soystory Authentic</p><p>Taiwanese Pastries</p></div></li>
+          <li><a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Facebook_32x32.png" alt=""></span>
+          </a><div><p>soystorypastries</p></div></li>
+                        </ul>
+          
+                      </blockquote>
                       </div>
                     </div><!--/block-->
                   </div><!--/position-->
@@ -116,16 +83,7 @@
             </div>
           </div>
         </div>
-        <div class="u-border-1 u-border-white u-expanded-width u-line u-line-horizontal u-opacity u-opacity-50 u-line-1"></div>
-        <div class="u-social-icons u-spacing-10 u-social-icons-1">
-          <a class="u-social-url" title="Facebook" target="_blank" href="https://www.facebook.com/soystorypastries/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base u-icon-1"><img src="/images/Facebook_128x128.png" alt=""></span>
-          </a>
-          <a class="u-social-url" title="Instagram" target="_blank" href="https://www.instagram.com/soystorypastries/"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-palette-5-base u-icon-2"><img src="/images/Instagram_128x128.png" alt=""></span>
-          </a>
-        </div>
-        <a href="/" class="u-image u-logo u-image-1" data-image-width="104" data-image-height="28" title="Home">
-          <img src="/images/Logo_SoyStory_Gray_104x28.png" class="u-logo-image u-logo-image-1">
-        </a>
+        
       </div></footer>
       <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S08TFE07G"></script>

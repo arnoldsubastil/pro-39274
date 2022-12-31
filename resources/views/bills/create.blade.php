@@ -7,47 +7,25 @@ Bill Order
 <!-- Push a style dynamically from a view -->
 @section('styles')
 <link rel="stylesheet" href="/css/bills/create.css" media="screen">
+<link rel="stylesheet" href="/css/datagrid.css" media="screen">
 @endsection
 
 @section('content')  
 
+<!-- <section class="u-clearfix u-section-3" id="sec-2dfe">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <p class="u-text u-text-default u-text-1"><a href="/Cart">View Shopping cart</a> > Bill Orders</p>
+  </div>
 
+</section> -->
     <section class="u-clearfix u-container-align-center u-section-2" id="sec-2a5c">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-            @foreach($carttocheckout as $product)
-                <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-1">
-                  <h3 class="u-text u-text-default u-text-1">Order Details</h3>
-                  <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-2">
-                    <div class="u-layout">
-                      <div class="u-layout-col">
-                        <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1920" data-image-height="1275" style="background-image: url('/{{ $product->url }}');">
-                          <div class="u-container-layout u-container-layout-2"></div>
-                        </div>
-                        <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
-                          <div class="u-container-layout u-container-layout-3">
-                            <p class="u-text u-text-default u-text-2">{{ $product->name }}</p>
-                            <p class="u-text u-text-default u-text-3"> {{ $product->foreignName }}</p>
-
-                            <p class="u-text u-text-default u-text-4">Quantity:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $product->numberoforder }}</p>
-                            <p class="u-text u-text-default u-text-5"> Total Amount:&nbsp; &nbsp; <span class="totalprodamount">{{ $product->totalamount }}</span><span class="amount">&nbsp;PHP <p style="font-weight: bold">({{ $product->sellingPrice }} each)</p></span>
-                            </p>
-                            <textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" cols="30" rows="3">{{ $product->product_note }}</textarea>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              @endforeach
-              </div>
 
 
-            <form method="POST" action="/Pay" enctype="multipart/form-data" id="payform">
+<!-- BEGIN - billing form -->
+<form method="POST" action="/Pay" enctype="multipart/form-data" id="payform">
             @csrf
             <input type="hidden" name="productlist" value="" id="productlist" />
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
@@ -77,8 +55,8 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
-                        <label><input type="radio" name="mode_of_payment" value="BPI">BPI</label> <br>
-                        <label><input type="radio" name="mode_of_payment" value="GCash">GCash</label> <br>
+                        <label><input type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
+                        <label><input type="radio" name="mode_of_payment" value="GCash"> GCash</label> <br>
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
                       </div>
@@ -92,13 +70,13 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-message u-form-group-5">
                         <label for="message-2382" class="u-label u-label-5">Order notes</label>
-                        <textarea placeholder="Notes about your order, e.g. special notes for delivery" rows="4" cols="50" id="message-2382" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-5"></textarea>
+                        <textarea placeholder="Notes about your order, e.g. special notes for delivery" rows="4" cols="50" id="message-2382" name="message" class="noResize u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-5"></textarea>
                       </div>
   
                       <div class="u-form-group u-form-message u-form-group-5">
-                        <label for="message-2382" class="u-label u-label-5">Total: <span id="totalcomputedamount"></span> PHP</label>
-                        <input type="hidden" id="totalcomputedamount_submt" value="" />
-                      </div>
+                        <!-- <label for="message-2382" class="u-label u-label-5">Voucher </label> -->
+                        <span id="myBtn" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select Voucher</span>
+                      </div>                      
 
                       <div class="u-align-right u-form-group u-form-submit">
                         <a href="PaymentDetails.html" class="form-submit u-btn u-btn-round u-btn-submit u-button-style u-radius-4 u-btn-2">Hidden</a>
@@ -109,7 +87,8 @@ Bill Order
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
                   </div>
-                  <span id="myBtn">View Voucher</span>
+                  
+                  <!-- <span id="myBtn">View Voucher</span> -->
 
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
@@ -125,7 +104,49 @@ Bill Order
                       </div>
 
                     </div>
-                  <a  id="myBtnsubmit" class="u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
+
+
+            <!-- BEGIN- related order list --> 
+            <br/>  
+            <h3>Order Details</h3>         
+            <div class="table orderDetailsTable">            
+                  <div class="table-row">
+                      <div class="table-head" style="display: none">Product ID</div>
+                      <div class="table-head">Image</div>
+                      <div class="table-head">Product</div>
+                      <div class="table-head quantity">Quantity</div>
+                      <div class="table-head">Total Price</div>
+                      <div class="table-head">Notes</div>
+                  </div>
+
+              @foreach($carttocheckout as $product)
+                
+                <div class="table-row">                      
+                      <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
+                      <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Notes</span><span class="listItemDetailValue"><textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" rows="5" placeholder="Notes about this product">{{ $product->product_note }}</textarea></span></div>
+                   </div>
+              
+              @endforeach
+              
+            </div>
+            <!-- END- related order list -->
+            
+        <div class="u-form-group u-form-message u-form-group-5 right">
+          <label for="message-2382" class="u-label u-label-5">Total Amount Due :  <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span></label>
+          <input type="hidden" id="totalcomputedamount_submt"  value="" />
+        </div>
+        <hr class="solid"/>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout right">            
+            <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
+            <a  id="myBtnsubmit" class="u-border-2 u-border-hover-palette-1-base u-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
+        </div>
+      </div>
+        
                   
                     <!-- The Modal -->
                     <div id="myModal2" class="modal">
@@ -139,11 +160,48 @@ Bill Order
 
                     </div>
 
+
                 </div>
               </div>
             </div>
 </form>
+
+<!-- END - billing form -->
+<!-- BEGIN - list of orders -->
+<!-- TO DO - to delete -->
+            <div class="u-layout-row" style="display: none;">
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+            @foreach($carttocheckout as $product)
+                <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-1">
+                  <h3 class="u-text u-text-default u-text-1">Order Details</h3>
+                  <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-2">
+                    <div class="u-layout">
+                      <div class="u-layout-col">
+                        <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1920" data-image-height="1275" style="background-image: url('/{{ $product->url }}');">
+                          <div class="u-container-layout u-container-layout-2"></div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-3">
+                          <div class="u-container-layout u-container-layout-3">
+                            <p class="u-text u-text-default u-text-2">{{ $product->name }}</p>
+                            <p class="u-text u-text-default u-text-3"> {{ $product->foreignName }}</p>
+
+                            <p class="u-text u-text-default u-text-4">Quantity:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $product->numberoforder }}</p>
+                            <p class="u-text u-text-default u-text-5"> Total Amount:&nbsp; &nbsp; <span class="totalprodamount">{{ $product->totalamount }}</span><span class="amount">&nbsp;PHP <p style="font-weight: bold">({{ $product->sellingPrice }} each)</p></span>
+                            </p>
+                            <textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" cols="30" rows="3">{{ $product->product_note }}</textarea>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              </div>
           </div>
+<!-- END - list of orders -->
+
+
         </div>
       </div>
     </section>

@@ -1,3 +1,21 @@
+/* lines */
+.dashed{
+    border-top: 1px dashed #DDDDDD;
+}
+
+.solid{
+    border-top: 1px solid #DDDDDD;
+}
+
+
+/*textarea*/
+textarea{
+    padding: 10px 12px;
+}
+
+.noResize{
+    resize: none;
+}
 
 /*text wrapping*/
 .clip { text-overflow: clip; }
@@ -81,6 +99,19 @@ p{
     font-size: 70%;
 }
 
+.currency{
+    font-size: 70%;
+}
+
+.totalAmount{
+    font-size: 2.0rem;
+    font-weight: 600;
+}
+
+.totalAmountCurrency{
+    font-size: 1.3rem;
+}
+
 
 
 /*image*/
@@ -154,7 +185,7 @@ footer.u-custom-color-3{
   
   .round label {
     background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #DDDDDD;
     border-radius: 50%;
     cursor: pointer;
     height: 28px;
