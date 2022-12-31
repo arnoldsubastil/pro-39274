@@ -8,6 +8,7 @@ Bill Order
 @section('styles')
 <link rel="stylesheet" href="/css/bills/create.css" media="screen">
 <link rel="stylesheet" href="/css/datagrid.css" media="screen">
+<link rel="stylesheet" href="/css/SnippetButton.css" media="screen">
 @endsection
 
 @section('content')  
@@ -91,20 +92,63 @@ Bill Order
                   
                   <!-- <span id="myBtn">View Voucher</span> -->
 
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
 
-                      <!-- Modal content -->
-                      <div class="modal-content">
-                        <span class="close">&times;</span>
-                        
-                        @foreach($voucher as $onevoucher)
-                              <label><input type="radio" name="voucher" vid="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}">{{ $onevoucher['voucher_code'] }}</label> <br>
-                        @endforeach
+              <!-- Modal content -->
+              <div class="modal-content">
+                <button class="close modalCloseButton" data-dismiss="modal">&times;</button>
+                <!-- BEGIN- vouchers list --> 
+                <h3>Vouchers</h3>         
+                <div class="table vouchersListTable">
+                  <div class="table-row">
+                      <div class="table-head selectCheckbox"></div>
+                      <div class="table-head">Image</div>
+                      <div class="table-head">Voucher</div>                      
+                      <div class="table-head">Quantity</div>
+                      <div class="table-head">Discounted Amount</div>
+                  </div>
+                    @foreach($voucher as $onevoucher)
+                      <div class="table-row">
+                            <div class="table-cell selectCheckbox">
+                              <div class="round">
+                                <input type="checkbox" id="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" name="voucher" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}" />
+                                <label for="{{ $onevoucher['voucher_id'] }}"></label>
+                              </div>
+                            </div>
+                            <div class="table-cell" style="display: none"><a class="listItemDetailLabel">Product ID</a><a href="" class="listItemDetailValue">123</a></div>
+                            <div class="table-cell"><a class="listItemDetailLabel">Image</a><a href="" class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/sample.png'}}/240" alt="" ></a></div>
+                            <div class="table-cell"><a class="listItemDetailLabel">Voucher</a><a href="" class="listItemDetailValue voucherName">Discount Voucher</a><a class="listItemDetailLabel">Code</a><a href="" class="listItemDetailValue code">503339EF-D410-40BF-8EBF-9C4BF1543296</a><a class="listItemDetailLabel">Description</a><a href="" class="listItemDetailValue">Valid until Jan 1 to 30, 2023</a></div>
+                            <div class="table-cell">
+                              <a class="listItemDetailLabel">Quantity</a>
+                              <a class="listItemDetailValue snippetButton">
+                                <button id="minus" class="minusButton">−</button>
+                                <input id="input" type="number" name=""   value="2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
+                                <button id="plus" class="plusButton">+</button>
+                              </a>
+                            </div>
+                            <div class="table-cell"><a class="listItemDetailLabel">Discounted Amount</a><a href="" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 100.00</span> </a></div>
+                          </div>
 
-                      </div>
-
+                    @endforeach
+                    
+                    <div class="right">
+                      <br/>
+                      <button class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-dismiss="modal">Cancel</button>
+                      <button class="u-border-2 u-border-hover-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Select</button>
+                      <br/>
                     </div>
+                    
+                </div>
+                <!-- END- voucher list -->
+
+                <!-- @foreach($voucher as $onevoucher)
+                      <label><input type="radio" name="voucher" vid="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}">{{ $onevoucher['voucher_code'] }}</label> <br>
+                @endforeach -->
+
+              </div>
+
+            </div>
 
 
             <!-- BEGIN- related order list --> 

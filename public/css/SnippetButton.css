@@ -1,3 +1,7 @@
+.snippetButton{
+  text-align: center;
+    display: inline-block;
+}
 
 .snippetButton input{
     border-radius: 0;
@@ -23,15 +27,17 @@
 .snippetButton button{
     display: inline-block;
     margin: 0;
-    padding: 8px 12px;    
+    padding: 9px 12px;    
     vertical-align: baseline;
     width: 48px;
 }
 
 .snippetButton .minusButton{
     margin-right: -5px !important;
+    margin-top: -1px !important;
 }
 
 .snippetButton .plusButton{
-    margin-left: -5px !important;
+    margin-left: -6px !important;
+    margin-top: -2px !important;
 }
