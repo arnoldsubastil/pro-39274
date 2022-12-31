@@ -32,12 +32,7 @@ Product Details
                       <h4>{{  $product->productSize }}</h4>
                         <p class="u-text u-text-3">
                           <span style="font-size: 1.75rem;">PHP</span>
-                          <span style="font-size: 1.75rem;">{{ $product->sellingPrice }}</span>
-                          @if($product->stock == null || $product->stock <= 0)
-                          <span style="color:#ab0000;font-size: 18px;">Product not available this time...</span>
-                          @else
-                          <button class="addtocart" prod-id="{{ $product->productIdlong }}">Add to cart</button>
-                          @endif
+                          <span style="font-size: 1.75rem;">{{ number_format($product->sellingPrice, 2, '.') }}</span>
 
                       </p>
                     </div>
@@ -62,10 +57,11 @@ Product Details
                     @for($i=0; $i < count(explode('/' ,$product->productOptions)); $i++)   
                        
                         @if (count(explode('/',$product->productOptions)) === 1)
-                          
+                          @if(count(explode('/' ,$product->productOptions)) > 1)
                         <li>
                         {{ explode('/', $product->productOptions)[0] }}
                         </li>
+                          @endif
                         @else
                         
                         <p class="u-text u-text-default u-text-6"> Available flavors:</p>
@@ -104,7 +100,15 @@ Product Details
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right" >
           <a href="javascript:history.back()" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
-          <a href="/Cart" class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
+         
+          @if($product->stock == null || $product->stock <= 0)
+            <span style="color:#ab0000;font-size: 18px;">Product not available this time...</span>
+          @else
+          <a class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
+          @endif 
+          
+
+
           <!-- <button id="placeorder"  class="u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</button>             -->
         </div>
       </div>
@@ -213,7 +217,8 @@ jQuery(document).ready(function ($) {
         _token: _token
         },
         success:function(response){
-            console.log(response);
+        location.href='/Cart';
+
         },
     });  
   });

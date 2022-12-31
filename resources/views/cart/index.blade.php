@@ -116,6 +116,18 @@ Shopping Cart
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 jQuery(document).ready(function ($) {  
+  var orderlist = '';
+    $(".itemchecker:checked").each(function(){
+      orderlist = $(this).val() + ',' + orderlist;
+    });
+    
+    if(orderlist != ''){
+      $('#placeorder').removeClass('disabledbutton');
+    $('.tocheckout').val(orderlist);
+    } else {
+      $('#placeorder').addClass('disabledbutton');
+    }
+
 
   $(".itemNumber").keyup(function(){
 
@@ -148,9 +160,10 @@ jQuery(document).ready(function ($) {
     });
     
     if(orderlist != ''){
-      $('#.placeorder').addClass('disabledbutton');
+      $('#placeorder').removeClass('disabledbutton');
+    $('.tocheckout').val(orderlist);
     } else {
-      $('#.placeorder').removeClass('disabledbutton');
+      $('#placeorder').addClass('disabledbutton');
     }
 
   });
@@ -163,6 +176,7 @@ jQuery(document).ready(function ($) {
     });
 
     if(orderlist != ''){
+    $('.tocheckout').val(orderlist);
       location.href='/Billing/Create/' + orderlist;
     } else {
       console.log('Please select a product on the cart');

@@ -25,6 +25,7 @@ class BillsController extends Controller
             ->join('products', 'products.productIdlong', '=', 'cart.product_id')
             ->where('cart.user_id', $userId)
             ->where('cart.status', 'added')
+            ->whereIn('cart.product_id', $productslist)
             ->groupBy('cart.product_id')
             ->groupBy('cart.user_id')
             ->groupBy('cart.product_note')
@@ -54,7 +55,6 @@ class BillsController extends Controller
         
         $listofvoucher = $checkallvouchersonorderuser[0]->vouchers;
         $listofvoucherarr = explode(',', $listofvoucher);
-
         $datetoday = date("Y-m-d");
         $checkvoucher = DB::table('voucher')
             ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed')
