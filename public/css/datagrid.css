@@ -155,6 +155,12 @@ END- html */
     vertical-align: middle;
     width: 100%;    
 }
+
+.table .table-cell .listItemDetailValue.button
+{
+    margin: 16px auto;
+}
+  
   
 .table .table-cell.selectCheckbox
 {

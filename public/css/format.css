@@ -1,3 +1,15 @@
+/* disabled */
+input:disabled {
+    cursor: not-allowed;
+    background-color: #F2F2F2;
+}
+
+textarea:disabled {
+    cursor: not-allowed;
+    background-color: #F2F2F2;
+}
+
+
 /* lines */
 .dashed{
     border-top: 1px dashed #DDDDDD;

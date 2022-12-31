@@ -24,8 +24,8 @@ Bill Order
           <div class="u-layout">
 
 
-<!-- BEGIN - billing form -->
-<form method="POST" action="/Pay" enctype="multipart/form-data" id="payform">
+          <!-- BEGIN - billing form -->
+          <form method="POST" action="/Pay" enctype="multipart/form-data" id="payform">
             @csrf
             <input type="hidden" name="productlist" value="" id="productlist" />
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
