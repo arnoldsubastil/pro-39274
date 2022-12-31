@@ -116,7 +116,7 @@ END- html */
 
 .table .table-row 
 {
-  border-bottom: 0;
+  border-bottom: 1px solid #DDDDDD;
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
   border-top: 1px solid #DDDDDD;
@@ -165,11 +165,25 @@ END- html */
 {
     margin: 16px auto;
 }
+
+.table-cell .listItemDetailValue.code{
+  font-size: 1rem;
+}
+
+.table-cell .listItemDetailValue.voucherName{
+  font-size: 1.125rem;
+  font-weight: bold;
+}
   
-  
-.table .table-cell.selectCheckbox
+
+.table .table-head.selectCheckbox
 {
-    width: auto;
+  border: 0;
+}
+
+.table .table-cell.selectCheckbox, .table .table-head.selectCheckbox
+{
+  width: 48px;
 }
 
 
@@ -290,7 +304,7 @@ END- html */
   
 .listView  .table-cell.selectCheckbox
 {
-    width: auto;
+    width: 48px;
 }
 
 
@@ -311,6 +325,14 @@ END- html */
 
 .orderDetailsTable .table-cell.quantity{  
   width: 10%
+}
+
+.vouchersListTable .table-head{  
+  width: 23%
+}
+
+.vouchersListTable .table-cell{  
+  width: 23%
 }
 
 /* responsive */
@@ -350,6 +372,19 @@ END- html */
   .table .table-cell.image .listItemDetailLabel{
     display: none;
   }  
+
+  .table-cell .listItemDetailValue.code{
+    margin-bottom: 16px;
+  }
+  
+  .table-cell .listItemDetailValue.voucherName{
+    margin-bottom: 16px;
+  }
+
+  .table-cell .listItemDetailValue.discount{
+    margin-bottom: 16px;
+  }
+    
 
   .listView .table-cell 
   {

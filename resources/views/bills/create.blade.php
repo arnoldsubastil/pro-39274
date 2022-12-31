@@ -8,6 +8,7 @@ Bill Order
 @section('styles')
 <link rel="stylesheet" href="/css/bills/create.css" media="screen">
 <link rel="stylesheet" href="/css/datagrid.css" media="screen">
+<link rel="stylesheet" href="/css/SnippetButton.css" media="screen">
 @endsection
 
 @section('content')  
@@ -91,20 +92,68 @@ Bill Order
                   
                   <!-- <span id="myBtn">View Voucher</span> -->
 
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
+            <!-- The Modal -->
+            <div id="VouchersListModal" class="modal">
 
-                      <!-- Modal content -->
-                      <div class="modal-content">
-                        <span class="close">&times;</span>
-                        
-                        @foreach($voucher as $onevoucher)
-                              <label><input type="radio" name="voucher" vid="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}">{{ $onevoucher['voucher_code'] }}</label> <br>
-                        @endforeach
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" id="VouchersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Select voucher</h4>
+                </div>
+                <div class="modal-body">
+                  <br/>
+                  <!-- BEGIN- vouchers list --> 
+                  <div class="table vouchersListTable">
+                    <div class="table-row">
+                        <div class="table-head selectCheckbox"></div>
+                        <div class="table-head">Image</div>
+                        <div class="table-head">Voucher</div>                      
+                        <div class="table-head">Quantity</div>
+                        <div class="table-head">Discounted Amount</div>
+                    </div>
+                      @foreach($voucher as $onevoucher)
+                        <div class="table-row">
+                              <div class="table-cell selectCheckbox">
+                                <div class="round">
+                                  <input type="checkbox" id="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" name="voucher" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}" />
+                                  <label for="{{ $onevoucher['voucher_id'] }}"></label>
+                                </div>
+                              </div>
+                              <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span href="" class="listItemDetailValue">123</span></div>
+                              <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/sample.png'}}/240" alt="" ></a></div>
+                              <div class="table-cell"><span class="listItemDetailLabel">Voucher</span><span class="listItemDetailValue voucherName">Discount Voucher</span><span class="listItemDetailLabel">Code</span><span href="" class="listItemDetailValue code">503339EF-D410-40BF-8EBF-9C4BF1543296</span><span class="listItemDetailLabel">Description</span><span href="" class="listItemDetailValue">Valid until Jan 1 to 30, 2023</span></div>
+                              <div class="table-cell">
+                                <span class="listItemDetailLabel">Quantity</span>
+                                <span class="listItemDetailValue snippetButton">
+                                  <button id="minus" class="minusButton">−</button>
+                                  <input id="input" type="number" name=""   value="2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
+                                  <button id="plus" class="plusButton">+</button>
+                                </span>
+                              </div>
+                              <div class="table-cell"><span class="listItemDetailLabel">Discounted Amount</span><span href="" class="listItemDetailValue discount"><span class="currency">PHP</span><span class="amount"> 100.00</span> </span></div>
+                            </div>
 
+                      @endforeach
+
+                      <div class="modal-footer right">
+                        <br/>
+                        <button type="button" id="VouchersModalCancelButton" data-dismiss="modal" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Cancel</button>
+                        <button class="u-border-2 u-border-hover-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Select</button>
+                        <br/>
                       </div>
 
-                    </div>
+                  </div>
+                  <!-- END- voucher list -->
+                </div>
+                
+                <!-- @foreach($voucher as $onevoucher)
+                      <label><input type="radio" name="voucher" vid="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}">{{ $onevoucher['voucher_code'] }}</label> <br>
+                @endforeach -->
+
+              </div>
+
+            </div>
 
 
             <!-- BEGIN- related order list --> 
@@ -212,30 +261,45 @@ Bill Order
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 jQuery(document).ready(function ($) {  
-// Get the modal
-var modal = document.getElementById("myModal");
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
+  // BEGIN - close vouchers list modal without refreshing the page
+  var vouchersListModal = document.getElementById("VouchersListModal");
+  var vouchersListCloseButton = document.getElementById("VouchersModalCloseButton");
+  var vouchersListCancelButton = document.getElementById("VouchersModalCancelButton");
+  vouchersListCloseButton.onclick = function(event) {
+    vouchersListModal.style.display = "none";
+  }
+  vouchersListCancelButton.onclick = function(event) {
+    vouchersListModal.style.display = "none";
+  }
+  // END - close vouchers modal without refreshing the page
+
+
+
+  // Get the modal
+  var modal = document.getElementById("VouchersListModal");
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+  // When the user clicks on the button, open the modal
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
     modal.style.display = "none";
   }
-}
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 
 
 

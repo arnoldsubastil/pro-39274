@@ -368,8 +368,7 @@ span.fr-img-caption.fr-view {
   pointer-events: none!important;
 }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
-html {
-  font-family: sans-serif;
+html {  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }

@@ -238,3 +238,23 @@ footer.u-custom-color-3{
     opacity: 1;
   }
   
+
+  .closeButton {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeButton:hover,
+  .closeButton:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  .modalCloseButton{
+    height: 48px;
+    width: 48px;
+  }
