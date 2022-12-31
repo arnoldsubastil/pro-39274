@@ -47,7 +47,9 @@
                 </a>
               </div> -->
               <div class="u-custom-menu u-nav-container ">
-
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
               <!-- BEGIN - hide quick navigation items if the user successfully signed in, show otherwise -->
                 @if (!Auth::guest()) 
                   <!-- <p> Welcome {{ Auth::user()->name . " " . Auth::user()->last_name }}</p> -->
