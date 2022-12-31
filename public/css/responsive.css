@@ -7,6 +7,11 @@
 }
 
 @media (min-width: 1009px) {
+
+  .u-header .u-menu-1 {
+    margin: 0 0 0 auto  ;
+}
+
     .shopButton
     {
         display: none;
@@ -28,6 +33,15 @@
 
   @media (max-width: 1024px){
 
+    .quickNavigationBar .u-nav-container{
+      display: block;
+    }
+
+    .quickNavigationBar .u-nav-container li, .quickNavigationBar .u-spacing-20 > li + li {
+      margin-bottom: 8px !important;
+      margin-top: 8px !important;
+    }
+
     .moduleNavigation .productsNavItem,
     .moduleNavigation .eventsNavItem, .moduleNavigation .contactNavItem{
       display: block;
@@ -43,6 +57,18 @@
 
     .stampImage{
       background-image: none;
+    }
+
+    .totalAmount{
+      width: 100%;
+    }
+
+    .u-section-2 .u-form-1{
+      width: 100% !important;
+    }
+
+    .u-layout.right{
+      text-align: center !important;
     }
 
     /* section.heroImage{
@@ -88,7 +114,9 @@
 
   }
 
+
   @media(max-width: 768px){
+
     .u-footer .u-gutter-0 .u-layout{
       margin: 0 20px !important;
     }
@@ -102,6 +130,51 @@
       vertical-align: top;
       width:auto;
     }    
+
+
+  }
+
+  @media(min-width: 768px){
+
+    .quickNavigationBar{    
+      display: inline-block !important;
+      margin: 0 !important;
+      text-align: right;
+      width: 100%;
+    }  
+  
+    .quickNavigationBar > div > ul{
+      display: inline-block !important;
+      margin: 0 !important;    
+    }
+  
+    .quickNavigationBar > div > ul > li{
+      font-size: 16px;    
+    }
+
+    .u-footer .u-gutter-0 .u-layout{
+      margin: 0 20px !important;
+    }
+
+
+  }
+
+  @media(max-width: 767px){
+    .quickNavigationBar{    
+      display: inline-block !important;
+      margin: 0 !important;
+      text-align: right;
+      width: 100%;
+    }  
+  
+    .quickNavigationBar > div > ul{
+      display: inline-block !important;
+      margin: 0 !important;    
+    }
+  
+    .quickNavigationBar > div > ul > li{
+      font-size: 16px;    
+    }
 
   }
 
@@ -167,23 +240,13 @@
 
 }
 
-
-  .shopMenu{
-    margin: 0 0 0 auto !important;
-  }
-
-
   .u-header .u-image-1{
     margin: -56px auto 0 0;
   }
 
-  .u-header .u-sheet-2{
-    padding-top: 16px;
-  }
 
   .u-section-1 .u-image-1{
     height: auto !important;
-    /* width: auto !important;; */
 
   }
   

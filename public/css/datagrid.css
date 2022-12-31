@@ -1,0 +1,338 @@
+/* BEGIN- html
+<br/>  
+<h3>Order Details</h3>         
+<div class="table orderDetailsTable">            
+      <div class="table-row">
+          <div class="table-head" style="display: none">Product ID</div>
+          <div class="table-head">Image</div>
+          <div class="table-head">Product</div>
+          <div class="table-head quantity">Quantity</div>
+          <div class="table-head">Total Price</div>
+          <div class="table-head">Notes</div>
+      <
+  @foreach($carttocheckout as $product)
+    
+    <div class="table-row">                      
+          <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
+          <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
+          <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
+          <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
+          <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
+          <div class="table-cell"><span class="listItemDetailLabel">Notes</span><span class="listItemDetailValue"><textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" rows="5" placeholder="Notes about this product">{{ $product->product_note }}</textarea></span></div>
+       </div>
+  
+  @endforeach
+  
+</div>
+END- html */
+
+/* Classes for Icon Sizes in Browse/List Pages (study based on windows file explorer):
+.noIconView (none)
+.smallIconView (32x32)
+.mediumIconView (48x48)
+.largeIconView (96x96)
+.extraLargeIconView (128x128)
+- all in 16 font sizes (standard font size) */
+
+
+
+.table{
+  border-collapse: collapse;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.table .table-head 
+{  
+  border-right: 1px solid #DDDDDD;
+  display: inline-block;
+  font-size: 1.125rem;
+  padding: 16px 0;
+}
+
+.table .table-head:last-child
+{
+  border-right: 0;
+}
+
+.table .table-cell {
+    
+    display: inline-block;
+    padding: 16px;    
+    vertical-align: middle;
+}
+
+.table a{
+  color: #383C3B;
+}
+
+.table .table-cell, .table .table-cell a
+{   
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.table .table-cell span.currency{
+  font-size: 1.125rem;
+}
+
+.table .table-cell span.amount
+{
+  font-size: 1.5rem;
+}
+
+
+.table .table-cell .foreignName
+{
+  font-size: 1rem;
+}
+
+.table .table-cell button, .table .table-cell img
+{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.table .table-cell img
+{
+  border-radius: 4px;
+  height: 128px;
+  width: 128px;
+}
+
+.table .table-cell textarea
+{    
+    border: 1px solid #DDDDDD;
+    font-size: 1.125rem;
+    resize: none;
+    width: 100%;
+}
+
+.table .table-row 
+{
+  border-bottom: 0;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.table .table-row:hover
+{
+  background-color: #F2F2F2;
+}
+
+.table .table-row:first-child 
+{    
+  display: inline-block;
+  padding: 0;
+}
+
+.table .table-row:first-child:hover 
+{    
+  background-color: transparent;
+}
+
+
+.table .table-row:last-child 
+{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.table .listItemDetailLabel{
+    display: none;
+    /* display: block; */
+}
+
+.table .table-cell .listItemDetailValue
+{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 100%;    
+}
+  
+.table .table-cell.selectCheckbox
+{
+    width: auto;
+}
+
+
+
+
+
+
+.listView  
+{   
+  border-collapse: collapse;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.listView  .table-head 
+{
+  display: none;
+  border: 1px solid #DDDDDD;
+  padding: 8px;
+}
+
+.listView  .table-cell {
+    
+    display: inline-block;
+    padding: 16px;    
+    vertical-align: middle;
+    width: 264px;
+}
+
+.listView a{
+  color: #383C3B;
+}
+
+.listView  .table-cell, .listView  .table-cell a
+{   
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.listView  .table-cell button, .listView  .table-cell img
+{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.listView  .table-cell img
+{
+  border-radius: 4px;
+    height: 240px;
+    width: 240px;
+}
+
+.listView .table-cell span.currency{
+  font-size: 1.125rem;
+}
+
+.listView .table-cell span.amount
+{
+  font-size: 2rem;
+}
+
+.listView .table-cell .foreignName
+{
+  font-size: 1rem;
+}
+
+.listView  .table-row 
+{
+  border-bottom: 0;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px 0;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.listView  .table-row:hover
+{
+  background-color: #F2F2F2;
+}
+
+.listView  .table-row:first-child 
+{    
+  display: none;
+}
+
+.listView  .table-row:last-child 
+{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.listView .listItemDetailLabel{
+    display: none;
+    /* display: block; */
+}
+
+.listView  .table-cell .listItemDetailValue
+{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 100%;    
+}
+  
+.listView  .table-cell.selectCheckbox
+{
+    width: auto;
+}
+
+
+/* width for different number of columns */
+
+/* for five columns */
+.orderDetailsTable .table-head{  
+  width: 22%
+}
+
+.orderDetailsTable .table-head.quantity{  
+  width: 10%
+}
+
+.orderDetailsTable .table-cell{  
+  width: 22%
+}
+
+.orderDetailsTable .table-cell.quantity{  
+  width: 10%
+}
+
+/* responsive */
+@media(max-width:1024px)
+{
+  .table .table-head{
+    display: none;
+  }
+
+  .table .table-cell{
+    width: 100% !important;
+  }
+
+  .table .table-row{
+    max-width: 280px;
+  }
+
+  .table .table-row{
+    border: 1px solid #DDDDDD;
+  }
+
+  .table .table-row:first-child{
+    display: none;
+  }
+
+  .table .table-cell .listItemDetailLabel{
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .table .table-cell .listItemDetailLabel.foreignName, .table .table-cell .listItemDetailLabel.price {
+    display: none;
+  }
+
+  .table .table-cell.image .listItemDetailLabel{
+    display: none;
+  }  
+
+  .listView .table-cell 
+  {
+    width: 100%;
+  }
+
+}
+

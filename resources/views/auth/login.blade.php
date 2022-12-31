@@ -63,7 +63,7 @@ Sign In
                     </form>
                   </div>
                   <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="/register" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
-                    <br>Continue as guest? <a href="/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
+                    <br>Continue as guest? <a href="/Pastries" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
                     <br>
                   </p>
                 </div>

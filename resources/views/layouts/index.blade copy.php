@@ -18,7 +18,6 @@
     <script class="u-script" type="text/javascript" src="/script/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/menu.js" defer=""></script>
-    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;
 }</style><link rel="stylesheet" data-font="Aleo:300,300i,400,400i,700,700i" href="https://fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i"></head>
@@ -29,71 +28,29 @@
           <div class="u-clearfix u-sheet u-sheet-1" style="text-align: center;">
             <p class="u-align-center u-text u-text-default u-text-1" style="display: inline-block; margin-bottom: 8px; margin-top: 8px;"> Free delivery for orders worth 2,000 PHP and above within Metro Manila!</p>
           </div>
-        </div>        
+
+          
           
           
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />           
+<input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />  
+</div>
           
         
         <div class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-base u-section-row u-sticky u-sticky-a971 u-white u-section-row-2" id="sec-9eb6">
-          <div class="u-clearfix u-sheet u-sheet-2">          
-
-          <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-2 quickNavigationBar" data-position="">
-              <!-- <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 400;">
-                <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-file-icon u-nav-link u-text-grey-75 u-file-icon-2" href="#">
-                  <img src="/images/Icons/Menu_VerticalDots_32x32.png" alt="">
+          <div class="u-clearfix u-sheet u-sheet-2">
+            <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1 shopMenu ">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;" class="shopButton"><img src="/images/Icons/Cart_Orange_64x64.png" alt="" height="64" width="64"></a>
+              <!-- <div class="menu-collapse" style="font-size: 1rem;">
+                <a class="u-button-style u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-file-icon u-nav-link u-text-grey-75 u-file-icon-1" href="#">
+                  <img src="/images/Icons/Menu_Ellipsis_x32x32.png" alt="">
                 </a>
               </div> -->
-              <div class="u-custom-menu u-nav-container ">
-
-              <!-- BEGIN - hide quick navigation items if the user successfully signed in, show otherwise -->
-                @if (!Auth::guest()) 
-                  <!-- <p> Welcome {{ Auth::user()->name . " " . Auth::user()->last_name }}</p> -->
-                  <p> Welcome {{ Auth::user()->firstName }}
-                     |  
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      {{ __('Log out') }}
-                    </a>
-                  </p>
-                @else
-                <ul class=" u-nav u-spacing-20 u-unstyled u-nav-3">
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/register" style="padding: 10px;">Register</a></li>
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/login" style="padding: 10px;">Login</a></li>                    
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact" style="padding: 10px;">Contact</a></li>
-                </ul>
-                @endif              
-              
-              <!-- END - hide quick navigation items if the user successfully signed in, show otherwise -->
+              <div class="u-custom-menu u-nav-container">
+                <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Cart/" style="padding: 12px 20px;">Shop now!</a>
+                <span class="notificationCart"></span>
+</li</ul>
               </div>
-            </nav>
-
-
-            <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1 shopMenu ">
-              <!-- linked to google form -->
-              <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" style="padding: 12px 20px;" class="shopButton">
-                <img src="/images/Icons/Cart_Orange_64x64.png" alt="add to cart" height="64" width="64" />
-              </a> -->
-              
-              <!-- BEGIN - add to cart button -->
-              <div class="u-custom-menu">
-                <ul class="u-nav u-unstyled u-nav-1">
-                  <li class="u-nav-item">
-                    <!-- button only-->
-                    <!-- <a class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" href="/Cart/" style="padding: 12px 20px;">
-                      Add to cart
-                    </a> -->
-                    <!-- icon and label -->
-                    <a class="u-none u-btn-2 shoppingCartButton" href="/Cart/" styli>
-                      <span class="notificationCart"></span>
-                      <img class="shoppingCartIcon" src="/images/Icons/Cart_Orange_48x48.png" alt="add to cart">
-                      <span class="shoppingCartLabel">Add to cart</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <!-- END - add to cart button -->
-
               <div class="u-custom-menu u-nav-container-collapse">
                 <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
                   <div class="u-inner-container-layout u-sidenav-overflow">
@@ -108,7 +65,6 @@
             <a href="/" class="u-align-left u-image u-logo u-image-1" data-image-width="256" data-image-height="64">
               <img src="/images/Logo_SoyStory_256x64.png" class="u-logo-image u-logo-image-1">
             </a>
-            
             <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-2" data-position="">
               <!-- <div class="menu-collapse" style="font-size: 1.125rem; letter-spacing: 0px; font-weight: 400;">
                 <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-file-icon u-nav-link u-text-grey-75 u-file-icon-2" href="#">
@@ -158,12 +114,15 @@
               </div> -->
             </nav>
           </div>
+          
+          
+          
+          
+          
         </div>
-      </div>
-    </header>
+      </div></header>
 
 <main>
-
 
 @yield('content')
  
@@ -232,7 +191,7 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-$(document).ready(function () {  
+jQuery(document).ready(function ($) {  
 
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
@@ -245,8 +204,8 @@ $(document).ready(function () {
         },
         success:function(response){
           if(response != 0)
-           $('.notificationCart').html(response); 
-           else          
+           $('.notificationCart').html(response);
+           else
            $('.notificationCart').hide();
         },
     });

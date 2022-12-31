@@ -1,3 +1,21 @@
+  .voucherSpan{
+    border-color: #b3b3b3;
+    color: #383c3b;
+    background-color: #ffffff;
+    font-size: 1.125rem;
+  }
+
+.u-form-group{
+  margin: 32px;
+}
+
+.u-section-6 .u-btn-1 {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: normal;
+  background-image: none;
+  margin: auto;
+}
 .u-section-1 .u-sheet-1 {
   min-height: 164px;
 }
@@ -15,7 +33,6 @@
 }
 
 .u-section-2 .u-layout-wrap-1 {
-  margin-top: 32px;
   margin-bottom: 60px;
   position: relative;
 }
@@ -40,9 +57,13 @@
 }
 
 .u-section-2 .u-image-1 {
-  min-height: 200px;
+  
   /*background-image: url("images/SaltedEggPineappleCake.JPG");*/
   background-position: 50% 50%;
+}
+
+.u-section-2 .u-btn-3 {  
+  margin: 0 auto;
 }
 
 .u-section-2 .u-container-layout-2 {
@@ -111,7 +132,6 @@
 .u-section-2 .u-form-1 {
   height: 686px;
   width: 510px;
-  margin: 32px 1px 0;
 }
 
 .u-section-2 .u-label-1 {
@@ -122,9 +142,6 @@
   font-size: 1.125rem;
 }
 
-.u-section-2 .u-form-group-2 {
-  margin-left: 0;
-}
 
 .u-section-2 .u-label-2 {
   font-size: 1.125rem;
@@ -140,10 +157,6 @@
 
 .u-section-2 .u-input-3 {
   font-size: 1.125rem;
-}
-
-.u-section-2 .u-form-group-4 {
-  margin-left: 0;
 }
 
 .u-section-2 .u-label-4 {
@@ -168,15 +181,8 @@
 
 .u-section-2 .u-btn-2 {
   font-size: 1.125rem;
-  width: 100%;
-  padding: 10px 0;
 }
 
-.u-section-2 .u-btn-3 {
-  font-size: 1.125rem;
-  margin: 0 auto;
-  padding: 10px 209px 10px 208px;
-}
 
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
@@ -185,10 +191,6 @@
 
   .u-section-2 .u-layout-cell-1 {
     min-height: 330px;
-  }
-
-  .u-section-2 .u-image-1 {
-    min-height: 165px;
   }
 
   .u-section-2 .u-layout-cell-3 {
@@ -200,7 +202,6 @@
   }
 
   .u-section-2 .u-form-1 {
-    width: 412px;
     margin-right: 0;
   }
 }
@@ -208,10 +209,6 @@
 @media (max-width: 991px) {
   .u-section-2 .u-layout-cell-1 {
     min-height: 100px;
-  }
-
-  .u-section-2 .u-image-1 {
-    min-height: 126px;
   }
 
   .u-section-2 .u-layout-cell-3 {
@@ -222,19 +219,12 @@
     min-height: 100px;
   }
 
-  .u-section-2 .u-form-1 {
-    width: 302px;
-  }
 }
 
 @media (max-width: 767px) {
   .u-section-2 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
-  }
-
-  .u-section-2 .u-image-1 {
-    min-height: 380px;
   }
 
   .u-section-2 .u-container-layout-2 {
@@ -248,12 +238,7 @@
   }
 }
 
-
-@media (max-width: 575px) {
-  .u-section-2 .u-image-1 {
-    min-height: 239px;
-  }
-}u-form-submit u-section-2 u-btn-2 {
+u-form-submit u-section-2 u-btn-2 {
 display: none;
 }
 .form-submit {
