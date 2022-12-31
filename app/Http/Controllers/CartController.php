@@ -222,7 +222,7 @@ class CartController extends Controller
     public function checkoutorder(Request $request) {
 
         $validated = $request->validate([
-            'name' => 'required|unique:posts|max:255',
+            'name' => 'required|max:255',
             'contact' => 'required|min:10|max:16',
             'maddress' => 'required',
             'daddress' => 'required',
