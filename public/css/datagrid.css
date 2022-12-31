@@ -73,6 +73,11 @@ END- html */
     vertical-align: middle;
 }
 
+.table  .table-cell:hover, .table  .table-cell a:hover
+{   
+    text-decoration: none;
+}
+
 .table .table-cell span.currency{
   font-size: 1.125rem;
 }
@@ -205,10 +210,21 @@ END- html */
     vertical-align: middle;
 }
 
+.listView  .table-cell:hover, .listView  .table-cell a:hover
+{   
+    text-decoration: none;
+}
+
 .listView  .table-cell button, .listView  .table-cell img
 {
     margin: auto;
     vertical-align: middle;
+}
+
+.listView  .table-cell .listItemDetailValue.snippetButton button, .listView  .table-cell .listItemDetailValue.snippetButton input
+{
+    margin: 0;
+    vertical-align: baseline;
 }
 
 .listView  .table-cell img

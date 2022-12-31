@@ -1,0 +1,37 @@
+
+.snippetButton input{
+    border-radius: 0;
+    display: inline-block;
+    margin: 0;
+    padding: 10px 12px;
+    vertical-align: baseline;
+    width: 128px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.snippetButton input::-webkit-outer-spin-button,
+.snippetButton input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.snippetButton input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.snippetButton button{
+    display: inline-block;
+    margin: 0;
+    padding: 8px 12px;    
+    vertical-align: baseline;
+    width: 48px;
+}
+
+.snippetButton .minusButton{
+    margin-right: -5px !important;
+}
+
+.snippetButton .plusButton{
+    margin-left: -5px !important;
+}

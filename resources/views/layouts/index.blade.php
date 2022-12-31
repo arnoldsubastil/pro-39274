@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="/css/format.css" media="screen">
     <link rel="stylesheet" href="/css/nicepage.css" media="screen">
     <link rel="stylesheet" href="/css/responsive.css" media="screen">
-    <link rel="stylesheet" href="/css/menu.css" media="screen">
+    <link rel="stylesheet" href="/css/menu.css" media="screen">    
     <!--Dynamic StyleSheets added from a view would be pasted here-->
     @yield('styles')    
    
     <script class="u-script" type="text/javascript" src="/script/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/menu.js" defer=""></script>
-    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <script class="u-script" type="text/javascript" src="/script/SnippetButtons.js" defer=""></script>
+
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;
 }</style><link rel="stylesheet" data-font="Aleo:300,300i,400,400i,700,700i" href="https://fonts.googleapis.com/css?family=Aleo:300,300i,400,400i,700,700i"></head>
