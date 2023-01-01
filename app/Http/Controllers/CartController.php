@@ -125,7 +125,6 @@ class CartController extends Controller
 
     public function getAllCheckout() {
         $userId = $this->getID(Auth::user());
-        // dd($userId);
         $checkouted = DB::table('orders')
             ->select('orders.user_id',
                 'orders.order_id',
@@ -161,8 +160,6 @@ class CartController extends Controller
             ->groupBy('orders.notes')
             ->get();
 
-        // return $checkouted;
-        // dd($checkouted);
         return view('orders.list', [
             'products'=>$checkouted
         ]);
@@ -282,7 +279,6 @@ class CartController extends Controller
                     ->update(['status' => 'ordered']);
 
             $bodydata = $this->orderOrganizer($orderId);
-            dd($bodydata);
             $this->mailersender($request->name, $request->email, $bodydata);
 
         return view('orders.notification');
@@ -345,7 +341,7 @@ class CartController extends Controller
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
-            ->where('orders.order_id', $orderId->id)
+            ->where('orders.order_id', $orderId->orderId)
             ->groupBy('orders.user_id')
             ->groupBy('voucher.voucher_code')
             ->groupBy('orders.full_name')
