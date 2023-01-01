@@ -282,6 +282,7 @@ class CartController extends Controller
                     ->update(['status' => 'ordered']);
 
             $bodydata = $this->orderOrganizer($orderId);
+            dd($bodydata);
             $this->mailersender($request->name, $request->email, $bodydata);
 
         return view('orders.notification');
@@ -344,7 +345,7 @@ class CartController extends Controller
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
-            ->where('orders.order_id', 69)
+            ->where('orders.order_id', $orderId->id)
             ->groupBy('orders.user_id')
             ->groupBy('voucher.voucher_code')
             ->groupBy('orders.full_name')
