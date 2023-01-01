@@ -1,0 +1,12 @@
+/* mode of paymet */
+
+.paymentSection{
+    display: none;
+    
+}
+
+.paymentSection > div{
+    display: inline-block;
+    vertical-align: top;
+    margin: 16px;
+}

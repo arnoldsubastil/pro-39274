@@ -18,6 +18,7 @@
     <script class="u-script" type="text/javascript" src="/script/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/SnippetButtons.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/script/SnippetRadioButtons.js" defer=""></script>
 
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;

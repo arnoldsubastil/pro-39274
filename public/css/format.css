@@ -255,6 +255,7 @@ footer.u-custom-color-3{
 
 
   .modalCloseButton{
+    margin-top: -20px;
     height: 48px;
     width: 48px;
   }
