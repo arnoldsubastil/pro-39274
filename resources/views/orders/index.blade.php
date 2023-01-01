@@ -29,7 +29,7 @@ Orders
                       <div class="table-head">Order</div>
                       <div class="table-head">Payment</div>
                       <div class="table-head">Items</div>                      
-                      <div class="table-head">Notes</div>
+                      <div class="table-head">Delivery</div>
                       <div class="table-head arrow"></div>
                     </div>
               <!--- begin product item --->
@@ -53,9 +53,18 @@ Orders
                         <a href="/my-orders" class="listItemDetailLabel">Status</a>
                         <a href="/my-orders" class="listItemDetailValue">Paid</a>
                       </div>
-                      <div class="table-cell payment"><a href="/my-orders" class="listItemDetailLabel">Order ID</a><a href="/my-orders" class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Transaction Date</a><a href="/my-orders" class="listItemDetailValue">January 1, 2022</a></div>
+                      <div class="table-cell payment"><a href="/my-orders" class="listItemDetailLabel">Order ID</a><a href="/my-orders" class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a href="/my-orders" class="listItemDetailValue">January 1, 2022</a></div>
                       <div class="table-cell payment"><a href="/my-orders" class="listItemDetailLabel">Reference Number</a><a href="/my-orders" class="listItemDetailValue">115880-2439-36</a><a class="listItemDetailLabel">Mode of Payment</a><a href="/my-orders" class="listItemDetailValue">GCash</a><a class="listItemDetailLabel">Amount Paid</a><a href="/my-orders" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 320.00</span> </a></div>
-                      <div class="table-cell payment"><a class="listItemDetailLabel">Products</a><a href="/my-orders" class="listItemDetailValue">Pineapple Cake(1 box), Plain Taiwanese Egg Roll (1 box)</a><a class="listItemDetailLabel">Amount Due</a><a href="/my-orders" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
+                      <div class="table-cell payment">
+                        <a class="listItemDetailLabel">Products</a>
+                        <a href="/my-orders" class="listItemDetailValue">
+                          <ul>
+                            <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
+                            <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
+                          </ul>
+                        </a>
+                        <a class="listItemDetailLabel">Amount Due</a>
+                        <a href="/my-orders" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
                       <div class="table-cell"><a href="/my-orders" class="listItemDetailLabel">Delivery Address</a><a href="/my-orders" class="listItemDetailValue">308 Narra Building 2276 Pasong Tamo Extension, Makati City</a><a href="/my-orders" class="listItemDetailLabel">Notes</a><a href="/my-orders" class="listItemDetailValue">Please call 09396432921 if I'm not around.</a></div>
                       <div class="table-cell arrow">
                         <a href="/my-orders" class="listItemDetailLabel"></a>
