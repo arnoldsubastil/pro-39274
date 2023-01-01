@@ -76,7 +76,7 @@ Bill Order
   
                       <div class="u-form-group u-form-message u-form-group-5">
                         <!-- <label for="message-2382" class="u-label u-label-5">Voucher </label> -->
-                        <span id="myBtn" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
+                        <span id="VouchersListSpan" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
                       </div>                      
 
                       <div class="u-align-right u-form-group u-form-submit">
@@ -86,16 +86,13 @@ Bill Order
                       <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
-                    </form>
                   </div>
                   <br/>
                   
                   <!-- <span id="myBtn">View Voucher</span> -->
 
-            <!-- The Modal -->
+            <!-- BEGIN - voucher list modal -->
             <div id="VouchersListModal" class="modal">
-
-              <!-- Modal content -->
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" id="VouchersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -146,15 +143,44 @@ Bill Order
                   </div>
                   <!-- END- voucher list -->
                 </div>
-                
                 <!-- @foreach($voucher as $onevoucher)
                       <label><input type="radio" name="voucher" vid="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}">{{ $onevoucher['voucher_code'] }}</label> <br>
                 @endforeach -->
-
               </div>
-
+              
             </div>
+            <!-- END - voucher list modal -->
 
+            <!-- BEGIN - payment modal -->
+            <div id="PaymentModal" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="modal-header">
+                    <button type="button" id="PaymentModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Pay order</h4>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
+                    <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">
+                      <div class="form-vertical u-form u-form-1">
+                          <div class="u-form-group u-form-name">
+                          <label for="name-2382" class="u-label u-label-1">Name</label>
+                          <input type="text" placeholder="Full name" id="name" name="name" value="{{ $user->firstName ?? '' }} {{ $user->lastName ?? '' }}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer right">
+                  <br/>
+                  <button type="button" id="PaymentModalCancelButton" data-dismiss="modal" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Cancel</button>
+                  <button class="u-border-2 u-border-hover-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Select</button>
+                  <br/>
+                </div>
+              </div>           
+            </div>
+            <!-- END - payment modal -->
 
             <!-- BEGIN- related order list --> 
             <h3>Order Details</h3>         
@@ -184,12 +210,11 @@ Bill Order
             </div>
             <!-- END- related order list -->
             
-        <div class="u-form-group u-form-message right">
-          <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
+      <div class="u-form-group u-form-message right">
+        <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
           <div class="totalAmount">
-              <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
-            
-          <input type="hidden" id="totalcomputedamount_submt"  value="" />
+            <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
+            <input type="hidden" id="totalcomputedamount_submt"  value="" />
         </div>               
       </div>
       <hr class="solid"/>
@@ -197,26 +222,11 @@ Bill Order
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right">            
           <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
-          <a  id="myBtnsubmit" class="u-border-2 u-border-hover-palette-1-base u-palette-1-base u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now&nbsp;</a>
+          <span id="PaymentSpan" class="u-border-2 u-border-hover-palette-1-base  u-btn u-btn-round u-button-style u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Pay now</span>
+        </div>
       </div>
-        
-                  
-                    <!-- The Modal -->
-                    <div id="myModal2" class="modal">
-
-                      <!-- Modal content -->
-                      <div class="modal-content">
-                        <span class="close2">&times;</span>
-                        <span class="confirm">Confirm</span>
-
-                      </div>
-
-                    </div>
-
-
-                </div>
-              </div>
-            </div>
+    </div>
+  </div>
 </form>
 
 <!-- END - billing form -->
@@ -265,8 +275,21 @@ Bill Order
 <script>
 jQuery(document).ready(function ($) {  
 
-  // BEGIN - close vouchers list modal without refreshing the page
+  // BEGIN - show modals when clicked the span
   var vouchersListModal = document.getElementById("VouchersListModal");
+  var vouchersListSpan = document.getElementById("VouchersListSpan");
+  vouchersListSpan.onclick = function() {
+    VouchersListModal.style.display = "block";
+  }
+  var paymentModal = document.getElementById("PaymentModal");
+  var paymentSpan = document.getElementById("PaymentSpan");
+  paymentSpan.onclick = function() {
+    paymentModal.style.display = "block";
+  }
+  // END - show modals when clicked the span
+
+  // BEGIN - close modals without refreshing the page
+  //vouchers list modal  
   var vouchersListCloseButton = document.getElementById("VouchersModalCloseButton");
   var vouchersListCancelButton = document.getElementById("VouchersModalCancelButton");
   vouchersListCloseButton.onclick = function(event) {
@@ -274,58 +297,33 @@ jQuery(document).ready(function ($) {
   }
   vouchersListCancelButton.onclick = function(event) {
     vouchersListModal.style.display = "none";
+  }  
+  //payment modal
+  var paymentCloseButton = document.getElementById("PaymentModalCloseButton");
+  var paymentCancelButton = document.getElementById("PaymentModalCancelButton");
+  paymentCloseButton.onclick = function(event) {
+    paymentModal.style.display = "none";
   }
-  // END - close vouchers modal without refreshing the page
+  paymentCancelButton.onclick = function(event) {
+    paymentModal.style.display = "none";
+  } 
+  // END - close modals without refreshing the page
 
-
-
-  // Get the modal
-  var modal = document.getElementById("VouchersListModal");
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
+  //TO DO - not working, do not prioritize
+  // BEGIN - close modals when clicked outside the modal
+  //vouchers list modal  
   window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == vouchersListModal) {
+      vouchersListModal.style.display = "none";
     }
   }
-
-
-
-// Get the modal
-var modal2 = document.getElementById("myModal2");
-// Get the button that opens the modal
-var btn2 = document.getElementById("myBtnsubmit");
-// Get the <span> element that closes the modal
-var span2 = document.getElementsByClassName("close")[0];
-// When the user clicks on the button, open the modal
-btn2.onclick = function() {
-  modal2.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-  modal2.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    modal2.style.display = "none";
+  //payment modal
+  window.onclick = function(event) {
+    if (event.target == paymentModal) {
+      paymentModal.style.display = "none";
+    }
   }
-}
-
+  // END - cclose modals when clicked outside the modal
 
 
 var mvar = 0;
