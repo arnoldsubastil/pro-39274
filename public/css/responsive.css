@@ -38,8 +38,8 @@
     }
 
     .quickNavigationBar .u-nav-container li, .quickNavigationBar .u-spacing-20 > li + li {
-      margin-bottom: 8px !important;
-      margin-top: 8px !important;
+      margin-bottom: 8px;
+      margin-top: 8px;
     }
 
     .moduleNavigation .productsNavItem,
@@ -150,7 +150,7 @@
   
     .quickNavigationBar > div > ul > li{
       font-size: 16px;   
-      margin: 12px 8px; 
+      margin: 12px 8px !important;
     }
 
     .u-footer .u-gutter-0 .u-layout{
@@ -175,7 +175,7 @@
   
     .quickNavigationBar > div > ul > li{
       font-size: 16px; 
-      margin: 12px 8px;   
+      margin: 12px 8px !important;   
     }
 
   }
