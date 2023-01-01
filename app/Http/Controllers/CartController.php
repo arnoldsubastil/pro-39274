@@ -10,6 +10,7 @@ use \App\Models\CartOrder;
 use \App\Models\Reviews;
 use Auth;
 use DB;
+use Mail;
 
 class CartController extends Controller
 {
@@ -140,7 +141,7 @@ class CartController extends Controller
                 'orders.voucher_proof',
                 'orders.notes',
                 DB::raw('GROUP_CONCAT(products.name) as productslist'))
-            ->join('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
+            ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
@@ -190,7 +191,7 @@ class CartController extends Controller
                 'cartorder.cartorderId',
                 'cartorder.review',
                 DB::raw('COUNT(1) as qty'))
-            ->join('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
+            ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
@@ -253,15 +254,16 @@ class CartController extends Controller
                 'full_name' => $request->name,
                 'status' => 'Paid',
                 'contact_number' => $request->contact,
+                'email' => $request->email,
                 'mailing_address' => $request->maddress,
                 'delivery_address' => $request->daddress,
                 'mode_of_payment' => $request->mode_of_payment,
                 'reference_no' => $request->reference_no,
+                'amount' => $request->totalcomputedamount_submt,
                 'voucher_id' => $request->voucher_id,
                 'voucher_proof' => $imageName,
                 'notes' => $request->message
             ]);
-            
             $productnote = json_decode($request->allproductcomments, true);
             
             foreach ($carttocheckout as $tocheckout){
@@ -278,7 +280,10 @@ class CartController extends Controller
                   ->where('status', 'added')
                   ->whereIn('product_id', $productslist)
                     ->update(['status' => 'ordered']);
-                    
+
+            $bodydata = $this->orderOrganizer($orderId);
+            $this->mailersender($request->name, $request->email, $bodydata);
+
         return view('orders.notification');
     }
 
@@ -300,6 +305,66 @@ class CartController extends Controller
             ]);
                     
         return view('cart.contactussuccess');
+    }
+
+
+    private function mailersender($toName, $toEmail, $body) {
+        
+        $data = array('info' => $body);
+        Mail::send('emails.mail', $data, function ($message) use ($toName, $toEmail) {
+        $message->to($toEmail, $toName)
+        ->subject('Laravel Test Mail');
+        $message->from('tech.sender2023@gmail.com', 'SoyStory Online Ordering');
+        });
+    }
+
+    private function orderOrganizer($orderId) {
+        return DB::table('orders')
+            ->select('orders.order_id',
+                'orders.user_id',
+                'orders.full_name',
+                'orders.status',
+                'orders.mailing_address',
+                'orders.delivery_address',
+                'orders.contact_number',
+                'orders.mode_of_payment',
+                'orders.reference_no',
+                'orders.amount',
+                'orders.voucher_id',
+                'voucher.voucher_code',
+                'orders.voucher_proof',
+                'orders.notes',
+                'products.name',
+                'products.productIdlong',
+                'cart.product_note',
+                'cartorder.cartorderId',
+                'cartorder.review',
+                DB::raw('COUNT(1) as qty'))
+            ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
+            ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
+            ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
+            ->join('products', 'cart.product_id', '=', 'products.productIdlong')
+            ->where('orders.order_id', 69)
+            ->groupBy('orders.user_id')
+            ->groupBy('voucher.voucher_code')
+            ->groupBy('orders.full_name')
+            ->groupBy('orders.status')
+            ->groupBy('orders.mailing_address')
+            ->groupBy('orders.delivery_address')
+            ->groupBy('orders.contact_number')
+            ->groupBy('orders.mode_of_payment')
+            ->groupBy('orders.reference_no')
+            ->groupBy('orders.amount')
+            ->groupBy('orders.voucher_id')
+            ->groupBy('orders.voucher_proof')
+            ->groupBy('orders.notes')
+            ->groupBy('products.name')
+            ->groupBy('products.productIdlong')
+            ->groupBy('cart.product_note')
+            ->groupBy('orders.order_id')
+            ->groupBy('cartorder.cartorderId')
+            ->groupBy('cartorder.review')
+            ->get();
     }
 
     private function getID($id) {

@@ -106,3 +106,4 @@ Route::post('/post-contact', 'App\Http\Controllers\CartController@postcontact');
 
 Route::get('/update-profile', 'App\Http\Controllers\Auth\RegisterController@getprofile');
 Route::post('/update-my-profile', 'App\Http\Controllers\Auth\RegisterController@updateAccount');
+

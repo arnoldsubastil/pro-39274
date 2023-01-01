@@ -18,11 +18,13 @@ class Orders extends Model
         'user_id',
         'full_name',
         'status',
+        'email',
         'mailing_address',
         'delivery_address',
         'contact_number',
         'mode_of_payment',
         'reference_no',
+        'amount',
         'voucher_id',
         'voucher_proof',
         'notes'

@@ -196,11 +196,20 @@ Bill Order
           <div class="totalAmount">
               <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
             
-          <input type="hidden" id="totalcomputedamount_submt"  value="" />
+          <input type="hidden" id="totalcomputedamount_submt" name="totalcomputedamount_submt"  value="" />
         </div>               
       </div>
       <hr class="solid"/>
       <br/>
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right">            
           <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
@@ -376,6 +385,7 @@ $("input[name='voucher']").click(function(){
             var vouchermode = $("input[name='voucher']:checked").attr('vouchermode');
             var requirement = $("input[name='voucher']:checked").attr('requirement');
             var id = $("input[name='voucher']:checked").attr('vid');
+            console.log(radioValue);
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = mvar - parseFloat(radioValue);
@@ -392,6 +402,9 @@ $("input[name='voucher']").click(function(){
               $('#totalcomputedamount').html(newvalue.format());
               $('#totalcomputedamount_submt').val(newvalue);
               console.log(newvalue);
+            } else{
+              $('#totalcomputedamount').html(mvar.format());
+              $('#totalcomputedamount_submt').val(mvar);
             }
         });
 
