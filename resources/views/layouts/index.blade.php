@@ -51,21 +51,27 @@
                   {{ csrf_field() }}
               </form>
               <!-- BEGIN - hide quick navigation items if the user successfully signed in, show otherwise -->
-                @if (!Auth::guest()) 
-                  <!-- <p> Welcome {{ Auth::user()->name . " " . Auth::user()->last_name }}</p> -->
-                  <p> Welcome {{ Auth::user()->firstName }}
-                     |  
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <ul class=" u-nav u-spacing-20 u-unstyled u-nav-3">                  
+                  @if (!Auth::guest())
+                  <li class="u-nav-item">
+                    <span class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base">
+                      Welcome {{ Auth::user()->firstName }}
+                    </span>
+                  </li>                    
+                  @endif
+                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/my-orders">Orders</a></li>  
+                  @if (!Auth::guest())
+                  <li class="u-nav-item">
+                    <a class="dropdown-item u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                       {{ __('Log out') }}
                     </a>
-                  </p>
-                @else
-                <ul class=" u-nav u-spacing-20 u-unstyled u-nav-3">
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/register" style="padding: 10px;">Register</a></li>
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/login" style="padding: 10px;">Login</a></li>                    
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact" style="padding: 10px;">Contact</a></li>
-                </ul>
-                @endif              
+                  </li>                    
+                  @else
+                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/register">Register</a></li>
+                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/login">Log in</a></li>                    
+                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact">Contact</a></li>
+                  @endif
+                </ul>             
               
               <!-- END - hide quick navigation items if the user successfully signed in, show otherwise -->
               </div>

@@ -149,7 +149,8 @@
     }
   
     .quickNavigationBar > div > ul > li{
-      font-size: 16px;    
+      font-size: 16px;   
+      margin: 12px 8px; 
     }
 
     .u-footer .u-gutter-0 .u-layout{
@@ -173,7 +174,8 @@
     }
   
     .quickNavigationBar > div > ul > li{
-      font-size: 16px;    
+      font-size: 16px; 
+      margin: 12px 8px;   
     }
 
   }

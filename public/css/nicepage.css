@@ -13868,7 +13868,6 @@ div.u-video,
   vertical-align: middle;
   padding: 0;
   margin: 0 8px 0 0;
-  height: 100%;
 }
 .u-nav-popup .u-nav-item {
   height: auto;
@@ -16342,9 +16341,9 @@ div.u-video,
 .menu-collapse a.u-nav-link {
   color: inherit;
 }
-.u-nav-container > .u-nav > .u-nav-item > .u-nav-link {
+/* .u-nav-container > .u-nav > .u-nav-item > .u-nav-link {
   padding: 10px 20px;
-}
+} */
 .menu-collapse {
   display: none;
   border: none;

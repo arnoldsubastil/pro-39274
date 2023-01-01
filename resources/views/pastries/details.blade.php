@@ -13,6 +13,7 @@ Product Details
 @section('content')  
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
+  <br/>
     @foreach($products as $product)
     <section class="u-clearfix u-section-1" id="carousel_7dcd">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
