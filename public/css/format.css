@@ -259,3 +259,11 @@ footer.u-custom-color-3{
     height: 48px;
     width: 48px;
   }
+
+  .triangle-right {
+	width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 16px solid #DDDDDD;
+    border-bottom: 8px solid transparent;
+}

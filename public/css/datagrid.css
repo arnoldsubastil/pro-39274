@@ -186,6 +186,16 @@ END- html */
   width: 48px;
 }
 
+.table .table-head.arrow
+{
+  border: 0;
+}
+
+.table .table-cell.arrow, .table .table-head.arrow
+{
+  width: 48px;
+}
+
 
 
 
@@ -331,9 +341,44 @@ END- html */
   width: 23%
 }
 
-.vouchersListTable .table-cell{  
+.vouchersListTable .table-cell{    
   width: 23%
 }
+
+.ordersTable .table-cell .listItemDetailValue{
+    margin-bottom: 16px;
+}
+
+.ordersTable .table-cell .listItemDetailValue:last-child{
+  margin-bottom: 0;
+}
+
+.ordersTable .table-cell .listItemDetailLabel{ 
+    display: block; 
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ordersTable .table-cell.status .listItemDetailLabel{ 
+  display: none;
+}
+
+.ordersTable .table-cell{ 
+  text-align: left;
+  vertical-align: top; 
+  width: 18%
+}
+
+.ordersTable .table-cell.status, .ordersTable .table-cell.arrow{ 
+  text-align: center;
+  vertical-align: middle; 
+}
+
+.ordersTable .table-head{  
+  width: 18%
+}
+
 
 /* responsive */
 @media(max-width:1024px)

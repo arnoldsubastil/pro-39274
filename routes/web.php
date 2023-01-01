@@ -99,6 +99,7 @@ Route::get('/Billing/Create/{productlist}', 'App\Http\Controllers\BillsControlle
 Route::post('/Pay', 'App\Http\Controllers\CartController@checkoutorder');
 
 Route::get('/my-orders', 'App\Http\Controllers\CartController@getAllCheckout');
+Route::get('/Orders', 'App\Http\Controllers\OrdersController@index')->name('orders.index');
 
 
 Route::get('/posted-review', 'App\Http\Controllers\CartController@postreview');

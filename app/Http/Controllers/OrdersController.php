@@ -26,6 +26,13 @@ class OrdersController extends Controller
     }
 
 
+    public function index(){        
+
+        return view('orders.index');
+
+    }
+
+
     public function notification(){        
 
         return view('orders.notification');
