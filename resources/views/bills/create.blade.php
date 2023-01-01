@@ -57,8 +57,8 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
-                        <input id="BPIRadioButton" type="radio" name="mode_of_payment" value="BPI"><label for="BPIRadioButton"> BPI</label> <br>
-                        <input id="GCashRadioButton" type="radio" name="mode_of_payment" value="GCash"><label for="GCashRadioButton"> GCash</label> <br>
+                        <label><input id="BPIRadioButton" type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
+                        <label><input id="GCashRadioButton" type="radio" name="mode_of_payment" value="GCash"> GCash</label> <br>
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
                       </div>
@@ -105,31 +105,38 @@ Bill Order
                   <div class="table vouchersListTable">
                     <div class="table-row">
                         <div class="table-head selectCheckbox"></div>
-                        <div class="table-head">Image</div>
-                        <div class="table-head">Voucher</div>                      
-                        <div class="table-head">Quantity</div>
+                        <div class="table-head">Voucher Name</div>             
+                        <div class="table-head">Information</div>                      
                         <div class="table-head">Discounted Amount</div>
                     </div>
                       @foreach($voucher as $onevoucher)
                         <div class="table-row">
-                              <div class="table-cell selectCheckbox">
+                              <div class="table-cell selectCheckbox"></div>
+                              <div class="table-cell">
                                 <div class="round">
                                   <input type="checkbox" id="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" name="voucher" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}" />
                                   <label for="{{ $onevoucher['voucher_id'] }}"></label>
                                 </div>
                               </div>
-                              <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span href="" class="listItemDetailValue">123</span></div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/sample.png'}}/240" alt="" ></a></div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Voucher</span><span class="listItemDetailValue voucherName">Discount Voucher</span><span class="listItemDetailLabel">Code</span><span href="" class="listItemDetailValue code">503339EF-D410-40BF-8EBF-9C4BF1543296</span><span class="listItemDetailLabel">Description</span><span href="" class="listItemDetailValue">Valid until Jan 1 to 30, 2023</span></div>
+                              
                               <div class="table-cell">
-                                <span class="listItemDetailLabel">Quantity</span>
+                                <span class="listItemDetailLabel">Voucher</span>
+                                <span class="listItemDetailLabel">Code</span>
+                                <span href="" class="listItemDetailValue code">{{ $onevoucher['voucher_code'] }}</span>
+                                <span class="listItemDetailLabel">Description</span>
+                                <span href="" class="listItemDetailValue">Valid until {{ $onevoucher['valid_date_start'] }} to {{ $onevoucher['valid_date_end'] }}</span>
+                              </div>
+                              
+                              <div class="table-cell">
                                 <span class="listItemDetailValue snippetButton">
-                                  <button id="minus" class="minusButton">−</button>
-                                  <input id="input" type="number" name=""   value="2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
-                                  <button id="plus" class="plusButton">+</button>
+                                  @if($onevoucher['discount_type'] == 'percent')
+                                   {{ $onevoucher['discount'] }} %
+                                   @else
+                                    {{ $onevoucher['discount'] }} Php
+                                  @endif
                                 </span>
                               </div>
-                              <div class="table-cell"><span class="listItemDetailLabel">Discounted Amount</span><span href="" class="listItemDetailValue discount"><span class="currency">PHP</span><span class="amount"> 100.00</span> </span></div>
+
                             </div>
 
                       @endforeach
@@ -271,7 +278,7 @@ Bill Order
                 
                 <div class="table-row">                      
                       <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
-                      <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/'.$product->url}}" alt="" ></span></div>
+                      <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductImages/'.$product->url}}/128" alt="" ></span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
                       <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
@@ -286,12 +293,22 @@ Bill Order
       <div class="u-form-group u-form-message right">
         <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
           <div class="totalAmount">
-            <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
-            <input type="hidden" id="totalcomputedamount_submt"  value="" />
+              <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
+            
+          <input type="hidden" id="totalcomputedamount_submt"  value="" />
         </div>               
       </div>
       <hr class="solid"/>
       <br/>
+      @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+      @endif
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right">            
           <a href="/Cart" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View cart</a>
@@ -346,7 +363,7 @@ Bill Order
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-jQuery(document).ready(function ($) {  
+  jQuery(document).ready(function ($) {  
 
   // BEGIN - show modals when clicked the span
   var vouchersListModal = document.getElementById("VouchersListModal");
@@ -370,8 +387,8 @@ jQuery(document).ready(function ($) {
   }
   vouchersListCancelButton.onclick = function(event) {
     vouchersListModal.style.display = "none";
-  }  
-  //payment modal
+  }
+  //vouchers list modal  
   var paymentCloseButton = document.getElementById("PaymentModalCloseButton");
   var paymentCancelButton = document.getElementById("PaymentModalCancelButton");
   paymentCloseButton.onclick = function(event) {
@@ -379,24 +396,8 @@ jQuery(document).ready(function ($) {
   }
   paymentCancelButton.onclick = function(event) {
     paymentModal.style.display = "none";
-  } 
-  // END - close modals without refreshing the page
-
-  //TO DO - not working, do not prioritize
-  // BEGIN - close modals when clicked outside the modal
-  //vouchers list modal  
-  window.onclick = function(event) {
-    if (event.target == vouchersListModal) {
-      vouchersListModal.style.display = "none";
-    }
   }
-  //payment modal
-  window.onclick = function(event) {
-    if (event.target == paymentModal) {
-      paymentModal.style.display = "none";
-    }
-  }
-  // END - cclose modals when clicked outside the modal
+  // END - close vouchers modal without refreshing the page
 
 
 var mvar = 0;
@@ -445,6 +446,7 @@ $("input[name='voucher']").click(function(){
             var vouchermode = $("input[name='voucher']:checked").attr('vouchermode');
             var requirement = $("input[name='voucher']:checked").attr('requirement');
             var id = $("input[name='voucher']:checked").attr('vid');
+            console.log(radioValue);
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = mvar - parseFloat(radioValue);
@@ -463,6 +465,9 @@ $("input[name='voucher']").click(function(){
               $('#BPITotalAmountDueSpan').html(newvalue.format());
               $('#GCashTotalAmountDueSpan').html(newvalue.format());
               console.log(newvalue);
+            } else{
+              $('#totalcomputedamount').html(mvar.format());
+              $('#totalcomputedamount_submt').val(mvar);
             }
         });
 

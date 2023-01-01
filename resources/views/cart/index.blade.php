@@ -52,9 +52,9 @@ Shopping Cart
                       <div class="table-cell">
                         <a class="listItemDetailLabel">Product Quantity</a>
                         <a class="listItemDetailValue snippetButton">
-                          <button id="minus" class="minusButton">−</button>
-                          <input id="input" type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" value="{{ $uniqueProductId->numberoforder }}" class="itemNumber u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
-                          <button id="plus" class="plusButton">+</button>
+                          <button class="minusButton">−</button>
+                          <input type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" value="{{ $uniqueProductId->numberoforder }}" class="itemNumber u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"/>
+                          <button class="plusButton">+</button>
                           <!-- <input type="button" value="-" class="minustocart" productcount="" style="display: none;"> -->
                           <!-- <input type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" class="itemNumber" value="{{ $uniqueProductId->numberoforder }}" /> -->
                         </a>
@@ -155,6 +155,23 @@ jQuery(document).ready(function ($) {
         },
     });  
   });
+
+  $('.minusButton').click(function(){
+    var olval = parseInt($(this).parent().children('.itemNumber').val());
+    if(olval > 0) {
+      var newnum = olval - 1;
+      $(this).parent().children('.itemNumber').val(newnum);
+    }
+    $(".itemNumber").trigger('keyup');
+  });
+
+  $('.plusButton').click(function(){
+    var olval = parseInt($(this).parent().children('.itemNumber').val());
+    var newnum =  olval + 1;
+      $(this).parent().children('.itemNumber').val(newnum);
+    $(".itemNumber").trigger('keyup');
+  });
+  
   $(".itemchecker:checked").change(function(){
 
     var orderlist = '';
