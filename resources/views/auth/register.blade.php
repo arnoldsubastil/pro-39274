@@ -25,7 +25,7 @@ Sign Up
                     @csrf
                       <h2 class="u-form-group u-form-text u-text u-text-1"> Sign up!</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
-                        <span style="font-weight: 400;">Create your account for fast checkout and easy to order transactions. </span>
+                        <span style="font-weight: 400;">Create your account to avail free shipping fees and discounted offers.</span>
                         <br>
                       </p>
                       <div class="u-form-group u-form-group-3">

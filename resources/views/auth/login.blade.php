@@ -53,6 +53,7 @@ Sign In
                         <button type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">{{ __('Login') }}</button>
                         <!-- <a href="Home.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Sign in</a>
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
+                        <br/>
                         @if (Route::has('password.request'))
                             <a  class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-grey-80 u-btn-1" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
@@ -62,10 +63,10 @@ Sign In
                      
                     </form>
                   </div>
-                  <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="/register" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
+                  <!-- <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="/register" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
                     <br>Continue as guest? <a href="/Pastries" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
                     <br>
-                  </p>
+                  </p> -->
                 </div>
               </div>
             </div>
@@ -84,7 +85,7 @@ Sign In
                   <h2 class="u-text u-text-default u-text-1">For new customers</h2>
                   <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Proceed to order and you will have an opportunity to create an account after checking out if one does not already exist for you.</p>
                   <a href="Home.html" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Create a customer account for fast checkout and easy to order transactions.&nbsp;</p>
+                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Create your account to avail free shipping fees and discounted offers.</p>
                   <a href="/register" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Create an account</a>
                 </div>
               </div>
