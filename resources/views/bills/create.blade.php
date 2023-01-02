@@ -295,7 +295,7 @@ Bill Order
           <div class="totalAmount">
               <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
             
-          <input type="hidden" id="totalcomputedamount_submt"  value="" />
+          <input type="hidden" id="totalcomputedamount_submt" name="totalcomputedamount_submt" value="" />
         </div>               
       </div>
       <hr class="solid"/>
