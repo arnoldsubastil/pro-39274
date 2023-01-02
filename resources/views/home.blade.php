@@ -60,6 +60,7 @@ Home
                         <button type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">{{ __('Login') }}</button>
                         <!-- <a href="Home.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Sign in</a>
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
+                        <br/>
                         @if (Route::has('password.request'))
                             <a  class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-grey-80 u-btn-1" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
