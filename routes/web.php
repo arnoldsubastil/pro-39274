@@ -98,8 +98,10 @@ Route::get('/my-cart', 'App\Http\Controllers\CartController@getItemCart');
 Route::get('/Billing/Create/{productlist}', 'App\Http\Controllers\BillsController@create')->name('bills.create');
 Route::post('/Pay', 'App\Http\Controllers\CartController@checkoutorder');
 
+
 Route::get('/my-orders', 'App\Http\Controllers\CartController@getAllCheckout');
 Route::get('/Orders', 'App\Http\Controllers\OrdersController@index')->name('orders.index');
+Route::get('/Orders/Receipt', 'App\Http\Controllers\EmailNotificationsController@details')->name('emails.mail');
 
 
 Route::get('/posted-review', 'App\Http\Controllers\CartController@postreview');

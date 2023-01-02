@@ -14,20 +14,20 @@ Order Product
 <section class="u-clearfix u-section-2" id="sec-e3fd">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-image-contain u-layout-cell u-size-30 u-image-1" data-image-width="278" data-image-height="156">
-                <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
-              </div>
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+          <div class="u-layout" style="text-align: center;">
+            <div class="u-layout-row" style="display: block;">              
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" style="display: inline-block;">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
                   <h1 class="u-align-center u-text u-text-default u-text-1">Thank you.</h1>
-                  <p class="u-align-center u-text u-text-default u-text-2">Your order was completed successfully.<br>Kindly wait for our text message confirmation within 5 minutes.
+                  <p class="u-align-center u-text u-text-default u-text-2">Your order was completed successfully.<br>An email notification was sent to your email.<br><br>Please check your inbox for the receipt.
                   </p>
-                  <p class="u-align-center u-text u-text-default u-text-3"> Create a customer account for fast checkout and easy to order transactions.&nbsp;</p>
                   <br/>
-                  <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Sign up</a>
+                  @if (!Auth::guest())
+                  <a href="/my-orders" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue</a>                    
+                  @else
+                  <a href="/Register" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Sign up</a>                                
                   <a href="/my-orders" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue</a>
+                  @endif
                 </div>
               </div>
             </div>
