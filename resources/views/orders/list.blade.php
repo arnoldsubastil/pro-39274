@@ -52,18 +52,18 @@ Order Details
                             <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
                            </div>
                         <br/>
-                        <a href="/my-orders" class="listItemDetailLabel">Status</a>
-                        <a href="/my-orders" class="listItemDetailValue">{{ $product->status }}</a>
+                        <a class="listItemDetailLabel">Status</a>
+                        <a class="listItemDetailValue">{{ $product->status }}</a>
                       </div>
-                      <div class="table-cell payment"><a href="/my-orders" class="listItemDetailLabel">Order ID</a><a href="/my-orders" class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a href="/my-orders" class="listItemDetailValue">January 1, 2022</a></div>
+                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a></div>
                       <div class="table-cell payment">
-                        <a href="/my-orders" class="listItemDetailLabel">Reference Number</a>
-                        <a href="/my-orders" class="listItemDetailValue">{{ $product->reference_no }}</a>
-                        <a href="/my-orders" class="listItemDetailLabel">Voucher</a>
+                        <a class="listItemDetailLabel">Reference Number</a>
+                        <a class="listItemDetailValue">{{ $product->reference_no }}</a>
+                        <a class="listItemDetailLabel">Voucher</a>
                         @if ($product->productslist != "")
-                            <a href="/my-orders" class="listItemDetailValue">{{ $product->voucher_code }}</a>
+                            <a class="listItemDetailValue">{{ $product->voucher_code }}</a>
                         @else
-                            <a href="/my-orders" class="listItemDetailValue">No voucher</a>
+                            <a class="listItemDetailValue">No voucher</a>
                         @endif
                         <br/>
                         @if ($product->voucher_proof != "")
@@ -72,23 +72,23 @@ Order Details
 
                         
                         <a class="listItemDetailLabel">Mode of Payment</a>
-                        <a href="/my-orders" class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
+                        <a class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
                         <a class="listItemDetailLabel">Amount Paid</a>
-                        <a href="/my-orders" class="listItemDetailValue">
+                        <a class="listItemDetailValue">
                             <span class="currency">PHP</span><span class="amount"> 320.00</span> 
                         </a>
                       </div>                      
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Products</a>
-                        <a href="/my-orders" class="listItemDetailValue">
+                        <a class="listItemDetailValue">
                           <ul>
                             <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
                             <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
                           </ul>
                         </a>
                         <a class="listItemDetailLabel">Amount Due</a>
-                        <a href="/my-orders" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
-                      <div class="table-cell"><a href="/my-orders" class="listItemDetailLabel">Delivery Address</a><a href="/my-orders" class="listItemDetailValue">{{ $product->delivery_address }}</a><a href="/my-orders" class="listItemDetailLabel">Notes</a><a href="/my-orders" class="listItemDetailValue">{{ $product->notes }}</a></div>
+                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
+                      <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
                  
                       <!-- <div class="table-cell arrow">
                         <a href="/my-orders" class="listItemDetailLabel"></a>
