@@ -53,9 +53,19 @@ Order Details
                            </div>
                         <br/>
                         <a class="listItemDetailLabel">Status</a>
-                        <a class="listItemDetailValue">{{ $product->status }}</a>
+                        <a class="listItemDetailValue">
+                        @if($product->status == 'Paid')    
+                          Payment
+                        @elseif($product->status == '1')  
+                          Reheating
+                        @elseif($product->status == '2')  
+                          Shipping
+                        @elseif($product->status == '3')  
+                          Delivery
+                        @endif
+                      </a>
                       </div>
-                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a></div>
+                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-2023{{ $product->order_id }}</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">{{ $product->created_at }}</a></div>
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Reference Number</a>
                         <a class="listItemDetailValue">{{ $product->reference_no }}</a>
@@ -87,7 +97,7 @@ Order Details
                           </ul>
                         </a>
                         <a class="listItemDetailLabel">Amount Due</a>
-                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
+                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->amount }}</span> </a></div>
                       <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
                  
                       <!-- <div class="table-cell arrow">

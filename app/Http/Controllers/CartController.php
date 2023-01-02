@@ -139,6 +139,8 @@ class CartController extends Controller
                 'voucher.voucher_code',
                 'orders.voucher_proof',
                 'orders.notes',
+                'orders.amount',
+                'orders.created_at',
                 DB::raw('GROUP_CONCAT(products.name) as productslist'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
@@ -158,6 +160,8 @@ class CartController extends Controller
             ->groupBy('voucher.voucher_code')
             ->groupBy('orders.voucher_proof')
             ->groupBy('orders.notes')
+            ->groupBy('orders.amount')
+            ->groupBy('orders.created_at')
             ->get();
 
         return view('orders.list', [

@@ -447,8 +447,10 @@ $("input[name='voucher']").click(function(){
             var radioValue = $("input[name='voucher']:checked").val();
             var vouchermode = $("input[name='voucher']:checked").attr('vouchermode');
             var requirement = $("input[name='voucher']:checked").attr('requirement');
-            var id = $("input[name='voucher']:checked").attr('vid');
+            var id = $("input[name='voucher']:checked").attr('id');
+            console.log(id);
             console.log(radioValue);
+              $('#voucher_id').val(id);
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = mvar - parseFloat(radioValue);
@@ -461,7 +463,6 @@ $("input[name='voucher']").click(function(){
               } else {
                 $('.proofvoucher').hide();
               }
-              $('#voucher_id').val(id);
               $('#totalcomputedamount').html(newvalue.format());              
               $('#totalcomputedamount_submt').val(newvalue);
               $('#BPITotalAmountDueSpan').html(newvalue.format());
