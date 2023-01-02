@@ -29,7 +29,7 @@ Nuts & Nougat
             @foreach($uniqueProductIds as $uniqueProductId)            
   
               <!--- get all nuts and nougat --->
-              @if($uniqueProductId['productTypeId'] == "C1968E9E-F308-4461-808C-4D53558A2372")
+              <!-- @if($uniqueProductId['productTypeId'] == "C1968E9E-F308-4461-808C-4D53558A2372") -->
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -46,7 +46,7 @@ Nuts & Nougat
                   </div>
                 </div>
 
-               @endif
+               <!-- @endif -->
               
               @endforeach
 

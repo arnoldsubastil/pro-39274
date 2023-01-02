@@ -54,9 +54,9 @@
                 <ul class=" u-nav u-spacing-20 u-unstyled u-nav-3">                  
                   @if (!Auth::guest())
                   <li class="u-nav-item">
-                    <span class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base">
+                    <a href="/update-profile" class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base">
                       Welcome {{ Auth::user()->firstName }}
-                    </span>
+                    </a>
                   </li>                    
                   @endif
                   <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/my-orders">Orders</a></li>  

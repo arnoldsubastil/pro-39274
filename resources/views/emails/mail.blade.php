@@ -75,7 +75,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0"><a href="#" style="text-decoration: none; font-size: 16px; color: #363636; font-weight: bold; font-family: arial "></a>
+											<td valign="middle" style="padding:0 8px 0px 0"><a  style="text-decoration: none; font-size: 16px; color: #363636; font-weight: bold; font-family: arial "></a>
 											</td>
 										</tr>
 									</table>
@@ -92,7 +92,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Order ID:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Order ID:</a>
 											</td>
 										</tr>
 									</table>
@@ -104,7 +104,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->order_id}}</a>
 											</td>
@@ -123,7 +123,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Orders:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Orders:</a>
 											</td>
 										</tr>
 									</table>
@@ -137,7 +137,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$prodinfo->name}}</a>
 											</td>
@@ -157,7 +157,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Status:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Status:</a>
 											</td>
 										</tr>
 									</table>
@@ -169,7 +169,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->status}}</a>
 											</td>
@@ -189,7 +189,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Contact Numer:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Contact Numer:</a>
 											</td>
 										</tr>
 									</table>
@@ -201,7 +201,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->contact_number}}</a>
 											</td>
@@ -222,7 +222,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Mode of Payment:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Mode of Payment:</a>
 											</td>
 										</tr>
 									</table>
@@ -234,7 +234,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->mode_of_payment}}</a>
 											</td>
@@ -254,7 +254,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Voucher Code:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Voucher Code:</a>
 											</td>
 										</tr>
 									</table>
@@ -266,7 +266,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->voucher_code}}</a>
 											</td>
@@ -286,7 +286,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Delivery Address:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Delivery Address:</a>
 											</td>
 										</tr>
 									</table>
@@ -298,7 +298,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             {{$info[0]->delivery_address}}</a>
 											</td>
@@ -318,7 +318,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Amount:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Amount:</a>
 											</td>
 										</tr>
 									</table>
@@ -330,7 +330,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
+											<td valign="middle" style="padding:0 8px 0px 0; width: 320px; display: inline-block;"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
                                             PHP {{$info[0]->amount}}</a>
 											</td>
@@ -378,7 +378,7 @@
 				  <!-- ****End Loanteria Signature and Footer**** -->
 				  <!-- <tr>
 					<td valign="top"  bgcolor="#0B253E">
-						<a href="#"><img  class="deviceWidth" src="http://c88resourcesstorage.blob.core.windows.net/loanteria-email-temp/email-template-elements/EmailFooter_560x28.png" alt="" border="0" style="display: block; width: 100%" /></a>
+						<a ><img  class="deviceWidth" src="http://c88resourcesstorage.blob.core.windows.net/loanteria-email-temp/email-template-elements/EmailFooter_560x28.png" alt="" border="0" style="display: block; width: 100%" /></a>
 					</td>
 				</tr> -->
                </table>

@@ -321,20 +321,38 @@ END- html */
 /* width for different number of columns */
 
 /* for five columns */
-.orderDetailsTable .table-head{  
-  width: 22%
+.ordersDetailsTable .table-cell .listItemDetailValue{
+  margin-bottom: 16px;
 }
 
-.orderDetailsTable .table-head.quantity{  
-  width: 10%
+.ordersDetailsTable .table-cell .listItemDetailValue:last-child{
+margin-bottom: 0;
 }
 
-.orderDetailsTable .table-cell{  
-  width: 22%
+.ordersDetailsTable .table-cell .listItemDetailLabel{ 
+  display: block; 
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.orderDetailsTable .table-cell.quantity{  
-  width: 10%
+.ordersDetailsTable .table-cell.status .listItemDetailLabel{ 
+display: none;
+}
+
+.ordersDetailsTable .table-cell{ 
+text-align: left;
+vertical-align: top; 
+width: 18%
+}
+
+.ordersDetailsTable .table-cell.status, .ordersDetailsTable .table-cell.arrow{ 
+text-align: center;
+vertical-align: middle; 
+}
+
+.ordersDetailsTable .table-head{  
+width: 18%
 }
 
 .vouchersListTable .table-head{  
@@ -367,7 +385,7 @@ END- html */
 .ordersTable .table-cell{ 
   text-align: left;
   vertical-align: top; 
-  width: 18%
+  width: 24%
 }
 
 .ordersTable .table-cell.status, .ordersTable .table-cell.arrow{ 
@@ -376,7 +394,7 @@ END- html */
 }
 
 .ordersTable .table-head{  
-  width: 18%
+  width: 24%
 }
 
 

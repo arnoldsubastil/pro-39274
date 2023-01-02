@@ -105,7 +105,7 @@ Product Details
             @foreach($uniqueProductIds as $uniqueProductId)
             
               <!--- get all pastries --->
-              @if($uniqueProductId['productTypeId'] == "2A98BD66-CC91-4EF3-B081-9B8C63203CAE")
+              <!-- @if($uniqueProductId['productTypeId'] == "2A98BD66-CC91-4EF3-B081-9B8C63203CAE") -->
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                 <div class="u-container-layout u-similar-container u-container-layout-1">
@@ -116,7 +116,7 @@ Product Details
                 </div>
               </div>
 
-              @endif            
+              <!-- @endif             -->
             
             @endforeach
 

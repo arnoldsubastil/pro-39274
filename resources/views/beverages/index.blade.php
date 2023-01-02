@@ -29,7 +29,7 @@ Beverages
               @foreach($uniqueProductIds as $uniqueProductId)
 
                 <!--- get all mix-ins, beverages --->
-                @if($uniqueProductId['productTypeId'] == "0E0E7C1B-699D-40FB-9689-2932C0F22543")
+                <!-- @if($uniqueProductId['productTypeId'] == "0E0E7C1B-699D-40FB-9689-2932C0F22543") -->
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -46,7 +46,7 @@ Beverages
                   </div>
                 </div>
 
-               @endif
+               <!-- @endif -->
               
               @endforeach
 

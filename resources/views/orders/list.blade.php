@@ -25,12 +25,12 @@ Order Details
                                 <div class="btn-submit form-vertical u-form u-form-1">
                                 <h4 class="u-text u-text-default u-text-6">Order ID: {{ $product->order_id }}</h4>
 <br/>
-                                <div class="table ordersTable">
+                                <div class="table ordersDetailsTable">
                     <div class="table-row">
                       <div class="table-head quantity">Status</div>
                       <div class="table-head">Order</div>
                       <div class="table-head">Payment</div>
-                      <div class="table-head">Items</div>                      
+                      <div class="table-head">Bill</div>                      
                       <div class="table-head">Delivery</div>
                       <!-- <div class="table-head arrow"></div> -->
                     </div>
@@ -47,30 +47,21 @@ Order Details
                         </div>
                       </div> -->
                       <div class="table-cell status">
-                        <div class="round" style="margin: 0 8px 8px 0;    text-align: center;    display: inline-block;    height: 26px;">
+                        <!-- <div class="round" style="margin: 0 8px 8px 0;    text-align: center;    display: inline-block;    height: 26px;">
                             <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
                             <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
                            </div>
-                        <br/>
+                        <br/> -->
                         <a class="listItemDetailLabel">Status</a>
                         <a class="listItemDetailValue">{{ $product->status }}</a>
                       </div>
-                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a></div>
+                      <div class="table-cell payment">
+                        <a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a>
+                        <a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a>
+                    </div>
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Reference Number</a>
-                        <a class="listItemDetailValue">{{ $product->reference_no }}</a>
-                        <a class="listItemDetailLabel">Voucher</a>
-                        @if ($product->productslist != "")
-                            <a class="listItemDetailValue">{{ $product->voucher_code }}</a>
-                        @else
-                            <a class="listItemDetailValue">No voucher</a>
-                        @endif
-                        <br/>
-                        @if ($product->voucher_proof != "")
-                          <img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" />
-                        @endif
-
-                        
+                        <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
                         <a class="listItemDetailLabel">Mode of Payment</a>
                         <a class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
                         <a class="listItemDetailLabel">Amount Paid</a>
@@ -79,13 +70,23 @@ Order Details
                         </a>
                       </div>                      
                       <div class="table-cell payment">
-                        <a class="listItemDetailLabel">Products</a>
+                        <!-- <a class="listItemDetailLabel">Products</a>
                         <a class="listItemDetailValue">
                           <ul>
                             <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
                             <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
                           </ul>
-                        </a>
+                        </a> -->
+                        <a class="listItemDetailLabel">Voucher</a>
+                        @if ($product->productslist != "")
+                            <a class="listItemDetailValue">{{ $product->voucher_code }}</a>
+                        @else
+                            <a class="listItemDetailValue">No voucher</a>
+                        @endif
+                        <br/>
+                        @if ($product->voucher_proof != "")                          
+                        <a class="listItemDetailValue"><img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" /></a>
+                        @endif
                         <a class="listItemDetailLabel">Amount Due</a>
                         <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
                       <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
@@ -127,14 +128,14 @@ Order Details
 
                                 <br/>
                                 <br/>
-                                <h5 class="u-text u-text-default u-text-6">Add Product Reviews</h5>  
+                                <h5 class="u-text u-text-default u-text-6">Orders</h5>  
                                 <br/>
                                 <div class="table ordersTable">            
                                   <div class="table-row">
                                       <div class="table-head" style="display: none">Product ID</div>
                                       <div class="table-head" >Image</div>
                                       <div class="table-head">Product</div>
-                                      <div class="table-head quantity">Quantity</div>
+                                      <!-- <div class="table-head quantity">Quantity</div> -->
                                       <div class="table-head">Total Price</div>
                                       <div class="table-head">Notes</div>
                                   </div>   
@@ -230,8 +231,7 @@ jQuery(document).ready(function ($) {
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
                     <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span></div>
-                    <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
                       <span class="listItemDetailValue">
