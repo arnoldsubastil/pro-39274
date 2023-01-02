@@ -29,24 +29,21 @@ Desserts
             @foreach($uniqueProductIds as $uniqueProductId)            
   
               <!--- get all sweets, beans, cereals --->
-              <!-- @if($uniqueProductId['productTypeId'] == "BDB353A9-27DA-4257-A3F6-54477A8CA9B4" || $uniqueProductId['productTypeId'] == "DE3B5EB8-F1C8-45C1-819D-D5AB033A7335" || $uniqueProductId['productTypeId'] == "8D184E01-01C3-49FD-A2BC-8452B17D9F60") -->
-                
-                <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
+               <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
                     <div class="u-container-align-center u-container-style u-group u-group-1">
                       <div class="u-container-layout u-valign-bottom u-container-layout-2">
-                        <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-1 ellipsis">{{$uniqueProductId['name']}}
+                        <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-1 ellipsis">{{$uniqueProductId->name}}
                         </h4>
                       </div>
                     </div>
-                    <p class="u-align-center u-text u-text-default u-text-2 small"> {{$uniqueProductId['foreignName']}} </p>
-                    <img class="u-image u-image-default u-image-1" src="{{$uniqueProductId['thumbnailUrl']}}" alt="" data-image-width="1684" data-image-height="1123">
-                    <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><span class="amount">PHP</span> {{$uniqueProductId['sellingPrice']}} </h4>
-                    <a href="{{ route('desserts.details', $uniqueProductId['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                    <p class="u-align-center u-text u-text-default u-text-2 small"> {{$uniqueProductId->foreignName}} </p>
+                    <img class="u-image u-image-default u-image-1" src="resizer/images/ProductThumbnails/{{$uniqueProductId->thumbnailUrl}}/240" alt="" data-image-width="1684" data-image-height="1123">
+                    <h4 class="u-align-center u-custom-font u-text u-text-default u-text-font u-text-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><span class="amount">PHP</span> {{$uniqueProductId->sellingPrice}} </h4>
+                    <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                   </div>
                 </div>
 
-               <!-- @endif -->
               
               @endforeach
 
