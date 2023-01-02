@@ -237,6 +237,19 @@ footer.u-custom-color-3{
   .round input[type="checkbox"]:checked + label:after {
     opacity: 1;
   }
+
+  .round input[type="radio"] {
+    visibility: hidden;
+  }
+  
+  .round input[type="radio"]:checked + label {
+    background-color: #5A8463;
+    border-color: #5A8463;
+  }
+  
+  .round input[type="radio"]:checked + label:after {
+    opacity: 1;
+  }
   
 
   .closeButton {
@@ -298,6 +311,13 @@ footer.u-custom-color-3{
     background-color: #FFBABA;
     background-image: url('https://i.imgur.com/GnyDvKN.png');
 }
+
+.alert-danger{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
+
 .validation{
     color: #D63301;
     background-color: #FFCCBA;

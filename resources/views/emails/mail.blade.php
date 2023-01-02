@@ -42,7 +42,7 @@
 					<td class="center" style="padding: 20px 0 0 36px;">
                         <table width="100%" border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
                             <tr>
-                                <td valign="top" style="" bgcolor="#ffffff">
+                                <td valign="top" style="text-decoration: none ; font-size: 14px ; color: #363636 ; font-family: arial" bgcolor="#ffffff">
                                 Hello <b>{{ $info[0]->full_name }}</b>,
 								</td>
                             </tr>
@@ -84,7 +84,7 @@
                         </table>
 					</td>
 				</tr>
-				@foreach($info as $prodinfo)
+				
                 <tr>
 					<td class="center" style="padding:12px 0 0 0">
                         <table width="36%" border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
@@ -92,7 +92,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Product ID:</a>
+											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Order ID:</a>
 											</td>
 										</tr>
 									</table>
@@ -106,7 +106,7 @@
 										<tr>
 											<td valign="middle" style="padding:0 8px 0px 0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
-                                            {{$prodinfo->productIdlong}}</a>
+                                            {{$info[0]->order_id}}</a>
 											</td>
 										</tr>
 									</table>
@@ -123,14 +123,16 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Product:</a>
+											<td valign="middle" style="padding:0"><a href="#" style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Orders:</a>
 											</td>
 										</tr>
 									</table>
                                 </td>
                             </tr>
                         </table>
+                        
                         <table width="49%" border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
+                            @foreach($info as $prodinfo)
                             <tr>
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0">
 									<table>
@@ -143,10 +145,11 @@
 									</table>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
+                       
 					</td>
-				</tr>
-                @endforeach
+				</tr>               
 				<tr>
 					<td class="center" style="padding:12px 0 0 0">
                         <table width="36%" border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
