@@ -103,7 +103,7 @@ Product Details
           <a href="javascript:history.back()" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
          
           @if($product->stock == null || $product->stock <= 0)
-            <span style="color:#ab0000;font-size: 18px;">Product not available this time...</span>
+            <span class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Product not available this time...</span>
           @else
           <a class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
           @endif 

@@ -18,40 +18,98 @@ Order Details
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
             <div class="u-layout">
-                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
-                    <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">                         
-                        <div class="btn-submit form-vertical u-form u-form-1"> 
-                            <h3 class="u-text u-text-default u-text-6">Order Details</h3>                  
+                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">                   
+                                              
                             @foreach($products as $product)
+                            <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">                         
+                                <div class="btn-submit form-vertical u-form u-form-1">
+                                <h4 class="u-text u-text-default u-text-6">Order ID: {{ $product->order_id }}</h4>
+<br/>
+                                <div class="table ordersTable">
+                    <div class="table-row">
+                      <div class="table-head quantity">Status</div>
+                      <div class="table-head">Order</div>
+                      <div class="table-head">Payment</div>
+                      <div class="table-head">Items</div>                      
+                      <div class="table-head">Delivery</div>
+                      <!-- <div class="table-head arrow"></div> -->
+                    </div>
+              <!--- begin product item --->
 
-                                <div class="u-form-group u-form-name">
-                                  <label for="name-2382" class="u-label u-label-1">Status</label>
-                                  <input disabled type="text" placeholder="Full name" id="name" name="name" value="{{ $product->status }}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1"/>
-                                </div>
-                                <div class="u-form-group u-form-group-2">
-                                  <label for="text-864f" class="u-label u-label-2">Delivery Address</label>
-                                  <input disabled type="text" placeholder="Valid contact number" value="{{ $product->delivery_address }}" id="contact" name="contact" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-2"/>
-                                </div>
-                                <div class="u-form-email u-form-group">
-                                  <label for="email-2382" class="u-label u-label-3">Mode of Payment</label>
-                                  <input disabled type="email" placeholder="Valid email address" id="email" value="{{ $product->mode_of_payment }}" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-3"/>
-                                </div>
-                                <div class="u-form-group u-form-group-4">
+              
+                <!--- get selected products --->
+                
+                <div class="table-row">
+                      <!-- <div class="table-cell selectCheckbox">
+                        <div class="round">
+                          <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
+                          <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
+                        </div>
+                      </div> -->
+                      <div class="table-cell status">
+                        <div class="round" style="margin: 0 8px 8px 0;    text-align: center;    display: inline-block;    height: 26px;">
+                            <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
+                            <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
+                           </div>
+                        <br/>
+                        <a href="/my-orders" class="listItemDetailLabel">Status</a>
+                        <a href="/my-orders" class="listItemDetailValue">{{ $product->status }}</a>
+                      </div>
+                      <div class="table-cell payment"><a href="/my-orders" class="listItemDetailLabel">Order ID</a><a href="/my-orders" class="listItemDetailValue">OR-202301011122</a><a class="listItemDetailLabel">Order Date</a><a href="/my-orders" class="listItemDetailValue">January 1, 2022</a></div>
+                      <div class="table-cell payment">
+                        <a href="/my-orders" class="listItemDetailLabel">Reference Number</a>
+                        <a href="/my-orders" class="listItemDetailValue">{{ $product->reference_no }}</a>
+                        <a href="/my-orders" class="listItemDetailLabel">Voucher</a>
+                        @if ($product->productslist != "")
+                            <a href="/my-orders" class="listItemDetailValue">{{ $product->voucher_code }}</a>
+                        @else
+                            <a href="/my-orders" class="listItemDetailValue">No voucher</a>
+                        @endif
+                        <br/>
+                        @if ($product->voucher_proof != "")
+                          <img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" />
+                        @endif
+
+                        
+                        <a class="listItemDetailLabel">Mode of Payment</a>
+                        <a href="/my-orders" class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
+                        <a class="listItemDetailLabel">Amount Paid</a>
+                        <a href="/my-orders" class="listItemDetailValue">
+                            <span class="currency">PHP</span><span class="amount"> 320.00</span> 
+                        </a>
+                      </div>                      
+                      <div class="table-cell payment">
+                        <a class="listItemDetailLabel">Products</a>
+                        <a href="/my-orders" class="listItemDetailValue">
+                          <ul>
+                            <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
+                            <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
+                          </ul>
+                        </a>
+                        <a class="listItemDetailLabel">Amount Due</a>
+                        <a href="/my-orders" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
+                      <div class="table-cell"><a href="/my-orders" class="listItemDetailLabel">Delivery Address</a><a href="/my-orders" class="listItemDetailValue">{{ $product->delivery_address }}</a><a href="/my-orders" class="listItemDetailLabel">Notes</a><a href="/my-orders" class="listItemDetailValue">{{ $product->notes }}</a></div>
+                 
+                      <!-- <div class="table-cell arrow">
+                        <a href="/my-orders" class="listItemDetailLabel"></a>
+                        <a href="/my-orders" class="listItemDetailValue">
+                          <div class="triangle-right" style="margin-left: 16px;"></div>                               
+                        </a>
+                      </div> -->
+                    </div>
+              
+                            
+            </div>
+
+                               
+                                <!-- <div class="u-form-group u-form-group-4">
                                   <label for="text-c306" class="u-label u-label-4">Mailing Address</label>
                                   <input disabled type="text" placeholder="Mailing address" id="maddress" value="adfds" name="maddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
                                 </div>
                                 <div class="u-form-group u-form-group-4">
                                   <label for="text-c306" class="u-label u-label-4">Delivery Address</label>
                                   <input disabled type="text" placeholder="Complete address" id="daddress" value="adfds" name="daddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                </div>
-                                <div class="u-form-group u-form-group-4">
-                                  <label for="text-c306" class="u-label u-label-4">Reference Number</label>
-                                  <input disabled type="text" placeholder="Payment Reference" id="reference_no" value="{{ $product->reference_no }}" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                </div>
-                                <div class="u-form-group u-form-group-4">
-                                  <label for="text-c306" class="u-label u-label-4">Notes</label>
-                                  <textarea disabled rows="4" id="message-2382" name="message" class="noResize u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-5">{{ $product->notes }}</textarea>
-                                </div>
+                                </div> 
                                 <div class="u-form-group u-form-group-4">
                                   <label for="text-c306" class="u-label u-label-4">Voucher</label>
 
@@ -65,17 +123,16 @@ Order Details
                                       <img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" />
                                     @endif  
 
-                                </div>
+                                </div>-->
 
                                 <br/>
-
-                                <h3 class="u-text u-text-default u-text-6">Product Reviews</h3>  
-                                <br/>                                
-
-                                <div class="table orderDetailsTable">            
+                                <br/>
+                                <h5 class="u-text u-text-default u-text-6">Add Product Reviews</h5>  
+                                <br/>
+                                <div class="table ordersTable">            
                                   <div class="table-row">
                                       <div class="table-head" style="display: none">Product ID</div>
-                                      <div class="table-head">Image</div>
+                                      <div class="table-head" >Image</div>
                                       <div class="table-head">Product</div>
                                       <div class="table-head quantity">Quantity</div>
                                       <div class="table-head">Total Price</div>
@@ -83,9 +140,10 @@ Order Details
                                   </div>   
                                   <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
                                 </div>
-                            @endforeach
                         </div>
                     </div>
+                            @endforeach
+                        
                 </div>
             </div>
         </div>
@@ -168,11 +226,10 @@ jQuery(document).ready(function ($) {
                         note = value.product_note;
                     }
                 $alltext = $alltext + `
-<<<<<<< HEAD
 
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
-                    <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
+                    <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span></div>
                     <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
@@ -183,7 +240,7 @@ jQuery(document).ready(function ($) {
                       <br/>
                       <form method="get" action="/posted-review">
                               <meta name="csrf-token" content="`+_token+`">
-                              <input type="hidden" name="productIdlong" value="`+value.productIdlong+`" />
+                              <input type="hidden" name="productIdlong" value="`+value.cartorderId+`" />
                               <span class="listItemDetailValue">
                                   <textarea name='myreview' class="prodcomments" rows="5" placeholder="Review this product"></textarea>
                               </span>
@@ -193,31 +250,11 @@ jQuery(document).ready(function ($) {
                         </form>
                     </div>
                 </div>
-
+                
+                
+                
                 `;
-=======
-                <div>
-                    Product Name: `+ value.name +`
-                </div>
-                <div>
-                    Product QTY: `+ value.qty +`
-                </div>
-                <div>
-                    Product Note: `+ note +`
-                </div>
-                `;
-                if(value.review == '') {
-                    $alltext = $alltext + `
-                <div>
-                    <form method="get" action="/posted-review">
-                        <meta name="csrf-token" content="`+_token+`">
-                        <input type="hidden" name="productIdlong" value="`+value.cartorderId+`" />
-                        <textarea name='myreview'></textarea>
-                        <input type="submit" />
-                    </form>
-                </div>`;
-                }
->>>>>>> 70cf331eaa62c63505fc267ffa875d689c068014
+                
                 });
                 
                 $('.'+orderId+'_item').html($alltext);

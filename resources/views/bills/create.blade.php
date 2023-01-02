@@ -194,10 +194,10 @@ Bill Order
                             <label for="name-2382" class="u-label u-label-1">Discount</label>
                             <input type="text" value="No available voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
                           </div>
-                          <div class="u-form-group">
+                          <!-- <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Amount Due</label>
-                            <input type="text" value="PHP 4,840.00" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div>
+                            <input id="BPITotalAmountDueTextbox" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" />
+                          </div> -->
                         </div>
                         <div class="form-vertical u-form u-form-1"> 
                           <h4>You are about to pay</h4>
@@ -225,10 +225,10 @@ Bill Order
                             <label for="name-2382" class="u-label u-label-1">Discount</label>
                             <input type="text" value="No available voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
                           </div>
-                          <div class="u-form-group">
+                          <!-- <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Amount Due</label>
-                            <input type="text" value="PHP 4,840.00" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div>
+                            <input id="GCashTotalAmountDueTextbox" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" />
+                          </div> -->
                         </div>
                         <div class="form-vertical u-form u-form-1"> 
                           <h4>You are about to pay</h4>
@@ -416,6 +416,8 @@ Array.prototype.insert = function ( index, ...items ) {
 $('#totalcomputedamount').html(mvar.format());
 $('#BPITotalAmountDueSpan').html(mvar.format());
 $('#GCashTotalAmountDueSpan').html(mvar.format());
+$('#BPITotalAmountDueTextbox').html(mvar.format());
+$('#BPITotalAmountDueTextbox').html(mvar.format());
 $('#totalcomputedamount_submt').val(mvar);
 
 
@@ -464,6 +466,8 @@ $("input[name='voucher']").click(function(){
               $('#totalcomputedamount_submt').val(newvalue);
               $('#BPITotalAmountDueSpan').html(newvalue.format());
               $('#GCashTotalAmountDueSpan').html(newvalue.format());
+              $('#BPITotalAmountDueTextbox').html(newvalue.format());
+              $('#GCashTotalAmountDueTextbox').html(newvalue.format());
               console.log(newvalue);
             } else{
               $('#totalcomputedamount').html(mvar.format());

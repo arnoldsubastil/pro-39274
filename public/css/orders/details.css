@@ -5,6 +5,10 @@
     font-size: 1.125rem;
   }
 
+  .u-layout-cell{
+    display: block;
+  }
+
 .u-form-group{
   margin: 32px;
 }
@@ -121,6 +125,7 @@
 
 .u-section-2 .u-container-layout-4 {
   padding: 30px 29px;
+  margin-bottom: 48px;
 }
 
 .u-section-2 .u-text-6 {
