@@ -9,7 +9,7 @@ class Cart extends Model
     protected $table;
     public function __construct()
     {
-        $this->table = 'Cart';
+        $this->table = 'cart';
     }
 
     protected $primaryKey = 'cart_id';
