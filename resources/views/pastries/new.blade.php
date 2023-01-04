@@ -7,7 +7,7 @@
 
 <!-- Push a style dynamically from a view -->
 @section('styles')
-<link rel="stylesheet" href="css/pastries.css" media="screen">
+<link rel="stylesheet" href="../../css/pastries.css" media="screen">
 @endsection
 
 @section('content')  
