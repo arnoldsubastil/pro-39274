@@ -331,7 +331,7 @@ class CartController extends Controller
         $data = array('info' => $body);
         Mail::send('emails.mail', $data, function ($message) use ($toName, $toEmail) {
         $message->to($toEmail, $toName)
-        ->subject('Laravel Test Mail');
+        ->subject('Soystory Order Receipt');
         $message->from('tech.sender2023@gmail.com', 'SoyStory Online Ordering');
         });
     }
