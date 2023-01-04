@@ -14,6 +14,7 @@ Product Details
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
   <br/>
+  @if($urlvid = '') @endif
     @foreach($products as $product)
     <section class="u-clearfix u-section-1" id="carousel_7dcd">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -83,9 +84,6 @@ Product Details
                     @endfor
                     
                       
-                      <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
-                       <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
-                      <a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>
                 </div>
@@ -95,6 +93,7 @@ Product Details
         </div>
       </div>
     </section>
+  @if($urlvid = $product->video_url) @endif
  @endforeach 
  <section class="u-clearfix u-section-6" id="sec-9474">
     <div class="u-clearfix u-sheet u-sheet-1">
@@ -147,8 +146,6 @@ Product Details
 
             @foreach($uniqueProductIds as $uniqueProductId)
             
-              <!--- get all pastries --->
-              @if($uniqueProductId->productTypeId == "A3902296-0D6F-4E34-91A2-023573626225")
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
 
@@ -160,13 +157,10 @@ Product Details
                   <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                 </div>
               </div>
-
-              @endif            
-            
             @endforeach
 
           <!--- end product item --->  
-            
+
           </div>
           <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
             <span aria-hidden="true">
@@ -194,6 +188,23 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
           </a>
         </div>
       </div><br/>
+
+
+      <div>Products Review</div>
+          @foreach($reviews as $review)
+            <div>
+                <div class="reviewerName">
+                    {{ $review->customer_id }}
+                </div>
+                <div class="customerReview">
+                    {{ $review->review }}
+                </div>
+            </div>
+          @endforeach
+
+          <div>VIdeo URL</div>
+          <div> URL embed here {{ $urlvid }}</div>
+
     </section>
     
        

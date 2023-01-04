@@ -8,6 +8,7 @@ use \App\Models\Cart;
 use \App\Models\Orders;
 use \App\Models\CartOrder;
 use \App\Models\Reviews;
+use \App\Models\Contact;
 use Auth;
 use DB;
 use Mail;
@@ -23,7 +24,7 @@ class CartController extends Controller
     public function index(Request $request) {
         $userId = $this->getID(Auth::user());
         $carttocheckout = DB::table('cart')
-            ->select('cart.user_id', 'cart.product_id', 'products.productIdlong', 'cart.product_note', 'products.name', 'products.thumbnailUrl', 'products.productStatusId', 'products.foreignName', 'products.thumbnailUrl', 'products.sellingPrice', DB::raw('COUNT(1) as numberoforder'))
+            ->select('cart.user_id', 'cart.product_id', 'products.productIdlong', 'cart.product_note', 'products.name', 'products.thumbnailUrl', 'products.foreignName', 'products.thumbnailUrl', 'products.sellingPrice', DB::raw('COUNT(1) as numberoforder'))
             ->join('products', 'products.productIdlong', '=', 'cart.product_id')
             ->where('cart.user_id', $userId)
             ->where('cart.status', 'added')
@@ -32,7 +33,6 @@ class CartController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('products.name')
             ->groupBy('products.thumbnailUrl')
-            ->groupBy('products.productStatusId')
             ->groupBy('cart.product_note')
             ->groupBy('products.foreignName')
             ->groupBy('products.thumbnailUrl')
@@ -130,6 +130,8 @@ class CartController extends Controller
                 'orders.order_id',
                 'orders.full_name',
                 'orders.status',
+                'deliverystatus.statusID',
+                'deliverystatus.statusname',
                 'orders.mailing_address',
                 'orders.delivery_address',
                 'orders.contact_number',
@@ -139,11 +141,14 @@ class CartController extends Controller
                 'voucher.voucher_code',
                 'orders.voucher_proof',
                 'orders.notes',
+                'orders.amount',
+                'orders.created_at',
                 DB::raw('GROUP_CONCAT(products.name) as productslist'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
+            ->join('deliverystatus', 'orders.status', '=', 'deliverystatus.statusID')
             ->where('orders.user_id', $userId)
             ->groupBy('orders.order_id')
             ->groupBy('orders.user_id')
@@ -158,6 +163,11 @@ class CartController extends Controller
             ->groupBy('voucher.voucher_code')
             ->groupBy('orders.voucher_proof')
             ->groupBy('orders.notes')
+            ->groupBy('orders.amount')
+            ->groupBy('deliverystatus.statusID')
+            ->groupBy('deliverystatus.statusname')
+            ->groupBy('orders.created_at')
+            ->orderBy('orders.order_id', 'desc')
             ->get();
 
         return view('orders.list', [
@@ -184,10 +194,11 @@ class CartController extends Controller
                 'orders.notes',
                 'products.name',
                 'products.productIdlong',
+                'products.url',
                 'cart.product_note',
-                'cartorder.cartorderId',
                 'cartorder.review',
-                DB::raw('COUNT(1) as qty'))
+                DB::raw('COUNT(1) as qty'),
+                DB::raw('GROUP_CONCAT(cartorder.cartorderId) as carts'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
@@ -208,9 +219,9 @@ class CartController extends Controller
             ->groupBy('orders.notes')
             ->groupBy('products.name')
             ->groupBy('products.productIdlong')
+            ->groupBy('products.url')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
-            ->groupBy('cartorder.cartorderId')
             ->groupBy('cartorder.review')
             ->get();
 
@@ -224,7 +235,8 @@ class CartController extends Controller
             'contact' => 'required|min:10|max:16',
             'maddress' => 'required',
             'daddress' => 'required',
-            'mode_of_payment' => 'required'
+            'mode_of_payment' => 'required',
+            'to_received_date' => 'required|date'
         ]);
 
         $userId = $this->getID(Auth::user());
@@ -249,7 +261,7 @@ class CartController extends Controller
             $orderId = Orders::create([
                 'user_id' => $userId,
                 'full_name' => $request->name,
-                'status' => 'Paid',
+                'status' => '1',
                 'contact_number' => $request->contact,
                 'email' => $request->email,
                 'mailing_address' => $request->maddress,
@@ -259,7 +271,9 @@ class CartController extends Controller
                 'amount' => $request->totalcomputedamount_submt,
                 'voucher_id' => $request->voucher_id,
                 'voucher_proof' => $imageName,
-                'notes' => $request->message
+                'notes' => $request->message,
+                'date_receive' => date("Y-m-d", strtotime($request->to_received_date)),
+                'shippingId' => $request->shipping
             ]);
             $productnote = json_decode($request->allproductcomments, true);
             
@@ -285,9 +299,17 @@ class CartController extends Controller
     }
 
     public function postreview(Request $request) {
-        CartOrder::where('cartorderId', $request->productIdlong)
+        $cartids = explode(',', $request->carts);
+        CartOrder::whereIn('cartorderId', $cartids)
         ->update([
             'review' => $request->myreview
+        ]);
+
+        Reviews::create([
+            'customer_id' => $request->user_id,
+            'product_id' => $request->productIdlong,
+            'review' => $request->myreview,
+            'approval' => 0
         ]);
                     
         return view('orders.reviewupdated');
@@ -295,7 +317,7 @@ class CartController extends Controller
     public function postcontact(Request $request) {
 
         $this->getID(Auth::user());
-            Reviews::create([
+            Contact::create([
                 'email' => $request->productIdlong,
                 'message' => $request->message,
                 'read_done' => 0
@@ -310,9 +332,15 @@ class CartController extends Controller
         $data = array('info' => $body);
         Mail::send('emails.mail', $data, function ($message) use ($toName, $toEmail) {
         $message->to($toEmail, $toName)
-        ->subject('Laravel Test Mail');
+        ->subject('Soystory Order Receipt');
         $message->from('tech.sender2023@gmail.com', 'SoyStory Online Ordering');
         });
+    }
+
+    public function showcategorylist() {
+        
+        return DB::table('categories')
+            ->select('categoryname', 'slug')->get();
     }
 
     private function orderOrganizer($orderId) {
@@ -334,9 +362,9 @@ class CartController extends Controller
                 'products.name',
                 'products.productIdlong',
                 'cart.product_note',
-                'cartorder.cartorderId',
                 'cartorder.review',
-                DB::raw('COUNT(1) as qty'))
+                DB::raw('COUNT(1) as qty'),
+                DB::raw('GROUP_CONCAT(cartorder.cartorderId) as carts'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
@@ -359,7 +387,6 @@ class CartController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
-            ->groupBy('cartorder.cartorderId')
             ->groupBy('cartorder.review')
             ->get();
     }

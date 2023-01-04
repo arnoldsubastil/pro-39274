@@ -2,25 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http; //GET DATA FROM WEB
-use Illuminate\Support\Facades\Storage; //GET DATA FROM STORAGE
 use DB;
 
 class PastriesController extends Controller
 {
     //
 
-    public function index(){
+    public function index($categoryID){
         
         $uniqueProductId = DB::table('products')
-            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
-            ->where('productType', 'Pastries')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->where('categories', $categoryID)
             ->get();          
 
-        return view('pastries.index',[
+        $categoryName = ucwords(str_replace('-', ' ', $categoryID));
+        return view('pastries.new',[
             'uniqueProductIds'=>$uniqueProductId,
-            'countUnique'=>count($uniqueProductId)
+            'countUnique'=>count($uniqueProductId),
+            'category'=>$categoryName
         ]);
     
     }
@@ -28,7 +27,7 @@ class PastriesController extends Controller
     public function details($productId){
 
         $uniqueProductId = DB::table('products')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.productType', 'products.productTypeId', 'products.productStatus', 'products.productStatusId', 'products.productBrandId', 'products.productBrandName', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'))
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'), 'products.video_url')
             ->where('productIdlong', $productId)
             ->leftJoin('cart', 'cart.product_id', '=', 'products.productIdlong')
             ->leftJoin('inventory', 'inventory.product_id', '=', 'products.productIdlong')
@@ -40,16 +39,13 @@ class PastriesController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('products.productOptions')
             ->groupBy('products.productSize')
-            ->groupBy('products.productType')
-            ->groupBy('products.productTypeId')
-            ->groupBy('products.productStatus')
-            ->groupBy('products.productStatusId')
-            ->groupBy('products.productBrandId')
-            ->groupBy('products.productBrandName')
             ->groupBy('products.sellingPrice')
             ->groupBy('products.thumbnailUrl')
+            ->groupBy('products.video_url')
             ->groupBy('products.url')
             ->get();
+
+            $category = $uniqueProductId[0]->categories;
         
             $allcartids = DB::table('cart')
             ->select(DB::raw('GROUP_CONCAT(cart_id) as carts'))
@@ -76,8 +72,8 @@ class PastriesController extends Controller
 
 
             $allNotcartids = DB::table('cartorder')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.productType', 'products.productTypeId', 'products.productStatus', 'products.productStatusId', 'products.productBrandId', 'products.productBrandName', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url')
-            ->where('productType', 'Pastries')
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize','products.sellingPrice', 'products.thumbnailUrl', 'products.url', 'products.video_url')
+            ->where('products.categories', $category)
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
             ->where('products.productIdlong', '!=', $productId)
@@ -90,31 +86,33 @@ class PastriesController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('products.productOptions')
             ->groupBy('products.productSize')
-            ->groupBy('products.productType')
-            ->groupBy('products.productTypeId')
-            ->groupBy('products.productStatus')
-            ->groupBy('products.productStatusId')
-            ->groupBy('products.productBrandId')
-            ->groupBy('products.productBrandName')
             ->groupBy('products.sellingPrice')
             ->groupBy('products.thumbnailUrl')
             ->groupBy('products.url')
+            ->groupBy('products.video_url')
             ->get();
             
             $remaining = 10 - count($allNotcartids); 
 
             $product = DB::table('products')
-            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'productType', 'productTypeId', 'productStatus', 'productStatusId', 'productBrandId', 'productBrandName', 'sellingPrice', 'thumbnailUrl', 'url')
-            ->where('productType', 'Pastries')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->where('categories', 'pastries')
             ->where('productIdlong', '!=', $productId)
             ->take($remaining)
             ->get();
 
+            
+            $allreviews = DB::table('reviews')
+            ->select('customer_id', 'review')
+            ->where('product_id', $productId)
+            ->where('approval', 1)
+            ->get();
         return view('pastries.details',[
             'alsobuy'=>$allNotcartids,
             'uniqueProductIds'=>$product,
             'products'=>$uniqueProductId,
-            'productId'=>$productId
+            'productId'=>$productId,
+            'reviews'=>$allreviews
         ]);
 
     }

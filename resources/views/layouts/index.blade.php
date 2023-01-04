@@ -131,12 +131,7 @@
                   <li class="u-nav-item"><a class="aboutNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/About" style="padding: 10px;">Our Story</a></li>
 <li class="u-nav-item dropdown"><a class="dropbtn productsNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" onclick="myFunction()" style="padding: 10px;">Our Products</a>
 <div id="myDropdown" class="dropdown-content">
-    <a href="/Pastries">Pastries</a>
-    <a href="/ToppingsAndSinkers">Toppings & Sinkers</a>
-    <a href="/NutsAndNougat">Nuts & Nougat</a>
-    <a href="/Beverages">Shake Shake Jelly</a>
-    <a href="/Desserts">Special Orders</a>
-  </div>
+</div>
   
 <!-- </li><li class="u-nav-item"><a class="categoriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Categories" style="padding: 10px;">Categories</a> -->
 <!-- </li><li class="u-nav-item"><a class="pastriesNavItem u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Pastries" style="padding: 10px;">Pastries</a>
@@ -257,6 +252,25 @@ $(document).ready(function () {
            $('.notificationCart').html(response); 
            else          
            $('.notificationCart').hide();
+        },
+    });
+
+    
+    $.ajax({
+        url: "/api/showcategorylist",
+        type:"GET",
+        data:{
+        myid:myid,
+        _token: _token
+        },
+        success:function(response){
+          var newlink = '';
+          $.each( response, function( key, value ) {
+            newlink = newlink + `<a href="/products/`+value['slug']+`">`+value['categoryname']+`</a>`;
+          });
+          console.log(newlink);
+
+          $('#myDropdown').html(newlink);
         },
     });
 });

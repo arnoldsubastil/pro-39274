@@ -21,7 +21,7 @@ class BillsController extends Controller
         $userId = $this->getID(Auth::user());
         $productslist = explode(',', $request->productlist);
         $carttocheckout = DB::table('cart')
-            ->select('cart.user_id', 'cart.product_id', 'cart.product_note', 'products.productIdlong', 'products.name', 'products.thumbnailUrl', 'products.productStatusId', 'products.foreignName', 'products.thumbnailUrl', 'products.url', 'products.sellingPrice', 'products.productSize', DB::raw('COUNT(1) as numberoforder'), DB::raw('(COUNT(1) * products.sellingPrice) as totalamount'))
+            ->select('cart.user_id', 'cart.product_id', 'cart.product_note', 'products.productIdlong', 'products.name', 'products.thumbnailUrl', 'products.foreignName', 'products.thumbnailUrl', 'products.url', 'products.sellingPrice', 'products.productSize', DB::raw('COUNT(1) as numberoforder'), DB::raw('(COUNT(1) * products.sellingPrice) as totalamount'))
             ->join('products', 'products.productIdlong', '=', 'cart.product_id')
             ->where('cart.user_id', $userId)
             ->where('cart.status', 'added')
@@ -32,7 +32,6 @@ class BillsController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('products.name')
             ->groupBy('products.thumbnailUrl')
-            ->groupBy('products.productStatusId')
             ->groupBy('products.foreignName')
             ->groupBy('products.thumbnailUrl')
             ->groupBy('products.url')
@@ -56,22 +55,38 @@ class BillsController extends Controller
         $listofvoucher = $checkallvouchersonorderuser[0]->vouchers;
         $listofvoucherarr = explode(',', $listofvoucher);
         $datetoday = date("Y-m-d");
-        $checkvoucher = DB::table('voucher')
-            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
+        if ($this->islogin(Auth::user())) {
+        $checkvoucher3 = DB::table('voucher')
+            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start','all_users')
             ->where('valid_date_start', '<=', $datetoday)
             ->where('valid_date_end', '>=', $datetoday)
             ->where('required_items', '<=', intval($countitem))
-            ->where('specific_user', '=', '')
+            ->where('specific_user', '=', null)
+            ->where('all_users', '=', 1)
             ->whereNotIn('voucher_id', $listofvoucherarr)
             ->get();
-        $checkvoucher2 = DB::table('voucher')
-            ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
-            ->where('valid_date_start', '<=', $datetoday)
-            ->where('valid_date_end', '>=', $datetoday)
-            ->where('required_items', '<=', intval($countitem))
-            ->where('specific_user', '=', $userId)
-            ->whereNotIn('voucher_id', $listofvoucherarr)
-            ->get();
+        } 
+            $checkvoucher = DB::table('voucher')
+                ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
+                ->where('valid_date_start', '<=', $datetoday)
+                ->where('valid_date_end', '>=', $datetoday)
+                ->where('required_items', '<=', intval($countitem))
+                ->where('specific_user', '=', null)
+                ->where('all_users', '=', 0)
+                ->whereNotIn('voucher_id', $listofvoucherarr)
+                ->get();
+            $checkvoucher2 = DB::table('voucher')
+                ->select('voucher_id', 'specific_user', 'voucher_code', 'required_items', 'discount_type', 'discount', 'proof_needed', 'valid_date_end', 'valid_date_start')
+                ->where('valid_date_start', '<=', $datetoday)
+                ->where('valid_date_end', '>=', $datetoday)
+                ->where('required_items', '<=', intval($countitem))
+                ->where('specific_user', '=', $userId)
+                ->where('all_users', '=', 0)
+                ->whereNotIn('voucher_id', $listofvoucherarr)
+                ->get();
+        
+
+
             $ctr = 0;
             $arr1 = array();
             foreach ($checkvoucher as $voucheradd){
@@ -98,20 +113,42 @@ class BillsController extends Controller
                 $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
+            
+        if ($this->islogin(Auth::user())) {
+            foreach ($checkvoucher3 as $voucheradd){
+                $arr1[$ctr]['voucher_id'] = $voucheradd->voucher_id;
+                $arr1[$ctr]['specific_user'] = $voucheradd->specific_user;
+                $arr1[$ctr]['voucher_code'] = $voucheradd->voucher_code;
+                $arr1[$ctr]['required_items'] = $voucheradd->required_items;
+                $arr1[$ctr]['discount_type'] = $voucheradd->discount_type;
+                $arr1[$ctr]['discount'] = $voucheradd->discount;
+                $arr1[$ctr]['proof_needed'] = $voucheradd->proof_needed;
+                $arr1[$ctr]['valid_date_start'] = $voucheradd->valid_date_start;
+                $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
+                $ctr++;
+            }
+        }
         
         $users = DB::table('users')
         ->select('name', 'firstName', 'lastName', 'deliveryAddress', 'email', 'contact_no')
         ->where('id', $userId)
+        ->get();
+        
+        $shipping = DB::table('shipping')
+        ->select('shippindId', 'shippingcondition', 'price')
         ->get();
             if (count($users) == 0) {
                 $users = array();
                 $newusers = array('name' => '', 'firstName' => '', 'lastName' => '', 'deliveryAddress' => '', 'email' => '', 'contact_no' => '');
                 $users[0] = (object)$newusers;
             }
+
+
         return view('bills.create', [
             'carttocheckout'=>$carttocheckout,
             'voucher' => $arr1,
-            'user' => $users[0]
+            'user' => $users[0],
+            'shipping' => $shipping
         ]);
 
     }
@@ -127,6 +164,18 @@ class BillsController extends Controller
             $userId = $id->id;
         }
         return $userId;
+    }
+
+    private function islogin($id){
+        if (is_string($id)) {
+            return false;
+        } elseif ($id == null) {
+            return false;
+        } elseif ($id->id == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 }

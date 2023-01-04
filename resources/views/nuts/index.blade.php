@@ -28,7 +28,10 @@ Nuts & Nougat
 
             @foreach($uniqueProductIds as $uniqueProductId)            
   
+<<<<<<< HEAD
               <!--- get all nuts and nougat --->
+=======
+>>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -45,7 +48,10 @@ Nuts & Nougat
                   </div>
                 </div>
 
+<<<<<<< HEAD
               
+=======
+>>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
               
               @endforeach
 

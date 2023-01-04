@@ -12,7 +12,7 @@ Home
 @section('content')
 
 <section class="u-clearfix u-section-1 heroImage" id="sec-ea9a"  style="background-color: #F4DFB0;" >
-<img class="u-image u-image-1" src="images/Animations/Animation_V2.gif" style=" width:100%;">
+<img class="u-image u-image-1" src="images/Animations/{{ $banner->bannerimage }}" style=" width:100%;">
       <!-- <div class="u-clearfix u-sheet u-sheet-1"  style="backgroun-color: ##EDC97C; background: url('images/Animations/Animations_1024x600.gif'); background-position: center; background-repeat: no-repeat; height: 600px; min-height: auto; width: 100%;">
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->
@@ -22,19 +22,24 @@ Home
     </section>
     <section class="u-carousel u-carousel-duration-2000 u-carousel-left u-slide u-block-d061-1" id="carousel_ae0d" data-interval="8000" data-u-ride="carousel">
       <ol class="u-absolute-hcenter u-carousel-indicators u-block-d061-2">
-        <li data-u-target="#carousel_ae0d" class="u-active u-grey-30" data-u-slide-to="0"></li>
-        <li data-u-target="#carousel_ae0d" class="u-grey-30" data-u-slide-to="1"></li>
-        <li data-u-target="#carousel_ae0d" class="u-grey-30" data-u-slide-to="2"></li>
+        @if($ctr = 0) @endif
+      @foreach($products as $product)
+      @if($ctr=$ctr+1) @endif
+        <li data-u-target="#carousel_ae0d" class="@if($ctr == 1) u-active @endif u-grey-30" data-u-slide-to="{{ $ctr }}"></li>
+      @endforeach
       </ol>
+        @if($ctr = 0) @endif
       <div class="u-carousel-inner" role="listbox">
-        <div class="u-active u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-1">
+        @foreach($products as $product)
+        @if($ctr=$ctr+1) @endif
+        <div class="@if($ctr == 1) u-active @endif u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-{{ $ctr }}">
           <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
               <div class="u-gutter-0 u-layout">
                 <div class="u-layout-row">
                   <div class="u-size-30">
                     <div class="u-layout-row">
-                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="480" data-image-height="480">
+                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="480" data-image-height="480" style="background-image: url(/resizer/images/ProductImages/{{ $product->url }}/480);">
                         <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
                       </div>
                     </div>
@@ -43,12 +48,12 @@ Home
                     <div class="u-layout-col">
                       <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
                         <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> Pineapple Cake&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 鳳梨酥</h2>
-                          <p class="u-text u-text-3"> Authentic Taiwanese pineapple cake. Buttery shortbread crust generously stuffed with homemade pineapple filling.</p>
-                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 570.00 
+                          <h1 class="u-custom-font u-text u-title u-text-1"> {{ $product->name }}&nbsp;</h1>
+                          <h2 class="u-text u-text-2"> {{ $product->foreignName }}</h2>
+                          <p class="u-text u-text-3"> {{ $product->productDescription }}</p>
+                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> {{ $product->sellingPrice }} 
                           </h2>
-                          <a href="/Pastries/D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                          <a href="/view/{{ $product->productIdlong }}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                         </div>
                       </div>
                     </div>
@@ -58,68 +63,7 @@ Home
             </div>
           </div>
         </div>
-        <div class="u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-2">
-          <div class="u-clearfix u-sheet u-sheet-1">
-            <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-              <div class="u-gutter-0 u-layout">
-                <div class="u-layout-row">
-                  <div class="u-size-30">
-                    <div class="u-layout-row">
-                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="480" data-image-height="480">
-                        <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="u-size-30">
-                    <div class="u-layout-col">
-                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
-                        <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> Suncake&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 太陽餅</h2>
-                          <p class="u-text u-text-3"> Plain Suncake: Taiwanese flaky pastry generously filled with maltose (麥芽糖). Also available in Salted egg, Ube, Red bean Mochi, Ube mochi, and Chocnut flavors.</p>
-                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 375.00 
-                          </h2>
-                          <a href="/Pastries/26E0F202-8063-4EEB-9EE9-134720810CBC" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-3">
-          <div class="u-clearfix u-sheet u-sheet-1">
-            <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-              <div class="u-gutter-0 u-layout">
-                <div class="u-layout-row">
-                  <div class="u-size-30">
-                    <div class="u-layout-row">
-                      <div class="u-container-style u-image u-layout-cell u-right-cell u-size-60 u-image-1" data-image-width="480" data-image-height="480">
-                        <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="u-size-30">
-                    <div class="u-layout-col">
-                      <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-base u-size-60 u-layout-cell-2">
-                        <div class="u-container-layout u-container-layout-2">
-                          <h1 class="u-custom-font u-text u-title u-text-1"> 3Q PASTRY&nbsp;</h1>
-                          <h2 class="u-text u-text-2"> 3Q 餅</h2>
-                          <p class="u-text u-text-3"> Taiwanese flaky generously filled with homemade red bean filling, pork floss, and either mochi or salted egg.</p>
-                          <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> 285.00 
-                          </h2>
-                          <a href="/Pastries/E041A5A3-A2CB-4A21-8C3C-E577CB8F14B2" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
       <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-d061-3" href="#carousel_ae0d" role="button" data-u-slide="prev">
         <span aria-hidden="true">
@@ -147,12 +91,12 @@ Home
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
                   <h6>New Product</h6>
-                  <h2 class="u-text u-text-default u-text-1">Pork Floss Snowflakes Pastry</h2>
-                  <p class="u-text u-text-2">Soft and chewy nougat pastry with pork floss.</p>
+                  <h2 class="u-text u-text-default u-text-1">{{ $newproduct->name }}</h2>
+                  <p class="u-text u-text-2">{{ $newproduct->productDescription }}</p>
                   <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                 </div>
               </div>
-              <div class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1440" data-image-height="960">
+              <div class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1440" data-image-height="960"  style="background-image: url(/resizer/images/ProductImages/{{ $newproduct->url }}/480);">
                 <div class="u-container-layout u-valign-middle u-container-layout-2" src=""></div>
               </div>
             </div>

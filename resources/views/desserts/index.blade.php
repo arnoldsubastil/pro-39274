@@ -28,8 +28,13 @@ Desserts
 
             @foreach($uniqueProductIds as $uniqueProductId)            
   
+<<<<<<< HEAD
               <!--- get all sweets, beans, cereals --->
                <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
+=======
+                
+                <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
+>>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
                   <div class="u-container-layout u-container-layout-1">
                     <div class="u-container-align-center u-container-style u-group u-group-1">
                       <div class="u-container-layout u-valign-bottom u-container-layout-2">

@@ -57,18 +57,10 @@ Bill Order
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
-                        <label><input id="BPIRadioButton" type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
+                        <label><input id="BPIRadioButton" checked="checked" type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
                         <label><input id="GCashRadioButton" type="radio" name="mode_of_payment" value="GCash"> GCash</label> <br>
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
-                      </div>
-                      <div class="u-form-group u-form-group-4">
-                        <label for="text-c306" class="u-label u-label-4">Reference Number</label>
-                        <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
-                      </div>
-                      <div class="u-form-group u-form-group-4 proofvoucher" style="display:none">
-                        <label for="text-c306" class="u-label u-label-4">Proof for Promo Selected</label>
-                        <input type="file" placeholder="Enter valid ID for proof" id="text-c306"  name="image" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
                       </div>
                       <div class="u-form-group u-form-message u-form-group-5">
                         <label for="message-2382" class="u-label u-label-5">Order notes</label>
@@ -78,7 +70,11 @@ Bill Order
                       <div class="u-form-group u-form-message u-form-group-5">
                         <!-- <label for="message-2382" class="u-label u-label-5">Voucher </label> -->
                         <span id="VouchersListSpan" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
-                      </div>                      
+                      </div>    
+                      <div class="u-form-group u-form-group-4 proofvoucher" style="display:none">
+                        <label for="text-c306" class="u-label u-label-4">Proof for Promo Selected</label>
+                        <input type="file" placeholder="Enter valid ID for proof" id="text-c306"  name="image" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
+                      </div>                  
 
                       <div class="u-align-right u-form-group u-form-submit">
                         <a href="PaymentDetails.html" class="form-submit u-btn u-btn-round u-btn-submit u-button-style u-radius-4 u-btn-2">Hidden</a>
@@ -176,24 +172,28 @@ Bill Order
                           <h4>Pay with</h4>                        
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Mode of Payment</label>
-                            <input type="text" value="BPI" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
+                            <input type="text" id="mode_ofpayment" value="BPI" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Account Number</label>
-                            <input type="text" value="2506 4318 0931 4904" placeholder="---- ---- ---- ----" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
+                            <label for="name-2382" class="u-label u-label-1">Shipping Instruction</label>
+                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
+                              @foreach($shipping as $ship)
+                                <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
+                              @endforeach  
+                          </select>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Expiration Date</label>
-                            <input type="text" value="02/26" placeholder="MM/YY" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
+                            <label for="name-2382" class="u-label u-label-1">Date Received</label>
+                            <input type="text"  name="to_received_date"  value="02/26" placeholder="MM/YY" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
                           </div>
-                          <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">CVV</label>
-                            <input type="text" value="2898" placeholder="----" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
-                          </div>
-                          <div class="u-form-group">
+                      <div class="u-form-group u-form-group-4">
+                        <label for="text-c306" class="u-label u-label-4">Reference Number</label>
+                        <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
+                      </div>
+                          <!-- <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Discount</label>
                             <input type="text" value="No available voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div>
+                          </div> -->
                           <!-- <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Amount Due</label>
                             <input id="BPITotalAmountDueTextbox" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" />
@@ -207,45 +207,6 @@ Bill Order
                           </div> 
                           <div class="u-form-group">
                             <p>Please review to ensure that the details are correct before you proceed.</p>
-                          </div>
-                        </div>
-                      </section>
-                      <section id="GCashPaymentSection" class="paymentSection">
-                        <div class="form-vertical u-form u-form-1">  
-                          <h4>Pay with</h4>                        
-                          <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Mode of Payment</label>
-                            <input type="text" value="GCash" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div>
-                          <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Contact Number</label>
-                            <input type="text" value="{{ $user->contact_no ?? '' }}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
-                          </div>
-                          <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Discount</label>
-                            <input type="text" value="No available voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div>
-                          <!-- <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Amount Due</label>
-                            <input id="GCashTotalAmountDueTextbox" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" />
-                          </div> -->
-                        </div>
-                        <div class="form-vertical u-form u-form-1"> 
-                          <h4>You are about to pay</h4>
-                          <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Total Amount</label>
-                            <p>&nbsp;<span class="totalAmountCurrency">PHP&nbsp;</span><span id="GCashTotalAmountDueSpan" class="totalAmount"></span></p>                             
-                          </div> 
-                          <div class="u-form-group">
-                            <p>Please review to ensure that the details are correct before you proceed.</p>
-                          </div>
-                        </div>
-                      </section>
-                      <section id="NotificationPaymentSection">
-                        <div class="form-vertical u-form">
-                          <div class="u-form-group u-form-name">
-                            <h3>No Mode of Payment Selected</h3>
-                            <p>Close this dialog and select mode of payment, then click </b>Pay now</b>.</p>
                           </div>
                         </div>
                       </section>
@@ -444,16 +405,31 @@ $('#allproductcomments').val(productcomments);
 
 
 $("input[name='voucher']").click(function(){
-            var radioValue = $("input[name='voucher']:checked").val();
+      updateValueToPay();
+        });
+
+
+$('.shipping').change(function(){
+  updateValueToPay()
+});
+
+function updateValueToPay() {
+  
+  var radioValue = $("input[name='voucher']:checked").val();
             var vouchermode = $("input[name='voucher']:checked").attr('vouchermode');
             var requirement = $("input[name='voucher']:checked").attr('requirement');
-            var id = $("input[name='voucher']:checked").attr('vid');
-            console.log(radioValue);
+            var id = $("input[name='voucher']:checked").attr('id');
+          
+  var priceaddtional = parseFloat($('.shipping').find(":selected").attr('price'));
+  var valuewithshipping = mvar + priceaddtional;
+
+
+              $('#voucher_id').val(id);
             if(radioValue){
               if(vouchermode == 'fix') {
-                newvalue = mvar - parseFloat(radioValue);
+                newvalue = valuewithshipping - parseFloat(radioValue);
               } else {
-                newvalue = mvar - (mvar * (parseFloat(radioValue)/100));
+                newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
               }
 
               if(requirement != '0'){
@@ -461,25 +437,27 @@ $("input[name='voucher']").click(function(){
               } else {
                 $('.proofvoucher').hide();
               }
-              $('#voucher_id').val(id);
               $('#totalcomputedamount').html(newvalue.format());              
               $('#totalcomputedamount_submt').val(newvalue);
               $('#BPITotalAmountDueSpan').html(newvalue.format());
-              $('#GCashTotalAmountDueSpan').html(newvalue.format());
               $('#BPITotalAmountDueTextbox').html(newvalue.format());
-              $('#GCashTotalAmountDueTextbox').html(newvalue.format());
               console.log(newvalue);
             } else{
-              $('#totalcomputedamount').html(mvar.format());
-              $('#totalcomputedamount_submt').val(mvar);
+              $('#totalcomputedamount').html(valuewithshipping.format());
+              $('#totalcomputedamount_submt').val(valuewithshipping);
+              $('#BPITotalAmountDueSpan').html(valuewithshipping.format());
+              $('#BPITotalAmountDueTextbox').html(valuewithshipping.format());
             }
-        });
 
+}
 
-        $('.confirm').click(function(){
+$('input[type=radio][name=mode_of_payment]').change(function() {
+    $('#mode_ofpayment').val(this.value);
+});
 
-          $( "#payform" ).submit();
-        });
+$('.confirm').click(function(){
+  $( "#payform" ).submit();
+});
 
 });
 

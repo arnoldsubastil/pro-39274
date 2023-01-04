@@ -53,12 +53,16 @@ Order Details
                            </div>
                         <br/> -->
                         <a class="listItemDetailLabel">Status</a>
-                        <a class="listItemDetailValue">{{ $product->status }}</a>
+                        <a class="listItemDetailValue">{{ $product->statusname }}</a>
                       </div>
+<<<<<<< HEAD
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a>
                         <a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a>
                     </div>
+=======
+                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-2023{{ $product->order_id }}</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">{{ $product->created_at }}</a></div>
+>>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Reference Number</a>
                         <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
@@ -88,7 +92,7 @@ Order Details
                         <a class="listItemDetailValue"><img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" /></a>
                         @endif
                         <a class="listItemDetailLabel">Amount Due</a>
-                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 570.00</span> </a></div>
+                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->amount }}</span> </a></div>
                       <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
                  
                       <!-- <div class="table-cell arrow">
@@ -209,8 +213,9 @@ jQuery(document).ready(function ($) {
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
 
-    $alltext = '';
     $(".addedInfo").each(function(){
+        var alltext = '';
+
         var orderId = $(this).attr('orderId');
         $.ajax({
         url: "/api/my-order",
@@ -226,40 +231,51 @@ jQuery(document).ready(function ($) {
                     if(value.product_note != null) {
                         note = value.product_note;
                     }
-                $alltext = $alltext + `
 
-                <div class="table-row">
-                    <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
-                    <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
-                      <span class="listItemDetailValue">
-                          <p name="" class="prodcomments" >`+ note +`</p>
-                      </span>
-                      <br/>
+                    var withreview = ``;
+                    console.log(value.review);
+                    if(value.review == ''){
+                      withreview = `
                       <form method="get" action="/posted-review">
                               <meta name="csrf-token" content="`+_token+`">
-                              <input type="hidden" name="productIdlong" value="`+value.cartorderId+`" />
+                              <input type="hidden" name="carts" value="`+value.carts+`" />
+                              <input type="hidden" name="productIdlong" value="`+value.productIdlong+`" />
+                              <input type="hidden" name="user_id" value="`+value.user_id+`" />
                               <span class="listItemDetailValue">
                                   <textarea name='myreview' class="prodcomments" rows="5" placeholder="Review this product"></textarea>
                               </span>
                               <span class="listItemDetailValue button">
                                 <input type="submit" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" />
                               </span>                              
-                        </form>
+                        </form>`;
+                    }
+
+                    alltext = alltext + `
+
+                <div class="table-row">
+                    <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
+<<<<<<< HEAD
+                    <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
+=======
+                    <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/resizer/images/ProductImages/`+ value.url +`/128" alt=""></span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span></div>
+                    <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
+>>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
+                    <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
+                      <span class="listItemDetailValue">
+                          <p name="" class="prodcomments" >`+ note +`</p>
+                      </span>
+                      <br/>` + withreview + `
                     </div>
-                </div>
-                
-                
-                
-                `;
+                </div>`;
                 
                 });
-                
-                $('.'+orderId+'_item').html($alltext);
+          $('.'+orderId+'_item').html(alltext);
         },
     }); 
+
     });
 
 });
