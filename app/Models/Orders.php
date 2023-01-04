@@ -27,6 +27,8 @@ class Orders extends Model
         'amount',
         'voucher_id',
         'voucher_proof',
-        'notes'
+        'notes',
+        'date_receive',
+        'shippingId'
     ];
 }

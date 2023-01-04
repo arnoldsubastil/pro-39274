@@ -78,7 +78,6 @@ Product Details
             @endif
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
                        <a href="{{ route('toppings.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
-                      <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>
                 </div>
@@ -104,8 +103,6 @@ Product Details
 
             @foreach($uniqueProductIds as $uniqueProductId)
             
-              <!--- get all pastries --->
-              @if($uniqueProductId['productTypeId'] == "2A98BD66-CC91-4EF3-B081-9B8C63203CAE")
             
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                 <div class="u-container-layout u-similar-container u-container-layout-1">
@@ -115,8 +112,7 @@ Product Details
                   <a href="{{ route('toppings.details', $uniqueProductId['productId']) }}" class="u-align-center u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                 </div>
               </div>
-
-              @endif            
+       
             
             @endforeach
 

@@ -28,8 +28,6 @@ Beverages
 
               @foreach($uniqueProductIds as $uniqueProductId)
 
-                <!--- get all mix-ins, beverages --->
-                @if($uniqueProductId['productTypeId'] == "0E0E7C1B-699D-40FB-9689-2932C0F22543")
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -45,8 +43,6 @@ Beverages
                     <a href="{{ route('beverages.details', $uniqueProductId['productId']) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                   </div>
                 </div>
-
-               @endif
               
               @endforeach
 

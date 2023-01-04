@@ -28,8 +28,6 @@ Desserts
 
             @foreach($uniqueProductIds as $uniqueProductId)            
   
-              <!--- get all sweets, beans, cereals --->
-              @if($uniqueProductId['productTypeId'] == "BDB353A9-27DA-4257-A3F6-54477A8CA9B4" || $uniqueProductId['productTypeId'] == "DE3B5EB8-F1C8-45C1-819D-D5AB033A7335" || $uniqueProductId['productTypeId'] == "8D184E01-01C3-49FD-A2BC-8452B17D9F60")
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -46,7 +44,6 @@ Desserts
                   </div>
                 </div>
 
-               @endif
               
               @endforeach
 

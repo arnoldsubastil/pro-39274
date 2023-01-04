@@ -13,9 +13,11 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+// Route::get('/', [App\Http\Controllers\GuestController::class, 'index'])->name('home');
+Route::get('/', 'App\Http\Controllers\GuestController@index');
 
 Route::get('/Categories', function () {
     return view('categories');
@@ -47,16 +49,9 @@ Route::get('/Events', 'App\Http\Controllers\EventProductsController@index')->nam
 Route::get('/MixAndMatch', 'App\Http\Controllers\MixProductsController@index')->name('mixProducts.index');
 
 /*Product Types*/
-Route::get('/Pastries', 'App\Http\Controllers\PastriesController@index')->name('pastries.index');
-Route::get('/Pastries/{productId}', 'App\Http\Controllers\PastriesController@details')->name('pastries.details');
-Route::get('/Beverages', 'App\Http\Controllers\BeveragesController@index')->name('beverages.index');
-Route::get('/Beverages/{productId}', 'App\Http\Controllers\BeveragesController@details')->name('beverages.details');
-Route::get('/Desserts', 'App\Http\Controllers\DessertsController@index')->name('desserts.index');
-Route::get('/Desserts/{productId}', 'App\Http\Controllers\DessertsController@details')->name('desserts.details');
-Route::get('/ToppingsAndSinkers', 'App\Http\Controllers\ToppingsAndSinkersController@index')->name('toppings.index');
-Route::get('/ToppingsAndSinkers/{productId}', 'App\Http\Controllers\ToppingsAndSinkersController@details')->name('toppings.details');
-Route::get('/NutsAndNougat', 'App\Http\Controllers\NutsAndNougatController@index')->name('nuts.index');
-Route::get('/NutsAndNougat/{productId}', 'App\Http\Controllers\NutsAndNougatController@details')->name('nuts.details');
+Route::get('/products/{categoryID}', 'App\Http\Controllers\PastriesController@index')->name('pastries.index');
+Route::get('/view/{productId}', 'App\Http\Controllers\PastriesController@details')->name('pastries.details');
+
 
 
 
@@ -109,4 +104,9 @@ Route::post('/post-contact', 'App\Http\Controllers\CartController@postcontact');
 
 Route::get('/update-profile', 'App\Http\Controllers\Auth\RegisterController@getprofile');
 Route::post('/update-my-profile', 'App\Http\Controllers\Auth\RegisterController@updateAccount');
+
+
+Route::get('/faq', 'App\Http\Controllers\FaqController@index');
+
+
 

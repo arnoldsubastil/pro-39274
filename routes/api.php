@@ -26,3 +26,4 @@ Route::post('/checkout', 'App\Http\Controllers\CartController@checkoutorder');
 
 
 Route::post('/my-order', 'App\Http\Controllers\CartController@getcheckoutItem');
+Route::get('/showcategorylist', 'App\Http\Controllers\CartController@showcategorylist');

@@ -5,17 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class HomeController extends Controller
+class GuestController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -40,7 +36,7 @@ class HomeController extends Controller
             ->take(1)
             ->get(); 
 
-        return view('homelogin', [
+        return view('home', [
             'banner'=>$banner[0],
             'products' => $bestsellersList,
             'newproduct' => $uniqueProductId[0]

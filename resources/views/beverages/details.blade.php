@@ -76,7 +76,6 @@ Product Details
             @endif
                       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd4K8kESzNAuFZsHarmN6-ajq39V45csHmTn2CPmu27pD4s_w/viewform?vc=0&c=0&w=1&flr=0" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</a>
                        <a href="{{ route('beverages.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Go back</a> 
-                      <!--<a href="{{ route('pastries.index') }}" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-3">Add to cart</a>-->
                     </div>
                   </div>
                 </div>
@@ -103,9 +102,6 @@ Product Details
 
             @foreach($uniqueProductIds as $uniqueProductId)
             
-              <!--- get all pastries --->
-              @if($uniqueProductId['productTypeId'] == "0E0E7C1B-699D-40FB-9689-2932C0F22543")
-            
               <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                 <div class="u-container-layout u-similar-container u-container-layout-1">
                   <img class="u-border-2 u-border-grey-10 u-expanded-width u-image u-image-contain u-image-default u-image-1" alt="" data-image-width="3024" data-image-height="2520" src="../{{$uniqueProductId['thumbnailUrl']}}">
@@ -115,8 +111,6 @@ Product Details
                 </div>
               </div>
 
-              @endif            
-            
             @endforeach
 
           <!--- end product item --->  

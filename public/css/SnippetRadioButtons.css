@@ -1,9 +1,5 @@
 /* mode of paymet */
 
-.paymentSection{
-    display: none;
-    
-}
 
 .paymentSection > div{
     display: inline-block;
