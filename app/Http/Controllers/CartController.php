@@ -361,9 +361,9 @@ class CartController extends Controller
                 'products.name',
                 'products.productIdlong',
                 'cart.product_note',
-                'cartorder.cartorderId',
                 'cartorder.review',
-                DB::raw('COUNT(1) as qty'))
+                DB::raw('COUNT(1) as qty'),
+                DB::raw('GROUP_CONCAT(cartorder.cartorderId) as carts'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
@@ -386,7 +386,6 @@ class CartController extends Controller
             ->groupBy('products.productIdlong')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
-            ->groupBy('cartorder.cartorderId')
             ->groupBy('cartorder.review')
             ->get();
     }
