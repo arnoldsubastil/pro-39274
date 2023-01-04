@@ -167,6 +167,7 @@ class CartController extends Controller
             ->groupBy('deliverystatus.statusID')
             ->groupBy('deliverystatus.statusname')
             ->groupBy('orders.created_at')
+            ->orderBy('orders.order_id', 'desc')
             ->get();
 
         return view('orders.list', [

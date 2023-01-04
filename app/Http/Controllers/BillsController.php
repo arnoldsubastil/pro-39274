@@ -113,6 +113,8 @@ class BillsController extends Controller
                 $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
+            
+        if ($this->islogin(Auth::user())) {
             foreach ($checkvoucher3 as $voucheradd){
                 $arr1[$ctr]['voucher_id'] = $voucheradd->voucher_id;
                 $arr1[$ctr]['specific_user'] = $voucheradd->specific_user;
@@ -125,6 +127,7 @@ class BillsController extends Controller
                 $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
+        }
         
         $users = DB::table('users')
         ->select('name', 'firstName', 'lastName', 'deliveryAddress', 'email', 'contact_no')
