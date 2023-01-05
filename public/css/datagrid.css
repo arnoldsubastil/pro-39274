@@ -316,7 +316,7 @@ END- html */
     margin: 12px 0;
 }
 
-.thumbnailView  .table-cell h4
+.thumbnailView  .table-cell h4, .thumbnailView  .table-cell h5
 {
     font-weight: bold;
     margin:0;

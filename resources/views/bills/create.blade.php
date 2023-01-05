@@ -185,7 +185,7 @@ Bill Order
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>                            
                             <div id="result"></div>
-                            <!-- <input id="ReceiveDateTextBox" type="text"  name="to_received_date"  value="02/26" placeholder="MM/YY" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1"> -->
+                            <input id="ReceiveDateTextBox" type="text"  name="to_received_date"  value="02/26/2023" placeholder="MM/YY" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
                           </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Reference Number</label>

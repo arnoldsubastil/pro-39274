@@ -55,14 +55,12 @@ Order Details
                         <a class="listItemDetailLabel">Status</a>
                         <a class="listItemDetailValue">{{ $product->statusname }}</a>
                       </div>
-<<<<<<< HEAD
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-202301011122</a>
                         <a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">January 1, 2022</a>
                     </div>
-=======
                       <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-2023{{ $product->order_id }}</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">{{ $product->created_at }}</a></div>
->>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
+
                       <div class="table-cell payment">
                         <a class="listItemDetailLabel">Reference Number</a>
                         <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
@@ -254,14 +252,13 @@ jQuery(document).ready(function ($) {
 
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
-<<<<<<< HEAD
-                    <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
+<div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/images/ProductImages/SaltedEggCocoPastry_1440x960.jpg" alt=""></span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
-=======
+
                     <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/resizer/images/ProductImages/`+ value.url +`/128" alt=""></span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span></div>
                     <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
->>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
+
                     <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
                       <span class="listItemDetailValue">

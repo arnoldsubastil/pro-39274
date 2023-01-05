@@ -22,7 +22,7 @@
 var today = new Date();
 var new_date = [];
 
-var sHTML = "<ul class='nolistStyle'>";
+var sHTML = "<ul class='noListStyle'>";
 
 for (i = 1; i < 6; i++) {
   
@@ -42,7 +42,7 @@ $("#result").html(sHTML);
 // var today = new Date();
 // var new_date = [];
 
-// var sHTML = "<ul class='nolistStyle'>";
+// var sHTML = "<ul class='noListStyle'>";
 
 // for (i = 1; i < 6; i++) {
   

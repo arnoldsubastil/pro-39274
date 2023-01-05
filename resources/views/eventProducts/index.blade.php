@@ -8,26 +8,85 @@ Promos and Events
 <!-- Push a style dynamically from a view -->
 @section('styles')
 <link rel="stylesheet" href="css/eventProducts/index.css" media="screen">
+<link rel="stylesheet" href="/css/datagrid.css" media="screen">
 @endsection
 
 @section('content')  
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
+
 <section class="u-clearfix u-section-1" id="sec-3310">
 @if ($lastid = '') @endif
 @foreach($uniqueProductIds as $uniqueProductId)
   @if ($lastid != $uniqueProductId->product_id)
-      <div class="u-clearfix u-sheet u-sheet-1">
+
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+          <div class="eventThumbnails thumbnailView">
+            <div class="table-row">
+              <div class="table-head" style="display: none">Product ID</div>
+              <div class="table-head">Product Name</div>
+            </div>
+            <!--- begin product item --->
+            @foreach($uniqueProductIds as $uniqueProductId)
+            <!--- get selected products --->
+            <div class="table-row">
+              <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$uniqueProductId->productIdlong}}</span></div>
+              <div class="table-cell"><span class="listItemDetailLabel">Product Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/'.$uniqueProductId->thumbnailUrl}}/1080" alt="" ></span></div>
+              <div class="table-cell">
+                <span class="listItemDetailLabel">Product Name</span><h5><span class="listItemDetailValue">{{$uniqueProductId->name}}</span></h5>
+                <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</span>
+                <span class="listItemDetailLabel">Product Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </span>
+                <table>
+                    <tr id="service">
+                        <td>
+                            <span>Flavors:</span>
+                            <input type="text" name="servicetype" id="servicetype" />
+                        </td>
+                        <td>
+                            <span>Quantity:</span>
+                            <input type="text" name="amount" id="amount" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button id="addmore" onclick="duplicate()">Add More</button>
+                        </td>
+                    </tr>
+                </table>
+                <ul class="u-text u-text-default u-text-7 noListStyle">
+                      @foreach (explode(',',$uniqueProductId->chooseitem) as $choices)
+                      @if($labels = explode('-',$choices)) @endif
+                        <li>Mix & Match: {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
+                          @for ($i = 0; $i < intval($labels['0']); $i++)
+                                <select id="year" name="year" class="form-control {{ $uniqueProductId->product_id }}_items">
+                                    @foreach (explode('/',$labels['2']) as $choicesitem)
+                                        <option value="{{ $choicesitem }}">{{ $choicesitem }}</option>
+                                    @endforeach
+                                </select>
+                          @endfor
+                      @endforeach
+                 </ul>
+                <a prod-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 addtocart" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" target="_blank">Order now!</a>
+              </div>
+            </div>                
+            @endforeach      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+      <!-- <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-34 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-col">
               <div class="u-size-30">
                 <div class="u-layout-row">
-                  <!-- <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1 giftset" src="" data-image-width="1718" data-image-height="965">
-                    <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
-                  </div> -->
-                  <img src="/resizer/images/ProductThumbnails/{{$uniqueProductId->url}}/240" style="margin: 24px; min-width: 320px; max-width: 432px;"/>
+                  <img src="/resizer/images/ProductThumbnails/{{$uniqueProductId->url}}/240" />
                   <div class="u-align-justify u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
                     <p class="u-text u-text-1">
@@ -62,7 +121,7 @@ Promos and Events
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
 
 <br/>
@@ -76,8 +135,21 @@ Promos and Events
 
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
+<script >
+
+function duplicate() {    
+    var original = document.getElementById('service');
+    var rows = original.parentNode.rows;
+    var i = rows.length - 1;
+    var clone = original.cloneNode(true); // "deep" clone
+
+    clone.id = "duplic" + (i); // there can only be one element with an ID
+    original.parentNode.insertBefore(clone, rows[i]);
+}
+
 jQuery(document).ready(function ($) {  
+
+  
 
   $('.addtocart').click(function(){
     
