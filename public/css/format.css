@@ -299,8 +299,16 @@ footer.u-custom-color-3{
 .info {
     color: #00529B;
     background-color: #BDE5F8;
-    background-image: url('https://i.imgur.com/ilgqWuX.png');
+    background-image: url(https://i.imgur.com/ilgqWuX.png);
+    padding: 0 8px;    
 }
+
+.info p{
+    font-size: 1rem;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+}
+
 .success {
     color: #4F8A10;
     background-color: #DFF2BF;
