@@ -197,10 +197,135 @@ END- html */
 }
 
 
+/* BEGIN - thumbnail view */
+.thumbnailView  
+{   
+  border-collapse: collapse;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.thumbnailView  .table-head 
+{
+  display: none;
+  border: 1px solid #DDDDDD;
+  padding: 8px;
+}
+
+.thumbnailView  .table-cell {
+    
+    display: inline-block;
+    padding: 16px;    
+    vertical-align: middle;
+    width: 48%;
+}
+
+.thumbnailView a{
+  color: #383C3B;
+}
+
+.thumbnailView  .table-cell, .thumbnailView  .table-cell a
+{   
+    font-size: 1.125rem;
+    vertical-align: middle;
+}
+
+.thumbnailView  .table-cell:hover, .thumbnailView  .table-cell a:hover
+{   
+    text-decoration: none;
+}
+
+.thumbnailView  .table-cell button, .thumbnailView  .table-cell img
+{
+    margin: auto;
+    vertical-align: middle;
+}
+
+.thumbnailView  .table-cell .listItemDetailValue.snippetButton button, .thumbnailView  .table-cell .listItemDetailValue.snippetButton input
+{
+    margin: 0;
+    vertical-align: baseline;
+}
+
+.thumbnailView  .table-cell img
+{
+  border-radius: 4px;
+  height: 100%;
+  max-width: 280px;
+  width: 100%;  
+}
+
+.thumbnailView .table-cell span.currency{
+  font-size: 1.125rem;
+}
+
+.thumbnailView .table-cell span.amount
+{
+  font-size: 2rem;
+}
+
+.thumbnailView .table-cell .foreignName
+{
+  font-size: 1rem;
+}
+
+.thumbnailView  .table-row 
+{
+  border-bottom: 0;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px 0;
+  vertical-align: middle;
+  width: 100%;
+  max-width: 938px;
+}
+
+.thumbnailView  .table-row:hover
+{
+  background-color: #F2F2F2;
+}
+
+.thumbnailView  .table-row:first-child 
+{    
+  display: none;
+}
+
+.thumbnailView  .table-row:last-child 
+{
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.thumbnailView .listItemDetailLabel{
+    display: none;
+    /* display: block; */
+}
+
+.thumbnailView  .table-cell .listItemDetailValue
+{
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 100%;    
+}
+
+.thumbnailView  .table-cell .button
+{
+    margin: 12px 0;
+}
+
+.thumbnailView  .table-cell h4
+{
+    font-weight: bold;
+    margin:0;
+}
+
+/* END - thumbnail view */
 
 
-
-
+/* BEGIN - list view */
 .listView  
 {   
   border-collapse: collapse;
@@ -316,6 +441,8 @@ END- html */
 {
     width: 48px;
 }
+/* END - list view */
+
 
 
 /* width for different number of columns */
@@ -401,6 +528,10 @@ width: 18%
   width: 24%
 }
 
+.eventThumbnails{
+  text-align: left;
+}
+
 
 /* responsive */
 @media(max-width:1024px)
@@ -458,5 +589,12 @@ width: 18%
     width: 100%;
   }
 
+}
+
+@media(max-width:1024px){
+  .thumbnailView .table-cell{
+    text-align: center;
+    width: 100%;
+  }  
 }
 

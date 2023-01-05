@@ -27,8 +27,7 @@ Promos and Events
                   <!-- <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1 giftset" src="" data-image-width="1718" data-image-height="965">
                     <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
                   </div> -->
-                  
-                  <img src="/images/GiftSets/ChristmasGiftSet625_1080x1080.jpg" style="margin: 24px; min-width: 320px; max-width: 432px;"/>
+                  <img src="/resizer/images/ProductThumbnails/{{$uniqueProductId->url}}/240" style="margin: 24px; min-width: 320px; max-width: 432px;"/>
                   <div class="u-align-justify u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
                     <div class="u-container-layout u-container-layout-2">
                     <p class="u-text u-text-1">

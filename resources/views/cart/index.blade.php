@@ -17,7 +17,7 @@ Shopping Cart
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
 <section class="u-clearfix u-section-3" id="sec-2dfe">
   <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <h6 class="u-text u-text-default u-text-1">Your shopping cart</h6>
+    <h6 class="u-text u-text-default u-text-1">Shopping Cart</h6>
   </div>
 </section>
 

@@ -8,6 +8,7 @@
 <!-- Push a style dynamically from a view -->
 @section('styles')
 <link rel="stylesheet" href="../../css/pastries.css" media="screen">
+<link rel="stylesheet" href="/css/datagrid.css" media="screen">
 @endsection
 
 @section('content')  
@@ -25,11 +26,34 @@
 
 
             <!--- begin product item --->
-
             @foreach($uniqueProductIds as $uniqueProductId)
             
-              <!--- get all pastries --->
+              @if($uniqueProductId->categories == "Events")
+                <div class="eventThumbnails thumbnailView">
+                  <div class="table-row">
+                      <div class="table-head" style="display: none">Product ID</div>
+                      <div class="table-head">Product Name</div>
+                  </div>
+                  <!--- begin product item --->
+
+                  @foreach($uniqueProductIds as $uniqueProductId)
+                  <!--- get selected products --->
+                  <div class="table-row">
+                    <div class="table-cell" style="display: none"><a class="listItemDetailLabel">Product ID</a><a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="listItemDetailValue">{{$uniqueProductId->productIdlong}}</a></div>
+                    <div class="table-cell"><a class="listItemDetailLabel">Product Image</a><a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/'.$uniqueProductId->thumbnailUrl}}/1080" alt="" ></a></div>
+                    <div class="table-cell">
+                      <a class="listItemDetailLabel">Product Name</a><h4><a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="listItemDetailValue">{{$uniqueProductId->name}}</a></h4>
+                      <a class="listItemDetailLabel">Foreign Name</a><a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</a>
+                      <!-- <a class="listItemDetailLabel">Product Price</a><a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </a> -->
+                      <br/><br/>
+                      <a href="/view/{{ $uniqueProductId->productIdlong }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
+                    </div>
+                  </div>                
+                  @endforeach
                 
+                </div>
+              @else
+                <!--- get all pastries --->                
                <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                 <div class="u-container-layout u-container-layout-1">
                   <div class="u-container-align-center u-container-style u-group u-group-1">
@@ -44,12 +68,12 @@
                   <a href="/view/{{ $uniqueProductId->productIdlong }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                 </div>
               </div>
+              @endif            
 
               
               
-              @endforeach
-
-              <!--- end product item --->
+            @endforeach
+            <!--- end product item --->
              
               
             </div>
