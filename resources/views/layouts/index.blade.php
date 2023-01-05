@@ -69,7 +69,7 @@
                   @else
                   <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/register">Register</a></li>
                   <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/login">Log in</a></li>                    
-                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact">Contact</a></li>
+                  <li class="u-nav-item"><a class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base" href="/Contact">Contact us</a></li>
                   @endif
                 </ul>             
               
@@ -96,7 +96,7 @@
                     <a class="u-none u-btn-2 shoppingCartButton" href="/Cart/" styli>
                       <span class="notificationCart"></span>
                       <img class="shoppingCartIcon" src="/images/Icons/Cart_Orange_48x48.png" alt="add to cart">
-                      <span class="shoppingCartLabel">Add to cart</span>
+                      <span class="shoppingCartLabel">My Cart</span>
                     </a>
                   </li>
                 </ul>
@@ -237,6 +237,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {  
+  
 
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
@@ -268,7 +269,7 @@ $(document).ready(function () {
           $.each( response, function( key, value ) {
             newlink = newlink + `<a href="/products/`+value['slug']+`">`+value['categoryname']+`</a>`;
           });
-          console.log(newlink);
+          //console.log(newlink);
 
           $('#myDropdown').html(newlink);
         },

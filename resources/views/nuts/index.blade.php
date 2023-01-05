@@ -26,12 +26,7 @@ Nuts & Nougat
 
             <!--- begin product item --->
 
-            @foreach($uniqueProductIds as $uniqueProductId)            
-  
-<<<<<<< HEAD
-              <!--- get all nuts and nougat --->
-=======
->>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
+            @foreach($uniqueProductIds as $uniqueProductId)   
                 
                 <div class="u-container-align-center u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-1 border">
                   <div class="u-container-layout u-container-layout-1">
@@ -47,11 +42,6 @@ Nuts & Nougat
                     <a href="{{ route('pastries.details', $uniqueProductId->productIdlong) }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View</a>
                   </div>
                 </div>
-
-<<<<<<< HEAD
-              
-=======
->>>>>>> 9504402a0e9acf39ae7f2f350ae54bdeb0910122
               
               @endforeach
 

@@ -321,6 +321,10 @@ END- html */
 /* width for different number of columns */
 
 /* for five columns */
+.orderDetailsTable .table-head{  
+  width: 18%
+  }
+
 .ordersDetailsTable .table-cell .listItemDetailValue{
   margin-bottom: 16px;
 }
