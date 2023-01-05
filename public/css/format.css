@@ -29,6 +29,11 @@ textarea{
     resize: none;
 }
 
+/* disabled */
+.nolistStyle{
+    list-style: none;
+}
+
 /*text wrapping*/
 .clip { text-overflow: clip; }
 .ellipsis { text-overflow: ellipsis; }

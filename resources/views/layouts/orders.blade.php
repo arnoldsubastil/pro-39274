@@ -19,6 +19,10 @@
     <script class="u-script" type="text/javascript" src="/script/nicepage.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/SnippetButtons.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="/script/SnippetRadioButtons.js" defer=""></script>
+    <script class="u-script" type="type/javascript" src="/script/dates/DateCounter.js" defer=""></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <meta name="generator" content="Nicepage 4.21.5, nicepage.com"><style class="custom-css" type="text/css">.u-backlink{
 	display: none;
