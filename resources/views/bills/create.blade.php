@@ -100,25 +100,26 @@ Bill Order
                   <!-- BEGIN- vouchers list --> 
                   <div class="table vouchersListTable">
                     <div class="table-row">
-                        <div class="table-head selectCheckbox"></div>
-                        <div class="table-head">Voucher Name</div>             
+                        <div class="table-head selectCheckbox"></div>     
+                        <div class="table-head">Voucher</div>   
                         <div class="table-head">Information</div>                      
                         <div class="table-head">Discounted Amount</div>
                     </div>
                       @foreach($voucher as $onevoucher)
                         <div class="table-row">
-                              <div class="table-cell selectCheckbox"></div>
-                              <div class="table-cell">
+                              <div class="table-cell selectCheckbox">
                                 <div class="round">
                                   <input type="radio" id="{{ $onevoucher['voucher_id'] }}" requirement="{{ $onevoucher['proof_needed'] }}" name="voucher" vouchermode="{{ $onevoucher['discount_type'] }}" value="{{ $onevoucher['discount'] }}" />
                                   <label for="{{ $onevoucher['voucher_id'] }}"></label>
                                 </div>
                               </div>
-                              
+
                               <div class="table-cell">
-                                <span class="listItemDetailLabel">Voucher</span>
                                 <span class="listItemDetailLabel">Code</span>
                                 <span href="" class="listItemDetailValue code">{{ $onevoucher['voucher_code'] }}</span>
+                              </div>
+
+                              <div class="table-cell">                                
                                 <span class="listItemDetailLabel">Description</span>
                                 <span href="" class="listItemDetailValue">Valid until {{ $onevoucher['valid_date_start'] }} to {{ $onevoucher['valid_date_end'] }}</span>
                               </div>
@@ -184,7 +185,7 @@ Bill Order
                           </div>
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>  
-                            <input id="ReceiveDateTextBox" placeholder="MMM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
+                            <input id="ReceiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
                             <div id="result"></div>
                                       </div>
                       <div class="u-form-group u-form-group-4">
