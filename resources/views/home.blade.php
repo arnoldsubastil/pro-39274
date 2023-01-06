@@ -62,7 +62,7 @@ Home
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
                         <br/>
                         @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}"  class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-grey-80 u-btn-1" >
+                            <a href="/password/reset"  class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3" >
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
@@ -71,8 +71,8 @@ Home
                     </form>
                   </div>
                   <p class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">Don't have an account? <a href="/register" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3">Sign up now</a>
-                    <br>Continue as guest? <a href="/Pastries" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
-                    <br>
+                    <br>Continue as guest? <a href="/products/pastries" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-4">Order now</a>
+                    <br><br>
                   </p>
                 </div>
               </div>

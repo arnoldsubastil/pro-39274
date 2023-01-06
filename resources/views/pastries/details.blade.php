@@ -79,7 +79,7 @@ Product Details
                         @endfor
                       </ul>
                       
-
+<br/>
                         @endif
                         
                       
