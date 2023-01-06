@@ -23,7 +23,7 @@ Order Details
                             @foreach($products as $product)
                             <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">                         
                                 <div class="btn-submit form-vertical u-form u-form-1">
-                                <h4 class="u-text u-text-default u-text-6">Order ID: {{ $product->order_id }}</h4>
+                                <h4 class="u-text u-text-default u-text-6" id="orders__{{ $product->order_id }}">Order ID: {{ $product->order_id }}</h4>
 <br/>
                                 <div class="table ordersDetailsTable">
                     <div class="table-row">
