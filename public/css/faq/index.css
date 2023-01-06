@@ -1,0 +1,30 @@
+.faqDiv .collapsible {
+    background-color: #F8F8F8;
+    color: #383C3B;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    padding-right: 44px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYBAMAAABpfeIHAAAAElBMVEUAAAA0O0A1O0E2PEI9PUk0OkAiqeRcAAAABXRSTlMA6qpVFQVXMqEAAABSSURBVBjTVcuxCQAgEMXQD67gCvau4AqC+69iYSRcysDLOKWdVUdPq2PmGUWeUQSjwCgwCowCo8AoMAgaCowCo9AgNAgNQoPQIDQIDUKD0HxxAZxJP8Gf3MEsAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 8px 6px;
+  }
+  
+  .faqDiv .active,.faqDiv .collapsible:hover {
+    background-color: #F0F0F0;
+  }
+  
+  .faqDiv .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    text-align: left;
+  }
