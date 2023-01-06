@@ -32,7 +32,7 @@ Order Details
                       <div class="table-head">Payment</div>
                       <div class="table-head">Bill</div>                      
                       <div class="table-head">Delivery</div>
-                      <!-- <div class="table-head arrow"></div> -->
+                      <div class="table-head arrow"></div>
                     </div>
               <!--- begin product item --->
 
@@ -90,56 +90,56 @@ Order Details
                         <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->amount }}</span> </a></div>
                       <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
                  
-                      <!-- <div class="table-cell arrow">
-                        <a href="/my-orders" class="listItemDetailLabel"></a>
-                        <a href="/my-orders" class="listItemDetailValue">
-                          <div class="triangle-right" style="margin-left: 16px;"></div>                               
-                        </a>
-                      </div> -->
+                      <div class="table-cell arrow">
+                        <!-- <a href="/my-orders" class="listItemDetailLabel"></a> -->
+                        <!-- <a href="/my-orders" class="listItemDetailValue">
+                          <span id="{{ $product->order_id }}"><div class="triangle-right" style="margin-left: 16px;"></div></span>                                                         
+                        </a> -->
+                        <span id="" data-toggle="modal" data-target="#{{$product->order_id}}" class-"arrowButton"><div class="triangle-right" style="margin-left: 16px;"></div></span>
+                      </div>
                     </div>
               
                             
-            </div>
+                      </div>
 
-                               
-                                <!-- <div class="u-form-group u-form-group-4">
-                                  <label for="text-c306" class="u-label u-label-4">Mailing Address</label>
-                                  <input disabled type="text" placeholder="Mailing address" id="maddress" value="adfds" name="maddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                </div>
-                                <div class="u-form-group u-form-group-4">
-                                  <label for="text-c306" class="u-label u-label-4">Delivery Address</label>
-                                  <input disabled type="text" placeholder="Complete address" id="daddress" value="adfds" name="daddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                </div> 
-                                <div class="u-form-group u-form-group-4">
-                                  <label for="text-c306" class="u-label u-label-4">Voucher</label>
+                                <br/>
+                                <br/>
 
-                                    @if ($product->productslist != "")
-                                      <input disabled type="text" value="{{ $product->voucher_code}}" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                    @else
-                                      <input disabled type="text" value="No voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4"/>
-                                    @endif
+                                <!-- BEGIN - orders modal -->
+                                <div class="modal" id="{{$product->order_id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                  <div class="modal-content">
+
+                                    <div class="modal-header">
+                                      <button type="button" id="OrdersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    <!-- BEGIN - orders --> 
+                                    <h5 class="u-text u-text-default u-text-6">Orders</h5>  
                                     <br/>
-                                    @if ($product->voucher_proof != "")
-                                      <img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" />
-                                    @endif  
+                                    <div class="table ordersTable">            
+                                      <div class="table-row">
+                                          <div class="table-head" style="display: none">Product ID</div>
+                                          <div class="table-head" >Image</div>
+                                          <div class="table-head">Product</div>
+                                          <!-- <div class="table-head quantity">Quantity</div> -->
+                                          <div class="table-head">Total Price</div>
+                                          <div class="table-head">Notes</div>
+                                      </div>   
+                                      <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
+                                    </div>
+                                    <!-- END - orders  --> 
 
-                                </div>-->
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" id="OrdersModalCancelButton" data-dismiss="modal" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Done</button>
+                                    </div>
 
-                                <br/>
-                                <br/>
-                                <h5 class="u-text u-text-default u-text-6">Orders</h5>  
-                                <br/>
-                                <div class="table ordersTable">            
-                                  <div class="table-row">
-                                      <div class="table-head" style="display: none">Product ID</div>
-                                      <div class="table-head" >Image</div>
-                                      <div class="table-head">Product</div>
-                                      <!-- <div class="table-head quantity">Quantity</div> -->
-                                      <div class="table-head">Total Price</div>
-                                      <div class="table-head">Notes</div>
-                                  </div>   
-                                  <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
+                                  </div>
                                 </div>
+                                <!-- END - orders modal -->
+
+                                
                         </div>
                     </div>
                             @endforeach
@@ -204,6 +204,19 @@ Order Details
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
 jQuery(document).ready(function ($) {  
+
+  // BEGIN - show modals when clicked the span
+  var ordersListModal = document.getElementById("{{$product->order_id}}");
+  var ordersListSpan = document.getElementsByTagName(".arrowButton");
+  ordersListSpan.onclick = function() {
+    ordersListModal.style.display = "block";
+  }
+  // $('.modal').attr('id', newId);
+  //   var Id = $('.modal').attr('id');
+  //   $('#modal' + Id).modal('toggle');
+
+  // END - show modals when clicked the span
+
 
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();

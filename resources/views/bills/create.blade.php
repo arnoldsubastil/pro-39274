@@ -102,7 +102,7 @@ Bill Order
                     <div class="table-row">
                         <div class="table-head selectCheckbox"></div>     
                         <div class="table-head">Voucher</div>   
-                        <div class="table-head">Information</div>                      
+                        <div class="table-head">Description</div>                      
                         <div class="table-head">Discounted Amount</div>
                     </div>
                       @foreach($voucher as $onevoucher)
