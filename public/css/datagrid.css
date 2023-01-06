@@ -452,6 +452,10 @@ END- html */
   width: 18%
   }
 
+  .orderDetailsTable .table-cell{  
+    width: 19%
+    }
+
 .ordersDetailsTable .table-cell .listItemDetailValue{
   margin-bottom: 16px;
 }
@@ -532,6 +536,9 @@ width: 18%
   text-align: left;
 }
 
+.eventThumbnails ul{
+  margin: 0;
+}
 
 /* responsive */
 @media(max-width:1024px)

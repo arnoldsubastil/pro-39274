@@ -29,10 +29,16 @@ textarea{
     resize: none;
 }
 
-/* disabled */
+/* list */
 .noListStyle{
     list-style: none;
 }
+
+ul li label{
+    padding: 16px;
+    font-size: 18px;
+}
+
 
 /*text wrapping*/
 .clip { text-overflow: clip; }
@@ -346,3 +352,44 @@ footer.u-custom-color-3{
     background-image: url('https://i.imgur.com/Z8q7ww7.png');
     font-size: 1rem;
 }
+
+.flavorSelect{
+    margin: 8px;
+    padding: 8px;
+}
+
+.flavorSelect option{
+    padding: 8px;
+}
+
+.shippingSelect{
+    margin: 0;
+    padding: 8px !important;
+    height: 50px !important;
+    
+}
+
+.shippingSelect option{
+    padding: 8px;
+}
+
+.shippingSelect:not([size]):not([multiple]) {
+    padding-right: 44px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYBAMAAABpfeIHAAAAElBMVEUAAAA0O0A1O0E2PEI9PUk0OkAiqeRcAAAABXRSTlMA6qpVFQVXMqEAAABSSURBVBjTVcuxCQAgEMXQD67gCvau4AqC+69iYSRcysDLOKWdVUdPq2PmGUWeUQSjwCgwCowCo8AoMAgaCowCo9AgNAgNQoPQIDQIDUKD0HxxAZxJP8Gf3MEsAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: right 1.1rem center;
+    background-size: 8px 6px;
+}
+
+.shippingSelect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 32px;
+  }
+
+  

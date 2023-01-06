@@ -175,18 +175,18 @@ Bill Order
                             <input type="text" id="mode_ofpayment" value="BPI" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Shipping Instruction</label>
-                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
+                            <label for="name-2382" class="u-label u-label-1">Shipping instruction</label>
+                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
                               @foreach($shipping as $ship)
                                 <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
                               @endforeach  
                           </select>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>                            
+                            <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>  
+                            <input id="ReceiveDateTextBox" placeholder="MMM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
                             <div id="result"></div>
-                            <input id="ReceiveDateTextBox" type="text"  name="to_received_date"  value="02/26/2023" placeholder="MM/YY" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">
-                          </div>
+                                      </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Reference Number</label>
                         <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
@@ -320,6 +320,7 @@ Bill Order
         </div>
       </div>
     </section>
+
 
 
 

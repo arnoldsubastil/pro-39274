@@ -18,43 +18,59 @@
 // document.getElementById('elem').innerHTML = formatted;
 
 
-//show all the next five days in radio buttons
+
+
+
 var today = new Date();
 var new_date = [];
 
 var sHTML = "<ul class='noListStyle'>";
 
-for (i = 1; i < 6; i++) {
-  
-    // new_date[i] = moment().add(i,"days").format("MMM DD");
-    new_date[i] = moment().add(i,"days").format("dddd");
+if (moment().isBefore('10:00:00')) {
+    //include today
+    counter=0;
+    limit=5;    
+}
+else
+{
+    //exclude today
+    counter=1;
+    limit=6;
+}
+
+for (i = counter; i < limit; i++) {
+
+    new_date[i] = moment().add(i,"days").format("MMM DD, YYYY");
     
-    sHTML = sHTML + "<li><input type='radio' id='" + new_date[i] + "' name='ReceiveDate' value='" + new_date[i] + "'> <label for='" + new_date[i] + "'>" + new_date[i] + "</label></li>";
-    
+    sHTML = sHTML + "<li><input type='radio' id='" + new_date[i] + "' name='ReceiveDate' value='" + new_date[i] + "'> <label for='" + new_date[i] + "'>" + moment().add(i,"days").format("dddd"); + "</label></li>";
+   
+
 }
 
 sHTML = sHTML + "</ul>";
 
 $("#result").html(sHTML);
 
+$("input:radio[name=ReceiveDate]").click(function() {
 
-//show value selected in radio buttons
-// var today = new Date();
-// var new_date = [];
-
-// var sHTML = "<ul class='noListStyle'>";
-
-// for (i = 1; i < 6; i++) {
-  
-//     // new_date[i] = moment().add(i,"days").format("MMM DD");
-//     new_date[i] = moment().add(i,"days").format("dddd");
+    // $("#ReceiveDateTextBox").css("background-color", "yellow");
+    $('#ReceiveDateTextBox').val($("input[name='ReceiveDate']:checked").val());
     
-//     sHTML = sHTML + "<li><input type='radio' id='" + new_date[i] + "' name='ReceiveDate' value='" + new_date[i] + "'> <label for='" + new_date[i] + "'>" + new_date[i] + "</label></li>";
-    
-// }
-
-// sHTML = sHTML + "</ul><input id='ReceiveDateTextBox' name='to_received_date' value='"+ value +"' class='u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1'>";
-
-// $("#result").html(sHTML);
+});
 
 
+
+
+$(function() {
+    $('input[name="to_received_date"]').daterangepicker({
+
+        locale: {
+            format: 'MMM DD, YYYY'
+        },
+        
+      singleDatePicker: true,
+      showDropdowns: true,
+      minYear: 1901,
+      maxYear: parseInt(moment().format('YYYY'),10)
+    });
+  });

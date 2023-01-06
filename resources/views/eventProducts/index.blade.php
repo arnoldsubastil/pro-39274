@@ -40,35 +40,21 @@ Promos and Events
                 <span class="listItemDetailLabel">Product Name</span><h5><span class="listItemDetailValue">{{$uniqueProductId->name}}</span></h5>
                 <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</span>
                 <span class="listItemDetailLabel">Product Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </span>
-                <table>
-                    <tr id="service">
-                        <td>
-                            <span>Flavors:</span>
-                            <input type="text" name="servicetype" id="servicetype" />
-                        </td>
-                        <td>
-                            <span>Quantity:</span>
-                            <input type="text" name="amount" id="amount" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button id="addmore" onclick="duplicate()">Add More</button>
-                        </td>
-                    </tr>
-                </table>
+               
                 <ul class="u-text u-text-default u-text-7 noListStyle">
                       @foreach (explode(',',$uniqueProductId->chooseitem) as $choices)
                       @if($labels = explode('-',$choices)) @endif
-                        <li>Mix & Match: {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
+                        <li><br/><b>Mix & Match: </b> {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
                           @for ($i = 0; $i < intval($labels['0']); $i++)
-                                <select id="year" name="year" class="form-control {{ $uniqueProductId->product_id }}_items">
+                                <select id="year" name="year" class="flavorSelect form-control {{ $uniqueProductId->product_id }}_items">
                                     @foreach (explode('/',$labels['2']) as $choicesitem)
                                         <option value="{{ $choicesitem }}">{{ $choicesitem }}</option>
                                     @endforeach
                                 </select>
                           @endfor
+                          
                       @endforeach
+                      
                  </ul>
                 <a prod-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 addtocart" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" target="_blank">Order now!</a>
               </div>
