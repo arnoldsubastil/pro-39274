@@ -1,4 +1,14 @@
-   
+  .storageDiv{
+    border: 1px solid #DDDDDD;
+    font-size: 1rem;
+    padding: 16px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  } 
+  .storageDiv p{
+    margin: 0;
+  } 
+  
   .u-section-1 .u-image-1 {
     min-height: 561px;
     background-image: url("images/Picture3.jpg");

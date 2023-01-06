@@ -8,6 +8,7 @@ Product Details
 <!-- Push a style dynamically from a view -->
 @section('styles')
 <link rel="stylesheet" href="/css/pastries/details.css" media="screen">
+<link rel="stylesheet" href="/css/datagrid.css" media="screen">
 @endsection
 
 @section('content')  
@@ -52,6 +53,7 @@ Product Details
                       <br/>
                       <br/>
                       <p class="u-text u-text-8"> {{ $product->productDescription }} </p>
+                      
                     </div>
                   </div>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-layout-cell-4">
@@ -113,11 +115,18 @@ Product Details
         </div>
       </div>
     </div>
-  </section>
-  <br/><br/>
- <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
-        <h6 class="u-text u-text-default u-text-1">You might also like:</h6>
+  </section><br/>
+  <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 storageDiv">
+        <label><b>Storage Instructions:</b></label>
+        <p class="u-text u-text-8">  Keep refrigerated at below 4°C and Cakes should be consumed immediately or within 3 days from purchase if refrigerated. </p>
+      </div>
+    </section>
+  <br/>
+    <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
+    <br/><br/>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-1">You might also like:</h2>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-3" id="sec-ff51">
@@ -189,8 +198,46 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div><br/>
 
-
-      <div>Products Review</div>
+    </section><br/>
+    <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
+        <h2 class="u-text u-text-1">Reviews:</h2><br/>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="reviewThumbnails thumbnailView">
+              <div class="table-row">
+                <div class="table-head" style="display: none">Product ID</div>
+                <div class="table-head">Product Name</div>
+              </div>
+              <!--- begin product item --->
+              @foreach($reviews as $review)
+              <!--- get selected products --->
+              <div class="table-row">
+                <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$uniqueProductId->productIdlong}}</span></div>
+                <div class="table-cell">
+                  <span class="listItemDetailLabel">Title</span><h5><span class="listItemDetailValue">No issues with delivery</span></h5><br/>
+                  <!-- <span class="listItemDetailLabel">Time</span><span class="listItemDetailValue">reviewed 3 hrs ago</span><br/> -->
+                  <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><i>"{{ $review->review }}"</i></span><br/><br/>
+                  <span class="listItemDetailLabel">Customer Name</span><h5><span class="listItemDetailValue">- {{ $review->customer_id }}</span></h5></div>
+              </div>                
+              @endforeach      
+            </div>
+        
+      </div>
+    </section>
+    <br/> 
+    <section class="u-clearfix u-section-2" id="sec-1333">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
+        <h2 class="u-text u-text-1">Links:</h2>
+      </div>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 storageDiv">
+        <label><b>I Made Buttery Pineapple Cakes From Scratch</b></label>
+        <p class="u-text u-text-8"> <a href="'{{ $urlvid }}'">{{ $urlvid }} </a></p>
+      </div>
+    </section><br/><br/><br/>
+      <!-- <div>Products Review</div>
           @foreach($reviews as $review)
             <div>
                 <div class="reviewerName">
@@ -200,12 +247,11 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                     {{ $review->review }}
                 </div>
             </div>
-          @endforeach
+          @endforeach -->
 
-          <div>VIdeo URL</div>
-          <div> URL embed here {{ $urlvid }}</div>
+          <!-- <div>VIdeo URL</div>
+          <div> URL embed here {{ $urlvid }}</div> -->
 
-    </section>
     
        
    

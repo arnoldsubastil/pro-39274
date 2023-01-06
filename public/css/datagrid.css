@@ -540,6 +540,21 @@ width: 18%
   margin: 0;
 }
 
+.thumbnailView .table-cell{
+  width: auto;
+}
+
+.reviewThumbnails .table-row{
+  border-bottom: 1px solid #DDDDDD;
+  max-width:280px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.reviewThumbnails {
+  text-align: left;
+}
+
 /* responsive */
 @media(max-width:1024px)
 {
