@@ -225,6 +225,10 @@ END- html */
   color: #383C3B;
 }
 
+.thumbnailView .table-cell{
+  width:auto;
+}
+
 .thumbnailView  .table-cell, .thumbnailView  .table-cell a
 {   
     font-size: 1.125rem;
@@ -541,9 +545,12 @@ width: 18%
   margin: 0;
 }
 
-.thumbnailView .table-cell{
-  width: auto;
+.eventThumbnails .table-cell{
+  width: 48%;
 }
+
+
+
 
 .reviewThumbnails .table-row{
   border-bottom: 1px solid #DDDDDD;
@@ -619,5 +626,7 @@ width: 18%
     text-align: center;
     width: 100%;
   }  
+
+  
 }
 
