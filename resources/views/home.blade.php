@@ -62,7 +62,7 @@ Home
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
                         <br/>
                         @if (Route::has('password.request'))
-                            <a href="/password/reset"  class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3" >
+                            <a href="/password/reset" onclick="reset()" class="resetPasswordLink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-grey-80 u-btn-3" >
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
@@ -253,6 +253,14 @@ Home
     </section>
 
 @endsection
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+ 
+function reset() {
+  window.location = "/password/reset"; 
+}
+
+  </script>
 
 <!-- Push a style dynamically from a view -->
 @push('styles')

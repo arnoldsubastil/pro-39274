@@ -55,7 +55,7 @@ Sign In
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
                         <br/>
                         @if (Route::has('password.request'))
-                            <a  class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-grey-80 u-btn-1" href="{{ route('password.request') }}">
+                            <a href="/password/reset" onclick="reset()" class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-font-montserrat u-hover-none u-none u-text-grey-80 u-btn-1" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
@@ -166,3 +166,12 @@ Sign In
     </div>
 </div> -->
 @endsection
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+ 
+function reset() {
+  window.location = "/password/reset"; 
+}
+
+  </script>
+
