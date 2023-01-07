@@ -557,7 +557,41 @@ width: 18%
 }
 
 
+.videoThumbnails  .table-cell:hover, .videoThumbnails  .table-cell a:hover, .videoThumbnails  .table-row:hover
+{   
+    background-color: transparent;
+}
 
+.videoThumbnails  .table-row
+{   
+    border: 0;
+    border-bottom: 0;
+}
+
+.videoThumbnails  iframe
+{   
+  width: 100%;
+  /* max-width: 800px; */
+  /* max-height: 334px; */
+  height: 480px;
+}
+
+.videoThumbnails {
+  text-align: left;
+}
+
+.videoThumbnails .table-cell {
+  max-width: initial;
+  width: 100%;
+}
+
+.videoThumbnails .table-cell .listItemDetailValue {
+  text-align: center;
+}
+
+.videoThumbnails .table-row:last-child{
+  border-bottom: 0;
+}
 
 .reviewThumbnails .table-row{
   border-bottom: 1px solid #DDDDDD;

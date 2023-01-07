@@ -198,16 +198,57 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div><br/>
 
-    </section><br/>
+    </section>
+    <br/> 
     <section class="u-clearfix u-section-2" id="sec-1333">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
+        <h2 class="u-text u-text-1">Video:</h2>
+      </div>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="videoThumbnails thumbnailView">
+              <div class="table-row" style="display: none">
+                <div class="table-head" >Product ID</div>
+                <div class="table-head">Product Name</div>
+              </div>
+              <!-- <div class="table-row">
+                <div class="table-cell">
+                  <span class="listItemDetailLabel">Video Title</span>
+                  <span class="listItemDetailValue"><h4>Video Title</h4></span><br/>
+              </div>  -->
+              <div class="table-cell">
+                  <!-- <span class="listItemDetailLabel">Video</span> -->
+                  <span class="listItemDetailValue">
+                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/-v8SwFskwvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                  <iframe src="{{ $urlvid }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <!-- <video poster="{{ $urlvid }}" controls="controls">
+                    <source src="{{ $urlvid }}" type="video/mp4">
+                    <source src="{{ $urlvid }}" type="video/ogg">
+                    <p>Your browser does not support the video tag.</p>
+                    <p>Video courtesy of <a href="{{ $urlvid }}" target="_blank">Inga Lam</a>.</p>                    
+                  </video> -->
+                  </span><br/>
+                  <div class="table-cell">
+                  <span class="listItemDetailLabel">I Made Buttery Pineapple Cakes From Scratch</span>
+                  <span class="listItemDetailValue">
+                    <p>
+                      Video courtesy of 
+                      <a href="{{ $urlvid }}" target="_blank">Soystory</a>
+                    </p>
+                  </span><br/>
+              </div>        
+            </div>
+        
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-1">Reviews:</h2><br/>
       </div>
     </section>
     <section class="u-clearfix u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
             <div class="reviewThumbnails thumbnailView">
-              <div class="table-row">
+              <div class="table-row" >
                 <div class="table-head" style="display: none">Product ID</div>
                 <div class="table-head">Product Name</div>
               </div>
@@ -227,16 +268,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         
       </div>
     </section>
-    <br/> 
-    <section class="u-clearfix u-section-2" id="sec-1333">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
-        <h2 class="u-text u-text-1">Links:</h2>
-      </div>
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 storageDiv">
-        <label><b>I Made Buttery Pineapple Cakes From Scratch</b></label>
-        <p class="u-text u-text-8"> <a href="'{{ $urlvid }}'">{{ $urlvid }} </a></p>
-      </div>
-    </section><br/><br/><br/>
+    
+    <br/><br/><br/>
       <!-- <div>Products Review</div>
           @foreach($reviews as $review)
             <div>
