@@ -316,12 +316,7 @@ class CartController extends Controller
     }
     public function postcontact(Request $request) {
         
-        $validated = $request->validate([
-            'email' => 'required|email',
-            'firstName' => 'required',
-            'lastName' => 'required',
-            'message' => 'required'
-        ]);
+      
         $message = 'Message From: ' . $request->firstName . ' ' . $request->lastName . ': ';
         $this->getID(Auth::user());
             Contact::create([
