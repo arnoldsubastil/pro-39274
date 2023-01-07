@@ -226,7 +226,7 @@ END- html */
 }
 
 .thumbnailView .table-cell{
-  width:auto;
+  width: 100%;
 }
 
 .thumbnailView  .table-cell, .thumbnailView  .table-cell a
@@ -571,8 +571,7 @@ width: 18%
 .videoThumbnails  iframe
 {   
   width: 100%;
-  /* max-width: 800px; */
-  /* max-height: 334px; */
+  max-width: 938px;
   height: 480px;
 }
 
@@ -599,8 +598,8 @@ width: 18%
   vertical-align: top;
 }
 
-.reviewThumbnails {
-  text-align: left;
+.reviewThumbnails .table-row:hover{
+  background: transparent;
 }
 
 /* responsive */

@@ -121,14 +121,93 @@ Product Details
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 storageDiv">
         <label><b>Storage Instructions:</b></label>
         <p class="u-text u-text-8"> {{ $product->storage }}</p>
-      </div>
+      </div><br/>
     </section>
     @endif
-  <br/>
-    <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
-    <br/><br/>
+    @if($urlvid != '-')
+    <section class="u-clearfix u-section-2" id="sec-1333">
+    <!-- <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
+        <h2 class="u-text u-text-1">Video:</h2>
+      </div> -->
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-text u-text-1">You might also like:</h2>
+            <div class="videoThumbnails thumbnailView">
+              <div class="table-row" style="display: none">
+                <div class="table-head" >Product ID</div>
+                <div class="table-head">Product Name</div>
+              </div>
+              <!-- <div class="table-row">
+                <div class="table-cell">
+                  <span class="listItemDetailLabel">Video Title</span>
+                  <span class="listItemDetailValue"><h4>Video Title</h4></span><br/>
+              </div>  -->
+              <div class="table-cell">
+                  <!-- <span class="listItemDetailLabel">Video</span> -->
+                  <span class="listItemDetailValue">
+                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/-v8SwFskwvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                  <iframe src="{{ $urlvid }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <!-- <video poster="{{ $urlvid }}" controls="controls">
+                    <source src="{{ $urlvid }}" type="video/mp4">
+                    <source src="{{ $urlvid }}" type="video/ogg">
+                    <p>Your browser does not support the video tag.</p>
+                    <p>Video courtesy of <a href="{{ $urlvid }}" target="_blank">Inga Lam</a>.</p>                    
+                  </video> -->
+                  </span><br/><br/>
+                       
+            </div>
+        
+      </div><br/>
+    </section>
+    @endif
+    @if(count($reviews) != 0)
+    <!-- <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h2 class="u-text u-text-1">Reviews:</h2><br/>
+      </div>
+    </section> -->
+    <section class="u-clearfix u-section-2" id="sec-1333">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="reviewThumbnails thumbnailView">
+              <div class="table-row" >
+                <div class="table-head" style="display: none">Product ID</div>
+                <div class="table-head">Product Name</div>
+              </div>
+              <!--- begin product item --->
+              @foreach($reviews as $review)
+              <!--- get selected products --->
+              <div class="table-row"><div class="table-cell">
+                  <span class="listItemDetailLabel">Image</span>
+                  <span class="listItemDetailValue">
+                    @if($review->name != '')
+                      <span id="InitialSpan">{{ substr($review->name, 0, 1) }}</span>
+                    @else
+                      Anonymous
+                    @endif
+                  </span>
+                </div>
+                
+                <div class="table-cell">
+                  <!-- <span class="listItemDetailLabel">Title</span><b><span class="listItemDetailValue">No issues with delivery</span></b> -->
+                  <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><i>"{{ $review->review }}"</i></span><br/><br/>
+                  <span class="listItemDetailLabel">Customer Name</span><span class="listItemDetailValue">
+                    @if($review->name != '')  
+                      - <span class="nameSpan">{{ $review->name }}</span>                      
+                    @else
+                      Anonymous
+                    @endif
+                    </span>
+                </div>
+              </div>                
+              @endforeach      
+            </div>
+        
+      </div><br/><br/>
+    </section>
+    @endif
+    
+    <section class="u-clearfix u-grey-5 u-section-2" id="sec-1333">
+    <br/>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h6 class="u-text u-text-1">You might also like:</h6>
       </div>
     </section>
     <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-3" id="sec-ff51">
@@ -201,87 +280,6 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div><br/>
 
     </section>
-    <br/> 
-    @if($urlvid != '-')
-    <section class="u-clearfix u-section-2" id="sec-1333">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1"><br/>
-        <h2 class="u-text u-text-1">Video:</h2>
-      </div>
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <div class="videoThumbnails thumbnailView">
-              <div class="table-row" style="display: none">
-                <div class="table-head" >Product ID</div>
-                <div class="table-head">Product Name</div>
-              </div>
-              <!-- <div class="table-row">
-                <div class="table-cell">
-                  <span class="listItemDetailLabel">Video Title</span>
-                  <span class="listItemDetailValue"><h4>Video Title</h4></span><br/>
-              </div>  -->
-              <div class="table-cell">
-                  <!-- <span class="listItemDetailLabel">Video</span> -->
-                  <span class="listItemDetailValue">
-                  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/-v8SwFskwvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-                  <iframe src="{{ $urlvid }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  <!-- <video poster="{{ $urlvid }}" controls="controls">
-                    <source src="{{ $urlvid }}" type="video/mp4">
-                    <source src="{{ $urlvid }}" type="video/ogg">
-                    <p>Your browser does not support the video tag.</p>
-                    <p>Video courtesy of <a href="{{ $urlvid }}" target="_blank">Inga Lam</a>.</p>                    
-                  </video> -->
-                  </span><br/>
-                  <div class="table-cell">
-                  <span class="listItemDetailLabel">I Made Buttery Pineapple Cakes From Scratch</span>
-                  <span class="listItemDetailValue">
-                    <p>
-                      Video courtesy of 
-                      <a href="{{ $urlvid }}" target="_blank">Soystory</a>
-                    </p>
-                  </span><br/>
-              </div>        
-            </div>
-        
-      </div>
-    </section>
-    @endif
-    
-    @if(count($reviews) != 0)
-    <section class="u-clearfix u-section-2" id="sec-1333">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-text u-text-1">Reviews:</h2><br/>
-      </div>
-    </section>
-    <section class="u-clearfix u-section-2" id="sec-1333">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            <div class="reviewThumbnails thumbnailView">
-              <div class="table-row" >
-                <div class="table-head" style="display: none">Product ID</div>
-                <div class="table-head">Product Name</div>
-              </div>
-              <!--- begin product item --->
-              @foreach($reviews as $review)
-              <!--- get selected products --->
-              <div class="table-row">
-                <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$uniqueProductId->productIdlong}}</span></div>
-                <div class="table-cell">
-                  <span class="listItemDetailLabel">Title</span><h5><span class="listItemDetailValue">No issues with delivery</span></h5><br/>
-                  <!-- <span class="listItemDetailLabel">Time</span><span class="listItemDetailValue">reviewed 3 hrs ago</span><br/> -->
-                  <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><i>"{{ $review->review }}"</i></span><br/><br/>
-                  <span class="listItemDetailLabel">Customer Name</span><h5><span class="listItemDetailValue">- 
-                    @if($review->name != '')
-                       {{ $review->name }}
-                    @else
-                      Anonymous
-                      @endif
-                </span></h5></div>
-              </div>                
-              @endforeach      
-            </div>
-        
-      </div>
-    </section>
-    @endif
-    <br/><br/><br/>
       <!-- <div>Products Review</div>
           @foreach($reviews as $review)
             <div>

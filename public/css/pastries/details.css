@@ -1,3 +1,20 @@
+#InitialSpan {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #A7A9AC;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+  padding: 10px 24px 16px;
+  }
+
+  .nameSpan{
+    text-transform: capitalize;
+  }
+  
   .storageDiv{
     border: 1px solid #DDDDDD;
     font-size: 1rem;
@@ -282,6 +299,7 @@
     }
   } .u-section-2 {
     background-image: none;
+    background-color: #F2F2F2;
   }
   
   .u-section-2 .u-sheet-1 {
@@ -323,6 +341,7 @@
   }
   
   .u-section-3 .u-btn-1 {
+    background-color: transparent !important;
     font-size: 1.125rem;
     border-style: solid;
     letter-spacing: 1px;
