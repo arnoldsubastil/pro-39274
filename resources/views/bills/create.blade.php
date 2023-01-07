@@ -185,9 +185,13 @@ Bill Order
                           </div>
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>  
-                            <input id="ReceiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
+                            <input id="ReceiveDateTextBox" class="receiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
+                            <span id="DefaultOptionButton" class="moreOption" style="margin-top: 16px;">View selection instead?</span>
                             <div id="result" class="receivedDateList"></div>
-                                      </div>
+                            <div class="moreOptionDiv"><span id="MoreOptionButton" class="moreOption">View calendar instead?</span></div>
+                            <!-- <div class="moreOptionDiv"><span id="DefaultOptionButton" class="moreOption">View selection instead?</span></div> -->
+                          </div>
+                                      
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Reference Number</label>
                         <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
@@ -329,6 +333,27 @@ Bill Order
 
 <script>
   jQuery(document).ready(function ($) {  
+
+  var receiveDateList = document.getElementById("result");
+  var calendarTextBox = document.getElementById("ReceiveDateTextBox");
+  var calendarOption = document.getElementById("MoreOptionButton");
+  var defaultOption = document.getElementById("DefaultOptionButton");
+  calendarOption.onclick = function() {
+    receiveDateList.style.display = "none";
+    defaultOption.style.display = "block";
+    calendarTextBox.style.display = "block";
+    calendarTextBox.style.border = "1px solid #b3b3b3";
+    calendarTextBox.style.display = "block";
+    calendarOption.style.display = "none";
+  }
+
+  defaultOption.onclick = function() {
+    receiveDateList.style.display = "block";
+    defaultOption.style.display = "none";
+    calendarTextBox.style.display = "none";
+    calendarTextBox.style.display = "none";
+    calendarOption.style.display = "block";
+  }
 
   // BEGIN - show modals when clicked the span
   var vouchersListModal = document.getElementById("VouchersListModal");

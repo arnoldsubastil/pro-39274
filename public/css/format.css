@@ -318,38 +318,38 @@ footer.u-custom-color-3{
 .success {
     color: #4F8A10;
     background-color: #DFF2BF;
-    background-image: url('https://i.imgur.com/Q9BGTuy.png');
+    /* background-image: url('https://i.imgur.com/Q9BGTuy.png'); */
 }
 .warning {
     color: #9F6000;
     background-color: #FEEFB3;
-    background-image: url('https://i.imgur.com/Z8q7ww7.png');
+    /* background-image: url('https://i.imgur.com/Z8q7ww7.png'); */
 }
 
 
 .error{
     color: #D8000C;
     background-color: #FFBABA;
-    background-image: url('https://i.imgur.com/GnyDvKN.png');
+    /* background-image: url('https://i.imgur.com/GnyDvKN.png'); */
 }
 
 .alert-danger{
     color: #D8000C;
     background-color: #FFBABA;
-    background-image: url('https://i.imgur.com/GnyDvKN.png');
+    /* background-image: url('https://i.imgur.com/GnyDvKN.png'); */
 }
 
 .validation{
     color: #D63301;
     background-color: #FFCCBA;
-    background-image: url('https://i.imgur.com/GnyDvKN.png');
+    /* background-image: url('https://i.imgur.com/GnyDvKN.png'); */
 }
 
 
 .invalid-feedback{
     color: #D8000C;
     background-color: transparent;
-    background-image: url('https://i.imgur.com/Z8q7ww7.png');
+    /* background-image: url('https://i.imgur.com/Z8q7ww7.png'); */
     font-size: 1rem;
 }
 

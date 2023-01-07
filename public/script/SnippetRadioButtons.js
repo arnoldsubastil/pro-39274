@@ -28,14 +28,14 @@ var sHTML = "<ul class='noListStyle'>";
 
 if (moment().isBefore('10:00:00')) {
     //include today
-    counter=0;
-    limit=5;    
+    counter=1;
+    limit=6;    
 }
 else
 {
     //exclude today
-    counter=1;
-    limit=6;
+    counter=2;
+    limit=7;
 }
 
 for (i = counter; i < limit; i++) {
