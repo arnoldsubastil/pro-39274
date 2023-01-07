@@ -171,7 +171,7 @@
 										<tr>
 											<td valign="middle" style="padding:0 8px 0px 0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: bold; font-family: arial ">	
 												
-                                            {{$info[0]->status}}</a>
+                                            {{$info[0]->statusname}}</a>
 											</td>
 										</tr>
 									</table>
