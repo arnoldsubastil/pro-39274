@@ -261,7 +261,13 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
                   <span class="listItemDetailLabel">Title</span><h5><span class="listItemDetailValue">No issues with delivery</span></h5><br/>
                   <!-- <span class="listItemDetailLabel">Time</span><span class="listItemDetailValue">reviewed 3 hrs ago</span><br/> -->
                   <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><i>"{{ $review->review }}"</i></span><br/><br/>
-                  <span class="listItemDetailLabel">Customer Name</span><h5><span class="listItemDetailValue">- {{ $review->customer_id }}</span></h5></div>
+                  <span class="listItemDetailLabel">Customer Name</span><h5><span class="listItemDetailValue">- 
+                    @if($review->name != '')
+                       {{ $review->name }}
+                    @else
+                      Anonymous
+                      @endif
+                </span></h5></div>
               </div>                
               @endforeach      
             </div>

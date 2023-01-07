@@ -105,9 +105,10 @@ class PastriesController extends Controller
 
             
             $allreviews = DB::table('reviews')
-            ->select('customer_id', 'review')
+            ->select('reviews.customer_id', 'reviews.review', 'users.name')
             ->where('product_id', $productId)
             ->where('approval', 1)
+            ->leftJoin('users', 'users.id', '=', 'reviews.customer_id')
             ->get();
         return view('pastries.details',[
             'alsobuy'=>$allNotcartids,
