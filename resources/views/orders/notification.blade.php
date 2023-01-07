@@ -19,7 +19,7 @@ Order Product
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" style="display: inline-block;">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
                   <h1 class="u-align-center u-text u-text-default u-text-1">Thank you.</h1>
-                  <p class="u-align-center u-text u-text-default u-text-2">Your order was completed successfully.<br>An email notification was sent to your email.<br><br>Please check your inbox for the receipt.
+                  <p class="u-align-center u-text u-text-default u-text-2">Your order has been successfully completed.<br><b>The Merchant is verifying your payment.</b><br><br>Kindly check your inbox for the receipt.
                   </p>
                   <br/>
                   @if (!Auth::guest())

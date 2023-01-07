@@ -5,6 +5,12 @@
     font-size: 1.125rem;
   }
 
+  .receivedDateList ul li label{
+    padding: 8px 4px;
+    font-size: 18px;
+    display: inline-block;
+  }
+
 .u-form-group{
   margin: 32px;
 }

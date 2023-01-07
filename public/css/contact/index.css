@@ -1,3 +1,59 @@
+.contactUsDiv ul li{
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.contactUsDiv ul li a{
+  display: inline-block;
+}
+
+.contactUsDiv ul li a{
+  display: inline-block;
+}
+
+.contactUsDiv ul li > a{
+  width:80%;
+}
+.contactUsDiv ul li:first-child > a {
+  width: auto;
+  vertical-align: top;
+  margin-right: 0px;
+}
+
+.contactUsDiv ul li:first-child .u-icon-span{
+  display: inline-block;
+  vertical-align: top;
+  width:80%;
+}
+
+.contactUsDiv ul li a, .contactUsDiv ul li:hover a{
+  color: #383C3B;
+}
+
+.contactUsDiv ul li .socialSpan{
+  float: left;
+  text-align: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.contactUsDiv ul li .u-icon { 
+  float: left;
+  text-align: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.contactUsDiv ul li:first-child .u-icon {
+  background-color: #A7A9AC;
+}
+
+
+
 .u-section-1 {
     background-image: none;
   }

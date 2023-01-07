@@ -452,6 +452,11 @@ END- html */
 /* width for different number of columns */
 
 /* for five columns */
+
+.orderDetailsTable .table-row:first-child{
+  display: none;
+}
+
 .orderDetailsTable .table-head{  
   width: 18%
   }
@@ -493,6 +498,8 @@ vertical-align: middle;
 .ordersDetailsTable .table-head{  
 width: 18%
 }
+
+
 
 .vouchersListTable .table-head{  
   width: 23%
@@ -583,6 +590,10 @@ width: 18%
   }
 
   .ordersDetailsTable .table-row:first-child{
+    display: none;
+  }
+
+  .vouchersListTable .table-row:first-child{
     display: none;
   }
 

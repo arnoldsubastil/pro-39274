@@ -186,7 +186,7 @@ Bill Order
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Preferred date of receipt</label>  
                             <input id="ReceiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
-                            <div id="result"></div>
+                            <div id="result" class="receivedDateList"></div>
                                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Reference Number</label>

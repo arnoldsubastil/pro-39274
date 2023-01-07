@@ -706,6 +706,7 @@
   }
 
   .u-section-5 .u-image-1 {
+    background-size: contain;
     min-height: 414px;
   }
 
