@@ -315,11 +315,18 @@ class CartController extends Controller
         return view('orders.reviewupdated');
     }
     public function postcontact(Request $request) {
-
+        
+        $validated = $request->validate([
+            'email' => 'required|email',
+            'firstName' => 'required|min:10|max:16',
+            'lastName' => 'required',
+            'message' => 'required'
+        ]);
+        $message = 'Message From: ' . $request->firstName . ' ' . $request->lastName . ': ';
         $this->getID(Auth::user());
             Contact::create([
-                'email' => $request->productIdlong,
-                'message' => $request->message,
+                'email' => $request->email,
+                'message' => $message,
                 'read_done' => 0
             ]);
                     
