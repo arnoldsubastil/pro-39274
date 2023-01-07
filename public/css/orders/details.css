@@ -1,3 +1,26 @@
+.arrowButton{
+  background-color: #A7A9AC;
+  display: inline-block;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.arrowButton .triangle-right{
+  margin-left: 0;
+}
+
+.closeButton {
+  margin-top: -12px;
+}
+.modal-footer{
+  margin-top: 24px;
+  text-align: right;
+}
+
+.modal-content{
+  padding: 24px;
+}
 .voucherSpan{
     border-color: #b3b3b3;
     color: #383c3b;

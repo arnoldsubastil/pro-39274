@@ -498,6 +498,7 @@ width: 18%
   width: 23%
 }
 
+
 .ordersTable .table-cell .listItemDetailValue{
     margin-bottom: 16px;
 }
@@ -574,7 +575,7 @@ width: 18%
     border: 1px solid #DDDDDD;
   }
 
-  .table .table-row:first-child{
+  .ordersDetailsTable .table-row:first-child{
     display: none;
   }
 

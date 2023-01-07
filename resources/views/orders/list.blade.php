@@ -95,7 +95,8 @@ Order Details
                         <!-- <a href="/my-orders" class="listItemDetailValue">
                           <span id="{{ $product->order_id }}"><div class="triangle-right" style="margin-left: 16px;"></div></span>                                                         
                         </a> -->
-                        <span id="" data-toggle="modal" data-target="#{{$product->order_id}}" class-"arrowButton"><div class="triangle-right" style="margin-left: 16px;"></div></span>
+                        <span class="arrowButton open-edit_user" data-toggle="modal" data-id="{{ $product->order_id }}"> <div class="triangle-right" ></div> </span> 
+                        <!-- <span id="" data-toggle="modal" data-target="#{{$product->order_id}}" class-"arrowButton"><div class="triangle-right" style="margin-left: 16px;"></div></span> -->
                       </div>
                     </div>
               
@@ -105,8 +106,8 @@ Order Details
                                 <br/>
                                 <br/>
 
-                                <!-- BEGIN - orders modal -->
-                                <div class="modal" id="{{$product->order_id}}" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+
+                                <div class="modal" id="myModal-{{$product->order_id}}" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                   <div class="modal-content">
 
                                     <div class="modal-header">
@@ -202,21 +203,15 @@ Order Details
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" ></script><!-- must comes first before ajax -->
 <script>
 jQuery(document).ready(function ($) {  
-
-  // BEGIN - show modals when clicked the span
-  var ordersListModal = document.getElementById("{{$product->order_id}}");
-  var ordersListSpan = document.getElementsByTagName(".arrowButton");
-  ordersListSpan.onclick = function() {
-    ordersListModal.style.display = "block";
-  }
-  // $('.modal').attr('id', newId);
-  //   var Id = $('.modal').attr('id');
-  //   $('#modal' + Id).modal('toggle');
-
-  // END - show modals when clicked the span
-
+  
+  //show modal through dynamic ID
+  $('.arrowButton').click(function(){
+    let id = $(this).data('id');
+    $('#myModal-'+id).modal('show');    
+  });
 
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
@@ -235,7 +230,7 @@ jQuery(document).ready(function ($) {
         },
         success:function(response){
                 $.each(response, function( index, value ) {
-                    var note = 'No message from the user for this specific product...';
+                    var note = 'No message from the user for this specific product.';
                     if(value.product_note != null) {
                         note = value.product_note;
                     }
