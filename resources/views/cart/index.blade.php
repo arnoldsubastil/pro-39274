@@ -39,7 +39,7 @@ Shopping Cart
 
                 <!--- get selected products --->
                 
-                <div class="table-row">
+                <div class="table-row" id="row_table_{{ $uniqueProductId->productIdlong }}">
                       <div class="table-cell selectCheckbox">
                         <div class="round">
                           <input type="checkbox" id="{{ $uniqueProductId->productIdlong }}" name="" value="{{ $uniqueProductId->productIdlong }}" class="itemchecker" checked />
@@ -59,7 +59,7 @@ Shopping Cart
                           <!-- <input type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" class="itemNumber" value="{{ $uniqueProductId->numberoforder }}" /> -->
                         </a>
                       </div>
-                      <div class="table-cell"><button class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Remove</button></div>
+                      <div class="table-cell"><button class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2 removeFromList" rowtoremove = "row_table_{{ $uniqueProductId->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Remove</button></div>
                     </div>
               
               @endforeach
@@ -154,6 +154,14 @@ jQuery(document).ready(function ($) {
             console.log(response);
         },
     });  
+  });
+  
+  $('.removeFromList').click(function(){
+    var parentremove = $(this).attr('rowtoremove');
+    $('#' + parentremove).fadeIn();
+    $('#' + parentremove).children('.itemNumber').val(0);
+    
+    $('#' + parentremove).children('.itemNumber').trigger('keyup');
   });
 
   $('.minusButton').click(function(){

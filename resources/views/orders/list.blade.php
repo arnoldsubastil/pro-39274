@@ -63,10 +63,6 @@ Order Details
                         <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
                         <a class="listItemDetailLabel">Mode of Payment</a>
                         <a class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
-                        <a class="listItemDetailLabel">Amount Paid</a>
-                        <a class="listItemDetailValue">
-                            <span class="currency">PHP</span><span class="amount"> 320.00</span> 
-                        </a>
                       </div>                      
                       <div class="table-cell payment">
                         <!-- <a class="listItemDetailLabel">Products</a>
@@ -258,7 +254,7 @@ jQuery(document).ready(function ($) {
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
 <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/resizer/images/ProductImages/`+ value.url +`/128" alt=""></span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">蛋黃酥</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`(`+value.foreignName+`)</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
 
                     
                     

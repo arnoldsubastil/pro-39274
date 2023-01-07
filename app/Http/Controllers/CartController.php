@@ -193,6 +193,7 @@ class CartController extends Controller
                 'orders.voucher_proof',
                 'orders.notes',
                 'products.name',
+                'products.foreignName',
                 'products.productIdlong',
                 'products.url',
                 'cart.product_note',
@@ -218,6 +219,7 @@ class CartController extends Controller
             ->groupBy('orders.voucher_proof')
             ->groupBy('orders.notes')
             ->groupBy('products.name')
+            ->groupBy('products.foreignName')
             ->groupBy('products.productIdlong')
             ->groupBy('products.url')
             ->groupBy('cart.product_note')
