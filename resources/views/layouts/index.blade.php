@@ -270,7 +270,10 @@ $(document).ready(function () {
         success:function(response){
           var newlink = '';
           $.each( response, function( key, value ) {
-            newlink = newlink + `<a href="/products/`+value['slug']+`">`+value['categoryname']+`</a>`;
+            if(value['slug'] != 'sets')
+              newlink = newlink + `<a href="/products/`+value['slug']+`">`+value['categoryname']+`</a>`;
+            else
+              newlink = newlink + `<a href="/Events">`+value['categoryname']+`</a>`;
           });
           //console.log(newlink);
 

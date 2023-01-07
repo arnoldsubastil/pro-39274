@@ -85,6 +85,7 @@ Home
     <section class="u-border-1 u-border-grey-10 u-border-no-left u-border-no-right u-clearfix u-white u-section-4" id="carousel_bc58">
       <p class="u-align-center u-text u-text-1">Check out our best sellers!</p>
     </section>
+    
     <section class="u-carousel u-carousel-duration-2000 u-carousel-left u-slide u-block-d061-1" id="carousel_ae0d" data-interval="8000" data-u-ride="carousel">
       <ol class="u-absolute-hcenter u-carousel-indicators u-block-d061-2">
         @if($ctr = 0) @endif
@@ -145,6 +146,8 @@ Home
         <span class="sr-only">Next</span>
       </a>
     </section>
+
+
     <section class="u-border-1 u-border-grey-10 u-border-no-left u-border-no-right u-clearfix u-white u-section-4" id="carousel_bc58">
       <p class="u-align-center u-text u-text-1">Today's offer new fresh products!</p>
     </section>
