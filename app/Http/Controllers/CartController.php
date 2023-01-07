@@ -294,6 +294,7 @@ class CartController extends Controller
 
             $bodydata = $this->orderOrganizer($orderId);
             $this->mailersender($request->name, $request->email, $bodydata);
+            $this->mailersender('Admin Copy', 'inquiry@soystory.ph', $bodydata);
 
         return view('orders.notification');
     }
