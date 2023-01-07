@@ -158,10 +158,11 @@ jQuery(document).ready(function ($) {
   
   $('.removeFromList').click(function(){
     var parentremove = $(this).attr('rowtoremove');
-    $('#' + parentremove).fadeIn();
-    $('#' + parentremove).children('.itemNumber').val(0);
+    console.log(parentremove);
+    $('#' + parentremove).fadeOut();
+    $('#' + parentremove).find('.itemNumber').val(0);
     
-    $('#' + parentremove).children('.itemNumber').trigger('keyup');
+    $('#' + parentremove).find('.itemNumber').trigger('keyup');
   });
 
   $('.minusButton').click(function(){
