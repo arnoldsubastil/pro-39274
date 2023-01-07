@@ -242,6 +242,8 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
       </div>
     </section>
     @endif
+    
+    @if(count($reviews) != 0)
     <section class="u-clearfix u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-text u-text-1">Reviews:</h2><br/>
@@ -276,7 +278,7 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         
       </div>
     </section>
-    
+    @endif
     <br/><br/><br/>
       <!-- <div>Products Review</div>
           @foreach($reviews as $review)
