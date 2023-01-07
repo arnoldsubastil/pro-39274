@@ -318,7 +318,7 @@ class CartController extends Controller
         
         $validated = $request->validate([
             'email' => 'required|email',
-            'firstName' => 'required|min:10|max:16',
+            'firstName' => 'required',
             'lastName' => 'required',
             'message' => 'required'
         ]);
