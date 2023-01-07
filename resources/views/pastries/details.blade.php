@@ -119,7 +119,7 @@ Product Details
   <section class="u-clearfix u-section-2" id="sec-1333">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 storageDiv">
         <label><b>Storage Instructions:</b></label>
-        <p class="u-text u-text-8">  $product->storage</p>
+        <p class="u-text u-text-8"> {{ $product->storage }}</p>
       </div>
     </section>
   <br/>
