@@ -315,11 +315,13 @@ class CartController extends Controller
         return view('orders.reviewupdated');
     }
     public function postcontact(Request $request) {
-
+        
+      
+        $message = 'Message From: ' . $request->firstName . ' ' . $request->lastName . ': ';
         $this->getID(Auth::user());
             Contact::create([
-                'email' => $request->productIdlong,
-                'message' => $request->message,
+                'email' => $request->email,
+                'message' => $message,
                 'read_done' => 0
             ]);
                     
@@ -348,7 +350,7 @@ class CartController extends Controller
             ->select('orders.order_id',
                 'orders.user_id',
                 'orders.full_name',
-                'orders.status',
+                'deliverystatus.statusname',
                 'orders.mailing_address',
                 'orders.delivery_address',
                 'orders.contact_number',
@@ -369,11 +371,12 @@ class CartController extends Controller
             ->join('cartorder', 'cartorder.order_id', '=', 'orders.order_id')
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
+            ->join('deliverystatus', 'deliverystatus.statusID', '=', 'orders.status')
             ->where('orders.order_id', $orderId->order_id)
             ->groupBy('orders.user_id')
             ->groupBy('voucher.voucher_code')
             ->groupBy('orders.full_name')
-            ->groupBy('orders.status')
+            ->groupBy('deliverystatus.statusname')
             ->groupBy('orders.mailing_address')
             ->groupBy('orders.delivery_address')
             ->groupBy('orders.contact_number')

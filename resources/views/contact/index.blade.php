@@ -21,7 +21,7 @@ Contact Us
               <div class="u-align-left u-container-align-center u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
                   <div class="u-align-center u-form u-form-1">
-                    <form method="POST" action="{{ route('register') }}" style="padding: 0px;">
+                    <form method="POST" action="/post-contact" style="padding: 0px;">
                     @csrf
                       <h2 class="u-form-group u-form-text u-text u-text-1"> What can we help you with?</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
