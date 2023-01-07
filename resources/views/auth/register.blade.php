@@ -119,7 +119,7 @@ Sign Up
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <h2 class="u-text u-text-default u-text-1">For returning customers</h2>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Sign in with your existing account.&nbsp;</p>
+                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Log in with your existing account.&nbsp;</p>
                   <a href="/login" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Login your account</a>
                   <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Proceed to order and you will have an opportunity to create an account after checking out if one does not already exist for you.</p>
                   <a href="/" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>

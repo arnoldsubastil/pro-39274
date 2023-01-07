@@ -29,9 +29,9 @@ Home
                   <div class="u-align-center u-form u-form-1">
                     <form method="POST" action="{{ route('login') }}" style="padding: 0px;">
                     @csrf
-                      <h2 class="u-form-group u-form-text u-text u-text-1"> Sign in!</h2>
+                      <h2 class="u-form-group u-form-text u-text u-text-1"> Log in!</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
-                        <span style="font-weight: 400;">Sign in with your existing account.</span>
+                        <span style="font-weight: 400;">Log in with your existing account.</span>
                         <br>
                       </p>
                       <div class="u-form-group u-form-group-3">
@@ -58,7 +58,7 @@ Home
                       </p>                     
                       <div class="u-align-center u-form-group u-form-submit">
                         <button type="submit" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">{{ __('Login') }}</button>
-                        <!-- <a href="Home.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Sign in</a>
+                        <!-- <a href="Home.html" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Log in</a>
                         <input type="submit" value="submit" class="u-form-control-hidden"> -->
                         <br/>
                         @if (Route::has('password.request'))

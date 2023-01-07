@@ -86,7 +86,7 @@ Products
             <div class="u-container-style u-layout-cell u-size-32 u-layout-cell-2">
               <div class="u-container-layout u-container-layout-2">
                 <h2 class="u-text u-text-default u-text-4">Returning Customers</h2>
-                <p class="u-text u-text-default u-text-5">Sign in to speed up the check out process and save payments to account.</p>
+                <p class="u-text u-text-default u-text-5">Log in to speed up the check out process and save payments to account.</p>
                 <div class="u-border-1 u-border-palette-5-dark-2 u-form u-radius-4 u-white u-form-1">
                   <form action="/" class="u-clearfix u-form-spacing-40 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 40px;">
                     <div class="u-form-group u-form-group-1">
@@ -101,7 +101,7 @@ Products
                       <a href="/" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3"> Forgot your password?</a>
                     </p>
                     <div class="u-align-center u-form-group u-form-submit">
-                      <a href="/" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-4 u-btn-4">Sign in existing account</a>
+                      <a href="/" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-4 u-btn-4">Log in existing account</a>
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
                     <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
