@@ -27,7 +27,7 @@ class PastriesController extends Controller
     public function details($productId){
 
         $uniqueProductId = DB::table('products')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'), 'products.video_url')
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'), 'products.video_url', 'products.storage')
             ->where('productIdlong', $productId)
             ->leftJoin('cart', 'cart.product_id', '=', 'products.productIdlong')
             ->leftJoin('inventory', 'inventory.product_id', '=', 'products.productIdlong')
@@ -43,6 +43,7 @@ class PastriesController extends Controller
             ->groupBy('products.thumbnailUrl')
             ->groupBy('products.video_url')
             ->groupBy('products.url')
+            ->groupBy('products.storage')
             ->get();
 
             $category = $uniqueProductId[0]->categories;
@@ -72,7 +73,7 @@ class PastriesController extends Controller
 
 
             $allNotcartids = DB::table('cartorder')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize','products.sellingPrice', 'products.thumbnailUrl', 'products.url', 'products.video_url')
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize','products.sellingPrice', 'products.thumbnailUrl', 'products.url', 'products.video_url', 'products.storage')
             ->where('products.categories', $category)
             ->join('cart', 'cartorder.cart_id', '=', 'cart.cart_id')
             ->join('products', 'cart.product_id', '=', 'products.productIdlong')
@@ -90,12 +91,13 @@ class PastriesController extends Controller
             ->groupBy('products.thumbnailUrl')
             ->groupBy('products.url')
             ->groupBy('products.video_url')
+            ->groupBy('products.storage')
             ->get();
             
             $remaining = 10 - count($allNotcartids); 
 
             $product = DB::table('products')
-            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url')
+            ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url', 'storage')
             ->where('categories', 'pastries')
             ->where('productIdlong', '!=', $productId)
             ->take($remaining)
