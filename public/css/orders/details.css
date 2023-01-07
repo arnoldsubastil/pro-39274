@@ -1,5 +1,6 @@
 .arrowButton{
   background-color: #A7A9AC;
+  cursor: pointer;
   display: inline-block;
   padding: 8px;
   text-align: center;
