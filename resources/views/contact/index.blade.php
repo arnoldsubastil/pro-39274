@@ -23,24 +23,11 @@ Contact Us
                   <div class="u-align-center u-form u-form-1">
                     <form method="POST" action="/post-contact" style="padding: 0px;">
                     @csrf
-                      <h2 class="u-form-group u-form-text u-text u-text-1"> What can we help you with?</h2>
+                      <h2 class="u-form-group u-form-text u-text u-text-1"> Need help or just want to say hi?</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
-                        <span style="font-weight: 400;">Get in touch with us by either the contact details below or fill out the form with your concerns.</span>
+                        <span style="font-weight: 400;">Fill in the form below and we will get back to you as soon as we can. You can also reach us at <span style="color: #EF803C;">0917 138 0392</span> via phone or Viber.</span>
                         <br>
                       </p>
-
-                      <div class="contactUsDiv socialIcons">
-                        <ul class="noListStyle listSocialIcons">
-                          <li><a class="u-social-url" title="Phone Number" target="_blank"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base ">
-                            <img src="/images/Icons/Footer_Phone_32x32.png" alt=""></span>
-          </a><span class="u-icon-span">
-          <a href="#"><span >+63 917 138 0392</span></a><br/><a href="#"><span>+63 920 921 1290</span>
-          </span></a></li>
-                          <li><span class="u-file-icon u-icon u-social-icon u-social-Icons u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Instagram_32x32.png" alt=""></span><a href="https://www.facebook.com/soystorypastries"><span>SOYSTORYPASTRIES</span></a></li>
-                          <li><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-palette-5-base socialSpan"><img src="/images/Icons/Footer_Facebook_32x32.png" alt=""></span><a href="https://www.instagram.com/soystorypastries/"><span>SOYSTORY AUTHENTIC TAIWANESE PASTRIES</span></a></li>
-                          <!-- <li><img src="" /><a href="mailto:service@sunnyhills.com.sg"><span style="line-height: 26px;">service@sunnyhills.com.sg</span></a></li> -->
-                        </ul>
-                      </div>
                       
                       <div class="u-form-group u-form-group-4">
                         <label for="name" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('First Name') }}</label>

@@ -184,7 +184,7 @@ Bill Order
                           </select>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Preferred date to Receive</label>  
+                            <label for="name-2382" class="u-label u-label-1">Delivery Date</label>  
                             <input id="ReceiveDateTextBox" class="receiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
                             <span id="DefaultOptionButton" class="moreOption" style="margin-top: 16px;">View selection instead?</span>
                             <div id="result" class="receivedDateList"></div>

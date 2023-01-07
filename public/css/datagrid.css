@@ -595,7 +595,6 @@ width: 18%
 
 .reviewThumbnails .table-row{
   border-bottom: 1px solid #DDDDDD;
-  max-width:280px;
   text-align: center;
   vertical-align: top;
 }
