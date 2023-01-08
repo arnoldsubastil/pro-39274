@@ -101,6 +101,7 @@ class BillsController extends Controller
                 $arr1[$ctr]['valid_date_end'] = $voucheradd->valid_date_end;
                 $ctr++;
             }
+            
             foreach ($checkvoucher2 as $voucheradd){
                 $arr1[$ctr]['voucher_id'] = $voucheradd->voucher_id;
                 $arr1[$ctr]['specific_user'] = $voucheradd->specific_user;
@@ -142,7 +143,6 @@ class BillsController extends Controller
                 $newusers = array('name' => '', 'firstName' => '', 'lastName' => '', 'deliveryAddress' => '', 'email' => '', 'contact_no' => '');
                 $users[0] = (object)$newusers;
             }
-
 
         return view('bills.create', [
             'carttocheckout'=>$carttocheckout,

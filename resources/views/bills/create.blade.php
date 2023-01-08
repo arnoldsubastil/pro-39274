@@ -102,7 +102,7 @@ Bill Order
                             </div>
                             <div class="u-form-group u-form-group-4">
                                 <label for="SenderNameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Sender Name') }}</label>
-                                <input id="SenderNameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="senderName" value="{{ old('senderName') }}" required autocomplete="senderName" autofocus>
+                                <input id="SenderNameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="giverName" value="{{ old('senderName') }}" required autocomplete="senderName" autofocus>
                                 @error('senderName')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -111,7 +111,7 @@ Bill Order
                             </div>
                             <div class="u-form-group u-form-group-4">
                               <label for="GiftTextArea" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Message') }}</label>
-                              <textarea id="GiftTextArea" placeholder="Message for the receiver" rows="4" cols="50" class="noResize u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" name="message" required ></textarea>
+                              <textarea id="GiftTextArea" placeholder="Message for the receiver" rows="4" cols="50" class="noResize u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" name="receiverMessage" required ></textarea>
                               @error('message')
                                   <span class="invalid-feedback" role="alert">
                                       <strong>{{ $message }}</strong>
@@ -132,7 +132,7 @@ Bill Order
                           <fieldset id="ReceiptFieldset" class="expand">
                             <div class="u-form-group u-form-group-4">
                                 <label for="NameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Name') }}</label>
-                                <input id="NameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
+                                <input id="NameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="companyName" value="{{ old('firstName') }}" required autocomplete="companyName" autofocus>
                                 @error('receiverName')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -141,7 +141,7 @@ Bill Order
                             </div>
                             <div class="u-form-group u-form-group-4">
                                 <label for="AddressTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Address') }}</label>
-                                <input id="AddressTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('deliveryAddress') is-invalid @enderror" name="deliveryAddress" value="{{ old('deliveryAddress') }}" required autocomplete="deliveryAddress" autofocus>
+                                <input id="AddressTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('deliveryAddress') is-invalid @enderror" name="companyAddress" value="{{ old('deliveryAddress') }}" required autocomplete="deliveryAddress" autofocus>
                                 @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -150,7 +150,7 @@ Bill Order
                             </div>
                             <div class="u-form-group u-form-group-4">
                                 <label for="TINTextbox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('TIN') }}</label>
-                                <input id="TINTextbox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('contact_no') is-invalid @enderror" name="TINValue" aria-required="true" aria-invalid="false" value="" inputmode="numeric" data-mask="000000000000" placeholder="XXXXXXXXXXXX" maxlength="12" autocomplete="off">
+                                <input id="TINTextbox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('contact_no') is-invalid @enderror" name="TIN" aria-required="true" aria-invalid="false" value="" inputmode="numeric" data-mask="000000000000" placeholder="XXXXXXXXXXXX" maxlength="12" autocomplete="off">
                                 @error('contact_no')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -540,8 +540,8 @@ function updateValueToPay() {
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = valuewithshipping - parseFloat(radioValue);
-              } else if() {
-                newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
+              } else if(vouchermode == 'shipping') {
+                newvalue = valuewithshipping - priceaddtional;
               } else {
                 newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
               }
