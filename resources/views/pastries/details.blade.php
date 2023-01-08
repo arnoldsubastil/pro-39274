@@ -109,7 +109,7 @@ Product Details
           <a class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
           @endif 
           
-
+<br/>
 
           <!-- <button id="placeorder"  class="u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now</button>             -->
         </div>
@@ -187,7 +187,7 @@ Product Details
                 
                 <div class="table-cell">
                   <!-- <span class="listItemDetailLabel">Title</span><b><span class="listItemDetailValue">No issues with delivery</span></b> -->
-                  <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><i>"{{ $review->review }}"</i></span><br/><br/>
+                  <span class="listItemDetailLabel">Review</span><span class="listItemDetailValue foreignName"><h6><i>"{{ $review->review }}"</i></h6></span><br/><br/>
                   <span class="listItemDetailLabel">Customer Name</span><span class="listItemDetailValue">
                     @if($review->name != '')  
                       - <span class="nameSpan">{{ $review->name }}</span>                      

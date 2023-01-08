@@ -1,30 +1,10 @@
-//get the date today
-// var today = new Date();
-// var dd = String(today.getDate()).padStart(2, '0');
-// var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-// var yyyy = today.getFullYear();
-// today = mm + '/' + dd + '/' + yyyy;
-// console.log(today);
-
-//get the date after 5 days
-// function padNumber(number) {
-//     var string  = '' + number;
-//     string      = string.length < 2 ? '0' + string : string;
-//     return string;
-// }
-// date      = new Date();
-// next_date = new Date(date.setDate(date.getDate() + 6));
-// formatted = next_date.getUTCFullYear() + '-' + padNumber(next_date.getUTCMonth() + 1) + '-' + padNumber(next_date.getUTCDate())
-// document.getElementById('elem').innerHTML = formatted;
-
-
-
-
 
 var today = new Date();
 var new_date = [];
-
-
+var startOfMorning = [];
+var endOfMorning = [];
+var startOfAfternoon = [];
+var endOfAfternoon = [];;
 
 var sHTML = "<ul class='noListStyle'>";
 
@@ -34,6 +14,7 @@ if (moment().isBefore('10:00:00')) {
     counter=1;
     limit=6;    
     minDateValue=moment().add(1, 'days');
+    minDateValue=moment().format("dddd - MMM DD, YYYY");
     
 }
 else
@@ -42,13 +23,33 @@ else
     counter=2;
     limit=7;
     minDateValue=moment().add(2, 'days');
+    minDateValue=moment().format("dddd - MMM DD, YYYY");
 }
+
+// for (i = counter; i < limit; i++) {
+
+//     new_date[i] = moment().add(i,"days").format("dddd - MMM DD, YYYY");
+//     // sHTML = sHTML + "<li><input type='radio' id='" + new_date[i] + "' name='ReceiveDate' value='" + new_date[i] + "'> <label for='" + new_date[i] + "'>place option here" + moment().add(i,"days").format("dddd - MMM DD, YYYY"); + "</label></li>";
+//     sHTML = sHTML + "<fieldset><label>" + moment().add(i,"days").format("dddd - MMM DD, YYYY"); + "</label></fieldset>";
+
+// }
 
 for (i = counter; i < limit; i++) {
 
-    new_date[i] = moment().add(i,"days").format("MMM DD, YYYY");
+    new_date[i] = moment().add(i,"days").format("dddd - MMM DD, YYYY");
+
+    //var abc = moment().add(i,"days");
+    // var startOfMorning = moment(abc).add(10,'hours').format('hh:mm A');
+    //var time = '8:00 PM';  
+     startOfMorning[i] = moment().add(i,"days").format('8:00');
+     endOfMorning[i] = moment().add(i,"days").format('10:00');
+    //morning[i]= startOfMorning;
+    //afternoon[i]= 1;
     
-    sHTML = sHTML + "<li><input type='radio' id='" + new_date[i] + "' name='ReceiveDate' value='" + new_date[i] + "'> <label for='" + new_date[i] + "'>" + moment().add(i,"days").format("dddd"); + "</label></li>";
+    startOfAfternoon[i] = moment().add(i,"days").format('1:00');
+    endOfAfternoon[i] = moment().add(i,"days").format('6:00');
+
+    sHTML = sHTML + "<li><div class='content'><input type='radio' id='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfMorning[i] + " AM - " + endOfMorning[i] + "AM)'/><label for='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "'> Morning (8:00 am to 11:00 am)</label><br/><input type='radio' id='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfAfternoon[i] + " PM - " + endOfAfternoon[i] +" PM) ' /><label for='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "'> Afternoon (1:00 pm to 6:00 pm)</label></div><label id='CollapsibleDateLabel'>" + moment().add(i,"days").format("dddd - MMM DD, YYYY"); + "</label><br/></li>";
    
 
 }
@@ -61,17 +62,15 @@ $("input:radio[name=ReceiveDate]").click(function() {
 
     // $("#ReceiveDateTextBox").css("background-color", "yellow");
     $('#ReceiveDateTextBox').val($("input[name='ReceiveDate']:checked").val());
-    
+    //alert($("input[name='ReceiveDate']:checked").val());
 });
-
-
 
 
 $(function() {
     $('input[name="to_received_date"]').daterangepicker({
         minDate: new Date(minDateValue),
         locale: {
-            format: 'MMM DD, YYYY'
+            format: 'dddd - MMM DD, YYYY'
         },
         
       singleDatePicker: true,
@@ -88,8 +87,26 @@ $(function() {
   });
 
 
-//   $("input").daterangepicker({
-//     minDate: moment().subtract(2, 'years')
-//   }, function (startDate, endDate, period) {
-//     $(this).val(startDate.format('L') + ' – ' + endDate.format('L'))
-//   });
+//   var coll = document.getElementById("CollapsibleDateLabel");
+//   for (i = 0; i < coll.length; i++) {
+//       coll[i].addEventListener("click", function() {
+//         this.classList.toggle("active");
+//         var content = this.nextElementSibling;
+//         if (content.style.display === "block") {
+//           content.style.display = "none";
+//         } else {
+//           content.style.display = "block";
+//         }
+//       });
+//     } 
+
+
+// $('#CollapsibleDateLabel').click(function() {
+
+ 
+//     alert("hello");
+
+// });
+
+
+

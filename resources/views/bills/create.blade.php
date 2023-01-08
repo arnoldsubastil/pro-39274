@@ -185,7 +185,7 @@ Bill Order
                           </div>
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Delivery Date</label>  
-                            <input id="ReceiveDateTextBox" class="receiveDateTextBox" placeholder="MM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
+                            <input id="ReceiveDateTextBox" class="receiveDateTextBox" placeholder="dddd - MMM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
                             <span id="DefaultOptionButton" class="moreOption" style="margin-top: 16px;">View selection instead?</span>
                             <div id="result" class="receivedDateList"></div>
                             <div class="moreOptionDiv"><span id="MoreOptionButton" class="moreOption">View calendar instead?</span></div>
@@ -338,6 +338,7 @@ Bill Order
   var calendarTextBox = document.getElementById("ReceiveDateTextBox");
   var calendarOption = document.getElementById("MoreOptionButton");
   var defaultOption = document.getElementById("DefaultOptionButton");
+
   calendarOption.onclick = function() {
     receiveDateList.style.display = "none";
     defaultOption.style.display = "block";
