@@ -308,7 +308,6 @@ Bill Order
                             <p class="u-text u-text-default u-text-4">Quantity:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{ $product->numberoforder }}</p>
                             <p class="u-text u-text-default u-text-5"> Total Amount:&nbsp; &nbsp; <span class="totalprodamount">{{ $product->totalamount }}</span><span class="amount">&nbsp;PHP <p style="font-weight: bold">({{ $product->sellingPrice }} each)</p></span>
                             </p>
-                            <textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" cols="30" rows="3">{{ $product->product_note }}</textarea>
                             </a>
                           </div>
                         </div>

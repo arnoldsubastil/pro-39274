@@ -324,7 +324,7 @@ jQuery(document).ready(function ($) {
         _token: _token
         },
         success:function(response){
-        // location.href='/Cart';
+        location.href='/Cart';
         console.log(response);
 
         },

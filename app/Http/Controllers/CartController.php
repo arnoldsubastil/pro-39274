@@ -199,6 +199,7 @@ class CartController extends Controller
                 'products.sellingPrice',
                 'cart.product_note',
                 'cartorder.review',
+                'cartorder.productnote',
                 DB::raw('COUNT(1) as qty'),
                 DB::raw('GROUP_CONCAT(cartorder.cartorderId) as carts'))
             ->leftJoin('voucher', 'voucher.voucher_id', '=', 'orders.voucher_id')
@@ -227,13 +228,14 @@ class CartController extends Controller
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
             ->groupBy('cartorder.review')
+            ->groupBy('cartorder.productnote')
             ->get();
 
             return $checkouted;
     }
 
     public function checkoutorder(Request $request) {
-
+        
         $validated = $request->validate([
             'name' => 'required|max:255',
             'contact' => 'required|min:10|max:16',
