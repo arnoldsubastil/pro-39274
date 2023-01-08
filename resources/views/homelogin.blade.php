@@ -139,11 +139,12 @@ Home
               <div class="u-align-left u-container-style u-image u-layout-cell u-size-19 u-image-1" data-image-width="1440" data-image-height="1440">
                 <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
               </div>
+              
               <div class="u-container-style u-layout-cell u-size-41 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-align-left u-custom-font u-heading-font u-text u-text-default u-text-1">It's Soystory time!</h2>
+                  <h2 class="u-align-left u-custom-font u-heading-font u-text u-text-default u-text-1">{{ $about[0]->maintitle }}</h2>
                   <p class="u-align-justify u-text u-text-2">
-                  Soystory is a food company that is committed to only using all-natural and fresh ingredients. Established in 2017, Soystory specializes in producing authentic Taiwanese delicacies in the Philippines. From salted-egg pineapple cakes, 3Q Pastries, to seasonal mooncakes, our products are handcrafted using carefully selected and locally sourced ingredients.  
+                  {{ $about[0]->page_content }} 
                 </p>
                   <a href="/About" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Read more</a>
                 </div>

@@ -227,9 +227,9 @@ jQuery(document).ready(function ($) {
         success:function(response){
                 $.each(response, function( index, value ) {
                     var note = 'No message from the user for this specific product.';
-                    console.log(value.order_id + ' -- ' + value.product_note);
-                    if(value.product_note != null) {
-                        note = value.product_note;
+                    console.log(value.order_id + ' -- ' + value.productnote);
+                    if(value.productnote != null) {
+                        note = value.productnote;
                     }
 
                     var withreview = ``;

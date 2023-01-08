@@ -28,7 +28,7 @@
 <header class=" u-clearfix u-header u-section-row-container" id="sec-71d2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" style="background-image: none"><div class="u-section-rows">
         <div class="u-custom-color-3 u-section-row u-sticky u-sticky-a482 u-section-row-1" id="sec-018c">
           <div class="u-clearfix u-sheet u-sheet-1" style="text-align: center;">
-            <p class="u-align-center u-text u-text-default u-text-1" style="display: inline-block; margin-bottom: 8px; margin-top: 8px;"> Free delivery for orders worth 2,000 PHP and above within Metro Manila!</p>
+            <p id="headerannouncement" class="u-align-center u-text u-text-default u-text-1" style="display: inline-block; margin-bottom: 8px; margin-top: 8px; "></p>
           </div>
         </div>        
           
@@ -259,7 +259,6 @@ $(document).ready(function () {
         },
     });
 
-    
     $.ajax({
         url: "/api/showcategorylist",
         type:"GET",
@@ -278,6 +277,21 @@ $(document).ready(function () {
           //console.log(newlink);
 
           $('#myDropdown').html(newlink);
+        },
+    });
+    // headerannouncement
+    $.ajax({
+        url: "/api/showannouncement",
+        type:"GET",
+        data:{
+        myid:myid,
+        _token: _token
+        },
+        success:function(response){
+          console.log(response[0]['page_content']);
+          var newlink = response[0]['page_content'];
+
+          $('#headerannouncement').html(newlink);
         },
     });
 });

@@ -29,6 +29,13 @@ class Orders extends Model
         'voucher_proof',
         'notes',
         'date_receive',
-        'shippingId'
+        'shippingId',
+        'companyName',
+        'companyAddress',
+        'TIN',
+        'receiverName',
+        'giverName',
+        'receiverMessage',
+        'receiverAddress'
     ];
 }
