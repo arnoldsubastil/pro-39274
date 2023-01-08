@@ -92,7 +92,27 @@ text-align: right;
         color: #D36D28;
         }
 
-         .collapsible {
+        /* #DateOptionsDiv{
+            display: none;
+        } */
+
+        #DateList {
+            display:flex;
+            flex-flow: column;
+        }
+        #DateOptionsDiv {
+            order:2;
+        }
+        #CollapsibleDateLabel {
+            order:1;
+        }
+
+        /* #DateOptionsDiv, #CollapsibleDateLabel{
+            display:flex;
+    flex-direction: column-reverse;
+        } */
+
+         /* .collapsible {
             background-color: #F8F8F8;
             color: #383C3B;
             cursor: pointer;
@@ -117,8 +137,12 @@ text-align: right;
           
            .content {
             padding: 0 18px;
-            /* display: none; */
+      
             overflow: hidden;
             background-color: #f1f1f1;
             text-align: left;
+          } */
+
+          .content {
+            padding: 0 18px;
           }
