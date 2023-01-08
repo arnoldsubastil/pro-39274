@@ -32,8 +32,9 @@ Bill Order
             <input type="hidden" name="productlist" value="" id="productlist" />
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">
                 <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">
-                  <h3 class="u-text u-text-default u-text-6">Billing Details</h3>
+                  
                   <div class="btn-submit form-vertical u-form u-form-1">
+                  <h3 class="u-text u-text-default u-text-6">Billing Details</h3>
                     <form action="PaymentDetails.html" class="u-clearfix u-form-spacing-24 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
                       <div class="u-form-group u-form-name">
                         <label for="name-2382" class="u-label u-label-1">Name</label>
@@ -84,9 +85,81 @@ Bill Order
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                   </div>
-                  <br/>
-                  
-                  <!-- <span id="myBtn">View Voucher</span> -->
+                  <div class="btn-submit form-vertical u-form u-form-1">
+                  <!-- <h3 class="u-text u-text-default u-text-6">Other Details</h3> -->
+                    <div class="otherDetails u-form-group u-form-group-4">
+                          <label for="text-c306" class="u-label u-label-4">Choose purpose of order:</label> <br>
+                          <input id="GiftCheckbox" type="checkbox" name="mode_of_payment" value="BPI" class="btn-expand"><label for="GiftCheckbox" class="btn-expand"> For gift</label> <br>
+                          <fieldset id="GiftFieldset" class="expand">
+                            <div class="u-form-group u-form-group-4">
+                                <label for="ReceiverNameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Receiver Name') }}</label>
+                                <input id="ReceiverNameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('receiverName') is-invalid @enderror" name="receiverName" value="{{ old('receiverName') }}" required autocomplete="receiverName" autofocus>
+                                @error('receiverName')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="u-form-group u-form-group-4">
+                                <label for="SenderNameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Sender Name') }}</label>
+                                <input id="SenderNameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="senderName" value="{{ old('senderName') }}" required autocomplete="senderName" autofocus>
+                                @error('senderName')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="u-form-group u-form-group-4">
+                              <label for="GiftTextArea" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Message') }}</label>
+                              <textarea id="GiftTextArea" placeholder="Message for the receiver" rows="4" cols="50" class="noResize u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" name="message" required ></textarea>
+                              @error('message')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
+                            </div>
+                            <div class="u-form-group u-form-group-4">
+                                <label for="ReceiverAddressTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Receiver Address') }}</label>
+                                <input id="ReceiverAddressTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('receiverAddress') is-invalid @enderror" name="receiverAddress" value="{{ old('receiverAddress') }}" required autocomplete="receiverAddress" autofocus>
+                                @error('receiverAddress')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                          </fieldset>
+                          <input id="ReceiptCheckbox" type="checkbox" name="mode_of_payment" value="GCash" class="btn-expand"><label for="ReceiptCheckbox" class="btn-expand"> For official receipt</label> <br>
+                          <fieldset id="ReceiptFieldset" class="expand">
+                            <div class="u-form-group u-form-group-4">
+                                <label for="NameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Name') }}</label>
+                                <input id="NameTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('firstName') is-invalid @enderror" name="firstName" value="{{ old('firstName') }}" required autocomplete="firstName" autofocus>
+                                @error('receiverName')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="u-form-group u-form-group-4">
+                                <label for="AddressTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Address') }}</label>
+                                <input id="AddressTextBox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('deliveryAddress') is-invalid @enderror" name="deliveryAddress" value="{{ old('deliveryAddress') }}" required autocomplete="deliveryAddress" autofocus>
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="u-form-group u-form-group-4">
+                                <label for="TINTextbox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('TIN') }}</label>
+                                <input id="TINTextbox" type="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 form-control @error('contact_no') is-invalid @enderror" name="TINValue" aria-required="true" aria-invalid="false" value="" inputmode="numeric" data-mask="000000000000" placeholder="XXXXXXXXXXXX" maxlength="12" autocomplete="off">
+                                @error('contact_no')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                          </fieldset>
+                        </div>
+                    </div>
 
             <!-- BEGIN - voucher list modal -->
             <div id="VouchersListModal" class="modal">
@@ -333,6 +406,15 @@ Bill Order
 
 <script>
   jQuery(document).ready(function ($) {  
+
+
+  $('#GiftCheckbox').change(function() {
+        $('#GiftFieldset').toggle();
+    });
+
+    $('#ReceiptCheckbox').change(function() {
+        $('#ReceiptFieldset').toggle();
+    });
 
   var receiveDateList = document.getElementById("result");
   var calendarTextBox = document.getElementById("ReceiveDateTextBox");

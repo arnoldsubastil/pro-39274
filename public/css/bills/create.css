@@ -1,3 +1,23 @@
+.otherDetails{
+  border: 1px solid #DDDDDD;
+  background-color: #F2F2F2;
+  padding: 16px;
+}
+  .otherDetails > fieldset{
+    display: none;
+    border-top: 1px dashed #DDDDDD;
+    border: 0;
+    margin: 16px;
+  }
+
+  .otherDetails > fieldset .u-form-group{
+    margin: 8px 16px
+  }
+
+  .otherDetails > input{
+    margin-left: 16px;
+  }
+
   .voucherSpan{
     border-color: #b3b3b3;
     color: #383c3b;
@@ -132,8 +152,14 @@
 }
 
 .u-section-2 .u-form-1 {
-  height: 686px;
-  width: 510px;
+  width: 48%;
+    display: inline-block;
+    max-width: 536px;
+    vertical-align: top;
+}
+
+.paymentSection > .u-form-1 {
+    max-width: 480px;
 }
 
 .u-section-2 .u-label-1 {
