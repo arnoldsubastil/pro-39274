@@ -196,6 +196,7 @@ class CartController extends Controller
                 'products.foreignName',
                 'products.productIdlong',
                 'products.url',
+                'products.sellingPrice',
                 'cart.product_note',
                 'cartorder.review',
                 DB::raw('COUNT(1) as qty'),
@@ -222,6 +223,7 @@ class CartController extends Controller
             ->groupBy('products.foreignName')
             ->groupBy('products.productIdlong')
             ->groupBy('products.url')
+            ->groupBy('products.sellingPrice')
             ->groupBy('cart.product_note')
             ->groupBy('orders.order_id')
             ->groupBy('cartorder.review')
@@ -238,7 +240,7 @@ class CartController extends Controller
             'maddress' => 'required',
             'daddress' => 'required',
             'mode_of_payment' => 'required',
-            'to_received_date' => 'required|date'
+            'to_received_date' => 'required'
         ]);
 
         $userId = $this->getID(Auth::user());

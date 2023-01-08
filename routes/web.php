@@ -23,10 +23,11 @@ Route::get('/Categories', function () {
     return view('categories');
 });
 
-Route::get('/About', function () {
-    return view('about');
-});
+// Route::get('/About', function () {
+//     return view('about');
+// });
 
+Route::get('/About', 'App\Http\Controllers\ContentController@index');
 
 Route::get('/Contact', 'App\Http\Controllers\ContactController@index')->name('contact.index');
 

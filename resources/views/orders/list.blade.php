@@ -233,6 +233,7 @@ jQuery(document).ready(function ($) {
                     }
 
                     var withreview = ``;
+                    var totalprice = parseFloat(value.qty) * parseFloat(value.sellingPrice) ;
                     console.log(value.review);
                     if(value.review == ''){
                       withreview = `
@@ -260,7 +261,7 @@ jQuery(document).ready(function ($) {
                     
                     
 
-                    <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> 3520</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> 320 </span>each)</span></div>
+                    <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> `+ totalprice +`</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> `+ value.sellingPrice +` </span>each)</span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
                       <span class="listItemDetailValue">
                           <p name="" class="prodcomments" >`+ note +`</p>
