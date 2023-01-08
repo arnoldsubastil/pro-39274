@@ -25,7 +25,6 @@
     border: 1px solid #F8F8F8;
     color: black;
     background-color: #F2F2F2;
-    padding: 8px 16px;
     border-radius: 4px;
 }
 
@@ -33,12 +32,11 @@
     border: 1px solid #E5E5E5;
     color: black;
     background-color: #F2F2F2;
-    padding: 8px 16px;
     border-radius: 4px;
 }
 
 .receivedDateList > ul > li > label {
-    padding: 8px 4px;
+    padding: 16px 8px;
     font-size: 18px;
     display: inline-block;
     width: 92%;
@@ -92,57 +90,16 @@ text-align: right;
         color: #D36D28;
         }
 
-        /* #DateOptionsDiv{
+        #DateOptionsDiv{
+            background-color: #DDDDDD;
             display: none;
-        } */
-
-        #DateList {
-            display:flex;
-            flex-flow: column;
-        }
-        #DateOptionsDiv {
-            order:2;
-        }
-        #CollapsibleDateLabel {
-            order:1;
+            padding: 16px;
         }
 
-        /* #DateOptionsDiv, #CollapsibleDateLabel{
-            display:flex;
-    flex-direction: column-reverse;
-        } */
-
-         /* .collapsible {
-            background-color: #F8F8F8;
-            color: #383C3B;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.25rem;
-            font-weight: bold;
-        
-            padding-right: 44px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYBAMAAABpfeIHAAAAElBMVEUAAAA0O0A1O0E2PEI9PUk0OkAiqeRcAAAABXRSTlMA6qpVFQVXMqEAAABSSURBVBjTVcuxCQAgEMXQD67gCvau4AqC+69iYSRcysDLOKWdVUdPq2PmGUWeUQSjwCgwCowCo8AoMAgaCowCo9AgNAgNQoPQIDQIDUKD0HxxAZxJP8Gf3MEsAAAAAElFTkSuQmCC);
-            background-repeat: no-repeat;
-            background-position: right 1.1rem center;
-            background-size: 8px 6px;
-          }
-          
-           .active,.dateSpan .collapsible:hover {
-            background-color: #F0F0F0;
-          }
-          
-           .content {
-            padding: 0 18px;
-      
-            overflow: hidden;
-            background-color: #f1f1f1;
-            text-align: left;
-          } */
+       
+         
 
           .content {
+            display: none;
             padding: 0 18px;
           }

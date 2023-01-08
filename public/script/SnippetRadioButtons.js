@@ -48,10 +48,9 @@ for (i = counter; i < limit; i++) {
 
     deliveryDate[i] = moment().add(i,"days").format("dddd - MMM DD, YYYY");
 
-    sHTML = sHTML + "<li id='DateList'><div id='DateOptionsDiv' class='content'><input type='radio' id='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfMorning[i] + " AM - " + endOfMorning[i] + " AM)'/><label for='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "'> Morning (8:00 am to 11:00 am)</label><br/><input type='radio' id='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfAfternoon[i] + " PM - " + endOfAfternoon[i] +" PM) ' /><label for='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "'> Afternoon (1:00 pm to 6:00 pm)</label></div><label id='CollapsibleDateLabel'>" + deliveryDate[i] + "</label></li>";
+    sHTML = sHTML + "<li id='DateList' class='active'><label id='CollapsibleDateLabel' class='btn-expand'>" + deliveryDate[i] + "</label><div id='DateOptionsDiv' class='expand' ><input type='radio' id='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfMorning[i] + " AM - " + endOfMorning[i] + " AM)'/><label for='" + new_date[i] + " " + startOfMorning[i] + " " + endOfMorning[i] + "'> Morning (8:00 am to 11:00 am)</label><br/><input type='radio' id='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "' name='ReceiveDate' value='" + new_date[i] + " (" + startOfAfternoon[i] + " PM - " + endOfAfternoon[i] +" PM) ' /><label for='" + new_date[i] + " " + startOfAfternoon[i] + " " + endOfAfternoon[i] + "'> Afternoon (1:00 pm to 6:00 pm)</label></div></li>";
    
-
-}
+ }
 
 sHTML = sHTML + "</ul>";
 
@@ -88,33 +87,11 @@ $(function() {
 
 var collapsibleButton = document.getElementById("CollapsibleDateLabel");
 var content = document.getElementById("DateOptionsDiv");
-  //var coll = limit;
-  for (i = 0; i < limit; i++) {
-    collapsibleButton.addEventListener("click", function() {
-        this.classList.toggle("active");
-        //var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    } 
 
 
-// $("#CollapsibleDateLabel").click(function() {
- 
-//     $("#DateList").find('#DateOptionsDiv').toggle();
-//     // $("#DateOptionsDiv").toggle();
-
-// });
-
-//   var collapsibleButton = document.getElementById("CollapsibleDateLabel");
-//   var collapsibleOptions = document.getElementById("DateOptionsDiv");
-
-//   collapsibleButton.onclick = function() {
-//     collapsibleOptions.style.display = "block";
-//   }
+$(".btn-expand").click(function() {
+    $(this).next(".expand").toggle();
+});
 
 
 
