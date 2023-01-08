@@ -209,24 +209,17 @@ Home
           <h2 class="u-text u-text-default u-text-1">Product Brands</h2>
             <p style="text-align: center;">Here's a quick overview of our products.</p>
             <div class="u-layout-row" style="">
+              @foreach($brands as $brand)
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <span class="u-file-icon u-icon u-icon-1"><img src="images/Logo/Logo_Soystory_162x203.png" alt="soystory logo" width="160"></span>
-                  <h4 class="u-text u-text-default u-text-1">Soystory Authentic</h4>
-                  <h5 class="u-text u-text-default u-text-1">Taiwanese Pastries</h5>
-                  <p class="u-text u-text-2">Healthy desserts are not out of the question either. If you are health conscious, you can still satisfy your cravings here. Try out some!</p>
+                  <span class="u-file-icon u-icon u-icon-1"><img src="images/Animations/{{ $brand->bannerimage }}" alt="soystory logo" width="160"></span>
+                  <h4 class="u-text u-text-default u-text-1">{{ $brand->maintitle }}</h4>
+                  <h5 class="u-text u-text-default u-text-1">@if($brand->subtitle != '-') {{ $brand->subtitle }} @endif</h5>
+                  <p class="u-text u-text-2">{{ $brand->page_content }}</p>
                   <!-- <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a> -->
                 </div>
               </div>
-              <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
-                <div class="u-container-layout u-valign-middle u-container-layout-1">
-                <span class="u-file-icon u-icon u-icon-1"><img src="images/Logo/Logo_SunQ_162x203.png" alt="soystory logo" width="160"></span>
-                  <h4 class="u-text u-text-default u-text-1">Sun-Q</h4>
-                  <h6 class="u-text u-text-default u-text-1"></h6>
-                  <p class="u-text u-text-2">If you are looking for a refreshing beverage, we have it here. Browse drink recipes in non-alcoholic varieties all tried and tested for maximum flavor….and fun!</p>
-                  <!-- <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a> -->
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -237,14 +230,14 @@ Home
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
-              <div class="u-align-left u-container-style u-image u-layout-cell u-size-19 u-image-1" data-image-width="1440" data-image-height="1440">
+              <div class="u-align-left u-container-style u-image u-layout-cell u-size-19 u-image-1" data-image-width="1440" data-image-height="1440" style="background-image: url(../images/Animations/{{ $about[0]->bannerimage }});">
                 <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
               </div>
               <div class="u-container-style u-layout-cell u-size-41 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-align-left u-custom-font u-heading-font u-text u-text-default u-text-1">Our Story</h2>
+                  <h2 class="u-align-left u-custom-font u-heading-font u-text u-text-default u-text-1">{{ $about[0]->maintitle }}</h2>
                   <p class="u-align-justify u-text u-text-2">
-                  Soystory is a food company that is committed to only using all-natural and fresh ingredients. Established in 2017, Soystory specializes in producing authentic Taiwanese delicacies in the Philippines. From salted-egg pineapple cakes, 3Q Pastries, to seasonal mooncakes, our products are handcrafted using carefully selected and locally sourced ingredients.  
+                  {{ $about[0]->page_content }} 
                 </p>
                   <a href="/About" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Read more</a>
                 </div>

@@ -25,6 +25,16 @@ class GuestController extends Controller
             ->where('contentID', 1)
             ->get();
 
+            $brands = DB::table('sitecontent')
+                ->select('contentID', 'titlepage', 'page_content', 'bannerimage', 'maintitle', 'subtitle')
+                ->where('titlepage', 'brands')
+                ->get();
+
+            $about = DB::table('sitecontent')
+                ->select('contentID', 'titlepage', 'page_content', 'bannerimage', 'maintitle', 'subtitle')
+                ->where('contentID', 10)
+                ->get();
+
             $bestsellersList = DB::table('products')
             ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url')
             ->where('bestseller', 1)
@@ -39,7 +49,9 @@ class GuestController extends Controller
         return view('home', [
             'banner'=>$banner[0],
             'products' => $bestsellersList,
-            'newproduct' => $uniqueProductId[0]
+            'newproduct' => $uniqueProductId[0],
+            'brands' => $brands,
+            'about' => $about
         ]);
     }
 }

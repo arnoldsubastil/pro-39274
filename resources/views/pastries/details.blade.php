@@ -71,10 +71,9 @@ Product Details
                         <p class="u-text u-text-default u-text-6"> Available flavors:</p>
                       <ul class="u-text u-text-default u-text-7">
                         @for($i=0; $i < count(explode('/', $product->productOptions)); $i++)   
+                        <input type="radio" id="flavors_{{ $i }}" @if($i == 0) checked @endif name="flavors" value="{{ explode('/', $product->productOptions)[$i] }}">
+                        <label for="flavors_{{ $i }}">{{ explode('/', $product->productOptions)[$i] }}</label><br>
                         
-                        <li>
-                        {{ explode('/', $product->productOptions)[$i] }}
-                        </li>
                       
                         @endfor
                       </ul>
@@ -102,9 +101,12 @@ Product Details
       <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-layout right" >
           <a href="javascript:history.back()" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
-         
-          @if($product->stock == null || $product->stock <= 0)
-            <span class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Product not available this time...</span>
+          @if(($product->stock == null || $product->stock <= 0))
+            @if($product->inventory == null || $product->inventory <= 0)
+              <span class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Product not available this time...</span>
+              @else
+              <a class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
+            @endif
           @else
           <a class="addtocart u-border-2 u-border-hover-palette-1-base u-button-style u-btn u-btn-round u-radius-4 u-btn-3" prod-id="{{ $product->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</a>
           @endif 
@@ -307,18 +309,23 @@ jQuery(document).ready(function ($) {
     let _token = $('meta[name="csrf-token"]').attr('content');
     let myid = $("#loginid").val();
     let id = $(this).attr('prod-id');
+
     let notes = '';
+    if($('#flavors_0').length) {
+      notes = 'Flavor: ' + $('input[name="flavors"]:checked').val();
+    }
     $.ajax({
         url: "/api/add-to-cart",
         type:"POST",
         data:{
         myid:myid,
         id:id,
-        notes:notes,
+        note:notes,
         _token: _token
         },
         success:function(response){
-        location.href='/Cart';
+        // location.href='/Cart';
+        console.log(response);
 
         },
     });  

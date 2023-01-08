@@ -29,6 +29,11 @@ class HomeController extends Controller
             ->where('contentID', 1)
             ->get();
 
+        $about = DB::table('sitecontent')
+            ->select('contentID', 'titlepage', 'page_content', 'bannerimage', 'maintitle', 'subtitle')
+            ->where('contentID', 10)
+            ->get();
+
             $bestsellersList = DB::table('products')
             ->select('product_id', 'categories', 'foreignName', 'name', 'productDescription', 'productIdlong', 'productOptions', 'productSize', 'sellingPrice', 'thumbnailUrl', 'url')
             ->where('bestseller', 1)
@@ -43,7 +48,8 @@ class HomeController extends Controller
         return view('homelogin', [
             'banner'=>$banner[0],
             'products' => $bestsellersList,
-            'newproduct' => $uniqueProductId[0]
+            'newproduct' => $uniqueProductId[0],
+            'about' => $about
         ]);
     }
 }

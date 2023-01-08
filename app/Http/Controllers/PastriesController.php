@@ -27,7 +27,7 @@ class PastriesController extends Controller
     public function details($productId){
 
         $uniqueProductId = DB::table('products')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'), 'products.video_url', 'products.storage')
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url', DB::raw('(SUM(inventory.added_count) - SUM(cart.qty)) as stock'), DB::raw('SUM(inventory.added_count) as inventory'), DB::raw('SUM(cart.qty) as cartQTY'), 'products.video_url', 'products.storage')
             ->where('productIdlong', $productId)
             ->leftJoin('cart', 'cart.product_id', '=', 'products.productIdlong')
             ->leftJoin('inventory', 'inventory.product_id', '=', 'products.productIdlong')

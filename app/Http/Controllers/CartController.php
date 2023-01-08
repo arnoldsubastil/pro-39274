@@ -277,6 +277,13 @@ class CartController extends Controller
                 'voucher_proof' => $imageName,
                 'notes' => $request->message,
                 'date_receive' => date("Y-m-d", strtotime($request->to_received_date)),
+                'companyName' => $request->companyName,
+                'companyAddress' => $request->companyAddress,
+                'TIN' => $request->TIN,
+                'receiverName' => $request->receiverName,
+                'giverName' => $request->giverName,
+                'receiverMessage' => $request->receiverMessage,
+                'receiverAddress' => $request->receiverAddress,
                 'shippingId' => $request->shipping
             ]);
             $productnote = json_decode($request->allproductcomments, true);
