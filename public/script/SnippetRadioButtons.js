@@ -76,7 +76,9 @@ $(function() {
         
       singleDatePicker: true,
       showDropdowns: true,
-      startDate: startDateValue
+      startDate: startDateValue.set({ hour: 8, minute: 0, millisecond: 0 })
+      
+    //   startTime: moment(startDateValue).startOf({ hour: 8, minute: 0, millisecond: 0 })
     //   minYear: 1901,
     //maxYear: parseInt(moment().format('YYYY'),10),
     // ranges: {
