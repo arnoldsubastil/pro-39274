@@ -330,7 +330,7 @@ class CartController extends Controller
     public function postcontact(Request $request) {
         
       
-        $message = 'Message From: ' . $request->firstName . ' ' . $request->lastName . ': ';
+        $message = 'Message From: ' . $request->firstName . ' ' . $request->lastName . '  "' . $request->inquiries . '"';
         $this->getID(Auth::user());
             Contact::create([
                 'email' => $request->email,
