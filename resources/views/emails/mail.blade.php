@@ -189,7 +189,7 @@
                                 <td style="font-size: 12px; color: #959595; font-weight: normal; text-align: left; font-family: arial; line-height: 18px; vertical-align: top; padding:0 0 0 88px">
 									<table>
 										<tr>
-											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Contact Numer:</a>
+											<td valign="middle" style="padding:0"><a  style="text-decoration: none; font-size: 14px; color: #363636; font-weight: normal; font-family: arial ">Contact Number:</a>
 											</td>
 										</tr>
 									</table>
