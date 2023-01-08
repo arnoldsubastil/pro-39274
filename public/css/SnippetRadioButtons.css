@@ -36,34 +36,12 @@
 }
 
 .receivedDateList > ul > li > label {
-    padding: 16px 8px;
+    padding: 16px;
     font-size: 18px;
     display: inline-block;
-    width: 92%;
+    width: 100%;
 }
 
-/* .receivedDateList div div{
-    border: 1px solid #F8F8F8;
-    color: black;
-    background-color: #F2F2F2;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
-
-.receivedDateList div div:hover{
-    border: 1px solid #E5E5E5;
-    color: black;
-    background-color: #F2F2F2;
-    padding: 8px 16px;
-    border-radius: 4px;
-}
-
-.receivedDateList > div > div > label {
-    padding: 8px 4px;
-    font-size: 18px;
-    display: inline-block;
-    width: 92%;
-} */
 
 .receiveDateTextBox{
     font-size: 1.125rem;
@@ -88,6 +66,7 @@ text-align: right;
 
     .moreOption{
         color: #D36D28;
+        cursor: pointer;
         }
 
         #DateOptionsDiv{

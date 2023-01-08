@@ -15,7 +15,8 @@ if (moment().isBefore('10:00:00')) {
     counter=1;
     limit=6;    
     minDateValue=moment().add(1, 'days');
-    minDateValue=moment().format("dddd - MMM DD, YYYY");
+    minDateValue=moment().format("dddd - MMM DD, YYYY (hh:mm A)");
+    startDateValue=moment().add(1, 'days');
     
 }
 else
@@ -24,7 +25,8 @@ else
     counter=2;
     limit=7;
     minDateValue=moment().add(2, 'days');
-    minDateValue=moment().format("dddd - MMM DD, YYYY");
+    minDateValue=moment().format("dddd - MMM DD, YYYY (hh:mm A)");
+    startDateValue=moment().add(2, 'days');
 }
 
 // for (i = counter; i < limit; i++) {
@@ -40,11 +42,11 @@ for (i = counter; i < limit; i++) {
 
     new_date[i] = moment().add(i,"days").format("dddd - MMM DD, YYYY");
 
-     startOfMorning[i] = moment().add(i,"days").format('8:00');
+     startOfMorning[i] = moment().add(i,"days").format('08:00');
      endOfMorning[i] = moment().add(i,"days").format('10:00');     
     
-    startOfAfternoon[i] = moment().add(i,"days").format('1:00');
-    endOfAfternoon[i] = moment().add(i,"days").format('6:00');
+    startOfAfternoon[i] = moment().add(i,"days").format('01:00');
+    endOfAfternoon[i] = moment().add(i,"days").format('06:00');
 
     deliveryDate[i] = moment().add(i,"days").format("dddd - MMM DD, YYYY");
 
@@ -66,14 +68,15 @@ $("input:radio[name=ReceiveDate]").click(function() {
 
 $(function() {
     $('input[name="to_received_date"]').daterangepicker({
-        minDate: new Date(minDateValue),
+        timePicker : true,
+        minDate: minDateValue,
         locale: {
-            format: 'dddd - MMM DD, YYYY (HH:mm A)'
+            format: 'dddd - MMM DD, YYYY (hh:mm A)'
         },
         
       singleDatePicker: true,
       showDropdowns: true,
-      startDate: moment().add(1, 'day')
+      startDate: startDateValue
     //   minYear: 1901,
     //maxYear: parseInt(moment().format('YYYY'),10),
     // ranges: {

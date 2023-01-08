@@ -342,7 +342,7 @@ Bill Order
 
   calendarOption.onclick = function() {
     receiveDateList.style.display = "none";
-    defaultOption.style.display = "block";
+    defaultOption.style.display = "inline-block";
     calendarTextBox.style.display = "block";
     calendarTextBox.style.border = "1px solid #b3b3b3";
     calendarTextBox.style.display = "block";
@@ -354,7 +354,7 @@ Bill Order
     defaultOption.style.display = "none";
     calendarTextBox.style.display = "none";
     calendarTextBox.style.display = "none";
-    calendarOption.style.display = "block";
+    calendarOption.style.display = "inline-block";
   }
 
   // BEGIN - show modals when clicked the span
