@@ -235,7 +235,6 @@ class CartController extends Controller
     }
 
     public function checkoutorder(Request $request) {
-        
         $validated = $request->validate([
             'name' => 'required|max:255',
             'contact' => 'required|min:10|max:16',
@@ -278,7 +277,7 @@ class CartController extends Controller
                 'voucher_id' => $request->voucher_id,
                 'voucher_proof' => $imageName,
                 'notes' => $request->message,
-                'date_receive' => date("Y-m-d", strtotime($request->to_received_date)),
+                'date_receive' => $request->to_received_date,
                 'companyName' => $request->companyName,
                 'companyAddress' => $request->companyAddress,
                 'TIN' => $request->TIN,

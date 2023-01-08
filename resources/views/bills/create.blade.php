@@ -458,6 +458,8 @@ function updateValueToPay() {
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = valuewithshipping - parseFloat(radioValue);
+              } else if() {
+                newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
               } else {
                 newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
               }
