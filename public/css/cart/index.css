@@ -428,6 +428,7 @@
     text-transform: none;
     margin: 0 2px 0 0;
     padding: 8px 24px;
+    
   }
   
   @media (max-width: 1199px) {
@@ -488,4 +489,12 @@
     min-height: 400px;
   }.u-backlink{
       display: none;
+  }
+
+  @media (max-width: 767px){
+
+    .u-layout-wrap:not(.u-layout-custom-sm) .u-layout-row > * {
+      min-width: initial;
+  }
+    
   }

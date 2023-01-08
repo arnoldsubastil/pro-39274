@@ -122,7 +122,7 @@ Order Details
                                           <!-- <div class="table-head quantity">Quantity</div> -->
                                           <div class="table-head">Total Price</div>
                                           <div class="table-head">Notes</div>
-                                      </div>   
+                                      </div> 
                                       <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
                                     </div>
                                     <!-- END - orders  --> 

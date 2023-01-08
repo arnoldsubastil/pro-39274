@@ -10,22 +10,19 @@ var deliveryDate=[];
 var sHTML = "<ul class='noListStyle'>";
 
 
-if (moment().isBefore('10:00:00')) {
-    //include today
+if (today.valueOf() < moment('10:00', 'hh:mm').valueOf()) {   
+    //next day
     counter=1;
     limit=6;    
-    minDateValue=moment().add(1, 'days');
-    minDateValue=moment().format("dddd - MMM DD, YYYY (hh:mm A)");
+    minDateValue=moment().add(1, 'days').format("dddd - MMM DD, YYYY (hh:mm A)");
     startDateValue=moment().add(1, 'days');
-    
 }
 else
 {
-    //exclude today
+    //next next day
     counter=2;
     limit=7;
-    minDateValue=moment().add(2, 'days');
-    minDateValue=moment().format("dddd - MMM DD, YYYY (hh:mm A)");
+    minDateValue=moment().add(2, 'days').format("dddd - MMM DD, YYYY (hh:mm A)");
     startDateValue=moment().add(2, 'days');
 }
 
@@ -75,7 +72,7 @@ $(function() {
         },
         
       singleDatePicker: true,
-      showDropdowns: true,
+      showDropdowns: false,
       startDate: startDateValue.set({ hour: 8, minute: 0, millisecond: 0 })
       
     //   startTime: moment(startDateValue).startOf({ hour: 8, minute: 0, millisecond: 0 })
