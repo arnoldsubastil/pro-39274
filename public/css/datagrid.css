@@ -453,9 +453,6 @@ END- html */
 
 /* for five columns */
 
-.orderDetailsTable .table-row:first-child{
-  display: none;
-}
 
 .orderDetailsTable .table-head{  
   width: 18%
@@ -605,6 +602,7 @@ width: 18%
 /* responsive */
 @media(max-width:1024px)
 {
+  
   .table .table-head{
     display: none;
   }
@@ -623,6 +621,10 @@ width: 18%
 
   .ordersDetailsTable .table-row:first-child{
     display: none;
+  }
+
+  .orderDetailsTable .table-row:first-child{
+    border: 0;
   }
 
   .vouchersListTable .table-row:first-child{
@@ -662,13 +664,33 @@ width: 18%
     width: 100%;
   }
 
-}
-
-@media(max-width:1024px){
   .thumbnailView .table-cell{
     text-align: center;
     width: 100%;
+  }
+}
+
+@media(max-width:767px){
+  .orderDetailsTable .table-row{
+    max-width: 280px;
   }  
+
+  .orderDetailsTable .table-row:first-child{
+    display: none;
+  }
+
+  
+}
+
+@media(min-width:768px){
+  .orderDetailsTable .table-row{
+    max-width: initial;
+    width: 100%;
+  }  
+
+  .orderDetailsTable .table-row:first-child{
+    display: block;
+  }
 
   
 }
