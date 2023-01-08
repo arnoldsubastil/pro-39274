@@ -17,9 +17,6 @@ Promos and Events
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
 
 <section class="u-clearfix u-section-1" id="sec-3310">
-@if ($lastid = '') @endif
-@foreach($uniqueProductIds as $uniqueProductId)
-  @if ($lastid != $uniqueProductId->product_id)
 
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
@@ -42,6 +39,7 @@ Promos and Events
                 <span class="listItemDetailLabel">Product Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </span>
                
                 <ul class="u-text u-text-default u-text-7 noListStyle">
+                      @if($uniqueProductId->chooseitem != null)
                       @foreach (explode(',',$uniqueProductId->chooseitem) as $choices)
                       @if($labels = explode('-',$choices)) @endif
                         <li><br/><b>Mix & Match: </b> {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
@@ -54,6 +52,7 @@ Promos and Events
                           @endfor
                           
                       @endforeach
+                      @endif
                       
                  </ul>
                 <a prod-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 addtocart" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" target="_blank">Order now!</a>
@@ -66,55 +65,9 @@ Promos and Events
       </div>
     </div>    
 
-      <!-- <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-gutter-34 u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-col">
-              <div class="u-size-30">
-                <div class="u-layout-row">
-                  <img src="/resizer/images/ProductThumbnails/{{$uniqueProductId->url}}/240" />
-                  <div class="u-align-justify u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
-                    <div class="u-container-layout u-container-layout-2">
-                    <p class="u-text u-text-1">
-                     {{ $uniqueProductId->productDescription }}
-                      </p>
-                      <br/><br/>
-                      <h4 class="u-text u-text-1">
-                      {{ $uniqueProductId->name }}
-                      </p>
-                      <ul class="u-text u-text-default u-text-7">
-                      @foreach (explode(',',$uniqueProductId->chooseitem) as $choices)
-                      @if($labels = explode('-',$choices)) @endif
-                        <li>{{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
-                          @for ($i = 0; $i < intval($labels['0']); $i++)
-                                <select id="year" name="year" class="form-control {{ $uniqueProductId->product_id }}_items">
-                                    @foreach (explode('/',$labels['2']) as $choicesitem)
-                                        <option value="{{ $choicesitem }}">{{ $choicesitem }}</option>
-                                    @endforeach
-                                </select>
-                          @endfor
-                      @endforeach
-                      </ul>
-                      <p class="u-text u-text-3">
-                          <span style="font-size: 1.25rem;">PHP </span>
-                          <span style="font-size: 1.75rem;">{{ $uniqueProductId->sellingPrice }}</span>
-                      </p>
-
-                      <br/><br/>
-<a prod-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 addtocart" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" target="_blank">Order now!</a>
-                 
-                      
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-
 
 <br/>
 
-@if ($lastid = $uniqueProductId->product_id) @endif
-@endif
-@endforeach
     </section>
     
    <br/><br/>
