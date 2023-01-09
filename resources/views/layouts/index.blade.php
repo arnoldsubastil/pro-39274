@@ -269,7 +269,7 @@ $(document).ready(function () {
         success:function(response){
           var newlink = '';
           $.each( response, function( key, value ) {
-            if(value['slug'] != 'sets')
+            if(value['slug'] != 'Events')
               newlink = newlink + `<a href="/products/`+value['slug']+`">`+value['categoryname']+`</a>`;
             else
               newlink = newlink + `<a href="/Events">`+value['categoryname']+`</a>`;
