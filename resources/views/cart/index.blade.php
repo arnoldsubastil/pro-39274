@@ -44,7 +44,6 @@ Shopping Cart
             <div class="u-layout-row" style="display: block;">              
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" style="display: inline-block;">
                 <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h1 class="u-align-center u-text u-text-default u-text-1">Thank you.</h1>
                   <p class="u-align-center u-text u-text-default u-text-2">Your Cart is currently empty.
                   </p>
                   <br/>
@@ -145,7 +144,7 @@ Shopping Cart
 
           <div class="u-layout right">
             <div class="u-layout-row ">
-              <a href="javascript:history.back()" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Go back</a>
+              <a href="/products/pastries" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>
               <button id="placeorder" class="disabledbutton u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</button>
             </div>
           </div>
