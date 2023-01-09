@@ -581,6 +581,7 @@ function updateValueToPay() {
 
               } else {
                 newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
+                $('#computevoucherdiscountTable').html('-' + parseFloat(radioValue)/100);
               }
 
               if(requirement != '0'){
