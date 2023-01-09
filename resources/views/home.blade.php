@@ -18,6 +18,7 @@ Home
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->
     </section>
+    @if(!Auth::check())
     <section class="u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-custom-color-4 u-valign-middle-xs u-section-1" id="sec-54cf">
     <div class="stripeDiv"></div>
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1 stampImage">
@@ -82,6 +83,7 @@ Home
       </div>
       <div class="stripeDiv"></div>
     </section>
+    @endif
     <section class="u-border-1 u-border-grey-10 u-border-no-left u-border-no-right u-clearfix u-white u-section-4" id="carousel_bc58">
       <p class="u-align-center u-text u-text-1">Check out our best sellers!</p>
     </section>
