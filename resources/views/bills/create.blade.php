@@ -326,6 +326,7 @@ Bill Order
                       <div class="table-head" style="display: none">Product ID</div>
                       <div class="table-head">Image</div>
                       <div class="table-head">Product</div>
+                      <div class="table-head">Unit Price</div>
                       <div class="table-head quantity">Quantity</div>
                       <div class="table-head">Total Price</div>
                       <div class="table-head">Notes</div>
@@ -337,8 +338,9 @@ Bill Order
                       <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$product->productIdlong}}</span></div>
                       <div class="table-cell image"><span class="listItemDetailLabel">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductImages/'.$product->url}}/128" alt="" ></span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">{{ $product->name }}</span><span class="listItemDetailLabel foreignName">Foreign Name</span><span class="listItemDetailValue foreignName">{{ $product->foreignName }}</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Unit Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->sellingPrice }}</span></span></div>
                       <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">{{ $product->numberoforder }}</span></div>
-                      <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span><span class="listItemDetailLabel price">Price</span><span class="listItemDetailValue">(<span class="currency">PHP</span><span class="price"> {{ $product->sellingPrice }} </span>each)</span></div>
+                      <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->totalamount }}</span></span></div>
                       <div class="table-cell"><span class="listItemDetailLabel">Notes</span><span class="listItemDetailValue"><textarea name="" product-id="{{ $product->productIdlong }}" class="prodcomments" rows="5" placeholder="Notes about this product">{{ $product->product_note }}</textarea></span></div>
                    </div>
               

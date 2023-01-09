@@ -27,12 +27,12 @@ Order Details
           <div class="u-layout" style="text-align: center;">
             <div class="u-layout-row" style="display: block;">              
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" style="display: inline-block;">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2 ">
                   <p class="u-align-center u-text u-text-default u-text-2">You have no previous orders.
                   </p>
                   <br/>
                   @if (!Auth::guest())
-                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>                    
+                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" style="display: inline-block;">Continue Shopping</a>                    
                   @else
                   <a href="/Register" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Sign up</a>                                
                   <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>
@@ -150,7 +150,8 @@ Order Details
                                             <div class="table-head" style="display: none">Product ID</div>
                                             <div class="table-head" >Image</div>
                                             <div class="table-head">Product</div>
-                                            <!-- <div class="table-head quantity">Quantity</div> -->
+                                            <div class="table-head quantity">Quantity</div>
+                                            <div class="table-head">Unit Price</div>
                                             <div class="table-head">Total Price</div>
                                             <div class="table-head">Notes</div>
                                         </div> 
@@ -292,12 +293,13 @@ jQuery(document).ready(function ($) {
                 <div class="table-row">
                     <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">DEE36E3F-9D7E-46C9-951F-26282B0F3841</span></div>
 <div class="table-cell image"><span class="listItemDetailLabel" style="display: none">Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="/resizer/images/ProductImages/`+ value.url +`/128" alt=""></span></div>
-                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`(`+value.foreignName+`)</span><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
-
+                    <div class="table-cell"><span class="listItemDetailLabel">Name</span><span class="listItemDetailValue">`+ value.name +`(`+value.foreignName+`)</span></div>
+                    <div class="table-cell quantity"><span class="listItemDetailLabel">Quantity</span><span class="listItemDetailValue">`+ value.qty +`</span></div>
                     
                     
 
-                    <div class="table-cell"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> `+ totalprice +`</span></span><span class="listItemDetailLabel price">Unit Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="price"> `+ value.sellingPrice +` </span></span></div>
+                    <div class="table-cell amount"><span class="listItemDetailLabel">Unit Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> `+ value.sellingPrice +`</span></span></div>
+                    <div class="table-cell amount"><span class="listItemDetailLabel">Total Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> `+ totalprice +`</span></span></div>
                     <div class="table-cell"><span class="listItemDetailLabel">Notes</span>
                       <span class="listItemDetailValue">
                           <p name="" class="prodcomments" >`+ note +`</p>
