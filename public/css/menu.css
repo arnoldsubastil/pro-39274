@@ -60,7 +60,7 @@
 
   .shoppingCartButton .notificationCart 
   {
-    
+    display: none;
     background: #B83331;
     border: 1px solid #FFFFFF;
     border-radius: 100%;
