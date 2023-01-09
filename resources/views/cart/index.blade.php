@@ -100,8 +100,22 @@ Shopping Cart
       </div>
     </section>
     <br/>
+  
+
+
     <section class="u-clearfix u-section-6" id="sec-9474">
       <div class="u-clearfix u-sheet u-sheet-1">
+                      
+        <div class="u-form-group u-form-message right">
+            <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
+              <div class="totalAmount">
+                  <span class="totalAmountCurrency">PHP</span> <span id="TotalPriceCart" class="totalAmount" ></span>
+                
+              <input type="hidden" id="totalcomputedamount_submt" name="totalcomputedamount_submt" value="" />
+              </div>
+            <label for="message-2382" class="u-label u-label-5" style="font-style: italic">Shipping will be calculated at checkout</label>   
+            <br><br>         
+        </div>
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
 
           <div class="u-layout right">
@@ -154,6 +168,7 @@ jQuery(document).ready(function ($) {
         },
         success:function(response){
             console.log(response);
+              computeTotal();
         },
     });  
   });
@@ -196,7 +211,6 @@ jQuery(document).ready(function ($) {
     } else {
       $('#placeorder').addClass('disabledbutton');
     }
-
   });
 
   $('#placeorder').click(function(){
@@ -214,8 +228,23 @@ jQuery(document).ready(function ($) {
     }
     
   });
+  computeTotal();
+function computeTotal() {
+  var TotalPriceCart = 0;
+  
+  $('.amount').each( function( key, value ) {
+            var samount = parseFloat($(this).html());
+            var qty = parseInt($(this).parent().parent().parent().find('.itemNumber').val());
+            console.log(qty);
+            TotalPriceCart = TotalPriceCart + (samount * qty);
+          });
 
+        $('#TotalPriceCart').html(TotalPriceCart);
+        }
 });
+
+
+
 
 </script>
 

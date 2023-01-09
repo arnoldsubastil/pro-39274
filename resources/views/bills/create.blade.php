@@ -71,7 +71,16 @@ Bill Order
                       <div class="u-form-group u-form-message u-form-group-5">
                         <!-- <label for="message-2382" class="u-label u-label-5">Voucher </label> -->
                         <span id="VouchersListSpan" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
-                      </div>    
+                      </div>   
+                      
+                      <div class="u-form-group">
+                            <label for="name-2382" class="u-label u-label-1">Shipping instruction</label>
+                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
+                              @foreach($shipping as $ship)
+                                <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
+                              @endforeach  
+                          </select>
+                        </div> 
                       <div class="u-form-group u-form-group-4 proofvoucher" style="display:none">
                         <label for="text-c306" class="u-label u-label-4">Proof for Promo Selected</label>
                         <input type="file" placeholder="Enter valid ID for proof" id="text-c306"  name="image" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
@@ -251,14 +260,6 @@ Bill Order
                             <input type="text" id="mode_ofpayment" value="BPI" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
                           </div>
                           <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Shipping instruction</label>
-                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
-                              @foreach($shipping as $ship)
-                                <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
-                              @endforeach  
-                          </select>
-                          </div>
-                          <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Delivery Date</label>  
                             <input id="ReceiveDateTextBox" class="receiveDateTextBox" placeholder="dddd - MMM DD, YYYY" type="text" autocomplete="off" autofill="off" name="to_received_date" class="form-control datepicker u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1">                          
                             <span id="DefaultOptionButton" class="moreOption" style="margin-top: 16px;">View selection instead?</span>
@@ -333,6 +334,35 @@ Bill Order
             <!-- END- related order list -->
             
       <div class="u-form-group u-form-message right">
+        <div style="text-align: right">
+
+          <table style="display: inline-block;">
+            <tr>
+              <td>
+               <strong> Product Amount:</strong>
+              </td>
+              <td>
+                <span id="computetotalamountTable"></span> Php
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <strong>Voucher Discount:</strong>
+              </td>
+              <td>
+              <span id="computevoucherdiscountTable">0</span> Php
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <strong>Shipping Fee:</strong>
+              </td>
+              <td>
+              <span id="computeshippingfeeTable">0</span> Php
+              </td>
+            </tr>
+          </table><br><br>
+        </div>
         <label for="message-2382" class="u-label u-label-5">Total Amount Due</label>
           <div class="totalAmount">
               <span class="totalAmountCurrency">PHP</span> <span id="totalcomputedamount" class="totalAmount" ></span>
@@ -488,6 +518,7 @@ Number.prototype.format = function(n, x) {
 Array.prototype.insert = function ( index, ...items ) {
     this.splice( index, 0, ...items );
 };
+$('#computetotalamountTable').html(mvar.format());
 $('#totalcomputedamount').html(mvar.format());
 $('#BPITotalAmountDueSpan').html(mvar.format());
 $('#GCashTotalAmountDueSpan').html(mvar.format());
@@ -537,14 +568,17 @@ function updateValueToPay() {
   var priceaddtional = parseFloat($('.shipping').find(":selected").attr('price'));
   var valuewithshipping = mvar + priceaddtional;
 
+  $('#computeshippingfeeTable').html('+' + priceaddtional);
 
               $('#voucher_id').val(id);
             if(radioValue){
               if(vouchermode == 'fix') {
                 newvalue = valuewithshipping - parseFloat(radioValue);
-              
+                $('#computevoucherdiscountTable').html('-' + parseFloat(radioValue));
               } else if(vouchermode == 'shipping') {
                 newvalue = valuewithshipping - priceaddtional;
+                $('#computevoucherdiscountTable').html('-' + priceaddtional);
+
               } else {
                 newvalue = valuewithshipping - (mvar * (parseFloat(radioValue)/100));
               }
