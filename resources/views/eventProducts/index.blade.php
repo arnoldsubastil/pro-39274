@@ -32,7 +32,7 @@ Promos and Events
             <!--- get selected products --->
             <div class="table-row">
               <div class="table-cell" style="display: none"><span class="listItemDetailLabel">Product ID</span><span class="listItemDetailValue">{{$uniqueProductId->productIdlong}}</span></div>
-              <div class="table-cell"><span class="listItemDetailLabel">Product Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/'.$uniqueProductId->thumbnailUrl}}/1080" alt="" ></span></div>
+              <div class="table-cell"><span class="listItemDetailLabel">Product Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductThumbnails/'.$uniqueProductId->url}}/1080" alt="" ></span></div>
               <div class="table-cell">
                 <span class="listItemDetailLabel">Product Name</span><h5><span class="listItemDetailValue">{{$uniqueProductId->name}}</span></h5>
                 <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</span>
