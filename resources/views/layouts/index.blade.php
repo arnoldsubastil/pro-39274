@@ -55,7 +55,7 @@
                   @if (!Auth::guest())
                   <li class="u-nav-item">
                     <a href="/update-profile" class=" u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-body-color u-text-hover-palette-2-base">
-                      Welcome {{ Auth::user()->firstName }}
+                      Welcome {{ ucfirst(Auth::user()->name) }}
                     </a>
                   </li>                    
                   @endif
