@@ -228,6 +228,10 @@ jQuery(document).ready(function ($) {
     }
     
   });
+
+  $('.itemchecker').change(function(){
+    computeTotal();
+  });
   computeTotal();
 function computeTotal() {
   var TotalPriceCart = 0;
@@ -235,8 +239,10 @@ function computeTotal() {
   $('.amount').each( function( key, value ) {
             var samount = parseFloat($(this).html());
             var qty = parseInt($(this).parent().parent().parent().find('.itemNumber').val());
-            console.log(qty);
+            
+            if($(this).parent().parent().parent().find('.itemchecker').prop('checked')) {
             TotalPriceCart = TotalPriceCart + (samount * qty);
+            }
           });
 
         $('#TotalPriceCart').html(TotalPriceCart);

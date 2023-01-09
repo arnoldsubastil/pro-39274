@@ -57,7 +57,7 @@ Bill Order
                         <input type="text" placeholder="Complete address" id="daddress" value="{{ $user->deliveryAddress  ?? '' }}" name="daddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
                       </div>
                       <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Shipping City</label>
+                            <label for="name-2382" class="u-label u-label-1">City <span style="font-style:italic;color: #939393;font-size: 13px;">(for shipping fee)</span>:</label>
                             <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
                               @foreach($shipping as $ship)
                                 <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
