@@ -32,7 +32,7 @@ Home
       <div class="u-carousel-inner" role="listbox">
         @foreach($products as $product)
         @if($ctr=$ctr+1) @endif
-        <div class="@if($ctr == 1) u-active @endif u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-{{ $ctr }}">
+        <div class="@if($ctr == 1) u-active @endif u-carousel-item u-clearfix u-palette-5-light-2 u-section-3">
           <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
               <div class="u-gutter-0 u-layout">

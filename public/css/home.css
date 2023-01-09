@@ -84,59 +84,59 @@
   height: 48px;
 }
 
- .u-section-3-1 {
+ .u-section-3 {
   background-image: none;
 }
 
-.u-section-3-1 .u-sheet-1 {
+.u-section-3 .u-sheet-1 {
   min-height: 560px;
 }
 
-.u-section-3-1 .u-layout-wrap-1 {
+.u-section-3 .u-layout-wrap-1 {
   width: 1000px;
   margin: 40px auto -10px 48px;
 }
 
-.u-section-3-1 .u-image-1 {
+.u-section-3 .u-image-1 {
   min-height: 480px;
   background-image: url("../images/ProductImages/PineappleCake_1684x1123.jpg");
   background-position: 50% 50%;
 }
 
-.u-section-3-1 .u-container-layout-1 {
+.u-section-3 .u-container-layout-1 {
   padding: 30px;
 }
 
-.u-section-3-1 .u-layout-cell-2 {
+.u-section-3 .u-layout-cell-2 {
   min-height: 480px;
 }
 
-.u-section-3-1 .u-container-layout-2 {
+.u-section-3 .u-container-layout-2 {
   padding: 30px 55px 30px 60px;
 }
 
-.u-section-3-1 .u-text-1 {
+.u-section-3 .u-text-1 {
   font-size: 2.25rem;
   font-family: Aleo;
   margin: 0;
 }
 
-.u-section-3-1 .u-text-2 {
+.u-section-3 .u-text-2 {
   font-size: 18px;
   margin: 20px 0 0;
 }
 
-.u-section-3-1 .u-text-3 {
+.u-section-3 .u-text-3 {
   margin: 20px 0 0;
 }
 
-.u-section-3-1 .u-text-4 {
+.u-section-3 .u-text-4 {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 0;
 }
 
-.u-section-3-1 .u-btn-1 {
+.u-section-3 .u-btn-1 {
   font-size: 1.125rem;
   background-image: none;
   font-weight: normal;
@@ -145,103 +145,103 @@
 }
 
 @media (max-width: 1199px) {
-  .u-section-3-1 .u-sheet-1 {
+  .u-section-3 .u-sheet-1 {
     min-height: 798px;
   }
 
-  .u-section-3-1 .u-layout-wrap-1 {
+  .u-section-3 .u-layout-wrap-1 {
     width: 940px;
     margin-left: 0;
   }
 
-  .u-section-3-1 .u-image-1 {
+  .u-section-3 .u-image-1 {
     min-height: 451px;
   }
 
-  .u-section-3-1 .u-layout-cell-2 {
+  .u-section-3 .u-layout-cell-2 {
     min-height: 451px;
   }
 
-  .u-section-3-1 .u-container-layout-2 {
+  .u-section-3 .u-container-layout-2 {
     padding-right: 40px;
     padding-left: 30px;
   }
 
-  .u-section-3-1 .u-btn-1 {
+  .u-section-3 .u-btn-1 {
     border-style: none;
   }
 }
 
 @media (max-width: 991px) {
-  .u-section-3-1 .u-sheet-1 {
+  .u-section-3 .u-sheet-1 {
     min-height: 720px;
   }
 
-  .u-section-3-1 .u-layout-wrap-1 {
+  .u-section-3 .u-layout-wrap-1 {
     width: 720px;
     margin-top: 58px;
     margin-bottom: -28px;
   }
 
-  .u-section-3-1 .u-image-1 {
+  .u-section-3 .u-image-1 {
     min-height: 345px;
   }
 
-  .u-section-3-1 .u-layout-cell-2 {
+  .u-section-3 .u-layout-cell-2 {
     min-height: 100px;
   }
 
-  .u-section-3-1 .u-container-layout-2 {
+  .u-section-3 .u-container-layout-2 {
     padding-right: 30px;
   }
 
-  .u-section-3-1 .u-text-1 {
+  .u-section-3 .u-text-1 {
     font-size: 3rem;
   }
 }
 
 @media (max-width: 767px) {
-  .u-section-3-1 .u-sheet-1 {
+  .u-section-3 .u-sheet-1 {
     min-height: 1284px;
   }
 
-  .u-section-3-1 .u-layout-wrap-1 {
+  .u-section-3 .u-layout-wrap-1 {
     width: 490px;
     margin-top: 91px;
     margin-right: 0;
     margin-left: auto;
   }
 
-  .u-section-3-1 .u-image-1 {
+  .u-section-3 .u-image-1 {
     min-height: 593px;
   }
 
-  .u-section-3-1 .u-container-layout-1 {
+  .u-section-3 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .u-section-3-1 .u-container-layout-2 {
+  .u-section-3 .u-container-layout-2 {
     padding-right: 10px;
     padding-left: 10px;
   }
 
-  .u-section-3-1 .u-text-1 {
+  .u-section-3 .u-text-1 {
     font-size: 2.25rem;
   }
 }
 
 @media (max-width: 575px) {
-  .u-section-3-1 .u-sheet-1 {
+  .u-section-3 .u-sheet-1 {
     min-height: 979px;
   }
 
-  .u-section-3-1 .u-layout-wrap-1 {
+  .u-section-3 .u-layout-wrap-1 {
     width: 320px;
     margin-top: 23px;
   }
 
-  .u-section-3-1 .u-image-1 {
+  .u-section-3 .u-image-1 {
     min-height: 326px;
   }
 }
