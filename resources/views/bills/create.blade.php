@@ -98,7 +98,7 @@ Bill Order
                   <!-- <h3 class="u-text u-text-default u-text-6">Other Details</h3> -->
                     <div class="otherDetails u-form-group u-form-group-4">
                           <label for="text-c306" class="u-label u-label-4">Special requests:</label> <br>
-                          <input id="GiftCheckbox" type="checkbox" name="mode_of_payment" value="BPI" class="btn-expand"><label for="GiftCheckbox" class="btn-expand"> Sending my order as a gift/care package</label> <br>
+                          <input id="GiftCheckbox" type="checkbox" name="mode_of_payment" value="BPI" class="btn-expand"><label for="GiftCheckbox" class="btn-expand"> Send my order as a gift/care package</label> <br>
                           <fieldset id="GiftFieldset" class="expand">
                             <div class="u-form-group u-form-group-4">
                                 <label for="ReceiverNameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Receiver Name') }}</label>
