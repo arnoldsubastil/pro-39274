@@ -22,7 +22,7 @@ Log In
                   <div class="u-align-center u-form u-form-1">
                     <form method="POST" action="{{ route('login') }}" style="padding: 0px;">
                     @csrf
-                      <h2 class="u-form-group u-form-text u-text u-text-1"> Welcome back!</h2>
+                      <h2 class="u-form-group u-form-text u-text u-text-1"> Log in</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
                         <span style="font-weight: 400;">Log in with your existing account.</span>
                         <br>
@@ -82,11 +82,11 @@ Log In
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1">For new customers</h2>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Proceed to order and you will have an opportunity to create an account after checking out if one does not already exist for you.</p>
-                  <a href="Home.html" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Create your account to avail free shipping fees and discounted offers.</p>
+                  <h2 class="u-text u-text-default u-text-1">Welcome to Soystory!</h2>                  
+                  <p class="u-custom-font u-font-montserrat u-text u-text-3">If you create an account, it takes less time to go through checkout and complete your orders. Sign up now to get exclusive vouchers..</p>
                   <a href="/register" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Create an account</a>
+                  <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">If you don’t feel comfortable creating an account yet, you may proceed to order and continue as guest.</p>
+                  <a href="Home.html" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
                 </div>
               </div>
             </div>
