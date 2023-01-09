@@ -374,6 +374,8 @@ class CartController extends Controller
                 'voucher.voucher_code',
                 'orders.voucher_proof',
                 'orders.notes',
+                'orders.companyName',
+                'orders.receiverName',
                 'products.name',
                 'products.productIdlong',
                 'cart.product_note',
@@ -399,6 +401,8 @@ class CartController extends Controller
             ->groupBy('orders.voucher_id')
             ->groupBy('orders.voucher_proof')
             ->groupBy('orders.notes')
+            ->groupBy('orders.companyName')
+            ->groupBy('orders.receiverName')
             ->groupBy('products.name')
             ->groupBy('products.productIdlong')
             ->groupBy('cart.product_note')

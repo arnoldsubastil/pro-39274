@@ -201,6 +201,8 @@ Bill Order
                                 <span class="listItemDetailValue snippetButton">
                                   @if($onevoucher['discount_type'] == 'percent')
                                    {{ $onevoucher['discount'] }} %
+                                   @elseif($onevoucher['discount_type'] == 'shipping')
+                                   -----FREE SHIPPING-----
                                    @else
                                     {{ $onevoucher['discount'] }} Php
                                   @endif

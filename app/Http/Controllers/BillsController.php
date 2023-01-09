@@ -38,14 +38,18 @@ class BillsController extends Controller
             ->groupBy('products.sellingPrice')
             ->groupBy('products.productSize')
             ->get();
-
-        $countitem = DB::table('cart')
-                 ->select(DB::raw('count(*) as count'))
-                 ->where('user_id', $userId)
-                 ->where('status', 'added')
-                 ->whereIn('product_id', $productslist)
-                 ->first()
-                 ->count;
+        $countitem = 0;
+        foreach ($carttocheckout as $sumforallorder) {
+            $countitem = $countitem + (float) $sumforallorder->totalamount;
+        }
+        // dd($carttocheckout, $countitem);
+        // // $countitem = DB::table('cart')
+        // //          ->select(DB::raw('count(*) as count'))
+        // //          ->where('user_id', $userId)
+        // //          ->where('status', 'added')
+        // //          ->whereIn('product_id', $productslist)
+        // //          ->first()
+        // //          ->count;
 
         $checkallvouchersonorderuser = DB::table('orders')
         ->select(DB::raw('GROUP_CONCAT(voucher_id) as vouchers'))
