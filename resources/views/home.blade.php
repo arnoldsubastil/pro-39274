@@ -8,17 +8,61 @@ Home
 @section('styles')
 <link rel="stylesheet" href="css/home.css" media="screen">
 <link rel="stylesheet" href="/css/login/index.css" media="screen">
+<link rel="stylesheet" href="/css/slider/slider.css" media="screen">
 @endsection
 
 @section('content')
-
+<section class="u-align-center u-clearfix u-section-1" id="carousel_f88c"></section>
+    <section class="u-align-center u-clearfix u-valign-middle u-section-2" id="carousel_001b">
+      <div id="carousel-bd35" data-interval="5000" data-u-ride="carousel" class="u-carousel u-expanded-width u-slider u-slider-1">
+        <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+          <li data-u-target="#carousel-bd35" class="u-active u-active-grey-25 u-shape-circle u-white" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
+          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
+          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="2" style="width: 10px; height: 10px;"></li>
+          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="3" style="width: 10px; height: 10px;"></li>
+          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="4" style="width: 10px; height: 10px;"></li>
+        </ol>
+        <div class="u-carousel-inner" role="listbox">
+          <div class="u-active u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-1" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1920" data-image-height="1275">
+            <div class="u-container-layout u-container-layout-1"></div>
+          </div>
+          <div class="u-align-center u-carousel-item u-container-style u-expanded-width u-image u-shading u-slide u-image-2" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1440" data-image-height="960">
+            <div class="u-container-layout u-container-layout-2"></div>
+          </div>
+          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-3" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="480" data-image-height="480">
+            <div class="u-container-layout u-container-layout-3"></div>
+          </div>
+          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-4" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1684" data-image-height="1123">
+            <div class="u-container-layout u-container-layout-4"></div>
+          </div>
+          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-5" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1696" data-image-height="1129">
+            <div class="u-container-layout u-container-layout-5"></div>
+          </div>
+        </div>
+        <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-spacing-12 u-text-body-alt-color u-carousel-control-1" href="#carousel-bd35" role="button" data-u-slide="prev">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 8 8"><path d="M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z"></path></svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 8 8"><path d="M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z"></path></svg>
+          </span>
+        </a>
+        <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-spacing-12 u-text-body-alt-color u-carousel-control-2" href="#carousel-bd35" role="button" data-u-slide="next">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 8 8"><path d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"></path></svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 8 8"><path d="M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z"></path></svg>
+          </span>
+        </a>
+      </div>
+    </section>
 <section class="u-clearfix u-section-1 heroImage" id="sec-ea9a"  style="background-color: #F4DFB0;" >
 <img class="u-image u-image-1" src="images/Animations/{{ $banner->bannerimage }}" style=" width:100%;">
       <!-- <div class="u-clearfix u-sheet u-sheet-1"  style="backgroun-color: ##EDC97C; background: url('images/Animations/Animations_1024x600.gif'); background-position: center; background-repeat: no-repeat; height: 600px; min-height: auto; width: 100%;">
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->
     </section>
-    @if(!Auth::check())
     <section class="u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-custom-color-4 u-valign-middle-xs u-section-1" id="sec-54cf">
     <div class="stripeDiv"></div>
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1 stampImage">
@@ -83,7 +127,6 @@ Home
       </div>
       <div class="stripeDiv"></div>
     </section>
-    @endif
     <section class="u-border-1 u-border-grey-10 u-border-no-left u-border-no-right u-clearfix u-white u-section-4" id="carousel_bc58">
       <p class="u-align-center u-text u-text-1">Check out our best sellers!</p>
     </section>
@@ -164,11 +207,7 @@ Home
                   <h6>New Product</h6>
                   <h2 class="u-text u-text-default u-text-1">{{ $newproduct->name }}</h2>
                   <p class="u-text u-text-2">{{ $newproduct->productDescription }}</p>
-                  @if($newproduct->categories == 'Events')
-                  <a href="/Events" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View Events</a>
-                  @else
-                  <a href="/{{ $newproduct->categories }}/{{ $newproduct->productIdlong }}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
-                  @endif
+                  <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                 </div>
               </div>
               <div class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1440" data-image-height="960"  style="background-image: url(/resizer/images/ProductImages/{{ $newproduct->url }}/480); background-size: contain;">
