@@ -34,7 +34,9 @@ Shopping Cart
                       <div class="table-head">Product Name</div>
                   </div>
               <!--- begin product item --->
-
+              @if(count($uniqueProductIds) == 0)
+                <p style="text-align: center; font-style: italic;">You have no previous orders</p>
+              @endif
               @foreach($uniqueProductIds as $uniqueProductId)
 
                 <!--- get selected products --->
