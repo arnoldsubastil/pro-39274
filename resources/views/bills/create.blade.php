@@ -88,7 +88,7 @@ Bill Order
                   <div class="btn-submit form-vertical u-form u-form-1">
                   <!-- <h3 class="u-text u-text-default u-text-6">Other Details</h3> -->
                     <div class="otherDetails u-form-group u-form-group-4">
-                          <label for="text-c306" class="u-label u-label-4">Choose purpose of order:</label> <br>
+                          <label for="text-c306" class="u-label u-label-4">Other options:</label> <br>
                           <input id="GiftCheckbox" type="checkbox" name="mode_of_payment" value="BPI" class="btn-expand"><label for="GiftCheckbox" class="btn-expand"> For gift</label> <br>
                           <fieldset id="GiftFieldset" class="expand">
                             <div class="u-form-group u-form-group-4">
