@@ -138,7 +138,7 @@ Bill Order
                                 @enderror
                             </div>
                           </fieldset>
-                          <input id="ReceiptCheckbox" type="checkbox" name="mode_of_payment" value="GCash" class="btn-expand"><label for="ReceiptCheckbox" class="btn-expand"> Request for an official receipt</label> <br>
+                          <input id="ReceiptCheckbox" type="checkbox" name="ReceiptCheckbox" value="forOR" class="btn-expand"><label for="ReceiptCheckbox" class="btn-expand"> Request for an official receipt</label> <br>
                           <fieldset id="ReceiptFieldset" class="expand">
                             <div class="u-form-group u-form-group-4">
                                 <label for="NameTextBox" class="u-custom-font u-font-montserrat u-label u-label-2">{{ __('Name') }}</label>

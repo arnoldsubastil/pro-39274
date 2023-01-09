@@ -22,7 +22,8 @@ class GuestController extends Controller
     {
         $banner = DB::table('sitecontent')
             ->select('contentID', 'titlepage', 'page_content', 'bannerimage')
-            ->where('contentID', 1)
+            ->where('titlepage', 'banner')
+            ->orderByDesc('contentID')
             ->get();
 
             $brands = DB::table('sitecontent')
@@ -47,7 +48,7 @@ class GuestController extends Controller
             ->get(); 
 
         return view('home', [
-            'banner'=>$banner[0],
+            'banner'=>$banner,
             'products' => $bestsellersList,
             'newproduct' => $uniqueProductId[0],
             'brands' => $brands,

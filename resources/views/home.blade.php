@@ -16,29 +16,24 @@ Home
     <section class="u-align-center u-clearfix u-valign-middle u-section-2" id="carousel_001b">
       <div id="carousel-bd35" data-interval="5000" data-u-ride="carousel" class="u-carousel u-expanded-width u-slider u-slider-1">
         <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-          <li data-u-target="#carousel-bd35" class="u-active u-active-grey-25 u-shape-circle u-white" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
-          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
-          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="2" style="width: 10px; height: 10px;"></li>
-          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="3" style="width: 10px; height: 10px;"></li>
-          <li data-u-target="#carousel-bd35" class="u-active-grey-25 u-shape-circle u-white" data-u-slide-to="4" style="width: 10px; height: 10px;"></li>
+          @if($ctr = 0) @endif
+        @foreach($banner as $adbanner)
+          <li data-u-target="#carousel-bd35" class="@if($ctr == 0) u-active @endif u-active-grey-25 u-shape-circle u-white" data-u-slide-to="{{ $ctr }}" style="width: 10px; height: 10px;"></li>
+          @if($ctr = $ctr + 1) @endif
+          @endforeach
         </ol>
         <div class="u-carousel-inner" role="listbox">
-          <div class="u-active u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-1" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1920" data-image-height="1275">
-            <div class="u-container-layout u-container-layout-1"></div>
+
+        @if($ctr = 0) @endif
+        @foreach($banner as $adbanner)
+          <div class="@if($ctr == 0) u-active @endif u-align-center u-carousel-item u-container-style u-image u-shading u-slide u-image-{{ $ctr }}" style="background-image: url('/images/Animations/{{ $adbanner->bannerimage }}');" data-image-width="1920" data-image-height="1275">
+            <div class="u-container-layout u-container-layout-{{ $ctr }}"></div>
           </div>
-          <div class="u-align-center u-carousel-item u-container-style u-expanded-width u-image u-shading u-slide u-image-2" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1440" data-image-height="960">
-            <div class="u-container-layout u-container-layout-2"></div>
-          </div>
-          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-3" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="480" data-image-height="480">
-            <div class="u-container-layout u-container-layout-3"></div>
-          </div>
-          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-4" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1684" data-image-height="1123">
-            <div class="u-container-layout u-container-layout-4"></div>
-          </div>
-          <div class="u-carousel-item u-container-align-center u-container-style u-expanded-width u-image u-slide u-image-5" style="background-image: url('/images/banner/PineappleCake_1684x1123.jpg');" data-image-width="1696" data-image-height="1129">
-            <div class="u-container-layout u-container-layout-5"></div>
-          </div>
+          @if($ctr = $ctr + 1) @endif
+          @endforeach
         </div>
+
+        
         <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-spacing-12 u-text-body-alt-color u-carousel-control-1" href="#carousel-bd35" role="button" data-u-slide="prev">
           <span aria-hidden="true">
             <svg viewBox="0 0 8 8"><path d="M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z"></path></svg>
@@ -58,7 +53,6 @@ Home
       </div>
     </section>
 <section class="u-clearfix u-section-1 heroImage" id="sec-ea9a"  style="background-color: #F4DFB0;" >
-<img class="u-image u-image-1" src="images/Animations/{{ $banner->bannerimage }}" style=" width:100%;">
       <!-- <div class="u-clearfix u-sheet u-sheet-1"  style="backgroun-color: ##EDC97C; background: url('images/Animations/Animations_1024x600.gif'); background-position: center; background-repeat: no-repeat; height: 600px; min-height: auto; width: 100%;">
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->
@@ -143,7 +137,7 @@ Home
       <div class="u-carousel-inner" role="listbox">
         @foreach($products as $product)
         @if($ctr=$ctr+1) @endif
-        <div class="@if($ctr == 1) u-active @endif u-carousel-item u-clearfix u-palette-5-light-2 u-section-3-{{ $ctr }}">
+        <div class="@if($ctr == 1) u-active @endif u-carousel-item u-clearfix u-palette-5-light-2 u-section-3">
           <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
               <div class="u-gutter-0 u-layout">

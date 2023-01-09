@@ -26,7 +26,8 @@ class HomeController extends Controller
     {
         $banner = DB::table('sitecontent')
             ->select('contentID', 'titlepage', 'page_content', 'bannerimage')
-            ->where('contentID', 1)
+            ->where('titlepage', 'banner')
+            ->orderByDesc('contentID')
             ->get();
 
         $about = DB::table('sitecontent')
@@ -44,9 +45,8 @@ class HomeController extends Controller
             ->orderByDesc('product_id')
             ->take(1)
             ->get(); 
-
         return view('homelogin', [
-            'banner'=>$banner[0],
+            'banner'=>$banner,
             'products' => $bestsellersList,
             'newproduct' => $uniqueProductId[0],
             'about' => $about
