@@ -44,7 +44,7 @@ Promos and Events
                       @foreach (explode('----,',$uniqueProductId->chooseitem) as $choices)
                       @if($labels = explode('-',$choices)) @endif
 
-                      @if(count($labels) != 0)
+                      @if($labels['0'] != 0)
                         <li><br/><b>Mix & Match: </b> {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
                       @endif
                           @for ($i = 0; $i < intval($labels['0']); $i++)
