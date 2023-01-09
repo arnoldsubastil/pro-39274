@@ -56,6 +56,14 @@ Bill Order
                         <label for="text-c306" class="u-label u-label-4">Delivery Address</label>
                         <input type="text" placeholder="Complete address" id="daddress" value="{{ $user->deliveryAddress  ?? '' }}" name="daddress" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
                       </div>
+                      <div class="u-form-group">
+                            <label for="name-2382" class="u-label u-label-1">Shipping City</label>
+                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
+                              @foreach($shipping as $ship)
+                                <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
+                              @endforeach  
+                          </select>
+                        </div> 
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
                         <label><input id="BPIRadioButton" checked="checked" type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
@@ -73,14 +81,6 @@ Bill Order
                         <span id="VouchersListSpan" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2">Select voucher</span>
                       </div>   
                       
-                      <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Shipping instruction</label>
-                            <select type="text" name="shipping" placeholder="---- ---- ---- ----" class="shippingSelect u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1 shipping">
-                              @foreach($shipping as $ship)
-                                <option value="{{ $ship->shippindId }}" price="{{ $ship->price }}">{{ $ship->shippingcondition }} - {{ $ship->price }} Php</option>
-                              @endforeach  
-                          </select>
-                        </div> 
                       <div class="u-form-group u-form-group-4 proofvoucher" style="display:none">
                         <label for="text-c306" class="u-label u-label-4">Proof for Promo Selected</label>
                         <input type="file" placeholder="Enter valid ID for proof" id="text-c306"  name="image" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
@@ -518,12 +518,12 @@ Number.prototype.format = function(n, x) {
 Array.prototype.insert = function ( index, ...items ) {
     this.splice( index, 0, ...items );
 };
-$('#computetotalamountTable').html(mvar.format());
-$('#totalcomputedamount').html(mvar.format());
-$('#BPITotalAmountDueSpan').html(mvar.format());
-$('#GCashTotalAmountDueSpan').html(mvar.format());
-$('#BPITotalAmountDueTextbox').html(mvar.format());
-$('#BPITotalAmountDueTextbox').html(mvar.format());
+$('#computetotalamountTable').html(mvar.format(2));
+$('#totalcomputedamount').html(mvar.format(2));
+$('#BPITotalAmountDueSpan').html(mvar.format(2));
+$('#GCashTotalAmountDueSpan').html(mvar.format(2));
+$('#BPITotalAmountDueTextbox').html(mvar.format(2));
+$('#BPITotalAmountDueTextbox').html(mvar.format(2));
 $('#totalcomputedamount_submt').val(mvar);
 
 
@@ -589,16 +589,16 @@ function updateValueToPay() {
               } else {
                 $('.proofvoucher').hide();
               }
-              $('#totalcomputedamount').html(newvalue.format());              
+              $('#totalcomputedamount').html(newvalue.format(2));              
               $('#totalcomputedamount_submt').val(newvalue);
-              $('#BPITotalAmountDueSpan').html(newvalue.format());
-              $('#BPITotalAmountDueTextbox').html(newvalue.format());
+              $('#BPITotalAmountDueSpan').html(newvalue.format(2));
+              $('#BPITotalAmountDueTextbox').html(newvalue.format(2));
               console.log(newvalue);
             } else{
-              $('#totalcomputedamount').html(valuewithshipping.format());
+              $('#totalcomputedamount').html(valuewithshipping.format(2));
               $('#totalcomputedamount_submt').val(valuewithshipping);
-              $('#BPITotalAmountDueSpan').html(valuewithshipping.format());
-              $('#BPITotalAmountDueTextbox').html(valuewithshipping.format());
+              $('#BPITotalAmountDueSpan').html(valuewithshipping.format(2));
+              $('#BPITotalAmountDueTextbox').html(valuewithshipping.format(2));
             }
 
 }
