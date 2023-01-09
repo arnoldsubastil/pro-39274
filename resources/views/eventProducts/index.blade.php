@@ -40,9 +40,13 @@ Promos and Events
                
                 <ul class="u-text u-text-default u-text-7 noListStyle">
                       @if($uniqueProductId->chooseitem != null)
-                      @foreach (explode(',',$uniqueProductId->chooseitem) as $choices)
+                      
+                      @foreach (explode('----,',$uniqueProductId->chooseitem) as $choices)
                       @if($labels = explode('-',$choices)) @endif
+
+                      @if(count($labels) != 0)
                         <li><br/><b>Mix & Match: </b> {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
+                      @endif
                           @for ($i = 0; $i < intval($labels['0']); $i++)
                                 <select id="year" name="year" class="flavorSelect form-control {{ $uniqueProductId->product_id }}_items">
                                     @foreach (explode('/',$labels['2']) as $choicesitem)

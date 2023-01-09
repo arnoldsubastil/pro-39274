@@ -15,7 +15,7 @@ class EventProductsController extends Controller
 
         
         $uniqueProductId = DB::table('products')
-            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url',DB::raw("GROUP_CONCAT(sets.count_choose,'-', sets.choice_text, '-', sets.choices) as chooseitem"))
+            ->select('products.product_id', 'products.categories', 'products.foreignName', 'products.name', 'products.productDescription', 'products.productIdlong', 'products.productOptions', 'products.productSize', 'products.sellingPrice', 'products.thumbnailUrl', 'products.url',DB::raw("GROUP_CONCAT(sets.count_choose,'-', sets.choice_text, '-', sets.choices, '----') as chooseitem"))
             ->leftJoin('sets', 'products.productIdlong', '=', 'sets.product_id')
             ->where('products.categories', 'Events')
             ->groupBy('products.product_id')
