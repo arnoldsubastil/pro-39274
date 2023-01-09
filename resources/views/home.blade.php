@@ -246,7 +246,7 @@ Home
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout" style="">
           <h2 class="u-text u-text-default u-text-1">Product Brands</h2>
-            <p style="text-align: center;">Here's a quick overview of our products.</p>
+            <p style="text-align: center;">On a mission to build a bridge between Taiwan and the Philippines one bite at a time.</p>
             <div class="u-layout-row" style="">
               @foreach($brands as $brand)
               <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-white u-layout-cell-1" src="">
