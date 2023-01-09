@@ -28,7 +28,7 @@ Shopping Cart
             <div class="u-layout-row">
               
 
-              <div class="listView">
+              <div class="listView" style="max-height: none !important;">
                   <div class="table-row">
                       <div class="table-head" style="display: none">Product ID</div>
                       <div class="table-head">Product Name</div>
