@@ -86,7 +86,7 @@ Log In
                   <p class="u-custom-font u-font-montserrat u-text u-text-3">If you create an account, it takes less time to go through checkout and complete your orders. Sign up now to get exclusive vouchers..</p>
                   <a href="/register" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Create an account</a>
                   <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">If you don’t feel comfortable creating an account yet, you may proceed to order and continue as guest.</p>
-                  <a href="Home.html" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
+                  <a href="/products/pastries" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
                 </div>
               </div>
             </div>

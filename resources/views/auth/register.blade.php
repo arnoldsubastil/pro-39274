@@ -23,7 +23,7 @@ Sign Up
                   <div class="u-align-center u-form u-form-1">
                     <form method="POST" action="{{ route('register') }}" style="padding: 0px;">
                     @csrf
-                      <h2 class="u-form-group u-form-text u-text u-text-1"> Sign up!</h2>
+                      <h2 class="u-form-group u-form-text u-text u-text-1"> Register</h2>
                       <p class="u-custom-font u-font-montserrat u-form-group u-form-text u-text u-text-2">
                         <span style="font-weight: 400;">Create your account to avail free shipping fees and discounted offers.</span>
                         <br>
@@ -118,12 +118,11 @@ Sign Up
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h2 class="u-text u-text-default u-text-1">For returning customers</h2>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-3">Log in with your existing account.&nbsp;</p>
-                  <a href="/login" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Login your account</a>
-                  <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">Proceed to order and you will have an opportunity to create an account after checking out if one does not already exist for you.</p>
-                  <a href="/" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
-                  
+                  <h2 class="u-text u-text-default u-text-1">Welcome to Soystory!</h2>                  
+                  <p class="u-custom-font u-font-montserrat u-text u-text-3">If you already have an account, click on the "Log in" option and enter your email address and password.</p>
+                  <a href="/login" class="u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-2">Log in</a>
+                  <p class="u-custom-font u-font-montserrat u-text u-text-default u-text-2">If you don’t feel comfortable creating an account yet, you may proceed to order and continue as guest.</p>
+                  <a href="/products/pastries" class="u-align-left u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-custom-font u-font-montserrat u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1">Continue as guest</a>
                 </div>
               </div>
             </div>
