@@ -67,6 +67,7 @@ Bill Order
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c306" class="u-label u-label-4">Mode of Payment</label> <br>
                         <label><input id="BPIRadioButton" checked="checked" type="radio" name="mode_of_payment" value="BPI"> BPI</label> <br>
+                        <label><input id="GCashRadioButton" type="radio" name="mode_of_payment" value="BDO"> BDO</label> <br>
                         <label><input id="GCashRadioButton" type="radio" name="mode_of_payment" value="GCash"> GCash</label> <br>
                         <input type="hidden" name="voucher_id" id="voucher_id" />
                         <input type="hidden" name="allproductcomments" id="allproductcomments" />
@@ -291,12 +292,13 @@ Bill Order
                             <p>Please review to ensure that the details are correct before you proceed.</p>
                           </div>
                              
-                          <div class="u-form-group">
+                          <div class="u-form-group"><strong>
                           <h4>Payment Information</h4>
                             <div id="bankaccountinfo">
                               BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
-                              <img src="/images/bpiinfo.png" alt="">
+                              <img src="/images/bpiinfo.png" width="300">
                             </div>
+                            </strong>
                           </div>
 
                         </div>
