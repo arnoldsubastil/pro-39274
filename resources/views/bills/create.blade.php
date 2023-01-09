@@ -290,6 +290,15 @@ Bill Order
                           <div class="u-form-group">
                             <p>Please review to ensure that the details are correct before you proceed.</p>
                           </div>
+                             
+                          <div class="u-form-group">
+                          <h4>Payment Information</h4>
+                            <div id="bankaccountinfo">
+                              BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
+                              <img src="/images/bpiinfo.png" alt="">
+                            </div>
+                          </div>
+
                         </div>
                       </section>
                     </div>
@@ -605,6 +614,22 @@ function updateValueToPay() {
 
 $('input[type=radio][name=mode_of_payment]').change(function() {
     $('#mode_ofpayment').val(this.value);
+    var payment = this.value;
+
+    if(payment === 'BPI') {
+      $('#bankaccountinfo').html(`
+                              BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
+                              <img src="/images/bpiinfo.png" width="300">
+                           `);
+    } else if(payment === 'BDO') {
+      $('#bankaccountinfo').html(`BDO: SOYSTORY FOOD SHOP 00-769-800-8061 <br>`);
+    } else {
+      $('#bankaccountinfo').html(`
+                              GCASH: EANNE YEANNE L. 09171380392 <br>
+                              <img src="/images/gcashinfo.jpg" width="300">
+                           `);
+    }
+    
 });
 
 $('.confirm').click(function(){
