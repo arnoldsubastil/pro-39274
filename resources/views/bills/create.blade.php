@@ -270,7 +270,10 @@ Bill Order
                           </div>
                                       
                       <div class="u-form-group u-form-group-4">
-                        <label for="text-c306" class="u-label u-label-4">Reference Number</label>
+                        <label for="text-c306" class="u-label u-label-4">Reference Number
+                        <br><span style="font-style:italic;color:#010101;font-size:12px">You can leave the reference blank if you need assistance.</span>
+
+                        </label>
                         <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
                       </div>
                           <!-- <div class="u-form-group">
