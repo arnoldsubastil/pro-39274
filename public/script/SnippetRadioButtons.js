@@ -73,7 +73,11 @@ $(function() {
         
       singleDatePicker: true,
       showDropdowns: false,
+     // allowTimes: ['10','11'],
       startDate: startDateValue.set({ hour: 8, minute: 0, millisecond: 0 })
+    //   disabledHours: {
+    //     hour: '7:00'
+    //   }
       
     //   startTime: moment(startDateValue).startOf({ hour: 8, minute: 0, millisecond: 0 })
     //   minYear: 1901,
