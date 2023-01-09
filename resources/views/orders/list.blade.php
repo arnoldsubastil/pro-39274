@@ -14,6 +14,8 @@ Order Details
 
 @section('content')  
 <br/>
+
+@if(Auth::check())
 <section class="u-clearfix u-container-align-center u-section-2">
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -147,6 +149,9 @@ Order Details
     </div>
     
 </section>
+@else
+<p style="text-align: center; font-style: italic;">This feature is for registered users only</p>
+@endif
 <!-- 
 <section class="u-clearfix u-section-2" id="sec-e3fd">
     
