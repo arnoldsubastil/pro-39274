@@ -37,31 +37,57 @@ Promos and Events
                 <span class="listItemDetailLabel">Product Name</span><h5><span class="listItemDetailValue">{{$uniqueProductId->name}}</span></h5>
                 <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</span>
                 <span class="listItemDetailLabel">Product Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </span>
-               
-                <ul class="u-text u-text-default u-text-7 noListStyle">
-                      @if($uniqueProductId->chooseitem != null)
-                      
-                      @foreach (explode('----,',$uniqueProductId->chooseitem) as $choices)
-                      @if($labels = explode('-',$choices)) @endif
+                <span data-toggle="modal" data-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 " data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" >Order now!</span>
+              
+                <!-- BEGIN - events modal -->
+            <div class="modal" id="myModal-{{$uniqueProductId->productIdlong}}" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" id="OrdersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                <!-- BEGIN - events --> 
+                <h5 class="u-text u-text-default u-text-6">Mix & Match</h5>  
+                <br/>
+                <div class="table eventsMixAndMatch">
+                  <ul class="u-text u-text-default u-text-7 noListStyle">
+                        @if($uniqueProductId->chooseitem != null)
 
-                      @if($labels['0'] != 0)
-                        <li><br/><b>Mix & Match: </b> {{ $labels['0'] }} pcs {{ $labels['1'] }}</li>
-                      @endif
-                          @for ($i = 0; $i < intval($labels['0']); $i++)
-                                <select id="year" name="year" class="flavorSelect form-control {{ $uniqueProductId->product_id }}_items">
-                                    @foreach (explode('/',$labels['2']) as $choicesitem)
-                                        <option value="{{ $choicesitem }}">{{ $choicesitem }}</option>
-                                    @endforeach
-                                </select>
-                          @endfor
-                          
-                      @endforeach
-                      @endif
-                      
-                 </ul>
-                <a prod-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 addtocart" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" target="_blank">Order now!</a>
+                        @foreach (explode('----,',$uniqueProductId->chooseitem) as $choices)
+                        @if($labels = explode('-',$choices)) @endif
+
+                        @if($labels['0'] != 0)
+                          <li><b>{{ $labels['0'] }} pcs {{ $labels['1'] }}</b></li>
+                        @endif
+                          <li>
+                            @for ($i = 0; $i < intval($labels['0']); $i++)
+                                  <select id="year" name="year" class="flavorSelect form-control {{ $uniqueProductId->product_id }}_items">
+                                      @foreach (explode('/',$labels['2']) as $choicesitem)
+                                          <option value="{{ $choicesitem }}">{{ $choicesitem }}</option>
+                                      @endforeach
+                                  </select>
+                            @endfor
+                          </li>
+                        @endforeach
+                        @endif
+
+                  </ul>
+                </div>
+                
+                <!-- END - events  --> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" id="EventsModalButton" target="_blank" prod-id="{{ $uniqueProductId->productIdlong }}" class="addtocart button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</button>
+                </div>
               </div>
-            </div>                
+            </div>
+            <!-- END - events modal -->
+              
+              </div>
+            </div>  
+            
+            
+            
             @endforeach      
             </div>
           </div>
@@ -78,7 +104,10 @@ Promos and Events
 
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" ></script><!-- must comes first before ajax -->
 <script >
+
+
 
 function duplicate() {    
     var original = document.getElementById('service');
@@ -92,7 +121,11 @@ function duplicate() {
 
 jQuery(document).ready(function ($) {  
 
-  
+  //show modal through dynamic ID
+$('.button').click(function(){
+    let id = $(this).data('id');
+    $('#myModal-'+id).modal('show');    
+  });
 
   $('.addtocart').click(function(){
     

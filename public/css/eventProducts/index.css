@@ -1,3 +1,33 @@
+.eventsMixAndMatch{
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  padding-top: 16px;
+}
+
+.eventsMixAndMatch ul{
+  display: inline-block;
+  text-align: left;
+  margin: auto;
+  width: 100%;
+}
+
+.eventsMixAndMatch ul li{
+  border-bottom: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  display: inline-block;
+  padding: 16px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.modal-footer {
+  margin-top: 24px;
+  text-align: right;
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 750px;
 }
