@@ -15,143 +15,174 @@ Order Details
 @section('content')  
 <br/>
 
-@if(Auth::check())
-<section class="u-clearfix u-container-align-center u-section-2">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">                   
-                                              
-                            @foreach($products as $product)
-                            <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">                         
-                                <div class="btn-submit form-vertical u-form u-form-1">
-                                <h4 class="u-text u-text-default u-text-6" id="orders__{{ $product->order_id }}">Order ID: {{ $product->order_id }}</h4>
-<br/>
-                                <div class="table ordersDetailsTable">
-                    <div class="table-row">
-                      <div class="table-head quantity">Status</div>
-                      <div class="table-head">Order</div>
-                      <div class="table-head">Payment</div>
-                      <div class="table-head">Bill</div>                      
-                      <div class="table-head">Delivery</div>
-                      <div class="table-head arrow"></div>
-                    </div>
-              <!--- begin product item --->
+  @if(Auth::check())
 
-              
-                <!--- get selected products --->
+  
+  @if(count($products) == 0)
+                <!-- <p style="text-align: center; font-style: italic;">You have no previous orders</p> -->
+
+                <section class="u-clearfix u-section-2" id="sec-e3fd">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="text-align: center;">
+            <div class="u-layout-row" style="display: block;">              
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2" style="display: inline-block;">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                  <p class="u-align-center u-text u-text-default u-text-2">You have no previous orders.
+                  </p>
+                  <br/>
+                  @if (!Auth::guest())
+                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>                    
+                  @else
+                  <a href="/Register" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Sign up</a>                                
+                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>
+                  @endif
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+@else
+  <section class="u-clearfix u-container-align-center u-section-2">
+      <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                  <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-4">                   
+                                                
+                              @foreach($products as $product)
+                              <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">                         
+                                  <div class="btn-submit form-vertical u-form u-form-1">
+                                  <h4 class="u-text u-text-default u-text-6" id="orders__{{ $product->order_id }}">Order ID: {{ $product->order_id }}</h4>
+  <br/>
+                                  <div class="table ordersDetailsTable">
+                      <div class="table-row">
+                        <div class="table-head quantity">Status</div>
+                        <div class="table-head">Order</div>
+                        <div class="table-head">Payment</div>
+                        <div class="table-head">Bill</div>                      
+                        <div class="table-head">Delivery</div>
+                        <div class="table-head arrow"></div>
+                      </div>
+                <!--- begin product item --->
+
                 
-                <div class="table-row">
-                      <!-- <div class="table-cell selectCheckbox">
-                        <div class="round">
-                          <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
-                          <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
-                        </div>
-                      </div> -->
-                      <div class="table-cell status">
-                        <!-- <div class="round" style="margin: 0 8px 8px 0;    text-align: center;    display: inline-block;    height: 26px;">
+                  <!--- get selected products --->
+                  
+                  <div class="table-row">
+                        <!-- <div class="table-cell selectCheckbox">
+                          <div class="round">
                             <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
                             <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
-                           </div>
-                        <br/> -->
-                        <a class="listItemDetailLabel">Status</a>
-                        <a class="listItemDetailValue">{{ $product->statusname }}</a>
-                      </div>
-                      <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-2023{{ $product->order_id }}</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">{{ $product->created_at }}</a></div>
-
-                      
-                      <div class="table-cell payment">
-                        <a class="listItemDetailLabel">Reference Number</a>
-                        <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
-                        <a class="listItemDetailLabel">Mode of Payment</a>
-                        <a class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
-                      </div>                      
-                      <div class="table-cell payment">
-                        <!-- <a class="listItemDetailLabel">Products</a>
-                        <a class="listItemDetailValue">
-                          <ul>
-                            <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
-                            <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
-                          </ul>
-                        </a> -->
-                        <a class="listItemDetailLabel">Voucher</a>
-                        @if ($product->productslist != "")
-                            <a class="listItemDetailValue">{{ $product->voucher_code }}</a>
-                        @else
-                            <a class="listItemDetailValue">No voucher</a>
-                        @endif
-                        <br/>
-                        @if ($product->voucher_proof != "")                          
-                        <a class="listItemDetailValue"><img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" /></a>
-                        @endif
-                        <a class="listItemDetailLabel">Amount Due</a>
-                        <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->amount }}</span> </a></div>
-                      <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
-                 
-                      <div class="table-cell arrow">
-                        <!-- <a href="/my-orders" class="listItemDetailLabel"></a> -->
-                        <!-- <a href="/my-orders" class="listItemDetailValue">
-                          <span id="{{ $product->order_id }}"><div class="triangle-right" style="margin-left: 16px;"></div></span>                                                         
-                        </a> -->
-                        <span class="arrowButton open-edit_user" data-toggle="modal" data-id="{{ $product->order_id }}"> <div class="triangle-right" ></div> </span> 
-                        <!-- <span id="" data-toggle="modal" data-target="#{{$product->order_id}}" class-"arrowButton"><div class="triangle-right" style="margin-left: 16px;"></div></span> -->
-                      </div>
-                    </div>
-              
-                            
-                      </div>
-
-                                <br/>
-                                <br/>
-
-
-                                <div class="modal" id="myModal-{{$product->order_id}}" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                  <div class="modal-content">
-
-                                    <div class="modal-header">
-                                      <button type="button" id="OrdersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    </div>
-                                    <div class="modal-body">
-
-                                    <!-- BEGIN - orders --> 
-                                    <h5 class="u-text u-text-default u-text-6">Orders</h5>  
-                                    <br/>
-                                    <div class="table ordersTable">            
-                                      <div class="table-row">
-                                          <div class="table-head" style="display: none">Product ID</div>
-                                          <div class="table-head" >Image</div>
-                                          <div class="table-head">Product</div>
-                                          <!-- <div class="table-head quantity">Quantity</div> -->
-                                          <div class="table-head">Total Price</div>
-                                          <div class="table-head">Notes</div>
-                                      </div> 
-                                      <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
-                                    </div>
-                                    <!-- END - orders  --> 
-
-                                    </div>
-                                    <div class="modal-footer">
-                                    <button type="button" id="OrdersModalCancelButton" data-dismiss="modal" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Done</button>
-                                    </div>
-
-                                  </div>
-                                </div>
-                                <!-- END - orders modal -->
-
-                                
+                          </div>
+                        </div> -->
+                        <div class="table-cell status">
+                          <!-- <div class="round" style="margin: 0 8px 8px 0;    text-align: center;    display: inline-block;    height: 26px;">
+                              <input type="checkbox" id="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" name="" value="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD" class="itemchecker" checked="">
+                              <label for="D79489EB-E8C1-44BC-AF8B-9E05DA9C84BD"></label>
+                            </div>
+                          <br/> -->
+                          <a class="listItemDetailLabel">Status</a>
+                          <a class="listItemDetailValue">{{ $product->statusname }}</a>
                         </div>
-                    </div>
-                            @endforeach
+                        <div class="table-cell payment"><a class="listItemDetailLabel">Order ID</a><a class="listItemDetailValue">OR-2023{{ $product->order_id }}</a><a class="listItemDetailLabel">Order Date</a><a class="listItemDetailValue">{{ $product->created_at }}</a></div>
+
                         
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</section>
-@else
-<p style="text-align: center; font-style: italic;">This feature is for registered users only</p>
-@endif
+                        <div class="table-cell payment">
+                          <a class="listItemDetailLabel">Reference Number</a>
+                          <a class="listItemDetailValue">{{ $product->reference_no }}</a> 
+                          <a class="listItemDetailLabel">Mode of Payment</a>
+                          <a class="listItemDetailValue">{{ $product->mode_of_payment }}</a>
+                        </div>                      
+                        <div class="table-cell payment">
+                          <!-- <a class="listItemDetailLabel">Products</a>
+                          <a class="listItemDetailValue">
+                            <ul>
+                              <li><span></span> <span>Pineapple Cake</span> (<span>1 box <span>)</li>
+                              <li><span>Plain</span> <span>Taiwanese Egg Roll</span> (<span>1 box <span>)</li>                        
+                            </ul>
+                          </a> -->
+                          <a class="listItemDetailLabel">Voucher</a>
+                          @if ($product->productslist != "")
+                              <a class="listItemDetailValue">{{ $product->voucher_code }}</a>
+                          @else
+                              <a class="listItemDetailValue">No voucher</a>
+                          @endif
+                          <br/>
+                          @if ($product->voucher_proof != "")                          
+                          <a class="listItemDetailValue"><img src="/images/voucherproof/{{ $product->voucher_proof }}" alt="" width="100" /></a>
+                          @endif
+                          <a class="listItemDetailLabel">Amount Due</a>
+                          <a class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{ $product->amount }}</span> </a></div>
+                        <div class="table-cell"><a class="listItemDetailLabel">Delivery Address</a><a class="listItemDetailValue">{{ $product->delivery_address }}</a><a class="listItemDetailLabel">Notes</a><a class="listItemDetailValue">{{ $product->notes }}</a></div>
+                  
+                        <div class="table-cell arrow">
+                          <!-- <a href="/my-orders" class="listItemDetailLabel"></a> -->
+                          <!-- <a href="/my-orders" class="listItemDetailValue">
+                            <span id="{{ $product->order_id }}"><div class="triangle-right" style="margin-left: 16px;"></div></span>                                                         
+                          </a> -->
+                          <span class="arrowButton open-edit_user" data-toggle="modal" data-id="{{ $product->order_id }}"> <div class="triangle-right" ></div> </span> 
+                          <!-- <span id="" data-toggle="modal" data-target="#{{$product->order_id}}" class-"arrowButton"><div class="triangle-right" style="margin-left: 16px;"></div></span> -->
+                        </div>
+                      </div>
+                
+                              
+                        </div>
+
+                                  <br/>
+                                  <br/>
+
+
+                                  <div class="modal" id="myModal-{{$product->order_id}}" data-bs-backdrop="true" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-content">
+
+                                      <div class="modal-header">
+                                        <button type="button" id="OrdersModalCloseButton" class="closeButton modalCloseButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+
+                                      <!-- BEGIN - orders --> 
+                                      <h5 class="u-text u-text-default u-text-6">Orders</h5>  
+                                      <br/>
+                                      <div class="table ordersTable">            
+                                        <div class="table-row">
+                                            <div class="table-head" style="display: none">Product ID</div>
+                                            <div class="table-head" >Image</div>
+                                            <div class="table-head">Product</div>
+                                            <!-- <div class="table-head quantity">Quantity</div> -->
+                                            <div class="table-head">Total Price</div>
+                                            <div class="table-head">Notes</div>
+                                        </div> 
+                                        <div class="addedInfo {{ $product->order_id }}_item" orderId="{{ $product->order_id }}"></div>
+                                      </div>
+                                      <!-- END - orders  --> 
+
+                                      </div>
+                                      <div class="modal-footer">
+                                      <button type="button" id="OrdersModalCancelButton" data-dismiss="modal" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Done</button>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                  <!-- END - orders modal -->
+
+                                  
+                          </div>
+                      </div>
+                              @endforeach
+                          
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </section>
+  
+    @endif  
+  @else
+  <p style="text-align: center; font-style: italic;">This feature is for registered users only</p>
+  @endif
 <!-- 
 <section class="u-clearfix u-section-2" id="sec-e3fd">
     
