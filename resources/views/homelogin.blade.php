@@ -57,6 +57,8 @@ Home
         <img class="u-image u-image-1" src="images/Animations/Animations_1024x700.gif" data-image-width="700" data-image-height="700"> 
       </div>-->
     </section>
+
+    @if(!Auth::check())
     <section class="u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-custom-color-4 u-valign-middle-xs u-section-1" id="sec-54cf">
     <div class="stripeDiv"></div>
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1 stampImage">
@@ -121,6 +123,8 @@ Home
       </div>
       <div class="stripeDiv"></div>
     </section>
+  @endif
+
     <section class="u-border-1 u-border-grey-10 u-border-no-left u-border-no-right u-clearfix u-white u-section-4" id="carousel_bc58">
       <p class="u-align-center u-text u-text-1">Check out our best sellers!</p>
     </section>
@@ -201,7 +205,12 @@ Home
                   <h6>New Product</h6>
                   <h2 class="u-text u-text-default u-text-1">{{ $newproduct->name }}</h2>
                   <p class="u-text u-text-2">{{ $newproduct->productDescription }}</p>
-                  <a href="/Pastries/580056F5-E372-43C2-B60C-3C0836B73C69" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                  
+                  @if($newproduct->categories == 'Events')
+                          <a href="/Events" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View Events</a>
+                          @else
+                          <a href="/view/{{ $newproduct->productIdlong }}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
+                          @endif
                 </div>
               </div>
               <div class="u-align-center u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1" src="" data-image-width="1440" data-image-height="960"  style="background-image: url(/resizer/images/ProductImages/{{ $newproduct->url }}/480); background-size: contain;">

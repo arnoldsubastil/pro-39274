@@ -49,6 +49,7 @@ Promos and Events
                 <!-- BEGIN - events --> 
                 <h5 class="u-text u-text-default u-text-6">Mix & Match</h5>  
                 <br/>
+                @if($numberofcount = 0) @endif
                 <div class="table eventsMixAndMatch">
                   <ul class="u-text u-text-default u-text-7 noListStyle">
                         @if($uniqueProductId->chooseitem != null)
@@ -58,6 +59,8 @@ Promos and Events
 
                         @if($labels['0'] != 0)
                           <li><b>{{ $labels['0'] }} pcs {{ $labels['1'] }}</b></li>
+                          
+                    @if($numberofcount = $numberofcount + 1) @endif
                         @endif
                           <li>
                             @for ($i = 0; $i < intval($labels['0']); $i++)
@@ -71,13 +74,17 @@ Promos and Events
                         @endforeach
                         @endif
 
+                        @if($numberofcount <= 0)
+                  <p>{{ $uniqueProductId->productDescription }}</p>
+                  @endif
                   </ul>
+                  
                 </div>
                 
                 <!-- END - events  --> 
                 </div>
                 <div class="modal-footer">
-                <button type="button" id="EventsModalButton" target="_blank" prod-id="{{ $uniqueProductId->productIdlong }}" class="addtocart button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</button>
+                <button type="button" id="EventsModalButton" target="_blank" prod-id="{{ $uniqueProductId->productIdlong }}" class="addtocart button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1"  prod-unique-id="{{ $uniqueProductId->product_id }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -134,11 +141,12 @@ $('.button').click(function(){
     let id = $(this).attr('prod-id');
     let uniqueid = $(this).attr('prod-unique-id');
 
+    console.log(uniqueid);
     $itemslist = 'Content: ';
     $("." + uniqueid + "_items").each(function() {
         $itemslist = $itemslist + $(this).val() + ", ";
+        ;
     });
-
     let notes = $itemslist;
     console.log(notes);
     $.ajax({
@@ -152,7 +160,7 @@ $('.button').click(function(){
         },
         success:function(response){
             console.log(response);
-        location.href='/Cart';
+        // location.href='/Cart';
         },
     });  
   });
