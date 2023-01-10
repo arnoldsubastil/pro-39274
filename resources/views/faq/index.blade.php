@@ -27,9 +27,9 @@ FAQ
 
                     @foreach($faqs as $faq)
                         <div>
-                            <button type="button" class="collapsible">{{ $faq->question }}</button>
+                            <button type="button" class="collapsible">{!! $faq->question !!}</button>
                             <div class="content">
-                              <p>{{ $faq->answer }}</p>
+                              <p>{!! $faq->answer !!}</p>
                               <br>
                             </div>
                         </div>
