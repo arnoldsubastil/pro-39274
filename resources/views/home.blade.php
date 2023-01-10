@@ -207,7 +207,7 @@ Home
                   <h2 class="u-text u-text-default u-text-1">{{ $newproduct->name }}</h2>
                   <p class="u-text u-text-2">{!! $newproduct->productDescription !!}</p>
                   @if($newproduct->categories == 'Events')
-                          <a href="/Events" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View Events</a>
+                          <a href="/Events" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View Sets</a>
                           @else
                           <a href="/view/{{ $newproduct->productIdlong }}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
                           @endif
