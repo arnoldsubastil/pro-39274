@@ -1,3 +1,8 @@
+.paymentSection img{
+  width: 100%;
+  max-width: 346px;
+}
+
 .otherDetails{
   border: 1px solid #DDDDDD;
   background-color: #F2F2F2;
@@ -160,6 +165,7 @@
 
 .paymentSection > .u-form-1 {
     max-width: 480px;
+    padding-right: 24px;
 }
 
 .u-section-2 .u-label-1 {

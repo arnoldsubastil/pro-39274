@@ -255,7 +255,7 @@ Bill Order
                     <div class="u-border-1 u-border-grey-5 u-container-layout u-container-layout-4">
                       <section id="BPIPaymentSection" class="paymentSection">
                         <div class="form-vertical u-form u-form-1">  
-                          <h4>Pay with</h4>                        
+                          <h4>Pay with:</h4>                        
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Mode of Payment</label>
                             <input type="text" id="mode_ofpayment" value="BPI" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
@@ -276,17 +276,15 @@ Bill Order
                         </label>
                         <input type="text" placeholder="Payment Reference" id="reference_no" value="" name="reference_no" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-4">
                       </div>
-                          <!-- <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Discount</label>
-                            <input type="text" value="No available voucher" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" disabled>
-                          </div> -->
-                          <!-- <div class="u-form-group">
-                            <label for="name-2382" class="u-label u-label-1">Amount Due</label>
-                            <input id="BPITotalAmountDueTextbox" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-4 u-white u-input-1" />
-                          </div> -->
                         </div>
-                        <div class="form-vertical u-form u-form-1"> 
-                          <h4>You are about to pay</h4>
+                        <div class="form-vertical u-form u-form-1">
+                          <h4>Pay to:</h4>
+                          <div id="bankaccountinfo">
+                            BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
+                            <img src="/images/PaymentAccounts/BPI_758x764.png">
+                          </div>
+                        <br/>
+                          <h4>You are about to pay:</h4>
                           <div class="u-form-group">
                             <label for="name-2382" class="u-label u-label-1">Total Amount</label>
                             <p>&nbsp;<span class="totalAmountCurrency">PHP&nbsp;</span><span id="BPITotalAmountDueSpan" class="totalAmount"></span></p>                             
@@ -294,16 +292,6 @@ Bill Order
                           <div class="u-form-group">
                             <p>Please review to ensure that the details are correct before you proceed.</p>
                           </div>
-                             
-                          <div class="u-form-group"><strong>
-                          <h4>Payment Information</h4>
-                            <div id="bankaccountinfo">
-                              BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
-                              <img src="/images/bpiinfo.png" width="300">
-                            </div>
-                            </strong>
-                          </div>
-
                         </div>
                       </section>
                     </div>
@@ -626,14 +614,14 @@ $('input[type=radio][name=mode_of_payment]').change(function() {
     if(payment === 'BPI') {
       $('#bankaccountinfo').html(`
                               BPI: SOYSTORY FOOD SHOP 8260-0036-83 <br>
-                              <img src="/images/bpiinfo.png" width="300">
+                              <img src="/images/PaymentAccounts/BPI_758x764.png">
                            `);
     } else if(payment === 'BDO') {
       $('#bankaccountinfo').html(`BDO: SOYSTORY FOOD SHOP 00-769-800-8061 <br>`);
     } else {
       $('#bankaccountinfo').html(`
                               GCASH: EANNE YEANNE L. 09171380392 <br>
-                              <img src="/images/gcashinfo.jpg" width="300">
+                              <img src="/images/PaymentAccounts/GCash_453x452.png">
                            `);
     }
     
