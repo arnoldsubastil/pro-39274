@@ -160,7 +160,7 @@ Home
                         <div class="u-container-layout u-container-layout-2">
                           <h1 class="u-custom-font u-text u-title u-text-1"> {{ $product->name }}&nbsp;</h1>
                           <h2 class="u-text u-text-2"> {{ $product->foreignName }}</h2>
-                          <p class="u-text u-text-3"> {{ $product->productDescription }}</p>
+                          <p class="u-text u-text-3"> {!! $product->productDescription !!}</p>
                           <h2 class="u-text u-text-4"><span style="font-size: 1.125rem;">PHP</span> {{ $product->sellingPrice }} 
                           </h2>
                           <a href="/view/{{ $product->productIdlong }}" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Order now!</a>
@@ -205,7 +205,7 @@ Home
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
                   <h6>New Product</h6>
                   <h2 class="u-text u-text-default u-text-1">{{ $newproduct->name }}</h2>
-                  <p class="u-text u-text-2">{{ $newproduct->productDescription }}</p>
+                  <p class="u-text u-text-2">{!! $newproduct->productDescription !!}</p>
                   @if($newproduct->categories == 'Events')
                           <a href="/Events" class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">View Events</a>
                           @else

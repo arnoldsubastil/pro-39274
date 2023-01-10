@@ -35,7 +35,7 @@ Promos and Events
               <div class="table-cell"><span class="listItemDetailLabel">Product Image</span><span class="listItemDetailValue"><img class="u-image u-image-default u-image-1" src="{{ '/resizer/images/ProductImages/'.$uniqueProductId->url}}/1080" alt="" ></span></div>
               <div class="table-cell">
                 <span class="listItemDetailLabel">Product Name</span><h5><span class="listItemDetailValue">{{$uniqueProductId->name}}</span></h5>
-                <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{{$uniqueProductId->productDescription}}</span>
+                <span class="listItemDetailLabel">Foreign Name</span><span class="listItemDetailValue foreignName">{!! $uniqueProductId->productDescription !!}</span>
                 <span class="listItemDetailLabel">Product Price</span><span class="listItemDetailValue"><span class="currency">PHP</span><span class="amount"> {{$uniqueProductId->sellingPrice}}</span> </span>
                 <span data-toggle="modal" data-id="{{ $uniqueProductId->productIdlong }}" prod-unique-id="{{ $uniqueProductId->product_id }}" class="button u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1 " data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" >Order now!</span>
               
@@ -75,7 +75,7 @@ Promos and Events
                         @endif
 
                         @if($numberofcount <= 0)
-                  <p>{{ $uniqueProductId->productDescription }}</p>
+                  <p>{!! $uniqueProductId->productDescription !!}</p>
                   @endif
                   </ul>
                   

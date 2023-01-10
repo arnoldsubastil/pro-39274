@@ -52,7 +52,7 @@ Product Details
                       <div class="u-image u-image-circle u-image-3" data-image-width="4288" data-image-height="2848" style="background-image: url('/resizer/images/ProductThumbnails/{{$product->thumbnailUrl}}/437'); background-size: cover;"></div>
                       <br/>
                       <br/>
-                      <p class="u-text u-text-8"> {{ $product->productDescription }} </p>
+                      <p class="u-text u-text-8"> {!! $product->productDescription !!} </p>
                       
                     </div>
                   </div>
