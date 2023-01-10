@@ -160,7 +160,7 @@ $('.button').click(function(){
         },
         success:function(response){
             console.log(response);
-        // location.href='/Cart';
+        location.href='/Cart';
         },
     });  
   });
