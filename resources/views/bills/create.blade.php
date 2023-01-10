@@ -20,6 +20,14 @@ Bill Order
   </div>
 
     </section> -->
+    <section class="u-clearfix u-section-3" id="sec-2dfe">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 breadcrumb">
+      @if (!Auth::guest())      
+      @else
+      <h6 class="u-text u-text-default u-text-1">Already have an account? <a href="/login">Log in</a></h6>
+      @endif      
+      </div>
+    </section>
     <section class="u-clearfix u-container-align-center u-section-2" id="sec-2a5c">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">

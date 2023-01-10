@@ -1,3 +1,27 @@
+form > div{
+  margin-top: 0;
+}
+
+.breadcrumb{
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.breadcrumb h6{
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.breadcrumb a{
+  color: #D36D28 !important;
+    text-decoration: underline !important;
+    font-style: italic;
+    padding: 0;
+}
+
 .paymentSection img{
   width: 100%;
   max-width: 346px;
