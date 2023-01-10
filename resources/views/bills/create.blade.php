@@ -24,7 +24,7 @@ Bill Order
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 breadcrumb">
       @if (!Auth::guest())      
       @else
-      <h6 class="u-text u-text-default u-text-1">Already have an account? <a href="/login">Log in</a></h6>
+      <!-- <h6 class="u-text u-text-default u-text-1">Already have an account? <a href="/login">Log in</a></h6> -->
       @endif      
       </div>
     </section>

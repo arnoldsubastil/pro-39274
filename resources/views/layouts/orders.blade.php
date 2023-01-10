@@ -38,7 +38,7 @@
 <section class="u-clearfix u-container-align-left u-section-1" id="sec-169e">
       <div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="/images/Logo_SoyStory_256x64.png" alt="" data-image-width="256" data-image-height="64" data-href="#" title="Home">
-        <h5 class="u-align-left u-text u-text-default u-text-1">SoyStory Order Form</h5>
+        <h5 class="u-align-left u-text u-text-default u-text-1">Order Form</h5>
       </div>
     </section></header>
 
