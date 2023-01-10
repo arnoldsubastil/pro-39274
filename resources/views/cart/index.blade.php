@@ -16,8 +16,8 @@ Shopping Cart
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <input type="hidden" name="" id="loginid" value="{!! !empty(Auth::user()->id) ? Auth::user()->id : '' !!}" />
 <section class="u-clearfix u-section-3" id="sec-2dfe">
-  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <h6 class="u-text u-text-default u-text-1">Shopping Cart</h6>
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1 breadcrumb">
+    <h6 class="u-text u-text-default u-text-1"><a href="/products/pastries"><img src="/images/Icons/ArrowLeft_32x20.png" /><span>Continue shopping</span></a></h6>
   </div>
 </section>
 
@@ -48,10 +48,10 @@ Shopping Cart
                   </p>
                   <br/>
                   @if (!Auth::guest())
-                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>                    
+                  <!-- <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>                     -->
                   @else
                   <a href="/Register" class="u-border-none u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Sign up</a>                                
-                  <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>
+                  <!-- <a href="/products/pastries" class="u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a> -->
                   @endif
                 </div>
               </div>
@@ -85,7 +85,9 @@ Shopping Cart
                           <!-- <input type="number" name="" prod-id="{{ $uniqueProductId->productIdlong }}" note="{{ $uniqueProductId->product_note}}" class="itemNumber" value="{{ $uniqueProductId->numberoforder }}" /> -->
                         </a>
                       </div>
-                      <div class="table-cell"><button class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2 removeFromList" rowtoremove = "row_table_{{ $uniqueProductId->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Remove</button></div>
+                      <div class="table-cell">
+                        <button class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2 removeFromList" rowtoremove = "row_table_{{ $uniqueProductId->productIdlong }}" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Remove</button>
+                      </div>
                     </div>
               
               @endforeach
@@ -144,7 +146,7 @@ Shopping Cart
 
           <div class="u-layout right">
             <div class="u-layout-row ">
-              <a href="/products/pastries" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a>
+              <!-- <a href="/products/pastries" class="u-align-right u-border-2 u-border-hover-palette-1-base u-border-palette-1-base u-btn u-btn-round u-button-style u-hover-palette-1-base u-none u-radius-4 u-btn-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Continue Shopping</a> -->
               <button id="placeorder" class="disabledbutton u-align-center u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-4 u-btn-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Place order</button>
             </div>
           </div>

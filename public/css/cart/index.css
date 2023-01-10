@@ -1,3 +1,17 @@
+
+.breadcrumb img{
+  margin: auto 8px 4px 0;
+  width: 24px;
+}
+
+.breadcrumb span{
+  margin-top: 8px;
+}
+
+.breadcrumb img, .breadcrumb span{
+  vertical-align: middle;
+}
+
 .u-layout-row{
   display: block;
 }
